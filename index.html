@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saving Tech | IT Disposal & Recycling</title>
+    
+    <!-- Favicon link here -->
+    <link rel="icon" type="image/x-icon" href="icon.ico">
+    
+    <style>
+        :root {
+            --primary-green: #2E8B57; /* Matched to logo */
+            --dark-grey: #1F2937;
+            --light-bg: #F3F4F6;
+            --white: #FFFFFF;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: var(--dark-grey);
+            line-height: 1.6;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.5rem 2rem; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            overflow: hidden; 
+            height: 80px; 
+        }
+
+        .logo a {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .logo img {
+            height: 250px; 
+            width: auto;
+            object-fit: contain;
+            margin-left: -20px; 
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-grey);
+            margin-left: 2rem;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-green);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-green);
+            color: var(--white);
+            padding: 0.5rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background-color: #246B43;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: var(--dark-grey);
+            color: var(--white);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 2rem auto;
+            color: #D1D5DB;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 4rem 2rem;
+            background-color: var(--light-bg);
+            text-align: center;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 2rem auto 0 auto;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--primary-green);
+            text-align: left;
+        }
+
+        .service-card h3 {
+            margin-bottom: 1rem;
+            color: var(--dark-grey);
+            font-size: 1.2rem;
+        }
+
+        .service-card p {
+            font-size: 0.95rem;
+            color: #4B5563;
+        }
+        
+        .citation {
+            font-size: 0.75rem;
+            color: #9CA3AF;
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
+
+        /* Form Section */
+        .booking-section {
+            padding: 4rem 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .booking-section h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-form input, .contact-form select, .contact-form textarea {
+            padding: 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+            width: 100%;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-grey);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="1-01.png" alt="Saving Tech Logo">
+                </a>
+            </div>
+            <nav class="nav-links">
+                <a href="#services">Our Services</a>
+                <a href="#book">Request Collection</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Secure IT Asset Disposal & Recycling</h1>
+            <p>Certified data wiping, hardware resets, and environmentally friendly tech recycling for businesses.</p>
+            <a href="#book" class="btn-primary">Book a Collection</a>
+        </section>
+
+        <section id="services" class="services">
+            <h2>What We Do</h2>
+            <div class="services-grid">
+                
+                <div class="service-card">
+                    <h3>IT Asset Disposal (ITAD) Services</h3>
+                    <p>Audited end-to-end ITAD for regulated industries - chain of custody, certificates of destruction and ESG reporting your board can sign off. <span class="citation"></span></p>
+                </div>
+
+                <div class="service-card">
+                    <h3>Remarketing & Value Recovery</h3>
+                    <p>Refurbish and remarket healthy IT through vetted B2B channels, recover commodity value from the rest, returned as a transparent rebate. <span class="citation"></span></p>
+                </div>
+
+                <div class="service-card">
+                    <h3>Asset Tracking & Reporting</h3>
+                    <p>Per-asset chain of custody, serial-level scans, audit-ready certificates and ESG metrics - the paperwork your auditors actually want. <span class="citation"></span></p>
+                </div>
+
+                <div class="service-card">
+                    <h3>Data Centre & Server Decommissioning</h3>
+                    <p>Plan your data centre decommissioning with confidence. <span class="citation"></span> Safe rack pull, drive destruction and disposal of business server hardware, with full chain of custody and certified reporting. <span class="citation"></span></p>
+                </div>
+
+                <div class="service-card">
+                    <h3>Computer & Laptop Recycling</h3>
+                    <p>Secure and effective computer recycling, with destruction services that ensure total erasure. <span class="citation"></span> Secure laptop collection, data wiping and reuse where it's safe to do so. <span class="citation"></span> Customers throughout the UK can benefit from our secure and free laptop recycling services. <span class="citation"></span></p>
+                </div>
+
+                <div class="service-card">
+                    <h3>Mobile Phone & Tablet Recycling</h3>
+                    <p>Mobile phone recycling and tablet disposal for business across the UK. <span class="citation"></span> Secure, compliant and fully certified with data erasure and nationwide collection. <span class="citation"></span></p>
+                </div>
+
+                <div class="service-card">
+                    <h3>Product Destruction</h3>
+                    <p>WEEE-compliant destruction of faulty, recalled and pre-launch electronics - witnessed and certified. <span class="citation"></span></p>
+                </div>
+
+                <div class="service-card">
+                    <h3>WEEE Recycling Bins</h3>
+                    <p>Our WEEE recycling service helps businesses dispose of electronic waste across the UK with compliant disposal and destruction. <span class="citation"></span> Reliable WEEE bin and e-waste collection services. <span class="citation"></span> Choose from 240L to 1100L bins for safe, eco-friendly disposal. <span class="citation"></span></p>
+                </div>
+
+                <div class="service-card">
+                    <h3>Specialist Waste & Consumables</h3>
+                    <p>Secure inkjet cartridge recycling for businesses across the UK. <span class="citation"></span> 6ft and 8ft fluorescent tube coffins to suit all your requirements. <span class="citation"></span></p>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="book" class="booking-section">
+            <h2>Request a Collection</h2>
+            <form class="contact-form" id="collectionForm">
+                <input type="text" id="name" placeholder="Company / Contact Name" required>
+                <input type="email" id="email" placeholder="Email Address" required>
+                <input type="tel" id="phone" placeholder="Phone Number" required>
+                <select id="serviceType" required>
+                    <option value="" disabled selected>Select Service Required</option>
+                    <option value="itad">IT Asset Disposal (ITAD)</option>
+                    <option value="remarketing">Remarketing & Value Recovery</option>
+                    <option value="decommissioning">Data Centre & Server Decommissioning</option>
+                    <option value="computers">Computer & Laptop Recycling</option>
+                    <option value="mobile">Mobile Phone & Tablet Recycling</option>
+                    <option value="destruction">Product & Data Destruction</option>
+                    <option value="weee">WEEE Recycling Bins</option>
+                    <option value="specialist">Specialist Waste (Tubes & Cartridges)</option>
+                </select>
+                <textarea id="details" rows="5" placeholder="Please list the approximate quantity and types of devices (e.g., 10 laptops, 5 desktops, 1 server)..." required></textarea>
+                <button type="submit" class="btn-primary">Submit Request</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Saving Tech. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Set dynamic copyright year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Basic Form Validation & Handling
+        document.getElementById('collectionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // In a real environment, this data would be sent to a backend server.
+            const name = document.getElementById('name').value;
+            
+            alert(`Thanks, ${name}! Your collection request has been submitted. (Note: This is a frontend draft, backend processing is required).`);
+            this.reset();
+        });
+    </script>
+
+</body>
+</html>
