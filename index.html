@@ -68,7 +68,12 @@
             margin-left: -20px; 
         }
 
-        .nav-links a {
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links > a {
             text-decoration: none;
             color: var(--dark-grey);
             margin-left: 2rem;
@@ -76,7 +81,85 @@
             transition: color 0.3s;
         }
 
-        .nav-links a:hover {
+        .nav-links > a:hover {
+            color: var(--primary-green);
+        }
+
+        /* Dropdown Menu Styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            margin-left: 2rem;
+        }
+
+        .dropdown .dropbtn {
+            background: none;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-weight: 600;
+            color: var(--dark-grey);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-family: inherit;
+            padding: 1rem 0; /* Creates a larger hover area */
+        }
+
+        .dropdown:hover .dropbtn {
+            color: var(--primary-green);
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--white);
+            min-width: 500px; /* Wide enough for two columns */
+            box-shadow: 0px 8px 24px rgba(0,0,0,0.12);
+            z-index: 100;
+            border-radius: 8px;
+            top: 100%;
+            left: 0;
+            padding: 1.5rem;
+            border-top: 3px solid var(--primary-green);
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-columns {
+            display: flex;
+            gap: 3rem;
+        }
+
+        .column {
+            flex: 1;
+        }
+
+        .column h4 {
+            font-size: 1.05rem;
+            margin-bottom: 0.8rem;
+            color: var(--dark-grey);
+            border-bottom: 1px solid #E5E7EB;
+            padding-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .column a {
+            color: #4B5563;
+            padding: 0.5rem 0;
+            text-decoration: none;
+            display: block;
+            margin-left: 0;
+            font-weight: 400;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .column a:hover {
             color: var(--primary-green);
         }
 
@@ -150,13 +233,6 @@
             font-size: 0.95rem;
             color: #4B5563;
         }
-        
-        .citation {
-            font-size: 0.75rem;
-            color: #9CA3AF;
-            display: inline-block;
-            margin-top: 0.5rem;
-        }
 
         /* Form Section */
         .booking-section {
@@ -205,6 +281,37 @@
                 </a>
             </div>
             <nav class="nav-links">
+                <!-- Dropdown Menu -->
+                <div class="dropdown">
+                    <a href="FreeITDisposal.html" class="dropbtn">Free IT Disposal &#711;</a>
+                    <div class="dropdown-content">
+                        <div class="dropdown-columns">
+                            <!-- Left Column -->
+                            <div class="column">
+                                <h4>IT recycling services</h4>
+                                <a href="#">AV & media equipment recycling</a>
+                                <a href="#">Computer recycling</a>
+                                <a href="#">Laptop recycling</a>
+                                <a href="#">Mobile device recycling</a>
+                                <a href="#">Monitor & screen recycling</a>
+                                <a href="#">Printer & copier recycling</a>
+                                <a href="#">Server recycling</a>
+                            </div>
+                            <!-- Right Column -->
+                            <div class="column">
+                                <h4>Industries we serve</h4>
+                                <a href="#">Data centre IT recycling</a>
+                                <a href="#">Education</a>
+                                <a href="#">Finance & legal</a>
+                                <a href="#">Healthcare</a>
+                                <a href="#">Managed Service Providers</a>
+                                <a href="#">Public sector</a>
+                                <a href="#">Small businesses</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
                 <a href="#services">Our Services</a>
                 <a href="#book">Request Collection</a>
             </nav>
@@ -224,47 +331,47 @@
                 
                 <div class="service-card">
                     <h3>IT Asset Disposal (ITAD) Services</h3>
-                    <p>Audited end-to-end ITAD for regulated industries - chain of custody, certificates of destruction and ESG reporting your board can sign off. <span class="citation"></span></p>
+                    <p>Audited end-to-end ITAD for regulated industries - chain of custody, certificates of destruction and ESG reporting your board can sign off.</p>
                 </div>
 
                 <div class="service-card">
                     <h3>Remarketing & Value Recovery</h3>
-                    <p>Refurbish and remarket healthy IT through vetted B2B channels, recover commodity value from the rest, returned as a transparent rebate. <span class="citation"></span></p>
+                    <p>Refurbish and remarket healthy IT through vetted B2B channels, recover commodity value from the rest, returned as a transparent rebate.</p>
                 </div>
 
                 <div class="service-card">
                     <h3>Asset Tracking & Reporting</h3>
-                    <p>Per-asset chain of custody, serial-level scans, audit-ready certificates and ESG metrics - the paperwork your auditors actually want. <span class="citation"></span></p>
+                    <p>Per-asset chain of custody, serial-level scans, audit-ready certificates and ESG metrics - the paperwork your auditors actually want.</p>
                 </div>
 
                 <div class="service-card">
                     <h3>Data Centre & Server Decommissioning</h3>
-                    <p>Plan your data centre decommissioning with confidence. <span class="citation"></span> Safe rack pull, drive destruction and disposal of business server hardware, with full chain of custody and certified reporting. <span class="citation"></span></p>
+                    <p>Plan your data centre decommissioning with confidence. Safe rack pull, drive destruction and disposal of business server hardware, with full chain of custody and certified reporting.</p>
                 </div>
 
                 <div class="service-card">
                     <h3>Computer & Laptop Recycling</h3>
-                    <p>Secure and effective computer recycling, with destruction services that ensure total erasure. <span class="citation"></span> Secure laptop collection, data wiping and reuse where it's safe to do so. <span class="citation"></span> Customers throughout the UK can benefit from our secure and free laptop recycling services. <span class="citation"></span></p>
+                    <p>Secure and effective computer recycling, with destruction services that ensure total erasure. Secure laptop collection, data wiping and reuse where it's safe to do so. Customers throughout the UK can benefit from our secure and free laptop recycling services.</p>
                 </div>
 
                 <div class="service-card">
                     <h3>Mobile Phone & Tablet Recycling</h3>
-                    <p>Mobile phone recycling and tablet disposal for business across the UK. <span class="citation"></span> Secure, compliant and fully certified with data erasure and nationwide collection. <span class="citation"></span></p>
+                    <p>Mobile phone recycling and tablet disposal for business across the UK. Secure, compliant and fully certified with data erasure and nationwide collection.</p>
                 </div>
 
                 <div class="service-card">
                     <h3>Product Destruction</h3>
-                    <p>WEEE-compliant destruction of faulty, recalled and pre-launch electronics - witnessed and certified. <span class="citation"></span></p>
+                    <p>WEEE-compliant destruction of faulty, recalled and pre-launch electronics - witnessed and certified.</p>
                 </div>
 
                 <div class="service-card">
                     <h3>WEEE Recycling Bins</h3>
-                    <p>Our WEEE recycling service helps businesses dispose of electronic waste across the UK with compliant disposal and destruction. <span class="citation"></span> Reliable WEEE bin and e-waste collection services. <span class="citation"></span> Choose from 240L to 1100L bins for safe, eco-friendly disposal. <span class="citation"></span></p>
+                    <p>Our WEEE recycling service helps businesses dispose of electronic waste across the UK with compliant disposal and destruction. Reliable WEEE bin and e-waste collection services. Choose from 240L to 1100L bins for safe, eco-friendly disposal.</p>
                 </div>
 
                 <div class="service-card">
                     <h3>Specialist Waste & Consumables</h3>
-                    <p>Secure inkjet cartridge recycling for businesses across the UK. <span class="citation"></span> 6ft and 8ft fluorescent tube coffins to suit all your requirements. <span class="citation"></span></p>
+                    <p>Secure inkjet cartridge recycling for businesses across the UK. 6ft and 8ft fluorescent tube coffins to suit all your requirements.</p>
                 </div>
 
             </div>
