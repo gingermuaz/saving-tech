@@ -11,13 +11,13 @@
         :root {
             --primary-green: #2E8B57; 
             --lime-accent: #D4F34A;
-            --light-lime: #EEF8CD; /* Matched to secondary button */
+            --light-lime: #EEF8CD;
             --hero-blue: #2A8BCA; 
-            --icon-blue: #1085C5; /* Matched to feature icons */
+            --icon-blue: #1085C5;
             --dark-grey: #1F2937;
             --text-grey: #374151;
             --light-bg: #F8FAFC; 
-            --section-grey: #F3F4F6; /* Matched to bottom section bg */
+            --section-grey: #F3F4F6;
             --white: #FFFFFF;
         }
         
@@ -379,17 +379,13 @@
             margin-bottom: 1.5rem;
         }
         
-        .multi-doc-placeholder .doc-half {
+        .multi-doc-placeholder img {
             flex: 1;
-            aspect-ratio: 1 / 1.4;
-            background-color: #E5E7EB;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #9CA3AF;
-            font-size: 1rem;
-            font-weight: bold;
+            width: 50%;
+            height: auto;
             box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            border-radius: 4px;
+            object-fit: cover;
         }
 
         .doc-card p.caption {
@@ -423,7 +419,7 @@
         }
 
         .bottom-features .container {
-            padding: 0; /* Resetting padding as background spans full width */
+            padding: 0;
             margin: 0 auto;
         }
 
@@ -482,7 +478,6 @@
             flex-wrap: wrap;
         }
         
-        /* Overriding margins for these specific buttons inside the flexbox */
         .action-buttons .btn-lime, 
         .action-buttons .btn-light-lime {
             margin: 0; 
@@ -635,11 +630,11 @@
                     
                     <div class="docs-grid">
                         <div class="doc-card">
-                            <img src="Images/StandardCertificate.jpeg" alt="Standard Data Destruction Certificate">
+                            <img src="images/StandardCertificate.jpeg" alt="Standard Data Destruction Certificate">
                             <p class="caption">Standard Data Destruction Certificate</p>
                         </div>
                         <div class="doc-card">
-                            <img src="Images/EnhancedCertificate.jpeg" alt="Enhanced Data Destruction Certificate">
+                            <img src="images/EnhancedCertificate.jpeg" alt="Enhanced Data Destruction Certificate">
                             <p class="caption">Enhanced Data Destruction Certificate</p>
                         </div>
                     </div>
@@ -652,8 +647,8 @@
                     <div class="docs-grid">
                         <div class="doc-card">
                             <div class="multi-doc-placeholder">
-                                <div class="doc-half">[WTN Page 1 Img]</div>
-                                <div class="doc-half">[WTN Page 2 Img]</div>
+                                <img src="images/StandardCertificate.jpeg" alt="Duty of Care Certificate (WTN Page 1)">
+                                <img src="images/EnhancedCertificate.jpeg" alt="Duty of Care Certificate (WTN Page 2)">
                             </div>
                             <p class="caption">Duty of Care Certificate (Waste transfer note)</p>
                         </div>
@@ -743,7 +738,6 @@
     </footer>
 
     <script>
-        // Set dynamic copyright year
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
 
