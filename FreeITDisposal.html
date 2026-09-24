@@ -120,7 +120,7 @@
             display: none;
             position: absolute;
             background-color: var(--white);
-            min-width: 280px; 
+            min-width: 500px;
             box-shadow: 0px 8px 24px rgba(0,0,0,0.12);
             z-index: 100;
             border-radius: 8px;
@@ -128,6 +128,10 @@
             left: 0;
             padding: 1.5rem;
             border-top: 3px solid var(--primary-green);
+        }
+
+        .dropdown-content.single-column {
+            min-width: 260px;
         }
 
         .dropdown:hover .dropdown-content {
@@ -567,23 +571,50 @@
                 </a>
             </div>
             <nav class="nav-links">
+                <!-- How It Works Dropdown -->
+                <div class="dropdown">
+                    <a href="Howitworks.html" class="dropbtn">How it works &#711;</a>
+                    <div class="dropdown-content single-column">
+                        <div class="dropdown-columns">
+                            <div class="column">
+                                <a href="Assetswecollectrecycle.html">Assets we collect &amp; recycle</a>
+                                <a href="FAQs.html">FAQs</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Free IT Disposal Dropdown -->
                 <div class="dropdown">
                     <a href="FreeITDisposal.html" class="dropbtn">Free IT Disposal &#711;</a>
-                    <div class="dropdown-content">
+                    <div class="dropdown-content single-column">
                         <div class="dropdown-columns">
                             <div class="column">
                                 <h4>IT recycling services</h4>
-                                <a href="#">Computer recycling</a>
-                                <a href="#">Hard drive &amp; media destruction</a>
-                                <a href="#">Laptop recycling</a>
-                                <a href="#">Mobile device recycling</a>
-                                <a href="#">Monitor &amp; screen recycling</a>
+                                <a href="Computerrecycling.html">Computer recycling</a>
+                                <a href="Harddrivemediadestruction.html">Hard drive &amp; media destruction</a>
+                                <a href="Laptoprecycling.html">Laptop recycling</a>
+                                <a href="Mobiledevicerecycling.html">Mobile device recycling</a>
+                                <a href="Monitorscreenrecycling.html">Monitor &amp; screen recycling</a>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <a href="#services">Our Services</a>
+                <a href="index.html#services">Our Services</a>
+
+                <!-- About Us Dropdown -->
+                <div class="dropdown">
+                    <a href="AboutUs.html" class="dropbtn">About Us &#711;</a>
+                    <div class="dropdown-content single-column">
+                        <div class="dropdown-columns">
+                            <div class="column">
+                                <a href="Documentscertificates.html">Documents &amp; Certificates</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <a href="#book" class="trigger-modal">Request Collection</a>
             </nav>
         </div>
@@ -601,7 +632,7 @@
                 
                 <button class="btn-primary trigger-modal">BOOK A COLLECTION</button>
                 
-                <p class="hero-small-text">Free collections when you recycle at least 10 laptops, PCs &amp; servers (any combination). It's also <a href="#">free to recycle almost all waste IT with us</a>.</p>
+                <p class="hero-small-text">Free collections when you recycle at least 10 laptops, PCs &amp; servers (any combination). It's also <a href="Assetswecollectrecycle.html">free to recycle almost all waste IT with us</a>.</p>
             </div>
         </section>
 
@@ -611,31 +642,31 @@
                 
                 <div class="grid-card">
                     <img src="Icons/Computer.png" alt="Computer" class="icon">
-                    <h3><a href="#">Computer recycling</a></h3>
+                    <h3><a href="Computerrecycling.html">Computer recycling</a></h3>
                     <p>Everything from old desktop PCs, Apple Macs &amp; all legacy computer systems.</p>
                 </div>
 
                 <div class="grid-card">
                     <img src="Icons/Hard Drive.png" alt="Hard Drive" class="icon">
-                    <h3><a href="#">Hard drive &amp; media destruction</a></h3>
+                    <h3><a href="Harddrivemediadestruction.html">Hard drive &amp; media destruction</a></h3>
                     <p>Expert hard drive &amp; SSD destruction services. We also securely destroy data found on a wide range of digital and electronic media.</p>
                 </div>
 
                 <div class="grid-card">
                     <img src="Icons/Laptop.png" alt="Laptop" class="icon">
-                    <h3><a href="#">Laptop recycling</a></h3>
+                    <h3><a href="Laptoprecycling.html">Laptop recycling</a></h3>
                     <p>We collect all types of laptops for recycling, from all brands. Including ultra-portables, rugged, MacBooks, Chromebooks etc.</p>
                 </div>
 
                 <div class="grid-card">
                     <img src="Icons/Mobile.png" alt="Mobile" class="icon">
-                    <h3><a href="#">Mobile device recycling</a></h3>
+                    <h3><a href="Mobiledevicerecycling.html">Mobile device recycling</a></h3>
                     <p>We collect and recycle all types of mobile devices, including phones, tablets, EPOS hardware, etc.</p>
                 </div>
 
                 <div class="grid-card">
                     <img src="Icons/Monitor.png" alt="Monitor" class="icon">
-                    <h3><a href="#">Monitor &amp; screen recycling</a></h3>
+                    <h3><a href="Monitorscreenrecycling.html">Monitor &amp; screen recycling</a></h3>
                     <p>We offer nationwide collection and recycling of all your computer monitors, display &amp; advertising screens.</p>
                 </div>
 
@@ -648,7 +679,7 @@
                 <div class="esg-content">
                     <h2>We help you meet your ESG &amp; sustainability goals</h2>
                     <p>We're the first WEEE recycling company in the UK who go further than net zero. Work with us for secure, easy and compliant IT asset recycling that also benefits the planet.</p>
-                    <a href="#" class="btn-primary">FIND OUT HOW</a>
+                    <a href="AboutUs.html" class="btn-primary">FIND OUT HOW</a>
                 </div>
                 <div class="esg-icon-wrapper">
                     &Oslash;
@@ -662,9 +693,9 @@
                 <h2>It's easy to recycle e-waste with us</h2>
                 
                 <ul class="recycle-checklist">
-                    <li>We collect for free if you have at least 10 laptops, PCs &amp; servers to recycle (<a href="#">any combination of these</a>).</li>
-                    <li><a href="#">Secure data destruction</a>, <a href="#">fully certificated</a> and WEEE &amp; GDPR compliant</li>
-                    <li>We are <a href="#">100% carbon negative</a>, and leaders in the UK's <a href="#">circular economy</a></li>
+                    <li>We collect for free if you have at least 10 laptops, PCs &amp; servers to recycle (<a href="Assetswecollectrecycle.html">any combination of these</a>).</li>
+                    <li><a href="Harddrivemediadestruction.html">Secure data destruction</a>, <a href="Documentscertificates.html">fully certificated</a> and WEEE &amp; GDPR compliant</li>
+                    <li>We are <a href="Howitworks.html">100% carbon negative</a>, and leaders in the UK's <a href="Howitworks.html">circular economy</a></li>
                 </ul>
 
                 <div class="process-cards">
@@ -692,13 +723,6 @@
                         <a href="#">&rarr; IT recycling by post</a>
                     </div>
 
-                    <div class="process-card">
-                        <img src="Icons/Shredding.png" alt="Shredder Icon" class="icon">
-                        <h3>Zero Paper Shred</h3>
-                        <p>A secure, convenient and cost-effective solution to your document shredding needs. Fully compliant.</p>
-                        <a href="#">&rarr; Secure paper shredding</a>
-                    </div>
-
                 </div>
             </div>
         </section>
@@ -718,13 +742,13 @@
                 <select id="serviceType" required>
                     <option value="" disabled selected>Select Service Required</option>
                     <option value="itad">IT Asset Disposal (ITAD)</option>
-                    <option value="remarketing">Remarketing & Value Recovery</option>
-                    <option value="decommissioning">Data Centre & Server Decommissioning</option>
-                    <option value="computers">Computer & Laptop Recycling</option>
-                    <option value="mobile">Mobile Phone & Tablet Recycling</option>
-                    <option value="destruction">Product & Data Destruction</option>
+                    <option value="remarketing">Remarketing &amp; Value Recovery</option>
+                    <option value="decommissioning">Data Centre &amp; Server Decommissioning</option>
+                    <option value="computers">Computer &amp; Laptop Recycling</option>
+                    <option value="mobile">Mobile Phone &amp; Tablet Recycling</option>
+                    <option value="destruction">Product &amp; Data Destruction</option>
                     <option value="weee">WEEE Recycling Bins</option>
-                    <option value="specialist">Specialist Waste (Tubes & Cartridges)</option>
+                    <option value="specialist">Specialist Waste (Tubes &amp; Cartridges)</option>
                 </select>
                 <textarea id="details" rows="4" placeholder="Please list the approximate quantity and types of devices (e.g., 10 laptops, 5 desktops, 1 server)..." required></textarea>
                 <button type="submit" class="btn-submit">Submit Request</button>
