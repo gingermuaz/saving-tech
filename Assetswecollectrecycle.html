@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saving Tech | Assets We Collect & Recycle</title>
+    
+    <link rel="icon" type="image/x-icon" href="icon.ico">
+    
+    <style>
+        :root {
+            --primary-green: #2E8B57;
+            --primary-green-hover: #246B43;
+            --accent-lime: #A3E635;
+            --hero-blue: #0284C7;
+            --dark-navy: #1F2937;
+            --light-bg: #F8FAFC;
+            --card-blue-bg: #F0F9FF;
+            --card-pink-bg: #FFF0F3;
+            --card-pink-border: #F43F5E;
+            --white: #FFFFFF;
+            --border-color: #E5E7EB;
+            --text-dark: #1F2937;
+            --text-muted: #4B5563;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.5rem 2rem; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            overflow: hidden; 
+            height: 80px; 
+        }
+
+        .logo a {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .logo img {
+            height: 250px; 
+            width: auto;
+            object-fit: contain;
+            margin-left: -20px; 
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links > a {
+            text-decoration: none;
+            color: var(--text-dark);
+            margin-left: 2rem;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links > a:hover {
+            color: var(--primary-green);
+        }
+
+        /* Dropdown Menu */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            margin-left: 2rem;
+        }
+
+        .dropdown .dropbtn {
+            background: none;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-weight: 600;
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-family: inherit;
+            padding: 1rem 0; 
+        }
+
+        .dropdown:hover .dropbtn {
+            color: var(--primary-green);
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--white);
+            min-width: 500px;
+            box-shadow: 0px 8px 24px rgba(0,0,0,0.12);
+            z-index: 100;
+            border-radius: 8px;
+            top: 100%;
+            left: 0;
+            padding: 1.5rem;
+            border-top: 3px solid var(--primary-green);
+        }
+
+        .dropdown-content.single-column {
+            min-width: 260px;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-columns {
+            display: flex;
+            gap: 3rem;
+        }
+
+        .column {
+            flex: 1;
+        }
+
+        .column h4 {
+            font-size: 1.05rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-dark);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .column a {
+            color: var(--text-muted);
+            padding: 0.5rem 0;
+            text-decoration: none;
+            display: block;
+            margin-left: 0;
+            font-weight: 400;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .column a:hover {
+            color: var(--primary-green);
+        }
+
+        /* Buttons */
+        .btn-primary {
+            background-color: var(--primary-green);
+            color: var(--white);
+            padding: 0.8rem 1.8rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-green-hover);
+        }
+
+        .btn-lime {
+            background-color: var(--accent-lime);
+            color: var(--text-dark);
+            padding: 0.9rem 1.8rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 800;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: opacity 0.2s;
+        }
+
+        .btn-lime:hover {
+            opacity: 0.9;
+        }
+
+        .btn-outline-dark {
+            background: transparent;
+            color: var(--text-dark);
+            border: 2px solid var(--text-dark);
+            padding: 0.6rem 1.2rem;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.2s, color 0.2s;
+        }
+
+        .btn-outline-dark:hover {
+            background-color: var(--text-dark);
+            color: var(--white);
+        }
+
+        .btn-dark {
+            background-color: #111827;
+            color: var(--white);
+            padding: 0.8rem 1.6rem;
+            border-radius: 2px;
+            text-decoration: none;
+            font-weight: 800;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            transition: background-color 0.2s;
+        }
+
+        .btn-dark:hover {
+            background-color: #1f2937;
+        }
+
+        /* Hero Banner Section */
+        .collect-hero {
+            background-color: var(--hero-blue);
+            background-image: radial-gradient(rgba(255, 255, 255, 0.15) 2px, transparent 2px);
+            background-size: 30px 30px;
+            padding: 4rem 2rem;
+            color: var(--white);
+        }
+
+        .hero-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero-card {
+            background-color: var(--white);
+            color: var(--text-dark);
+            max-width: 540px;
+            padding: 3rem;
+            border-radius: 4px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .breadcrumb {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 1.2rem;
+        }
+
+        .breadcrumb a {
+            color: var(--hero-blue);
+            text-decoration: underline;
+        }
+
+        .hero-card h1 {
+            font-size: 2.4rem;
+            line-height: 1.15;
+            margin-bottom: 1.8rem;
+            font-weight: 800;
+        }
+
+        .checklist-hero {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .checklist-hero li {
+            position: relative;
+            padding-left: 2.8rem;
+            margin-bottom: 1.2rem;
+            font-size: 1rem;
+            color: var(--text-dark);
+            line-height: 1.4;
+        }
+
+        .checklist-hero li a {
+            color: var(--hero-blue);
+            text-decoration: underline;
+        }
+
+        .checklist-hero li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 2px solid #D1D5DB;
+            color: #9CA3AF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        /* General Section Layouts */
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 3.5rem;
+            align-items: start;
+        }
+
+        .intro-text h2 {
+            font-size: 3rem;
+            line-height: 1;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+        }
+
+        .intro-text p {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .intro-text p a {
+            color: var(--hero-blue);
+            text-decoration: underline;
+        }
+
+        .jump-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .jump-list li {
+            margin-bottom: 0.6rem;
+        }
+
+        .jump-list li a {
+            color: var(--hero-blue);
+            text-decoration: underline;
+            font-size: 1.05rem;
+            font-weight: 500;
+        }
+
+        .side-callout-card {
+            background-color: var(--light-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .side-callout-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .side-callout-card p {
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            margin-bottom: 1.2rem;
+            line-height: 1.5;
+        }
+
+        /* Asset Category Section */
+        .category-header {
+            margin-top: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .category-header h2 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .category-header p {
+            font-size: 1.05rem;
+            color: var(--text-dark);
+        }
+
+        .category-header p a {
+            color: var(--hero-blue);
+            text-decoration: underline;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .asset-card {
+            background-color: var(--card-blue-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .asset-card.pink-card {
+            background-color: var(--card-pink-bg);
+        }
+
+        .asset-card .card-icon {
+            width: 45px;
+            height: 45px;
+            margin-bottom: 1.2rem;
+            stroke: var(--hero-blue);
+            fill: none;
+            stroke-width: 1.5;
+        }
+
+        .asset-card.pink-card .card-icon {
+            stroke: var(--card-pink-border);
+        }
+
+        .asset-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .asset-card.pink-card h3 {
+            color: #881337;
+        }
+
+        .asset-card p {
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            line-height: 1.5;
+        }
+
+        .asset-card ul.bullet-list {
+            margin-left: 1.2rem;
+            margin-top: 0.5rem;
+        }
+
+        .asset-card ul.bullet-list li {
+            font-size: 0.95rem;
+            margin-bottom: 0.4rem;
+            color: var(--text-dark);
+        }
+
+        /* Why Zero Tech Waste Section */
+        .why-section {
+            background-color: #bef264;
+            padding: 4rem 2rem;
+            color: var(--text-dark);
+        }
+
+        .why-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .why-section h2 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: #0f172a;
+        }
+
+        .why-subheading {
+            font-size: 1.1rem;
+            max-width: 900px;
+            margin-bottom: 2.5rem;
+            color: #1e293b;
+            line-height: 1.5;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .why-card {
+            background-color: #f7fee7;
+            border-radius: 12px;
+            padding: 2.2rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .why-card .num-badge {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            border: 1.5px solid #334155;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #1e293b;
+        }
+
+        .why-card h3 {
+            font-size: 1.35rem;
+            font-weight: 800;
+            margin-bottom: 0.8rem;
+            color: #0f172a;
+            line-height: 1.2;
+        }
+
+        .why-card p {
+            font-size: 0.95rem;
+            color: #334155;
+            line-height: 1.5;
+        }
+
+        .why-footer-note {
+            margin-top: 1.5rem;
+            font-size: 0.95rem;
+            color: #1e293b;
+        }
+
+        .why-footer-note a {
+            color: #0284c7;
+            text-decoration: underline;
+        }
+
+        /* Modal Overlay & Card */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(4px);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+        }
+
+        .modal-card {
+            background: var(--white);
+            width: 100%;
+            max-width: 620px;
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+            position: relative;
+            animation: modalFadeIn 0.25s ease-out;
+        }
+
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(-15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1.2rem;
+            right: 1.5rem;
+            font-size: 1.8rem;
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            line-height: 1;
+            transition: color 0.2s;
+        }
+
+        .modal-close:hover {
+            color: var(--text-dark);
+        }
+
+        .modal-card h2 {
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1.8rem;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .contact-form input, 
+        .contact-form select, 
+        .contact-form textarea {
+            width: 100%;
+            padding: 0.9rem 1rem;
+            border: 1px solid #D1D5DB;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .contact-form input:focus, 
+        .contact-form select:focus, 
+        .contact-form textarea:focus {
+            border-color: var(--primary-green);
+        }
+
+        .contact-form button.btn-submit {
+            background-color: var(--primary-green);
+            color: var(--white);
+            padding: 0.9rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            margin-top: 0.5rem;
+        }
+
+        .contact-form button.btn-submit:hover {
+            background-color: var(--primary-green-hover);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-navy);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+        }
+
+        @media (max-width: 900px) {
+            .intro-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-card {
+                max-width: 100%;
+            }
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="1-01.png" alt="Saving Tech Logo">
+                </a>
+            </div>
+            <nav class="nav-links">
+                <!-- How It Works Dropdown -->
+                <div class="dropdown">
+                    <a href="Howitworks.html" class="dropbtn">How it works &#711;</a>
+                    <div class="dropdown-content single-column">
+                        <div class="dropdown-columns">
+                            <div class="column">
+                                <a href="Assetswecollectrecycle.html">Assets we collect &amp; recycle</a>
+                                <a href="FAQs.html">FAQs</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Free IT Disposal Dropdown -->
+                <div class="dropdown">
+                    <a href="FreeITDisposal.html" class="dropbtn">Free IT Disposal &#711;</a>
+                    <div class="dropdown-content single-column">
+                        <div class="dropdown-columns">
+                            <div class="column">
+                                <h4>IT recycling services</h4>
+                                <a href="Computerrecycling.html">Computer recycling</a>
+                                <a href="Harddrivemediadestruction.html">Hard drive &amp; media destruction</a>
+                                <a href="Laptoprecycling.html">Laptop recycling</a>
+                                <a href="Mobiledevicerecycling.html">Mobile device recycling</a>
+                                <a href="Monitorscreenrecycling.html">Monitor &amp; screen recycling</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="index.html#services">Our Services</a>
+
+                <!-- About Us Dropdown -->
+                <div class="dropdown">
+                    <a href="AboutUs.html" class="dropbtn">About Us &#711;</a>
+                    <div class="dropdown-content single-column">
+                        <div class="dropdown-columns">
+                            <div class="column">
+                                <a href="Documentscertificates.html">Documents &amp; Certificates</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="#book" class="trigger-modal">Request Collection</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        
+        <!-- Blue Pattern Hero Section -->
+        <section class="collect-hero">
+            <div class="hero-inner">
+                <div class="hero-card">
+                    <div class="breadcrumb">
+                        <a href="index.html">Home</a> &rarr; <a href="Howitworks.html">How it works</a> &rarr; What we collect
+                    </div>
+                    <h1>Complete list of IT equipment &amp; e-waste we collect &amp; recycle</h1>
+                    
+                    <ul class="checklist-hero">
+                        <li>We recycle almost everything on this page for FREE, but we charge to recycle some types of <a href="#screens-displays">screens</a> and <a href="#printers-photocopiers">printers</a></li>
+                        <li>We collect for free, if you have at least 10 laptops, PCs &amp; servers to recycle (any combination of these).</li>
+                    </ul>
+                    
+                    <button class="btn-lime trigger-modal">BOOK A COLLECTION</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Intro Section & Jump Links -->
+        <section class="section-container">
+            <div class="intro-grid">
+                
+                <div class="intro-text">
+                    <h2>What we collect</h2>
+                    <p>This page gives you a general idea of what we handle — and almost all of it is free to recycle except where noted. See our <a href="FAQs.html">frequently-asked questions</a> or <a href="#bookingModal" class="trigger-modal">drop us an email</a> if you have any questions. We are here to help.</p>
+                    
+                    <ul class="jump-list">
+                        <li><a href="Computerrecycling.html">Computer recycling</a></li>
+                        <li><a href="Harddrivemediadestruction.html">Hard drive &amp; media destruction</a></li>
+                        <li><a href="Laptoprecycling.html">Laptop recycling</a></li>
+                        <li><a href="Mobiledevicerecycling.html">Mobile device recycling</a></li>
+                        <li><a href="Monitorscreenrecycling.html">Monitor &amp; screen recycling</a></li>
+                    </ul>
+                </div>
+
+                <div class="side-callout-card">
+                    <h3>How do I get a free collection?</h3>
+                    <p>We will collect from your premises free of charge — All you need to do is have at least 10 qualifying items for us to collect, and the collection will be free of charge from your premises.</p>
+                    <p>It can be any combination of laptops, PCs or servers (including Apple macs &amp; laptops), you just need 10 or more of these items, and to be in mainland UK.</p>
+                    <a href="#screens-displays" class="btn-outline-dark">IT RECYCLING CHARGES</a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Computers & Laptops -->
+        <section id="computers-laptops" class="section-container" style="padding-top: 0;">
+            <div class="category-header">
+                <h2>Computers &amp; laptops</h2>
+                <p>We recycle all types of <a href="Computerrecycling.html">computers</a>, <a href="Laptoprecycling.html">laptops</a> &amp; computing equipment.</p>
+            </div>
+
+            <div class="cards-grid">
+                
+                <div class="asset-card">
+                    <svg class="card-icon" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="14" rx="2"/><line x1="12" y1="16" x2="12" y2="20"/><line x1="8" y1="20" x2="16" y2="20"/></svg>
+                    <h3>Desktop PCs</h3>
+                    <p>Desktop, workstations, all-in-ones, small form factors, micro computers.</p>
+                </div>
+
+                <div class="asset-card">
+                    <svg class="card-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="13" rx="2"/><circle cx="12" cy="9" r="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="16" x2="12" y2="21"/></svg>
+                    <h3>Apple Mac Desktops</h3>
+                    <p><strong>All Apple Macs:</strong> iMac, eMac, Mac Pro, Mac Studio, Mac Mini, all formats and generations.</p>
+                </div>
+
+                <div class="asset-card">
+                    <svg class="card-icon" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="12" rx="2"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
+                    <h3>Legacy computer systems</h3>
+                    <p>If you have an old BBC micro or an Sun UltraSPARC cluttering up a cupboard, we’ll recycle it for you.</p>
+                </div>
+
+                <div class="asset-card">
+                    <svg class="card-icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M2 20h20"/></svg>
+                    <h3>Windows laptops</h3>
+                    <p><strong>All types:</strong> business laptops, netbooks, Chromebooks, 2-in-1, ultraportable, ultrathin laptops<br><br><strong>All brands:</strong> HP, Dell, Lenovo, Acer, ASUS, MSI, Microsoft, Samsung</p>
+                </div>
+
+                <div class="asset-card">
+                    <svg class="card-icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M2 20h20"/></svg>
+                    <h3>Apple Laptops</h3>
+                    <p><strong>Apple:</strong> MacBook pro, unibody, MacBook air, Retina MacBook pro...<br><br><strong>Old Apple laptops:</strong> legacy MacBooks &amp; MacBook Air, etc...</p>
+                </div>
+
+                <div class="asset-card">
+                    <svg class="card-icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M2 20h20"/></svg>
+                    <h3>Specialist Laptops</h3>
+                    <p><strong>Specialist varieties:</strong> Rugged, diagnostics, vintage, workstation, gaming laptops etc.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Servers & Infrastructure -->
+        <section id="servers-infrastructure" class="section-container" style="padding-top: 0;">
+            <div class="category-header">
+                <h2>Servers &amp; infrastructure equipment</h2>
+                <p>We recycle all <a href="FreeITDisposal.html">servers</a>, network, data, telephony and power management equipment from offices, data centres, co-location facilities and more.</p>
+            </div>
+
+            <div class="cards-grid">
+                
+                <div class="asset-card">
+                    <svg class="card-icon" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="5" rx="1"/><rect x="2" y="10" width="20" height="5" rx="1"/><rect x="2" y="17" width="20" height="5" rx="1"/></svg>
+                    <h3>Servers</h3>
+                    <p><strong>All form factors:</strong> Rack mount: 1U/2U/3U/4U, blade servers, high-density servers, multi-node servers, freestanding workstations &amp; tower servers.<br><br><strong>Any brand:</strong> Dell, HP (HPE), Lenovo, IBM, Cisco, Supermicro, Fujitsu, Oracle, Huawei, Inspur</p>
+                </div>
+
+                <div class="asset-card">
+                    <svg class="card-icon" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="6" cy="12" r="1"/><circle cx="10" cy="12" r="1"/><circle cx="14" cy="12" r="1"/><circle cx="18" cy="12" r="1"/></svg>
+                    <h3>Infrastructure</h3>
+                    <p><strong>Networking:</strong> switches, routers, access points, firewalls, load balancers, network cables, patch panels, gateways<br><br><strong>Telephony:</strong> IP phones, VoIP systems, PBX systems, conference phones, softphones, headsets</p>
+                </div>
+
+                <div class="asset-card">
+                    <svg class="card-icon" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="6" x2="12" y2="12"/></svg>
+                    <h3>Power management</h3>
+                    <p><strong>Power management:</strong> uninterruptible power supplies (UPS), power distribution units (PDUs), surge protectors, backup generators, inverters</p>
+                </div>
+
+                <div class="asset-card pink-card">
+                    <svg class="card-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M14.5 9A2.5 2.5 0 0 0 12 7.5C10.5 7.5 9 8.5 9 10.5c0 3 5 2.5 5 5.5 0 1.5-1.5 2.5-3 2.5a3.5 3.5 0 0 1-3.5-2"/></svg>
+                    <h3>We charge to collect large server racks &amp; cabinets</h3>
+                    <p><strong>Laptop caddy/trolley: £100 each</strong><br><br>We aim to collect racking &amp; cabinets for free, but in some cases there may be a charge depending on the type and size of racking you need us to collect. Please contact us and ask for a quote – you can always send us a photo of the racking to help us quote.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Mobile Devices -->
+        <section id="mobile-devices" class="section-container" style="padding-top: 0;">
+            <div class="category-header">
+                <h2>Mobile devices &amp; handheld equipment</h2>
+                <p>We collect and recycle all types of <a href="Mobiledevicerecycling.html">mobile devices</a>, including phones, tablets, EPOS hardware, etc.</p>
+            </div>
+
+            <div class="cards-grid">
+                
+                <div class="asset-card">
+                    <svg class="card-icon" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                    <h3>Mobile phones</h3>
+                    <p><strong>Mobile Phones:</strong> iPhone, Android, blackberry, windows phones, smart phones, flip phones, rugged phones, retro phones</p>
+                </div>
+
+                <div class="asset-card">
+                    <svg class="card-icon" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                    <h3>iPads &amp; Tablets</h3>
+                    <p><strong>Tablets:</strong> Android devices, windows tablets, e-readers and kindles, rugged tablets, convertible tablets, graphics tablets<br><br><strong>iPad:</strong> iPad Air, iPad Mini, iPad Pro — all generations and models.</p>
+                </div>
+
+                <div class="asset-card">
+                    <svg class="card-icon" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 7h6M9 11h6"/></svg>
+                    <h3>Professional handheld devices</h3>
+                    <p><strong>EPOS hardware:</strong> terminals, scanners, tablets, printers,<br><br><strong>Card readers:</strong> any brand (Epson, Zebra, Honeywell, Datalogic, Star Micronics, ELO etc.)</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Screens, Displays & Televisions -->
+        <section id="screens-displays" class="section-container" style="padding-top: 0;">
+            <div class="category-header">
+                <h2>Screens, displays &amp; televisions</h2>
+                <p>We offer nationwide collection and recycling of all your <a href="Monitorscreenrecycling.html">computer monitors</a>, display &amp; advertising screens.</p>
+            </div>
+
+            <div class="cards-grid">
+                
+                <div class="asset-card">
+                    <svg class="card-icon" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    <h3>Monitors &amp; televisions</h3>
+                    <p><strong>All types:</strong> LCD, TFT, LED, OLED, IPS, TN, VA, curved, ultrawide, 4K, gaming, touch screen, portable, HDR, professional, broadcast.<br><br><strong>All brands:</strong> Samsung, LG, Sony, Panasonic, TCL, Hisense, Vizio, Philips, Sharp, Toshiba...</p>
+                </div>
+
+                <div class="asset-card">
+                    <svg class="card-icon" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="12" rx="2"/><line x1="6" y1="20" x2="18" y2="20"/></svg>
+                    <h3>Commercial displays</h3>
+                    <p><strong>Advertising &amp; merchandising screens:</strong> All sizes of digital advertising / experience / merchandising screens typical of those used at events, in-store retail and experiential destinations such as theme parks and stadiums.</p>
+                </div>
+
+                <div class="asset-card pink-card">
+                    <svg class="card-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M14.5 9A2.5 2.5 0 0 0 12 7.5C10.5 7.5 9 8.5 9 10.5c0 3 5 2.5 5 5.5 0 1.5-1.5 2.5-3 2.5a3.5 3.5 0 0 1-3.5-2"/></svg>
+                    <h3>We charge to recycle some types of display</h3>
+                    <p><strong>All charges are ex-VAT</strong></p>
+                    <ul class="bullet-list">
+                        <li>Displays up to 30", with working screens: FREE</li>
+                        <li>Displays up to 30", with cracked or broken screens: £7</li>
+                        <li>Displays over 30", working or broken/cracked: £1/inch</li>
+                        <li>Interactive whiteboards/smartboards: all sizes, working or broken/cracked: £1/inch</li>
+                    </ul>
+                </div>
+
+                <div class="asset-card pink-card">
+                    <svg class="card-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+                    <h3>We do not accept CRT screens</h3>
+                    <p>We won’t be able to collect the older style of cathode-ray screens, as found in old televisions and monitors, as they require special handling owing to the hazardous materials within them.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Storage Media & Accessories -->
+        <section id="storage-media" class="section-container" style="padding-top: 0;">
+            <div class="category-header">
+                <h2>Storage media, peripherals and accessories</h2>
+                <p>We securely destroy data found on hard disk drives (HDDs), solid-state drives (SSDs), flash drives and all internal storage media, and we recycle all components and accessories. Find out about our <a href="Harddrivemediadestruction.html">secure data destruction</a> process.</p>
+            </div>
+
+            <div class="cards-grid">
+                
+                <div class="asset-card">
+                    <svg class="card-icon" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><circle cx="12" cy="10" r="4"/><circle cx="12" cy="10" r="1"/></svg>
+                    <h3>Storage drives &amp; media</h3>
+                    <p><strong>Internal storage devices:</strong> internal hard drives, SSDs, external hard drives, flash drives...<br><br><strong>External devices:</strong> NAS devices, tape drives, tape cartridges, memory cards, USB sticks...</p>
+                </div>
+
+                <div class="asset-card">
+                    <svg class="card-icon" viewBox="0 0 24 24"><rect x="6" y="3" width="12" height="18" rx="6"/><line x1="12" y1="7" x2="12" y2="11"/></svg>
+                    <h3>Peripherals &amp; accessories</h3>
+                    <p><strong>Peripherals and accessories:</strong> keyboards, mice, webcams, headsets, speakers, docking stations, styluses, joysticks...</p>
+                </div>
+
+                <div class="asset-card">
+                    <svg class="card-icon" viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="12" rx="2"/><line x1="9" y1="2" x2="9" y2="6"/><line x1="15" y1="2" x2="15" y2="6"/></svg>
+                    <h3>Components &amp; internal hardware</h3>
+                    <p><strong>Chips, modules &amp; componentry:</strong> CPUs, GPUs, RAM modules, hard drives, power supplies, motherboards, cooling fans, heatsinks, network interface cards, PCBs, optical drives</p>
+                </div>
+
+                <div class="asset-card">
+                    <svg class="card-icon" viewBox="0 0 24 24"><path d="M4 12h16M7 8l-4 4 4 4M17 8l4 4-4 4"/></svg>
+                    <h3>Cables, wires &amp; connectors</h3>
+                    <p><strong>Wires and cables:</strong> all types of cabling, wires, interconnects and adaptors for power, data etc.</p>
+                </div>
+
+                <div class="asset-card">
+                    <svg class="card-icon" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><line x1="7" y1="10" x2="17" y2="10"/></svg>
+                    <h3>All types of WEEE &amp; IT</h3>
+                    <p><strong>Miscellaneous IT and electrical equipment:</strong> laptop batteries, chargers, power adapters, surge protectors, circuit boards, e-waste, IoT devices, lead-acid batteries, shredders</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- AV & Media Equipment -->
+        <section id="av-media" class="section-container" style="padding-top: 0;">
+            <div class="category-header">
+                <h2>AV &amp; media devices</h2>
+                <p>We recycle all types of AV equipment, including that used in studios, theatres, outside-broadcast &amp; on-location assets to assets used on tour and in venue. This includes the rigging &amp; cabling associated with audio and video devices.</p>
+            </div>
+
+            <div class="cards-grid">
+                
+                <div class="asset-card">
+                    <svg class="card-icon" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><circle cx="12" cy="14" r="3"/><circle cx="12" cy="6" r="1"/></svg>
+                    <h3>Audio</h3>
+                    <ul class="bullet-list">
+                        <li>Amplifiers</li>
+                        <li>Audio cables, multicore etc.</li>
+                        <li>Audio mixers &amp; desks</li>
+                        <li>Field recorders</li>
+                        <li>Headphones</li>
+                        <li>Microphones of all types</li>
+                        <li>Mounts &amp; adapters</li>
+                        <li>Rackmount audio processing, recorders &amp; effects</li>
+                        <li>Speakers &amp; subwoofers</li>
+                        <li>Studio monitors</li>
+                    </ul>
+                </div>
+
+                <div class="asset-card">
+                    <svg class="card-icon" viewBox="0 0 24 24"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M16 10l6-4v12l-6-4"/></svg>
+                    <h3>Video</h3>
+                    <ul class="bullet-list">
+                        <li>Displays, LED &amp; TFT screens</li>
+                        <li>Lasers</li>
+                        <li>Media players</li>
+                        <li>Projectors</li>
+                        <li>Recording equipment</li>
+                        <li>Video editing equipment</li>
+                        <li>Video switchers</li>
+                    </ul>
+                </div>
+
+                <div class="asset-card">
+                    <svg class="card-icon" viewBox="0 0 24 24"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+                    <h3>Broadcast, production &amp; venue</h3>
+                    <ul class="bullet-list">
+                        <li>Cables &amp; connectors</li>
+                        <li>Cameras, dollies, steady-rigs/stabilisers</li>
+                        <li>Front-of-house desks &amp; equipment</li>
+                        <li>Lighting equipment including lights, cabling &amp; controls</li>
+                        <li>Stands, mounts &amp; rigging</li>
+                        <li>Teleprompters / autocue</li>
+                        <li>Wireless audio and video equipment</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Why Zero Tech Waste Section -->
+        <section class="why-section">
+            <div class="why-container">
+                <h2>Why Zero Tech Waste?</h2>
+                <p class="why-subheading">Secure, carbon-negative IT recycling for businesses that need old equipment handled properly — with free qualifying collections, data destruction and certificates provided where applicable.</p>
+                
+                <div class="why-grid">
+                    <div class="why-card">
+                        <div class="num-badge">1</div>
+                        <h3>Secure data destruction</h3>
+                        <p>We securely erase, degauss or destroy data-bearing devices where required, helping protect sensitive business information before equipment is reused or recycled.</p>
+                    </div>
+
+                    <div class="why-card">
+                        <div class="num-badge">2</div>
+                        <h3>Certificates and compliance</h3>
+                        <p>We provide the documentation you need for your records, including Waste Transfer Notes, Certificates of Destruction and carbon offset certificates where applicable.</p>
+                    </div>
+
+                    <div class="why-card">
+                        <div class="num-badge">3</div>
+                        <h3>Carbon-negative recycling</h3>
+                        <p>We prioritise reuse before materials recycling and offset twice the CO<sub>2</sub> generated through our service, helping your old IT take a more responsible route.</p>
+                    </div>
+                </div>
+
+                <button class="btn-dark trigger-modal">BOOK A COLLECTION</button>
+
+                <p class="why-footer-note">
+                    Free collections when you recycle at least 10 laptops, PCs &amp; servers (any combination). It's also <a href="Assetswecollectrecycle.html">free to recycle almost all waste IT with us</a>.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Modal Popup Form -->
+    <div class="modal-overlay" id="bookingModal">
+        <div class="modal-card">
+            <button class="modal-close" id="closeModal">&times;</button>
+            <h2>Request a Collection</h2>
+            
+            <form class="contact-form" id="collectionForm">
+                <input type="text" id="name" placeholder="Company / Contact Name" required>
+                <input type="email" id="email" placeholder="Email Address" required>
+                <input type="tel" id="phone" placeholder="Phone Number" required>
+                <select id="serviceType" required>
+                    <option value="" disabled selected>Select Service Required</option>
+                    <option value="itad">IT Asset Disposal (ITAD)</option>
+                    <option value="remarketing">Remarketing &amp; Value Recovery</option>
+                    <option value="decommissioning">Data Centre &amp; Server Decommissioning</option>
+                    <option value="computers">Computer &amp; Laptop Recycling</option>
+                    <option value="mobile">Mobile Phone &amp; Tablet Recycling</option>
+                    <option value="destruction">Product &amp; Data Destruction</option>
+                    <option value="weee">WEEE Recycling Bins</option>
+                    <option value="specialist">Specialist Waste (Tubes &amp; Cartridges)</option>
+                </select>
+                <textarea id="details" rows="4" placeholder="Please list the approximate quantity and types of devices (e.g., 10 laptops, 5 desktops, 1 server)..." required></textarea>
+                <button type="submit" class="btn-submit">Submit Request</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Saving Tech. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const modal = document.getElementById('bookingModal');
+        const closeModal = document.getElementById('closeModal');
+        const triggers = document.querySelectorAll('.trigger-modal');
+
+        triggers.forEach(trigger => {
+            trigger.addEventListener('click', (e) => {
+                e.preventDefault();
+                modal.style.display = 'flex';
+            });
+        });
+
+        closeModal.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        document.getElementById('collectionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you! Your collection request has been submitted.');
+            modal.style.display = 'none';
+            this.reset();
+        });
+    </script>
+
+</body>
+</html>

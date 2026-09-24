@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frequently Asked Questions | Saving Tech</title>
+
+  <!-- Favicon link -->
+  <link rel="icon" type="image/x-icon" href="icon.ico">
+
+  <style>
+    :root {
+      --primary-green: #2E8B57;
+      --dark-grey: #1F2937;
+      --light-bg: #F3F4F6;
+      --white: #FFFFFF;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #ffffff;
+      color: var(--dark-grey);
+      line-height: 1.6;
+    }
+
+    a {
+      color: #0066cc;
+      text-decoration: underline;
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+
+    /* Header & Navigation */
+    header {
+      background-color: var(--white);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0.5rem 2rem; 
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      overflow: hidden; 
+      height: 80px; 
+    }
+
+    .logo a {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .logo img {
+      height: 250px; 
+      width: auto;
+      object-fit: contain;
+      margin-left: -20px; 
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-links > a {
+      text-decoration: none;
+      color: var(--dark-grey);
+      margin-left: 2rem;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    .nav-links > a:hover {
+      color: var(--primary-green);
+    }
+
+    /* Dropdown Menu Styles */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+      margin-left: 2rem;
+    }
+
+    .dropdown .dropbtn {
+      background: none;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-weight: 600;
+      color: var(--dark-grey);
+      text-decoration: none;
+      transition: color 0.3s;
+      font-family: inherit;
+      padding: 1rem 0;
+    }
+
+    .dropdown:hover .dropbtn {
+      color: var(--primary-green);
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: var(--white);
+      min-width: 500px;
+      box-shadow: 0px 8px 24px rgba(0,0,0,0.12);
+      z-index: 100;
+      border-radius: 8px;
+      top: 100%;
+      left: 0;
+      padding: 1.5rem;
+      border-top: 3px solid var(--primary-green);
+    }
+
+    .dropdown-content.single-column {
+      min-width: 260px;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-columns {
+      display: flex;
+      gap: 3rem;
+    }
+
+    .column {
+      flex: 1;
+    }
+
+    .column h4 {
+      font-size: 1.05rem;
+      margin-bottom: 0.8rem;
+      color: var(--dark-grey);
+      border-bottom: 1px solid #E5E7EB;
+      padding-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .column a {
+      color: #4B5563;
+      padding: 0.5rem 0;
+      text-decoration: none;
+      display: block;
+      margin-left: 0;
+      font-weight: 400;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    .column a:hover {
+      color: var(--primary-green);
+    }
+
+    .container {
+      max-width: 1050px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Hero Banner Section */
+    .hero-section {
+      background-color: #0d82c3;
+      background-image: radial-gradient(rgba(255, 255, 255, 0.2) 2px, transparent 2px);
+      background-size: 24px 24px;
+      padding: 50px 0;
+    }
+    .hero-card {
+      background: #ffffff;
+      padding: 36px 40px;
+      border-radius: 4px;
+      max-width: 480px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    }
+    .breadcrumbs {
+      font-size: 14px;
+      color: #555555;
+      margin-bottom: 16px;
+    }
+    .hero-title {
+      font-size: 42px;
+      font-weight: 800;
+      line-height: 1.05;
+      margin-bottom: 16px;
+      font-family: "Arial Black", Impact, sans-serif;
+      letter-spacing: -0.5px;
+    }
+    .hero-text {
+      font-size: 15px;
+      color: #333333;
+      margin-bottom: 24px;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      padding: 12px 22px;
+      font-size: 14px;
+      font-weight: 800;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 2px;
+      cursor: pointer;
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+    .btn-green {
+      background-color: #c3f23a;
+      color: #000000;
+      border: none;
+    }
+    .btn-green-light {
+      background-color: #e5fb90;
+      color: #000000;
+      border: none;
+    }
+    .btn-outline {
+      background-color: transparent;
+      color: #000000;
+      border: 1px solid #000000;
+      padding: 10px 18px;
+    }
+
+    /* Content Layout */
+    .main-content {
+      padding: 40px 0 60px;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 50px;
+    }
+    @media (max-width: 768px) {
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* FAQ Card Design */
+    .faq-card {
+      background-color: #f7f8f9;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 16px;
+    }
+    .faq-card h3 {
+      font-size: 21px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #111111;
+    }
+    .faq-card p {
+      font-size: 15px;
+      color: #333333;
+      margin-bottom: 16px;
+    }
+    .faq-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .section-heading {
+      font-size: 40px;
+      font-weight: 800;
+      font-family: "Arial Black", Impact, sans-serif;
+      margin-top: 40px;
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+    }
+    .section-subtext {
+      font-size: 16px;
+      margin-bottom: 24px;
+      color: #333333;
+    }
+
+    /* Bottom Feature Banner */
+    .why-us-section {
+      background-color: #f2f3f5;
+      padding: 60px 0;
+    }
+    .why-us-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin: 32px 0;
+    }
+    @media (max-width: 900px) {
+      .why-us-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 550px) {
+      .why-us-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .why-card {
+      background-color: #ffffff;
+      border-radius: 16px;
+      padding: 32px 24px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+    .why-card .icon {
+      width: 56px;
+      height: 56px;
+      margin-bottom: 20px;
+      color: #0b82c3;
+    }
+    .why-card h4 {
+      font-size: 19px;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 12px;
+      font-family: "Arial Black", Impact, sans-serif;
+    }
+    .why-card p {
+      font-size: 14px;
+      color: #555555;
+    }
+    .btn-group {
+      display: flex;
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--dark-grey);
+      color: var(--white);
+      text-align: center;
+      padding: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="1-01.png" alt="Saving Tech Logo">
+                </a>
+            </div>
+            <nav class="nav-links">
+                <!-- How It Works Dropdown -->
+                <div class="dropdown">
+                    <a href="Howitworks.html" class="dropbtn">How it works &#711;</a>
+                    <div class="dropdown-content single-column">
+                        <div class="dropdown-columns">
+                            <div class="column">
+                                <a href="Assetswecollectrecycle.html">Assets we collect &amp; recycle</a>
+                                <a href="FAQs.html">FAQs</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Free IT Disposal Dropdown -->
+                <div class="dropdown">
+                    <a href="FreeITDisposal.html" class="dropbtn">Free IT Disposal &#711;</a>
+                    <div class="dropdown-content single-column">
+                        <div class="dropdown-columns">
+                            <div class="column">
+                                <h4>IT recycling services</h4>
+                                <a href="Computerrecycling.html">Computer recycling</a>
+                                <a href="Harddrivemediadestruction.html">Hard drive &amp; media destruction</a>
+                                <a href="Laptoprecycling.html">Laptop recycling</a>
+                                <a href="Mobiledevicerecycling.html">Mobile device recycling</a>
+                                <a href="Monitorscreenrecycling.html">Monitor &amp; screen recycling</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="index.html#services">Our Services</a>
+
+                <!-- About Us Dropdown -->
+                <div class="dropdown">
+                    <a href="AboutUs.html" class="dropbtn">About Us &#711;</a>
+                    <div class="dropdown-content single-column">
+                        <div class="dropdown-columns">
+                            <div class="column">
+                                <a href="Documentscertificates.html">Documents &amp; Certificates</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="index.html#book">Request Collection</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Header -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="hero-card">
+          <div class="breadcrumbs">
+            <a href="index.html">Home</a> &rarr; <a href="Howitworks.html">How it works</a> &rarr; FAQs
+          </div>
+          <h1 class="hero-title">Frequently asked questions</h1>
+          <p class="hero-text">
+            Here are FAQs about <a href="#">our service</a> and about <a href="#">our charges</a>. If you can't find what you're looking for here, <a href="#">drop us an email</a>. We are here to help.
+          </p>
+          <a href="index.html#book" class="btn btn-green">BOOK A COLLECTION</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content Body -->
+    <main class="main-content">
+      <div class="container">
+
+        <!-- Top Two Highlight Cards -->
+        <div class="grid-2">
+          <div class="faq-card">
+            <h3>How do I get a free collection?</h3>
+            <p>We will collect from your premises free of charge &mdash; All you need to do is have at least 10 qualifying items for us to collect, and the collection will be free of charge from your premises.</p>
+            <p>It can be any combination of laptops, PCs or servers (including Apple macs & laptops), you just need 10 or more of these items, and to be in mainland UK.</p>
+          </div>
+          <div class="faq-card">
+            <h3>What equipment do you collect?</h3>
+            <p>We <a href="Assetswecollectrecycle.html">recycle all types of electronics</a>, including laptops, servers, mobile phones & tablets, monitors & screens, printers & copiers, network infrastructure equipment and specialist/sector-specific equipment.</p>
+            <div style="margin-top: 24px;">
+              <a href="Assetswecollectrecycle.html" class="btn btn-outline">WHAT WE COLLECT</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service FAQs Section -->
+        <h2 class="section-heading">FAQs about our service</h2>
+
+        <div class="faq-card">
+          <h3>What areas do you cover?</h3>
+          <p>We cover the whole of the UK.</p>
+        </div>
+
+        <div class="faq-card">
+          <h3>What are your operating hours?</h3>
+          <p>Our hours of operation are 9am to 5pm, Monday to Friday. We are closed on Bank Holidays and at weekends.</p>
+        </div>
+
+        <div class="faq-card">
+          <h3>Can I bring items to you?</h3>
+          <p>Yes &ndash; customers are welcome to bring items to us during normal operating times (Monday to Friday, 9am to 5pm). There is no charge for dropping equipment to us in person, unless the items are in the list of chargeable items. You are also welcome to pallet ship items to us, with prior arrangement.</p>
+        </div>
+
+        <div class="faq-card">
+          <h3>How quickly can you collect from us?</h3>
+          <p>Being an SME, we are very agile and can collect any volume quickly from anywhere in the UK, usually within a few days. Locations further from our base in Reading can have a slightly longer lead time, but not all that long.</p>
+        </div>
+
+        <div class="faq-card">
+          <h3>Are you registered with the Environment Agency?</h3>
+          <p>Yes, we hold all necessary Environment Agency licenses to operate. See our <a href="AboutUs.html">Why us page</a> for details about all our licenses, plus more information about our company.</p>
+        </div>
+
+        <div class="faq-card">
+          <h3>Are you really carbon-negative? How?</h3>
+          <p>Yes, we are! We account for all of the CO2 in your collection, everything from the transport to the recycling, and for every kilo of CO2 generated in our service, we offset 2 kilos equivalent &mdash; and you get a certificate of carbon offset at the end of the process to account for it.</p>
+          <p>We use electric vehicles for as many IT asset collections as possible, and support a robust tree-planting carbon offset program. We calculate our carbon emissions at every point of operations &ndash; miles driven, parcels posted, even the electricity to make our cups of tea &ndash; and make sure we contribute towards sequestering more carbon than we create.</p>
+          <p>As well as helping other organisations and businesses reduce their eco-footprint by collecting and recycling redundant IT equipment, we want to make sure we are a positive force for environmental change in the world.</p>
+          <p>Find out more about our <a href="Howitworks.html">carbon-negative IT recycling services</a>.</p>
+        </div>
+
+        <div class="faq-card">
+          <h3>How do you destroy the data when recycling assets?</h3>
+          <p>We destroy data on all devices we handle, safely and securely. Any data-bearing media is wiped using a multipass binary overwrite. If it cannot be wiped, due to non-functionality or damage, we physically destroy the media. Whichever method is used, the data is completely and irretrievably eradicated. Visit <a href="Howitworks.html">how it works</a> for information on our data destruction methods, and an explanation of our processes.</p>
+        </div>
+
+        <div class="faq-card">
+          <h3>What will happen to my equipment after it is collected?</h3>
+          <p>We transport all your IT assets back to our secure warehouse for processing. Any IT equipment containing data will be wiped within 48hrs, and any identifying information is removed. If the equipment is unsuitable for reuse or beyond repair, we dismantle it into its component parts for recycling.</p>
+        </div>
+
+        <div class="faq-card">
+          <h3>What documentation or certificates are provided?</h3>
+          <p>All WEEE recycling companies must provide certificates to you as part of the recycling service, and you can <a href="Documentscertificates.html">see examples of our certificates here</a>.</p>
+          <p>We provide the Duty of Care Certificate (Waste transfer note / WTN) at the point of collection. We provide a standard data destruction certificate (or an enhanced certificate if you choose to upgrade to this service), and we also create a detailed report on carbon offset that is specific to your collection.</p>
+        </div>
+
+        <!-- Assets FAQs Section -->
+        <h2 class="section-heading" style="margin-top: 50px;">FAQs about assets we collect</h2>
+        <p class="section-subtext">You can also take a look at a <a href="Assetswecollectrecycle.html">list of things that we collect</a>.</p>
+
+        <div class="faq-card">
+          <h3>What items can you accept?</h3>
+          <p>We accept all types of electrical and electronic equipment, whether functional or not. Check out guide to assets we can collect on the page below.</p>
+          <p>This includes, but is not limited to &ndash; desktops (PCs), laptops, servers, tablets, monitors, UPS units, cables, keyboards, printers, photocopiers, shredders, projectors, phones, and phone systems. Additionally, we handle industry-specific items such as video, photographic, audio, and conferencing equipment, educational hardware, test and development devices, medical devices, solar panels, and related equipment. We don't accept CRT monitors, and any refrigeration equipment such as fridges, chillers and air-conditioners.</p>
+          <p>There is no limit to the volume we can collect, and we frequently decommission equipment from schools, colleges, data centres, offices, and classrooms.</p>
+        </div>
+
+        <div class="faq-card">
+          <h3>Do you need an exact list of equipment?</h3>
+          <p>Whilst an exact list is helpful, we do not require an accurate list of the equipment to collect from you, just an indication.</p>
+        </div>
+
+        <div class="faq-card">
+          <h3>What are the items that qualify for free collection?</h3>
+          <p>Qualifying items are Desktops (PCs), servers and laptops. These need to be complete, and not activation/cloud locked. Some select rack-mountable units are also qualifying items. If you have fewer than ten items to collect, please contact us for a quote.</p>
+        </div>
+
+        <div class="faq-card">
+          <h3>What items do you not accept?</h3>
+          <p>At present, we do not accept fluorescent tubes/lights, light bulbs and plastic/cardboard packaging (unless this is the original equipment packaging). We can however advise on the correct methods to recycle these items.</p>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Bottom CTA Section -->
+    <section class="why-us-section">
+      <div class="container">
+        <h2 class="section-heading">Here's why businesses recycle their waste IT with us</h2>
+        <p class="section-subtext">Secure, carbon-negative IT recycling with free qualifying collections, data destruction and certificates always provided.</p>
+
+        <div class="why-us-grid">
+          <div class="why-card">
+            <div class="icon">
+              <svg fill="currentColor" viewBox="0 0 24 24"><path d="M20 8l-8-5-8 5v8l8 5 8-5V8zm-8-2.3L17.3 9 12 12.3 6.7 9 12 5.7zM6 10.4l5 3.1v5.8l-5-3.1v-5.8zm7 8.9v-5.8l5-3.1v5.8l-5 3.1z"/></svg>
+            </div>
+            <h4>Free qualifying collections</h4>
+            <p>Free collection for 10+ qualifying laptops, PCs or servers.</p>
+          </div>
+
+          <div class="why-card">
+            <div class="icon">
+              <svg fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            </div>
+            <h4>Certificates provided</h4>
+            <p>You receive the documentation you need for your records.</p>
+          </div>
+
+          <div class="why-card">
+            <div class="icon">
+              <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-5.45 9-12V5l-9-4zm-1 6h2v2h-2V7zm0 4h2v6h-2v-6z"/></svg>
+            </div>
+            <h4>Secure data destruction</h4>
+            <p>Data-bearing devices are securely erased, degaussed or destroyed where required.</p>
+          </div>
+
+          <div class="why-card">
+            <div class="icon">
+              <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+            </div>
+            <h4>Carbon-negative recycling</h4>
+            <p>Reuse-first processing, UK-based handling and twice the CO2 offset.</p>
+          </div>
+        </div>
+
+        <div class="btn-group">
+          <a href="index.html#book" class="btn btn-green">BOOK A COLLECTION</a>
+          <a href="Assetswecollectrecycle.html" class="btn btn-green-light">WHAT WE COLLECT</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; <span id="year"></span> Saving Tech. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

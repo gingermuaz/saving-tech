@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptop Recycling & Free Disposal | Saving Tech</title>
+    
+    <link rel="icon" type="image/x-icon" href="icon.ico">
+    
+    <style>
+        :root {
+            --primary-green: #2E8B57; 
+            --lime-accent: #D4F34A; 
+            --hero-blue: #0284C7; 
+            --dark-blue: #0C4A6E; /* Branded primary theme colour */
+            --icon-blue: #0284C7;
+            --dark-grey: #1F2937;
+            --text-grey: #4B5563;
+            --light-bg: #F8FAFC; 
+            --card-bg: #F0F7FA;
+            --faq-bg: #F3F4F6;
+            --border-grey: #E5E7EB;
+            --white: #FFFFFF;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: var(--text-grey);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        /* --- Header & Navigation --- */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.5rem 2rem; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            overflow: hidden; 
+            height: 80px; 
+        }
+
+        .logo a {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .logo img {
+            height: 250px; 
+            width: auto;
+            object-fit: contain;
+            margin-left: -20px; 
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links > a {
+            text-decoration: none;
+            color: var(--dark-grey);
+            margin-left: 2rem;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links > a:hover {
+            color: var(--primary-green);
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            margin-left: 2rem;
+        }
+
+        .dropdown .dropbtn {
+            background: none;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-weight: 600;
+            color: var(--dark-grey);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-family: inherit;
+            padding: 1rem 0; 
+        }
+
+        .dropdown:hover .dropbtn {
+            color: var(--primary-green);
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--white);
+            min-width: 500px; 
+            box-shadow: 0px 8px 24px rgba(0,0,0,0.12);
+            z-index: 100;
+            border-radius: 8px;
+            top: 100%;
+            left: 0;
+            padding: 1.5rem;
+            border-top: 3px solid var(--primary-green);
+        }
+
+        .dropdown-content.single-column {
+            min-width: 260px;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-columns {
+            display: flex;
+            gap: 3rem;
+        }
+
+        .column { flex: 1; }
+
+        .column h4 {
+            font-size: 1.05rem;
+            margin-bottom: 0.8rem;
+            color: var(--dark-grey);
+            border-bottom: 1px solid #E5E7EB;
+            padding-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .column a {
+            color: #4B5563;
+            padding: 0.5rem 0;
+            text-decoration: none;
+            display: block;
+            margin-left: 0;
+            font-weight: 400;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .column a:hover { color: var(--primary-green); }
+
+        /* --- Common Buttons & Links --- */
+        .btn-lime {
+            background-color: var(--lime-accent);
+            color: var(--dark-grey);
+            padding: 0.85rem 1.75rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.1rem;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: background 0.2s;
+            margin: 1rem 0;
+        }
+
+        .btn-lime:hover { background-color: #C3E239; }
+
+        a.inline-link {
+            color: var(--hero-blue);
+            text-decoration: underline;
+        }
+        
+        a.inline-link:hover { color: #0369A1; }
+
+        /* --- Hero Section (Updated Color & Size Consistency) --- */
+        .hero-section {
+            background: linear-gradient(rgba(12, 74, 110, 0.75), rgba(12, 74, 110, 0.75)), url('images/laptop-recycling-hero.jpg') center/cover no-repeat;
+            background-color: var(--dark-blue);
+            padding: 4rem 2rem;
+            min-height: 480px;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content-box {
+            background-color: var(--white);
+            padding: 3.5rem;
+            max-width: 620px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            margin-left: max(2rem, calc((100vw - 1200px) / 2));
+            border-radius: 4px;
+        }
+
+        .hero-content-box .breadcrumb {
+            font-size: 0.95rem;
+            color: var(--text-grey);
+            margin-bottom: 1rem;
+        }
+
+        .hero-content-box h1 {
+            font-size: 2.5rem;
+            color: var(--dark-grey);
+            margin-bottom: 1.2rem;
+            line-height: 1.15;
+            font-weight: 800;
+        }
+
+        .hero-content-box p {
+            font-size: 1.1rem;
+            color: var(--text-grey);
+            margin-bottom: 1rem;
+        }
+
+        .hero-note {
+            font-size: 0.9rem;
+            color: var(--text-grey);
+            margin-top: 0.5rem;
+            margin-bottom: 0;
+            line-height: 1.5;
+        }
+
+        /* --- Main Layout Elements --- */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        /* --- Form & Content Split Section --- */
+        .split-section {
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        /* Form Card */
+        .form-card {
+            background-color: var(--dark-blue);
+            color: var(--white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .form-card h2 {
+            color: var(--lime-accent);
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .form-card .form-subtitle {
+            font-size: 1rem;
+            color: #E0F2FE;
+            margin-bottom: 1.25rem;
+            font-weight: 600;
+        }
+
+        .form-card .form-desc {
+            font-size: 0.95rem;
+            color: #BAE6FD;
+            margin-bottom: 1.75rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+            color: var(--white);
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .radio-group label {
+            font-weight: 400;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .form-hint {
+            font-size: 0.825rem;
+            color: #93C5FD;
+            margin-top: 0.25rem;
+        }
+
+        .form-row-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.75rem;
+            border-radius: 4px;
+            border: 1px solid #0284C7;
+            background-color: var(--white);
+            color: var(--dark-grey);
+            font-size: 0.95rem;
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 110px;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+            margin-top: 1rem;
+        }
+
+        .checkbox-group input {
+            margin-top: 0.25rem;
+        }
+
+        .checkbox-group label {
+            font-size: 0.85rem;
+            font-weight: 400;
+            color: #E0F2FE;
+            line-height: 1.4;
+        }
+
+        .checkbox-group label a {
+            color: #93C5FD;
+            text-decoration: underline;
+        }
+
+        .btn-submit {
+            width: 100%;
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+
+        /* Info Side */
+        .info-side h2 {
+            font-size: 2.2rem;
+            color: var(--dark-grey);
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .info-side h3 {
+            font-size: 1.25rem;
+            color: var(--dark-grey);
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+        }
+
+        .info-side p {
+            margin-bottom: 1.25rem;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        .feature-bullets {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-bullets li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+            font-weight: 600;
+        }
+
+        .feature-bullets li::before {
+            content: "•";
+            color: var(--dark-grey);
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -0.2rem;
+        }
+
+        .who-we-collect-list {
+            list-style: disc;
+            padding-left: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .who-we-collect-list li {
+            margin-bottom: 0.8rem;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .who-we-collect-list strong {
+            color: var(--dark-grey);
+        }
+
+        /* --- Process & Data Risk Section --- */
+        .section-header-block {
+            margin-bottom: 4rem;
+        }
+
+        .section-header-block h2 {
+            font-size: 2.2rem;
+            color: var(--dark-grey);
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .section-header-block p {
+            font-size: 1.05rem;
+            margin-bottom: 1.25rem;
+        }
+
+        /* 5-Step Process Cards */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1rem;
+            margin: 2.5rem 0;
+        }
+
+        .process-card {
+            background-color: var(--light-bg);
+            border: 1px solid var(--border-grey);
+            border-radius: 8px;
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .step-number {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: 1px solid #94A3B8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            color: #475569;
+            margin-bottom: 1rem;
+            background-color: var(--white);
+        }
+
+        .process-card h4 {
+            font-size: 1rem;
+            color: var(--dark-grey);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .process-card p {
+            font-size: 0.875rem;
+            color: var(--text-grey);
+            line-height: 1.4;
+        }
+
+        .action-banner {
+            margin: 2rem 0 0 0;
+        }
+
+        .btn-outline-dark {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border: 1px solid var(--dark-grey);
+            color: var(--dark-grey);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.85rem;
+            border-radius: 2px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: all 0.2s;
+        }
+
+        .btn-outline-dark:hover {
+            background-color: var(--dark-grey);
+            color: var(--white);
+        }
+
+        /* --- What We Recycle Section --- */
+        .recycle-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+
+        .pills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin: 1.5rem 0;
+        }
+
+        .pill {
+            background-color: #E2E8F0;
+            color: var(--dark-grey);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .recycle-image-box img {
+            width: 100%;
+            border-radius: 12px;
+            object-fit: cover;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        /* --- What You Get Grid --- */
+        .perks-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0 4rem 0;
+        }
+
+        .perk-card {
+            background-color: var(--light-bg);
+            border: 1px solid var(--border-grey);
+            border-radius: 8px;
+            padding: 1.75rem;
+        }
+
+        .perk-icon {
+            width: 42px;
+            height: 42px;
+            margin-bottom: 1rem;
+            color: var(--icon-blue);
+        }
+
+        .perk-card h4 {
+            font-size: 1.15rem;
+            color: var(--dark-grey);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .perk-card p {
+            font-size: 0.95rem;
+            color: var(--text-grey);
+            line-height: 1.4;
+        }
+
+        .section-tag {
+            display: inline-block;
+            background-color: var(--dark-blue);
+            color: var(--white);
+            font-size: 0.85rem;
+            font-weight: 800;
+            padding: 0.4rem 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1.5rem;
+            text-decoration: none;
+            border-radius: 2px;
+        }
+
+        /* --- FAQ Section --- */
+        .faq-section {
+            margin-bottom: 4rem;
+        }
+
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            margin-top: 1.5rem;
+        }
+
+        .faq-item {
+            background-color: var(--faq-bg);
+            border-radius: 8px;
+            padding: 1.75rem 2rem;
+        }
+
+        .faq-item h3 {
+            font-size: 1.2rem;
+            color: var(--dark-grey);
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+        }
+
+        .faq-item p {
+            font-size: 1.05rem;
+            color: var(--text-grey);
+            line-height: 1.6;
+        }
+
+        /* --- Social Share --- */
+        .share-section {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-grey);
+            font-weight: 600;
+            color: var(--dark-grey);
+        }
+
+        .share-icons {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .share-icons span {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 4px;
+            color: white;
+            font-weight: bold;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+        .icon-in { background-color: #0A66C2; }
+        .icon-teams { background-color: #6264A7; }
+        .icon-wa { background-color: #25D366; }
+        .icon-link { background-color: #9CA3AF; }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--dark-grey);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+        }
+
+        /* --- Responsive Breakpoints --- */
+        @media (max-width: 992px) {
+            .split-section, .recycle-grid {
+                grid-template-columns: 1fr;
+            }
+            .process-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .perks-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-content-box { 
+                margin-left: 0;
+                padding: 2rem; 
+            }
+        }
+
+        @media (max-width: 600px) {
+            .process-grid, .perks-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-content-box h1 {
+                font-size: 2rem;
+            }
+            .form-row-2 {
+                grid-template-columns: 1fr;
+            }
+            .form-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation Header -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="1-01.png" alt="Saving Tech Logo">
+                </a>
+            </div>
+            <nav class="nav-links">
+                <div class="dropdown">
+                    <a href="Howitworks.html" class="dropbtn">How it works &#711;</a>
+                    <div class="dropdown-content single-column">
+                        <div class="dropdown-columns">
+                            <div class="column">
+                                <a href="Assetswecollectrecycle.html">Assets we collect &amp; recycle</a>
+                                <a href="FAQs.html">FAQs</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <a href="FreeITDisposal.html" class="dropbtn">Free IT Disposal &#711;</a>
+                    <div class="dropdown-content single-column">
+                        <div class="dropdown-columns">
+                            <div class="column">
+                                <h4>IT recycling services</h4>
+                                <a href="Computerrecycling.html">Computer recycling</a>
+                                <a href="Harddrivemediadestruction.html">Hard drive &amp; media destruction</a>
+                                <a href="Laptoprecycling.html">Laptop recycling</a>
+                                <a href="Mobiledevicerecycling.html">Mobile device recycling</a>
+                                <a href="Monitorscreenrecycling.html">Monitor &amp; screen recycling</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="index.html#services">Our Services</a>
+
+                <div class="dropdown">
+                    <a href="AboutUs.html" class="dropbtn">About Us &#711;</a>
+                    <div class="dropdown-content single-column">
+                        <div class="dropdown-columns">
+                            <div class="column">
+                                <a href="Documentscertificates.html">Documents &amp; Certificates</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="index.html#book">Request Collection</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section with Consistent Theme & Sizing -->
+        <section class="hero-section">
+            <div class="hero-content-box">
+                <p class="breadcrumb">
+                    <a href="index.html" class="inline-link">Home</a> &rarr; 
+                    <a href="FreeITDisposal.html" class="inline-link">IT recycling services</a> &rarr; 
+                    Laptop recycling
+                </p>
+                <h1>Free laptop recycling &amp; secure data destruction</h1>
+                <p>Saving Tech collects redundant business laptops, MacBooks, Chromebooks and mobile computers across the UK, with secure data destruction, compliance certificates and free collection for 10+ qualifying items.</p>
+                
+                <a href="#book" class="btn-lime">BOOK A FREE LAPTOP COLLECTION</a>
+                
+                <p class="hero-note">Free collections when you recycle at least 10 laptops, PCs &amp; servers (any combination). It's also <a href="FreeITDisposal.html" class="inline-link">free to recycle almost all waste IT with us</a>.</p>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- Split Section: Booking Form & Why Businesses Use Us -->
+            <section class="split-section" id="book">
+                <!-- Left Column: Booking Form -->
+                <div class="form-card">
+                    <h2>Book your laptop recycling collection</h2>
+                    <div class="form-subtitle">Takes less than 2 minutes. We'll confirm collection options by email or phone.</div>
+                    <p class="form-desc">Tell us what you need collected and we'll confirm the next available collection slot. We'll collect from your premises, securely process your equipment, destroy sensitive data where required, and provide the certificates you need.</p>
+
+                    <form id="laptopCollectionForm">
+                        <div class="form-group">
+                            <label>Enquiry type *</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="enquiryType" value="Business" checked> Business</label>
+                                <label><input type="radio" name="enquiryType" value="Personal"> Personal</label>
+                            </div>
+                            <div class="form-hint">We serve businesses, local authorities, educational institutions and charities. Personal enquiries are also welcome.</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Name *</label>
+                            <div class="form-row-2">
+                                <input type="text" class="form-control" placeholder="First" required>
+                                <input type="text" class="form-control" placeholder="Last" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Company name</label>
+                            <input type="text" class="form-control" placeholder="Your company name">
+                            <div class="form-hint">We serve businesses, local authorities and charities. Personal enquiries are also welcome.</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Email *</label>
+                            <input type="email" class="form-control" placeholder="Your email address" required>
+                            <div class="form-hint">One of our team will email you to arrange collection</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Phone</label>
+                            <input type="tel" class="form-control" placeholder="Your phone number">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Collection postcode *</label>
+                            <input type="text" class="form-control" style="max-width: 200px;" required>
+                            <div class="form-hint">Where in the UK would you like us to collect from?</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>What you'd like us to collect *</label>
+                            <textarea class="form-control" placeholder="Describe the amount and type of items you want us to collect." required></textarea>
+                        </div>
+
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="stayInformed">
+                            <label for="stayInformed"><strong>Stay informed</strong><br>Yes, I'd like to receive occasional emails<br>Join our email list for occasional updates on secure IT recycling, data destruction best practices, &amp; e-waste sustainability. Unsubscribe at any time.</label>
+                        </div>
+
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="consent" required>
+                            <label for="consent"><strong>Your consent *</strong><br>I have read and agree to the Saving Tech <a href="Howitworks.html">Terms and Conditions</a> and for them to process my data in accordance with their <a href="AboutUs.html">Privacy Notice</a>.</label>
+                        </div>
+
+                        <div class="btn-submit">
+                            <button type="submit" class="btn-lime" style="width: 100%;">SEND ENQUIRY</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Right Column: Info Content -->
+                <div class="info-side">
+                    <h2>Why businesses use us</h2>
+                    <h3>Secure, certified &amp; easy to organise.</h3>
+                    <ul class="feature-bullets">
+                        <li>Free collections for 10+ qualifying items</li>
+                        <li>Nationwide coverage</li>
+                        <li>GDPR &amp; WEEE compliant</li>
+                        <li>Certificates provided</li>
+                        <li>Carbon-negative IT recycling</li>
+                    </ul>
+
+                    <p>Old IT is not just office clutter. It can carry sensitive data, compliance risk and environmental responsibility. Saving Tech helps businesses clear it securely, responsibly and with proof.</p>
+
+                    <p>From finance and legal firms to healthcare organisations, education providers, MSPs, public sector teams, agencies and growing businesses, we make it simple to clear redundant IT equipment without risking your data, compliance or environmental commitments. We collect directly from your premises, securely handle your equipment, destroy sensitive data, and provide the certificates you need for your records.</p>
+
+                    <p style="font-size: 0.95rem; color: #4B5563;">Free collections when you recycle at least 10 laptops, PCs &amp; servers (any combination). It's also <a href="FreeITDisposal.html" class="inline-link">free to recycle almost all waste IT with us</a>.</p>
+
+                    <h3>Who we collect from</h3>
+                    <p>We support organisations that need old IT removed properly, safely and with clear evidence of responsible disposal. Typical local collections include:</p>
+                    
+                    <ul class="who-we-collect-list">
+                        <li><strong>Staff laptop refreshes:</strong> Securely recycle old employee laptops after a hardware upgrade.</li>
+                        <li><strong>Office clearances:</strong> Remove redundant laptops, chargers, docks, monitors and peripherals.</li>
+                        <li><strong>Leavers and returned devices:</strong> Dispose of old or damaged laptops that are no longer suitable for redeployment.</li>
+                        <li><strong>Schools and education providers:</strong> Recycle classroom laptops, Chromebooks, tablets and accessories responsibly.</li>
+                        <li><strong>MSPs and IT support companies:</strong> Manage client laptop recycling with secure handling and clear documentation.</li>
+                        <li><strong>Finance, legal and healthcare teams:</strong> Protect sensitive data while recycling laptops from regulated or data-heavy environments.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Data Risk & Process Section -->
+            <section class="section-header-block">
+                <h2>Old laptops are not just e-waste. They carry data risk.</h2>
+                <p>Redundant laptops can carry sensitive business data, employee records, customer information, passwords, documents and access credentials. That makes laptop recycling a security decision — not just a disposal task. Saving Tech helps businesses recycle old laptops properly, with secure collection, data destruction, responsible reuse or recycling, and the certificates you need for your records.</p>
+
+                <h3 style="font-size: 1.35rem; color: var(--dark-grey); margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 700;">Secure data destruction for old laptops</h3>
+                <p>Every laptop is handled with data security in mind from collection to processing. We securely erase, degauss or physically destroy storage media depending on the device, condition and data risk. Where required, we can provide enhanced data destruction with a full audit trail and individual certificates. That means your old laptops can be reused, recycled or broken down without leaving sensitive data behind.</p>
+
+                <h3 style="font-size: 1.35rem; color: var(--dark-grey); margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 700;">Reuse before recycling</h3>
+                <p>A laptop should not become waste if it can still be useful. Where possible, we assess laptops for reuse, refurbishment or component recovery. Working devices and usable parts can be redeployed into the circular economy, helping reduce demand for new raw materials and unnecessary manufacturing.</p>
+
+                <h3 style="font-size: 1.35rem; color: var(--dark-grey); margin-top: 2rem; margin-bottom: 0.5rem; font-weight: 700;">Here's how it works</h3>
+
+                <div class="process-grid">
+                    <div class="process-card">
+                        <div class="step-number">1</div>
+                        <h4>Tell us what you have</h4>
+                        <p>Let us know how many laptops and other IT assets you need collected.</p>
+                    </div>
+                    <div class="process-card">
+                        <div class="step-number">2</div>
+                        <h4>We arrange collection</h4>
+                        <p>We confirm the best collection option and collect from your premises.</p>
+                    </div>
+                    <div class="process-card">
+                        <div class="step-number">3</div>
+                        <h4>We handle the data</h4>
+                        <p>Storage media is securely erased, degaussed or destroyed where required.</p>
+                    </div>
+                    <div class="process-card">
+                        <div class="step-number">4</div>
+                        <h4>We assess for reuse</h4>
+                        <p>Laptops are checked for reuse, refurbishment, component recovery or recycling.</p>
+                    </div>
+                    <div class="process-card">
+                        <div class="step-number">5</div>
+                        <h4>You receive documentation</h4>
+                        <p>We provide the relevant certificates and records for your compliance and ESG evidence.</p>
+                    </div>
+                </div>
+
+                <p>When laptops cannot be reused, we responsibly recycle the materials through UK-based processes and partners. This is <a href="Howitworks.html" class="inline-link">laptop recycling built around value retention</a> — not just disposal.</p>
+
+                <div class="action-banner">
+                    <a href="Harddrivemediadestruction.html" class="btn-outline-dark">LEARN ABOUT SECURE DATA DESTRUCTION</a>
+                </div>
+            </section>
+
+            <!-- What We Recycle Section -->
+            <section class="recycle-grid">
+                <div>
+                    <h2 style="font-size: 2.2rem; color: var(--dark-grey); font-weight: 800; margin-bottom: 1rem;">What we recycle</h2>
+                    <p style="font-size: 1.05rem;">We collect and recycle all brands and types of laptops, including:</p>
+
+                    <div class="pills-container">
+                        <span class="pill">Business laptops</span>
+                        <span class="pill">MacBooks</span>
+                        <span class="pill">Chromebooks</span>
+                        <span class="pill">Netbooks</span>
+                        <span class="pill">2-in-1 laptops</span>
+                        <span class="pill">Ultrabooks</span>
+                        <span class="pill">Rugged laptops</span>
+                        <span class="pill">Broken or obsolete laptops</span>
+                        <span class="pill">Laptop chargers and accessories</span>
+                        <span class="pill">External drives and storage media</span>
+                        <span class="pill">Associated monitors, docks and peripherals</span>
+                    </div>
+
+                    <p style="margin-top: 1.5rem; font-size: 1.05rem;">We collect all types of WEEE. Whether you are replacing staff devices, clearing old stock, closing an office or managing a hardware refresh, we can collect and process your redundant laptops securely. For more information, call us on <a href="tel:08004947778" class="inline-link">0800 494 7778</a>, or <a href="#book" class="inline-link">make an enquiry online</a>.</p>
+                </div>
+
+                <div class="recycle-image-box">
+                    <img src="images/laptop-components.webp" alt="Laptop internal circuitry and components for recycling">
+                    <p style="font-size: 0.85rem; color: #6B7280; margin-top: 0.5rem; text-align: center;"><a href="Howitworks.html" class="inline-link">Learn more about how laptop recycling contributes to the circular economy.</a></p>
+                </div>
+            </section>
+
+            <!-- What You Get With Every Collection -->
+            <section>
+                <h2 style="font-size: 2.2rem; color: var(--dark-grey); font-weight: 800; margin-bottom: 0.25rem;">What you get with every collection</h2>
+                <p style="font-size: 1.05rem; color: #4B5563; margin-bottom: 1.5rem;">Collections are free when you have 10+ qualifying items.</p>
+
+                <div class="perks-grid">
+                    <!-- Perk 1 -->
+                    <div class="perk-card">
+                        <svg class="perk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <path d="M1 3h15v13H1z"/>
+                            <path d="M16 8h4l3 3v5h-7V8z"/>
+                            <circle cx="5.5" cy="18.5" r="2.5"/>
+                            <circle cx="18.5" cy="18.5" r="2.5"/>
+                        </svg>
+                        <h4>Free qualifying collections</h4>
+                        <p>Free collection for 10+ qualifying laptops, PCs or servers.</p>
+                    </div>
+
+                    <!-- Perk 2 -->
+                    <div class="perk-card">
+                        <svg class="perk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                        </svg>
+                        <h4>Certified data destruction</h4>
+                        <p>Secure erasure, degaussing or destruction where required.</p>
+                    </div>
+
+                    <!-- Perk 3 -->
+                    <div class="perk-card">
+                        <svg class="perk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <polyline points="22 4 12 14.01 9 11.01"/>
+                        </svg>
+                        <h4>Certificates provided</h4>
+                        <p>Waste Transfer Notes and certificates where applicable.</p>
+                    </div>
+
+                    <!-- Perk 4 -->
+                    <div class="perk-card">
+                        <svg class="perk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M2 12h20"/>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4 10z"/>
+                        </svg>
+                        <h4>Carbon-negative recycling</h4>
+                        <p>We offset twice the CO<sub>2</sub> generated through our service.</p>
+                    </div>
+
+                    <!-- Perk 5 -->
+                    <div class="perk-card">
+                        <svg class="perk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <path d="M17 1l4 4-4 4"/>
+                            <path d="M3 11V9a4 4 0 0 1 4-4h14"/>
+                            <path d="M7 23l-4-4 4-4"/>
+                            <path d="M21 13v2a4 4 0 0 1-4 4H3"/>
+                        </svg>
+                        <h4>Reuse-first processing</h4>
+                        <p>We prioritise reuse before materials recycling.</p>
+                    </div>
+
+                    <!-- Perk 6 -->
+                    <div class="perk-card">
+                        <svg class="perk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M4.93 4.93l14.14 14.14"/>
+                        </svg>
+                        <h4>UK-based handling</h4>
+                        <p>Processing stays in the UK for better accountability.</p>
+                    </div>
+                </div>
+
+                <a href="Assetswecollectrecycle.html" class="section-tag">WHAT WE COLLECT</a>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="faq-section">
+                <h2 style="font-size: 2.2rem; color: var(--dark-grey); font-weight: 800;">Frequently asked questions</h2>
+
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <h3>Is laptop recycling free?</h3>
+                        <p>Yes. We offer free collections when you have 10 or more qualifying laptops, PCs or servers in any combination. For smaller collections or specialist items, we'll confirm any collection cost before booking.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Can you recycle broken or obsolete laptops?</h3>
+                        <p>Yes. We collect working, broken, obsolete and end-of-life laptops. Where possible, we prioritise reuse or component recovery before materials recycling.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Do you destroy data from old laptops?</h3>
+                        <p>Yes. We securely sanitise data from laptop storage media and can provide Certificates of Destruction. Where software-based erasure is not suitable, we use physical destruction methods.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Do you recycle MacBooks and Chromebooks?</h3>
+                        <p>Yes. We collect and recycle MacBooks, Chromebooks, Windows laptops, netbooks, 2-in-1 devices, rugged laptops and other mobile computers.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>What happens to laptops after collection?</h3>
+                        <p>We assess laptops for reuse first. Devices that can be refurbished or redeployed are prioritised for a second life. Anything that cannot be reused is responsibly recycled through appropriate UK-based material streams.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Do you provide certificates?</h3>
+                        <p>Yes. We provide relevant documentation, including Waste Transfer Notes, Certificates of Destruction and Carbon Offset Certificates where applicable.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Can you collect laptops with other IT equipment?</h3>
+                        <p>Yes. We can collect laptops alongside PCs, servers, monitors, printers, phones, tablets, hard drives, cables, docks and other business IT equipment.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Social Share Links -->
+            <div class="share-section">
+                <span>Share this:</span>
+                <div class="share-icons">
+                    <span class="icon-in" title="LinkedIn">in</span>
+                    <span class="icon-teams" title="Microsoft Teams">T</span>
+                    <span class="icon-wa" title="WhatsApp">W</span>
+                    <span class="icon-link" title="Copy Link">&#128279;</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Saving Tech. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        document.getElementById('laptopCollectionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your enquiry. Your laptop collection request has been received.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>

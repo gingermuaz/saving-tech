@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitor & Screen Recycling | Saving Tech</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="icon.ico">
+    
+    <style>
+        :root {
+            --primary-green: #2E8B57;
+            --dark-grey: #1F2937;
+            --light-bg: #F3F4F6;
+            --white: #FFFFFF;
+            --border-color: #E5E7EB;
+            --alert-bg: #FEF2F2;
+            --alert-border: #FCA5A5;
+            --alert-text: #991B1B;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: var(--dark-grey);
+            line-height: 1.6;
+            background-color: #FAFAFA;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.5rem 2rem; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            overflow: hidden; 
+            height: 80px; 
+        }
+
+        .logo a {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .logo img {
+            height: 250px; 
+            width: auto;
+            object-fit: contain;
+            margin-left: -20px; 
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links > a {
+            text-decoration: none;
+            color: var(--dark-grey);
+            margin-left: 2rem;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links > a:hover {
+            color: var(--primary-green);
+        }
+
+        /* Dropdown Menu Styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            margin-left: 2rem;
+        }
+
+        .dropdown .dropbtn {
+            background: none;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-weight: 600;
+            color: var(--dark-grey);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-family: inherit;
+            padding: 1rem 0;
+        }
+
+        .dropdown:hover .dropbtn {
+            color: var(--primary-green);
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--white);
+            min-width: 500px;
+            box-shadow: 0px 8px 24px rgba(0,0,0,0.12);
+            z-index: 100;
+            border-radius: 8px;
+            top: 100%;
+            left: 0;
+            padding: 1.5rem;
+            border-top: 3px solid var(--primary-green);
+        }
+
+        .dropdown-content.single-column {
+            min-width: 260px;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-columns {
+            display: flex;
+            gap: 3rem;
+        }
+
+        .column {
+            flex: 1;
+        }
+
+        .column h4 {
+            font-size: 1.05rem;
+            margin-bottom: 0.8rem;
+            color: var(--dark-grey);
+            border-bottom: 1px solid #E5E7EB;
+            padding-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .column a {
+            color: #4B5563;
+            padding: 0.5rem 0;
+            text-decoration: none;
+            display: block;
+            margin-left: 0;
+            font-weight: 400;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .column a:hover {
+            color: var(--primary-green);
+        }
+
+        /* Buttons & Utility Classes */
+        .btn-primary {
+            background-color: var(--primary-green);
+            color: var(--white);
+            padding: 0.75rem 1.8rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #246B43;
+        }
+
+        .btn-secondary {
+            background-color: var(--white);
+            color: var(--dark-grey);
+            padding: 0.75rem 1.8rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            border: 1px solid var(--border-color);
+            margin-left: 0.5rem;
+            transition: background-color 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--light-bg);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background-color: var(--dark-grey);
+            color: var(--white);
+            padding: 4rem 2rem;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .breadcrumb {
+            font-size: 0.9rem;
+            color: #9CA3AF;
+            margin-bottom: 1rem;
+        }
+
+        .breadcrumb a {
+            color: #D1D5DB;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .hero-content h1 {
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin-bottom: 1.2rem;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: #D1D5DB;
+            margin-bottom: 1.8rem;
+        }
+
+        .hero-note {
+            font-size: 0.88rem;
+            color: #9CA3AF;
+            margin-top: 1.2rem;
+        }
+
+        .hero-note a {
+            color: var(--white);
+            text-decoration: underline;
+        }
+
+        .hero-image-box {
+            background-color: #2D3748;
+            border-radius: 12px;
+            height: 380px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Information & Features */
+        .section-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            color: var(--dark-grey);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header p {
+            color: #6B7280;
+            font-size: 1.1rem;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+
+        .content-block h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: var(--dark-grey);
+        }
+
+        .content-block p {
+            color: #4B5563;
+            margin-bottom: 1.2rem;
+        }
+
+        /* Collect Cards Grid */
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            color: var(--dark-grey);
+        }
+
+        .card p, .card ul {
+            font-size: 0.95rem;
+            color: #4B5563;
+        }
+
+        .card ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .card ul li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.2rem;
+        }
+
+        .card ul li::before {
+            content: "•";
+            color: var(--primary-green);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .card-alert {
+            background-color: var(--alert-bg);
+            border: 1px solid var(--alert-border);
+        }
+
+        .card-alert h3 {
+            color: var(--alert-text);
+        }
+
+        .card-alert p {
+            color: #7F1D1D;
+        }
+
+        /* Trust / CTA Box */
+        .trust-box {
+            background-color: var(--dark-grey);
+            color: var(--white);
+            border-radius: 8px;
+            padding: 3rem;
+            text-align: center;
+            margin: 4rem 0;
+        }
+
+        .trust-box h2 {
+            font-size: 2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .trust-box p {
+            color: #D1D5DB;
+            max-width: 700px;
+            margin: 0 auto 2.5rem auto;
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .trust-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 6px;
+            text-align: left;
+        }
+
+        .trust-card h4 {
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+            color: var(--white);
+        }
+
+        .trust-card p {
+            font-size: 0.88rem;
+            color: #9CA3AF;
+            margin-bottom: 0;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: var(--light-bg);
+            padding: 4rem 2rem;
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--white);
+            border-radius: 6px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .faq-item h3 {
+            font-size: 1.1rem;
+            color: var(--dark-grey);
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-item p {
+            color: #4B5563;
+            font-size: 0.98rem;
+        }
+
+        /* Booking Section */
+        .booking-section {
+            padding: 4rem 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .booking-section h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-form input, .contact-form select, .contact-form textarea {
+            padding: 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+            width: 100%;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-grey);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-container, .grid-2 {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="1-01.png" alt="Saving Tech Logo">
+                </a>
+            </div>
+            <nav class="nav-links">
+                <!-- How It Works Dropdown -->
+                <div class="dropdown">
+                    <a href="Howitworks.html" class="dropbtn">How it works &#711;</a>
+                    <div class="dropdown-content single-column">
+                        <div class="dropdown-columns">
+                            <div class="column">
+                                <a href="Assetswecollectrecycle.html">Assets we collect &amp; recycle</a>
+                                <a href="FAQs.html">FAQs</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Free IT Disposal Dropdown -->
+                <div class="dropdown">
+                    <a href="FreeITDisposal.html" class="dropbtn">Free IT Disposal &#711;</a>
+                    <div class="dropdown-content single-column">
+                        <div class="dropdown-columns">
+                            <div class="column">
+                                <h4>IT recycling services</h4>
+                                <a href="Computerrecycling.html">Computer recycling</a>
+                                <a href="Harddrivemediadestruction.html">Hard drive &amp; media destruction</a>
+                                <a href="Laptoprecycling.html">Laptop recycling</a>
+                                <a href="Mobiledevicerecycling.html">Mobile device recycling</a>
+                                <a href="Monitorscreenrecycling.html">Monitor &amp; screen recycling</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="index.html#services">Our Services</a>
+
+                <!-- About Us Dropdown -->
+                <div class="dropdown">
+                    <a href="AboutUs.html" class="dropbtn">About Us &#711;</a>
+                    <div class="dropdown-content single-column">
+                        <div class="dropdown-columns">
+                            <div class="column">
+                                <a href="Documentscertificates.html">Documents &amp; Certificates</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="#book" class="btn-primary" style="margin-left: 2rem; padding: 0.5rem 1.2rem;">Request Collection</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <p class="breadcrumb">
+                        <a href="index.html">Home</a> &rarr; 
+                        <a href="index.html#services">Services</a> &rarr; 
+                        Monitor &amp; screen recycling
+                    </p>
+                    <h1>Free monitor &amp; screen recycling with full compliance</h1>
+                    <p>If your organisation is about to upgrade your computer monitors or display screens, it's essential to consider how you will dispose your old ones in compliance with WEEE regulations. We offer nationwide collection and recycling of all your computer monitors of any size, brand, or quantity.</p>
+                    <a href="#book" class="btn-primary">BOOK A COLLECTION</a>
+                    <p class="hero-note">Free collections when you recycle at least 10 laptops, PCs &amp; servers (any combination). It's also <a href="FreeITDisposal.html">free to recycle almost all waste IT with us</a>.</p>
+                </div>
+                <div class="hero-image-box">
+                    <img src="Images/Monitor.png" alt="Monitor and Screen Recycling">
+                </div>
+            </div>
+        </section>
+
+        <!-- Eco-friendly Section -->
+        <section class="container">
+            <div class="section-header">
+                <h2>Eco-friendly monitor disposal</h2>
+            </div>
+
+            <div class="grid-2">
+                <div class="content-block">
+                    <h3>We recycle all types of display screens</h3>
+                    <p>Technology moves on fast! Newer monitors come with features like reduced blue light emissions, flicker-free technology, and low-haze screens, leaving old tech obsolete. The good news is <strong>98% of LCD monitors are recyclable</strong>. Plastics can be repurposed into new products, circuit boards can be processed to recover useful metals, and cables can be stripped to reclaim copper and other materials.</p>
+                    
+                    <p>We collect all computer monitors and display screens — including large and matrix style screens used in advertising and merchandising. Whether you are upgrading the screens for your office-based workforce, or you are having a refit or upgrade for your in-store or out-of-home advertising and merchandising screens, we are here to help.</p>
+
+                    <h3>It's free* to recycle monitors &amp; displays</h3>
+                    <p>All monitors and display screens must be recycled by law in line with the WEEE regulations, but did you know that all components from your old monitors can be reused? This includes the plastic case, power board, charging cables and even the glass.</p>
+                </div>
+                <div>
+                    <img src="Images/Monitor.png" alt="Computer Display Setup" style="width: 100%; border-radius: 8px; border: 1px solid var(--border-color); object-fit: cover; height: 350px;">
+                </div>
+            </div>
+        </section>
+
+        <!-- Accepted Brands & Types Section -->
+        <section class="container" style="padding-top: 0;">
+            <div class="section-header">
+                <h2>We collect all brands and types of monitors, displays, screens and televisions</h2>
+                <p>We offer nationwide collection and recycling of all your computer monitors, display &amp; advertising screens.</p>
+            </div>
+
+            <div class="grid-cards">
+                <div class="card">
+                    <h3>Monitors &amp; televisions</h3>
+                    <p><strong>All types:</strong> LCD, TFT, LED, OLED, IPS, TN, VA, curved, ultrawide, 4K, gaming, touch screen, portable, HDR, professional, broadcast.</p>
+                    <br>
+                    <p><strong>All brands:</strong> Samsung, LG, Sony, Panasonic, TCL, Hisense, Vizio, Philips, Sharp, Toshiba, Dell, HP, Lenovo...</p>
+                </div>
+
+                <div class="card">
+                    <h3>Commercial displays</h3>
+                    <p><strong>Advertising &amp; merchandising screens:</strong> All sizes of digital advertising / experience / merchandising screens typical of those used at events, in-store retail, and experiential destinations such as theme parks and stadiums.</p>
+                </div>
+
+                <div class="card">
+                    <h3>We charge to recycle some types of display</h3>
+                    <p><em>All charges are ex-VAT:</em></p>
+                    <ul>
+                        <li>Displays up to 30&quot;, with working screens: <strong>FREE</strong></li>
+                        <li>Displays up to 30&quot;, with cracked or broken screens: <strong>£7</strong></li>
+                        <li>Displays over 30&quot;, working or broken/cracked: <strong>£1/inch</strong></li>
+                        <li>Interactive whiteboards/smartboards (all sizes, working or broken): <strong>£1/inch</strong></li>
+                    </ul>
+                </div>
+
+                <div class="card card-alert">
+                    <h3>We do not accept CRT screens</h3>
+                    <p>We won't be able to collect the older style of cathode-ray tube screens typical of those used in old televisions and monitors, as they require special handling owing to the hazardous materials within them.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust / CTA Banner -->
+        <section class="container">
+            <div class="trust-box">
+                <h2>Ready to book?</h2>
+                <p>Here's why businesses trust us to recycle their obsolete monitors &amp; screens. We make sustainable IT disposal simple for all businesses &amp; institutions.</p>
+
+                <div class="trust-grid">
+                    <div class="trust-card">
+                        <h4>Free qualifying collections</h4>
+                        <p>Free for 10+ qualifying laptops, PCs or servers.</p>
+                    </div>
+                    <div class="trust-card">
+                        <h4>Secure data destruction</h4>
+                        <p>Sensitive data handled properly.</p>
+                    </div>
+                    <div class="trust-card">
+                        <h4>Certificates provided</h4>
+                        <p>Documentation for your compliance records.</p>
+                    </div>
+                    <div class="trust-card">
+                        <h4>Carbon-negative recycling</h4>
+                        <p>Responsible, reuse-first processing.</p>
+                    </div>
+                </div>
+
+                <p style="margin-bottom: 1.5rem;">Book your collection today and let us take care of compliance, security, and sustainability with transparent, certified recycling:</p>
+                <div>
+                    <a href="#book" class="btn-primary">BOOK A COLLECTION</a>
+                    <a href="tel:08004947778" class="btn-secondary">0800 494 7778</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Frequently Asked Questions -->
+        <section class="faq-section">
+            <div class="faq-container">
+                <div class="section-header">
+                    <h2>Frequently asked questions</h2>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Is monitor and screen recycling free?</h3>
+                    <p>Displays up to 30 inches with a working screen are recycled free of charge. Charges apply for larger or damaged screens, detailed below.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Do you charge for broken or oversized screens?</h3>
+                    <p>Yes. Displays up to 30 inches with a cracked or broken screen cost £7, and displays over 30 inches, working or broken, are charged at £1 per inch. Interactive whiteboards and smartboards are charged at the same rate regardless of condition.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Can you collect CRT screens?</h3>
+                    <p>No. Older cathode-ray tube screens require specialist handling due to the hazardous materials they contain, so we're unable to collect them.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>What types of monitors and displays do you recycle?</h3>
+                    <p>We recycle LCD, TFT, LED, OLED, curved, ultrawide, 4K, touch screen and professional broadcast monitors, along with commercial advertising and merchandising screens, of any brand.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>What happens to monitors after collection?</h3>
+                    <p>We assess every monitor for reuse before considering recycling. Where a screen can't be reused, components including the plastic case, circuit boards and cabling are recovered and reprocessed.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Do you provide a certificate of destruction for screens?</h3>
+                    <p>Yes. You'll receive a <a href="Documentscertificates.html" style="color: var(--primary-green); font-weight: 600;">Certificate of Destruction</a> and a certificate of carbon offset for the collection, and enhanced data destruction with detailed audit logs is available on request.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Can you collect monitors alongside computers and other IT equipment?</h3>
+                    <p>Yes. Monitors are commonly collected as part of a wider IT recycling collection alongside <a href="Computerrecycling.html" style="color: var(--primary-green); font-weight: 600;">computers</a>, laptops and printers.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Booking Section -->
+        <section id="book" class="booking-section">
+            <h2>Request a Collection</h2>
+            <form class="contact-form" id="collectionForm">
+                <input type="text" id="name" placeholder="Company / Contact Name" required>
+                <input type="email" id="email" placeholder="Email Address" required>
+                <input type="tel" id="phone" placeholder="Phone Number" required>
+                <select id="serviceType" required>
+                    <option value="" disabled selected>Select Service Required</option>
+                    <option value="monitors" selected>Monitor &amp; Screen Recycling</option>
+                    <option value="computers">Computer &amp; Laptop Recycling</option>
+                    <option value="itad">IT Asset Disposal (ITAD)</option>
+                    <option value="remarketing">Remarketing &amp; Value Recovery</option>
+                    <option value="decommissioning">Data Centre &amp; Server Decommissioning</option>
+                    <option value="mobile">Mobile Phone &amp; Tablet Recycling</option>
+                    <option value="destruction">Product &amp; Data Destruction</option>
+                    <option value="weee">WEEE Recycling Bins</option>
+                    <option value="specialist">Specialist Waste (Tubes &amp; Cartridges)</option>
+                </select>
+                <textarea id="details" rows="5" placeholder="Please list the approximate quantity and types of screens or IT devices (e.g., 10x 24-inch LCD monitors, 5x PCs)..." required></textarea>
+                <button type="submit" class="btn-primary">Submit Request</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; <span id="year"></span> Saving Tech. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        document.getElementById('collectionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            alert(`Thanks, ${name}! Your collection request has been submitted.`);
+            this.reset();
+        });
+    </script>
+
+</body>
+</html>

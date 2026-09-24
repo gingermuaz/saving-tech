@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documents & Certificates | Saving Tech</title>
+    
+    <link rel="icon" type="image/x-icon" href="icon.ico">
+    
+    <style>
+        :root {
+            --primary-green: #2E8B57; 
+            --lime-accent: #D4F34A;
+            --light-lime: #EEF8CD; /* Matched to secondary button */
+            --hero-blue: #2A8BCA; 
+            --icon-blue: #1085C5; /* Matched to feature icons */
+            --dark-grey: #1F2937;
+            --text-grey: #374151;
+            --light-bg: #F8FAFC; 
+            --section-grey: #F3F4F6; /* Matched to bottom section bg */
+            --white: #FFFFFF;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: var(--text-grey);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.5rem 2rem; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            overflow: hidden; 
+            height: 80px; 
+        }
+
+        .logo a {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .logo img {
+            height: 250px; 
+            width: auto;
+            object-fit: contain;
+            margin-left: -20px; 
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links > a {
+            text-decoration: none;
+            color: var(--dark-grey);
+            margin-left: 2rem;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links > a:hover {
+            color: var(--primary-green);
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            margin-left: 2rem;
+        }
+
+        .dropdown .dropbtn {
+            background: none;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-weight: 600;
+            color: var(--dark-grey);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-family: inherit;
+            padding: 1rem 0; 
+        }
+
+        .dropdown:hover .dropbtn {
+            color: var(--primary-green);
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--white);
+            min-width: 260px; 
+            box-shadow: 0px 8px 24px rgba(0,0,0,0.12);
+            z-index: 100;
+            border-radius: 8px;
+            top: 100%;
+            left: 0;
+            padding: 1.5rem;
+            border-top: 3px solid var(--primary-green);
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-columns {
+            display: flex;
+            gap: 3rem;
+        }
+
+        .column { flex: 1; }
+
+        .column h4 {
+            font-size: 1.05rem;
+            margin-bottom: 0.8rem;
+            color: var(--dark-grey);
+            border-bottom: 1px solid #E5E7EB;
+            padding-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .column a {
+            color: #4B5563;
+            padding: 0.5rem 0;
+            text-decoration: none;
+            display: block;
+            margin-left: 0;
+            font-weight: 400;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .column a:hover { color: var(--primary-green); }
+
+        /* Buttons */
+        .btn-lime {
+            background-color: var(--lime-accent);
+            color: var(--dark-grey);
+            padding: 0.85rem 1.75rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.1rem;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: background 0.2s;
+            margin: 1.5rem 0;
+        }
+
+        .btn-lime:hover {
+            background-color: #C3E239;
+        }
+
+        .btn-light-lime {
+            background-color: var(--light-lime);
+            color: var(--dark-grey);
+            padding: 0.85rem 1.75rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.1rem;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: background 0.2s;
+            margin: 1.5rem 0;
+        }
+
+        .btn-light-lime:hover {
+            background-color: #E2F0B3;
+        }
+
+        a.inline-link {
+            color: var(--hero-blue);
+            text-decoration: underline;
+        }
+        
+        a.inline-link:hover {
+            color: #1a6291;
+        }
+
+        /* Layout Container */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        /* Hero Document Box Section */
+        .hero-docs {
+            background-color: var(--hero-blue);
+            padding: 4rem 2rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content-box {
+            background-color: var(--white);
+            padding: 3.5rem;
+            max-width: 680px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            margin-left: max(2rem, calc((100vw - 1200px) / 2)); 
+        }
+
+        .hero-content-box .breadcrumb {
+            font-size: 0.95rem;
+            color: #4B5563;
+            margin-bottom: 1rem;
+        }
+        
+        .breadcrumb a {
+            color: var(--hero-blue);
+            text-decoration: underline;
+        }
+
+        .hero-content-box h1 {
+            font-size: 2.8rem;
+            color: var(--dark-grey);
+            margin-bottom: 1.2rem;
+            line-height: 1.1;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-content-box p {
+            font-size: 1.15rem;
+            color: var(--text-grey);
+            margin-bottom: 1rem;
+        }
+
+        .hero-content-box .hero-note {
+            font-size: 0.9rem;
+            color: #6B7280;
+            margin-top: 0.5rem;
+            margin-bottom: 0;
+            line-height: 1.5;
+        }
+
+        /* Content Text Sections */
+        .content-block {
+            margin-bottom: 4rem;
+        }
+
+        .content-block h2 {
+            font-size: 2.4rem;
+            color: var(--dark-grey);
+            margin-bottom: 2rem;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+        }
+
+        .doc-item {
+            margin-bottom: 2rem;
+        }
+
+        .doc-item h3 {
+            font-size: 1.25rem;
+            color: var(--dark-grey);
+            margin-bottom: 0.5rem;
+        }
+        
+        .doc-item p {
+            font-size: 1.1rem;
+            color: var(--text-grey);
+        }
+
+        /* Certificates Examples Section */
+        .examples-wrapper {
+            background-color: var(--light-bg);
+            border-radius: 12px;
+            padding: 3rem 4rem;
+            margin-bottom: 4rem;
+        }
+        
+        .examples-wrapper h2 {
+            font-size: 2.4rem;
+            color: var(--dark-grey);
+            margin-bottom: 2rem;
+            letter-spacing: -0.5px;
+        }
+
+        .example-section {
+            margin-bottom: 4rem;
+        }
+        
+        .example-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .example-section h3 {
+            font-size: 1.8rem;
+            color: #104A73; 
+            margin-bottom: 0.8rem;
+        }
+
+        .example-section > p {
+            font-size: 1.1rem;
+            color: var(--text-grey);
+            margin-bottom: 2.5rem;
+            max-width: 900px;
+        }
+
+        .docs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .doc-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 3rem 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+        }
+
+        .doc-image-placeholder {
+            width: 100%;
+            aspect-ratio: 1 / 1.4;
+            background-color: #E5E7EB;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #9CA3AF;
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 1.5rem;
+        }
+        
+        .multi-doc-placeholder {
+            display: flex;
+            gap: 1rem;
+            width: 100%;
+            margin-bottom: 1.5rem;
+        }
+        
+        .multi-doc-placeholder .doc-half {
+            flex: 1;
+            aspect-ratio: 1 / 1.4;
+            background-color: #E5E7EB;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #9CA3AF;
+            font-size: 1rem;
+            font-weight: bold;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .doc-card p.caption {
+            font-size: 1rem;
+            color: #104A73;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        /* Learn More Section */
+        .learn-more {
+            margin-bottom: 2rem;
+        }
+        
+        .learn-more h2 {
+            font-size: 2.4rem;
+            color: var(--dark-grey);
+            margin-bottom: 1rem;
+            letter-spacing: -0.5px;
+        }
+
+        .learn-more p {
+            font-size: 1.15rem;
+            color: var(--text-grey);
+        }
+
+        /* Bottom Feature Cards */
+        .bottom-features {
+            background-color: var(--section-grey);
+            padding: 4rem 2rem;
+        }
+
+        .bottom-features .container {
+            padding: 0; /* Resetting padding as background spans full width */
+            margin: 0 auto;
+        }
+
+        .bottom-features h2 {
+            font-size: 2.2rem;
+            color: var(--dark-grey);
+            margin-bottom: 1rem;
+            letter-spacing: -0.5px;
+        }
+
+        .bottom-features > .container > p {
+            font-size: 1.15rem;
+            color: var(--text-grey);
+            margin-bottom: 2.5rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 2.5rem 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .feature-icon {
+            width: 75px;
+            height: 75px;
+            margin-bottom: 1.5rem;
+            color: var(--icon-blue);
+        }
+
+        .feature-card h3 {
+            font-size: 1.25rem;
+            color: var(--dark-grey);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .feature-card p {
+            font-size: 1.05rem;
+            color: var(--text-grey);
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        /* Overriding margins for these specific buttons inside the flexbox */
+        .action-buttons .btn-lime, 
+        .action-buttons .btn-light-lime {
+            margin: 0; 
+        }
+
+        @media (max-width: 900px) {
+            .feature-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-content-box {
+                margin-left: 0;
+                padding: 2rem;
+            }
+            .examples-wrapper {
+                padding: 2rem;
+            }
+            .docs-grid {
+                grid-template-columns: 1fr;
+            }
+            .multi-doc-placeholder {
+                flex-direction: column;
+            }
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-grey);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="1-01.png" alt="Saving Tech Logo">
+                </a>
+            </div>
+            <nav class="nav-links">
+                <div class="dropdown">
+                    <a href="Howitworks.html" class="dropbtn">How it works &#711;</a>
+                    <div class="dropdown-content">
+                        <div class="dropdown-columns">
+                            <div class="column">
+                                <a href="Assetswecollectrecycle.html">Assets we collect &amp; recycle</a>
+                                <a href="FAQs.html">FAQs</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <a href="FreeITDisposal.html" class="dropbtn">Free IT Disposal &#711;</a>
+                    <div class="dropdown-content">
+                        <div class="dropdown-columns">
+                            <div class="column">
+                                <h4>IT recycling services</h4>
+                                <a href="Computerrecycling.html">Computer recycling</a>
+                                <a href="Harddrivemediadestruction.html">Hard drive &amp; media destruction</a>
+                                <a href="Laptoprecycling.html">Laptop recycling</a>
+                                <a href="Mobiledevicerecycling.html">Mobile device recycling</a>
+                                <a href="Monitorscreenrecycling.html">Monitor &amp; screen recycling</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="index.html#services">Our Services</a>
+
+                <div class="dropdown">
+                    <a href="AboutUs.html" class="dropbtn">About Us &#711;</a>
+                    <div class="dropdown-content">
+                        <div class="dropdown-columns">
+                            <div class="column">
+                                <a href="Documentscertificates.html">Documents &amp; Certificates</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="index.html#book">Request Collection</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-docs">
+            <div class="hero-content-box">
+                <p class="breadcrumb"><a href="index.html">Home</a> &rarr; <a href="AboutUs.html">Why us</a> &rarr; Examples of our certificates</p>
+                <h1>Certificates of destruction & compliance documentation</h1>
+                <p>Every collection we carry out comes with a complete set of compliance documentation as standard. This is not optional paperwork – it is the audit trail that protects your business.</p>
+                
+                <a href="index.html#book" class="btn-lime">BOOK A FREE COLLECTION</a>
+                
+                <p class="hero-note">Free collections when you recycle at least 10 laptops, PCs & servers (any combination). It's also <a href="FreeITDisposal.html" class="inline-link">free to recycle almost all waste IT with us</a>.</p>
+            </div>
+        </section>
+
+        <!-- Main Content Area -->
+        <div class="container">
+            
+            <div class="content-block">
+                <h2>What documentation do you receive after collection?</h2>
+                
+                <div class="doc-item">
+                    <h3>Waste Transfer Note (WTN)</h3>
+                    <p>A legally required document under the Environmental Protection Act 1990. It confirms that your waste has been transferred to a licensed carrier and records the type, quantity, and destination of the material collected. You are required to retain this for a minimum of two years.</p>
+                </div>
+
+                <div class="doc-item">
+                    <h3>Certificate of Recycling</h3>
+                    <p>Confirms that the equipment collected has been processed in accordance with the WEEE Regulations. This is the document you need to demonstrate compliance if your organisation is subject to audit or due diligence by clients or regulators.</p>
+                </div>
+
+                <div class="doc-item">
+                    <h3>Standard Data Destruction Certificate</h3>
+                    <p>Confirms that data has been destroyed to an NCSC-approved standard. This is the evidence you need to demonstrate GDPR compliance in relation to data-bearing hardware.</p>
+                    <p style="margin-top: 1rem;">For organisations that require enhanced accountability, we offer individual asset-level Enhanced Data Destruction Certificates with full asset tracking. This is available for an additional fee and is particularly relevant for clients in healthcare, finance, and legal services. Please request this at the point of booking.</p>
+                </div>
+
+                <div class="doc-item">
+                    <h3>Carbon Offset Certificate</h3>
+                    <p>Issued with every collection, documenting the verified carbon offset associated with your recycling activity. This can be included in your CSR or ESG reporting as evidence of measurable environmental benefit.</p>
+                </div>
+            </div>
+
+            <div class="content-block">
+                <h2>How long should you keep your recycling certificates?</h2>
+                <p>We recommend retaining all compliance documentation for a minimum of three years. Waste Transfer Notes carry a two-year statutory retention requirement. Certificates of Data Destruction should be retained for as long as the devices they cover would otherwise have been in service.</p>
+            </div>
+
+            <h2 style="font-size: 2.4rem; color: var(--dark-grey); margin-bottom: 2rem; letter-spacing: -0.5px;">Examples of our certificates</h2>
+
+            <div class="examples-wrapper">
+                <div class="example-section">
+                    <h3>Data destruction certificates</h3>
+                    <p>We offer standard certificates by default. You have the option of upgrading to an enhanced data destruction service for £5+VAT per disk/drive which provides a fully audited log</p>
+                    
+                    <div class="docs-grid">
+                        <div class="doc-card">
+                            <div class="doc-image-placeholder">
+                                [Standard Certificate Img]
+                            </div>
+                        </div>
+                        <div class="doc-card">
+                            <div class="doc-image-placeholder">
+                                [Enhanced Certificate Img]
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="example-section">
+                    <h3>WEEE recycling certificates</h3>
+                    <p>When we collect assets from your business, we issue you with a Duty of Care Certificate (Waste Transfer Note) also known as a WTN. As we track the carbon across the entire process from collecting to processing and recycling your assets we also issue a Certificate of Carbon Offset — to evidence to you that we have offset DOUBLE the carbon involved.</p>
+                    
+                    <div class="docs-grid">
+                        <div class="doc-card">
+                            <div class="multi-doc-placeholder">
+                                <div class="doc-half">[WTN Page 1 Img]</div>
+                                <div class="doc-half">[WTN Page 2 Img]</div>
+                            </div>
+                            <p class="caption">Duty of Care Certificate (Waste transfer note)</p>
+                        </div>
+                        
+                        <div class="doc-card">
+                            <div class="doc-image-placeholder">
+                                [Carbon Offset Img]
+                            </div>
+                            <p class="caption">Certificate of carbon offset</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Learn More Section -->
+            <div class="learn-more">
+                <h2>Learn more</h2>
+                <p>Read our article on <a href="#" class="inline-link">Understanding data destruction certificates</a> to get more detail on these certificates and why they are important. You can also contact us to ask a question about them — we are here to make recycling your IT waste compliant and hassle-free.</p>
+            </div>
+
+        </div> <!-- End container -->
+
+        <!-- Bottom Feature Cards Section -->
+        <section class="bottom-features">
+            <div class="container">
+                <h2>Here's why businesses recycle their IT with us</h2>
+                <p>Secure, carbon-negative IT recycling with free qualifying collections, data destruction and certificates always provided.</p>
+                
+                <div class="feature-grid">
+                    <!-- Card 1: Collections -->
+                    <div class="feature-card">
+                        <svg class="feature-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 9v6l10 5 10-5V9l-10 5-10-5z" opacity="0.9" />
+                            <rect x="9" y="4" width="6" height="10" rx="1" fill="#fff" />
+                            <circle cx="12" cy="7" r="1.5" fill="var(--icon-blue)" />
+                            <path d="M11 11l1 1 2-2" stroke="var(--icon-blue)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <h3>Free qualifying collections</h3>
+                        <p>Free collection for 10+ qualifying laptops, PCs or servers.</p>
+                    </div>
+                    
+                    <!-- Card 2: Certificates -->
+                    <div class="feature-card">
+                        <svg class="feature-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/>
+                            <circle cx="12" cy="12" r="4" fill="#fff" />
+                            <path d="M12 9.5c-1.38 0-2.5 1.12-2.5 2.5s1.12 2.5 2.5 2.5 2.5-1.12 2.5-2.5-1.12-2.5-2.5-2.5zm1 3.5l-1.5-1.5.7-.7.8.8 2-2 .7.7-2.7 2.7z" fill="var(--icon-blue)" />
+                            <path d="M10 15.5l-1.5 2.5L12 17l3.5 1-1.5-2.5z" fill="#fff" />
+                        </svg>
+                        <h3>Certificates provided</h3>
+                        <p>You receive the documentation you need for your records.</p>
+                    </div>
+                    
+                    <!-- Card 3: Secure Destruction -->
+                    <div class="feature-card">
+                        <svg class="feature-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-1 6h2v3h1c.55 0 1 .45 1 1v4c0 .55-.45 1-1 1h-4c-.55 0-1-.45-1-1v-4c0-.55.45-1 1-1h1V7z" />
+                            <path d="M11 7h2v3h-2z" fill="#fff" />
+                            <rect x="9" y="10" width="6" height="6" fill="#fff" rx="0.5" />
+                        </svg>
+                        <h3>Secure data destruction</h3>
+                        <p>Data-bearing devices are securely erased, degaussed or destroyed where required.</p>
+                    </div>
+                    
+                    <!-- Card 4: Carbon-negative -->
+                    <div class="feature-card">
+                        <svg class="feature-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                            <path d="M14 20c0 0 4-1 5.5-4C18 16 16 18 14 20z" fill="#fff"/>
+                            <path d="M15.5 21.5c0 0 5-1 6.5-5-2 1-4 3.5-6.5 5z" fill="#fff"/>
+                        </svg>
+                        <h3>Carbon-negative recycling</h3>
+                        <p>Reuse-first processing, UK-based handling and twice the CO&sub2; offset.</p>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <a href="index.html#book" class="btn-lime">BOOK A COLLECTION</a>
+                    <a href="Assetswecollectrecycle.html" class="btn-light-lime">WHAT WE COLLECT</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Saving Tech. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Set dynamic copyright year
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>
