@@ -83,7 +83,7 @@
       align-items: center;
     }
 
-    .nav-links > a {
+    .nav-links > a:not(.btn-primary) {
       text-decoration: none;
       color: var(--dark-grey);
       margin-left: 2rem;
@@ -91,8 +91,12 @@
       transition: color 0.3s;
     }
 
-    .nav-links > a:hover {
+    .nav-links > a:not(.btn-primary):hover {
       color: var(--primary-green);
+    }
+
+    .nav-links > .btn-primary {
+      margin-left: 2rem;
     }
 
     /* Dropdown Menu Styles */
@@ -175,6 +179,22 @@
 
     .column a:hover {
       color: var(--primary-green);
+    }
+
+    .btn-primary {
+      background-color: var(--primary-green);
+      color: var(--white);
+      padding: 0.5rem 1.5rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover {
+      background-color: #246B43;
     }
 
     .container {
@@ -360,7 +380,7 @@
 <body>
 
     <!-- Header Navigation -->
-    <header>
+<header>
         <div class="nav-container">
             <div class="logo">
                 <a href="index.html">
@@ -368,9 +388,25 @@
                 </a>
             </div>
             <nav class="nav-links">
-                <!-- How It Works Dropdown -->
+                <!-- 1. Free IT Disposal Dropdown -->
                 <div class="dropdown">
-                    <a href="Howitworks.html" class="dropbtn">How it works &#711;</a>
+                    <a href="FreeITDisposal.html" class="dropbtn">Free IT Disposal &#711;</a>
+                    <div class="dropdown-content single-column">
+                        <div class="dropdown-columns">
+                            <div class="column">
+                                <h4>IT recycling services</h4>
+                                <a href="Computerrecycling.html">Computer recycling</a>
+                                <a href="Laptoprecycling.html">Laptop recycling</a>
+                                <a href="Mobiledevicerecycling.html">Mobile device recycling</a>
+                                <a href="Monitorscreenrecycling.html">Monitor &amp; screen recycling</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Our Services Dropdown -->
+                <div class="dropdown">
+                    <a href="#services" class="dropbtn">Our Services &#711;</a>
                     <div class="dropdown-content single-column">
                         <div class="dropdown-columns">
                             <div class="column">
@@ -381,38 +417,35 @@
                     </div>
                 </div>
 
-                <!-- Free IT Disposal Dropdown -->
+                <!-- 3. Data Destruction Dropdown -->
                 <div class="dropdown">
-                    <a href="FreeITDisposal.html" class="dropbtn">Free IT Disposal &#711;</a>
+                    <a href="Howitworks.html" class="dropbtn">Data Destruction &#711;</a>
                     <div class="dropdown-content single-column">
                         <div class="dropdown-columns">
                             <div class="column">
-                                <h4>IT recycling services</h4>
-                                <a href="Computerrecycling.html">Computer recycling</a>
+                                <a href="DataDestructionMethods.html">Data destruction methods</a>
+                                <a href="Articles.html">Articles</a>
                                 <a href="Harddrivemediadestruction.html">Hard drive &amp; media destruction</a>
-                                <a href="Laptoprecycling.html">Laptop recycling</a>
-                                <a href="Mobiledevicerecycling.html">Mobile device recycling</a>
-                                <a href="Monitorscreenrecycling.html">Monitor &amp; screen recycling</a>
+                                <a href="SecureDataDestruction.html">Secure data destruction</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                <a href="index.html#services">Our Services</a>
 
-                <!-- About Us Dropdown -->
+                <!-- 4. About Us Dropdown -->
                 <div class="dropdown">
                     <a href="AboutUs.html" class="dropbtn">About Us &#711;</a>
                     <div class="dropdown-content single-column">
                         <div class="dropdown-columns">
                             <div class="column">
                                 <a href="Documentscertificates.html">Documents &amp; Certificates</a>
+                                <a href="Blogs.html">Blogs</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <a href="index.html#book">Request Collection</a>
+                <a href="Book.html#form-section" style="background-color: var(--primary-green); color: var(--white); padding: 0.6rem 1.25rem; border-radius: 4px; text-decoration: none; font-weight: 700;">Book a Collection</a>
             </nav>
         </div>
     </header>
@@ -422,13 +455,13 @@
       <div class="container">
         <div class="hero-card">
           <div class="breadcrumbs">
-            <a href="index.html">Home</a> &rarr; <a href="Howitworks.html">How it works</a> &rarr; FAQs
+            <a href="index.html">Home</a> &rarr; <a href="index.html#services">Our Services</a> &rarr; FAQs
           </div>
           <h1 class="hero-title">Frequently asked questions</h1>
           <p class="hero-text">
             Here are FAQs about <a href="#">our service</a> and about <a href="#">our charges</a>. If you can't find what you're looking for here, <a href="#">drop us an email</a>. We are here to help.
           </p>
-          <a href="index.html#book" class="btn btn-green">BOOK A COLLECTION</a>
+          <a href="Book.html#form-section" class="btn btn-green">BOOK A COLLECTION</a>
         </div>
       </div>
     </section>
@@ -456,6 +489,7 @@
         <!-- Service FAQs Section -->
         <h2 class="section-heading">FAQs about our service</h2>
 
+        <!-- Retained Top 2 FAQs -->
         <div class="faq-card">
           <h3>What areas do you cover?</h3>
           <p>We cover the whole of the UK.</p>
@@ -466,69 +500,41 @@
           <p>Our hours of operation are 9am to 5pm, Monday to Friday. We are closed on Bank Holidays and at weekends.</p>
         </div>
 
+        <!-- Replaced New FAQs -->
         <div class="faq-card">
-          <h3>Can I bring items to you?</h3>
-          <p>Yes &ndash; customers are welcome to bring items to us during normal operating times (Monday to Friday, 9am to 5pm). There is no charge for dropping equipment to us in person, unless the items are in the list of chargeable items. You are also welcome to pallet ship items to us, with prior arrangement.</p>
+          <h3>What industries do you serve?</h3>
+          <p>We support businesses and organisations across a wide range of industries, including healthcare, finance, government, retail, education, and professional services.</p>
         </div>
 
         <div class="faq-card">
-          <h3>How quickly can you collect from us?</h3>
-          <p>Being an SME, we are very agile and can collect any volume quickly from anywhere in the UK, usually within a few days. Locations further from our base in Reading can have a slightly longer lead time, but not all that long.</p>
+          <h3>What is your recycling rate?</h3>
+          <p>We operate a zero-landfill commitment, prioritising reuse, refurbishment, and responsible recycling wherever possible. Equipment that cannot be reused or refurbished is processed through appropriate recycling channels to maximise recovery and minimise environmental impact.</p>
         </div>
 
         <div class="faq-card">
-          <h3>Are you registered with the Environment Agency?</h3>
-          <p>Yes, we hold all necessary Environment Agency licenses to operate. See our <a href="AboutUs.html">Why us page</a> for details about all our licenses, plus more information about our company.</p>
+          <h3>Do you charge extra for certificates?</h3>
+          <p>No. Our data-erasure certificates are provided at no additional cost with every collection. These certificates confirm that the relevant storage media has been securely sanitised.</p>
         </div>
 
         <div class="faq-card">
-          <h3>Are you really carbon-negative? How?</h3>
-          <p>Yes, we are! We account for all of the CO2 in your collection, everything from the transport to the recycling, and for every kilo of CO2 generated in our service, we offset 2 kilos equivalent &mdash; and you get a certificate of carbon offset at the end of the process to account for it.</p>
-          <p>We use electric vehicles for as many IT asset collections as possible, and support a robust tree-planting carbon offset program. We calculate our carbon emissions at every point of operations &ndash; miles driven, parcels posted, even the electricity to make our cups of tea &ndash; and make sure we contribute towards sequestering more carbon than we create.</p>
-          <p>As well as helping other organisations and businesses reduce their eco-footprint by collecting and recycling redundant IT equipment, we want to make sure we are a positive force for environmental change in the world.</p>
-          <p>Find out more about our <a href="Howitworks.html">carbon-negative IT recycling services</a>.</p>
+          <h3>Are your ITAD services compliant with GDPR?</h3>
+          <p>Yes. Our ITAD processes are designed to support compliance with applicable data protection requirements, including the UK GDPR. We maintain a clear audit trail for data-bearing assets and provide data-erasure certificates to help you demonstrate that your equipment has been securely processed.</p>
         </div>
 
         <div class="faq-card">
-          <h3>How do you destroy the data when recycling assets?</h3>
-          <p>We destroy data on all devices we handle, safely and securely. Any data-bearing media is wiped using a multipass binary overwrite. If it cannot be wiped, due to non-functionality or damage, we physically destroy the media. Whichever method is used, the data is completely and irretrievably eradicated. Visit <a href="Howitworks.html">how it works</a> for information on our data destruction methods, and an explanation of our processes.</p>
+          <h3>What types of equipment do you accept?</h3>
+          <p>We securely manage a wide range of IT and electronic equipment, including desktops, laptops, servers, mobile phones, tablets, printers, monitors, networking equipment, storage devices, and more.</p>
         </div>
 
         <div class="faq-card">
-          <h3>What will happen to my equipment after it is collected?</h3>
-          <p>We transport all your IT assets back to our secure warehouse for processing. Any IT equipment containing data will be wiped within 48hrs, and any identifying information is removed. If the equipment is unsuitable for reuse or beyond repair, we dismantle it into its component parts for recycling.</p>
+          <h3>What is the difference between ITAD and general recycling?</h3>
+          <p>General recycling focuses primarily on the disposal and recovery of materials. ITAD (IT Asset Disposition) is a comprehensive process that includes secure data erasure, asset tracking, value recovery, reuse, refurbishment, and responsible recycling.</p>
+          <p>Our process provides chain-of-custody records and documentation, helping organisations maintain control and accountability throughout the lifecycle of their IT assets.</p>
         </div>
 
         <div class="faq-card">
-          <h3>What documentation or certificates are provided?</h3>
-          <p>All WEEE recycling companies must provide certificates to you as part of the recycling service, and you can <a href="Documentscertificates.html">see examples of our certificates here</a>.</p>
-          <p>We provide the Duty of Care Certificate (Waste transfer note / WTN) at the point of collection. We provide a standard data destruction certificate (or an enhanced certificate if you choose to upgrade to this service), and we also create a detailed report on carbon offset that is specific to your collection.</p>
-        </div>
-
-        <!-- Assets FAQs Section -->
-        <h2 class="section-heading" style="margin-top: 50px;">FAQs about assets we collect</h2>
-        <p class="section-subtext">You can also take a look at a <a href="Assetswecollectrecycle.html">list of things that we collect</a>.</p>
-
-        <div class="faq-card">
-          <h3>What items can you accept?</h3>
-          <p>We accept all types of electrical and electronic equipment, whether functional or not. Check out guide to assets we can collect on the page below.</p>
-          <p>This includes, but is not limited to &ndash; desktops (PCs), laptops, servers, tablets, monitors, UPS units, cables, keyboards, printers, photocopiers, shredders, projectors, phones, and phone systems. Additionally, we handle industry-specific items such as video, photographic, audio, and conferencing equipment, educational hardware, test and development devices, medical devices, solar panels, and related equipment. We don't accept CRT monitors, and any refrigeration equipment such as fridges, chillers and air-conditioners.</p>
-          <p>There is no limit to the volume we can collect, and we frequently decommission equipment from schools, colleges, data centres, offices, and classrooms.</p>
-        </div>
-
-        <div class="faq-card">
-          <h3>Do you need an exact list of equipment?</h3>
-          <p>Whilst an exact list is helpful, we do not require an accurate list of the equipment to collect from you, just an indication.</p>
-        </div>
-
-        <div class="faq-card">
-          <h3>What are the items that qualify for free collection?</h3>
-          <p>Qualifying items are Desktops (PCs), servers and laptops. These need to be complete, and not activation/cloud locked. Some select rack-mountable units are also qualifying items. If you have fewer than ten items to collect, please contact us for a quote.</p>
-        </div>
-
-        <div class="faq-card">
-          <h3>What items do you not accept?</h3>
-          <p>At present, we do not accept fluorescent tubes/lights, light bulbs and plastic/cardboard packaging (unless this is the original equipment packaging). We can however advise on the correct methods to recycle these items.</p>
+          <h3>What data-wiping methods and standards do you use?</h3>
+          <p>We use NIST SP 800-88 Rev. 1 and follow British HMG IS5 alongside current UK <a href="https://www.ncsc.gov.uk/guidance/secure-sanitisation-storage-media" target="_blank" rel="noopener noreferrer">Government/NCSC</a> guidance for the secure sanitisation and disposal of data-bearing devices.</p>
         </div>
 
       </div>
@@ -575,7 +581,7 @@
         </div>
 
         <div class="btn-group">
-          <a href="index.html#book" class="btn btn-green">BOOK A COLLECTION</a>
+          <a href="Book.html#form-section" class="btn btn-green">BOOK A COLLECTION</a>
           <a href="Assetswecollectrecycle.html" class="btn btn-green-light">WHAT WE COLLECT</a>
         </div>
       </div>
