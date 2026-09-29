@@ -74,7 +74,7 @@
             align-items: center;
         }
 
-        .nav-links > a {
+        .nav-links > a:not(.btn-primary) {
             text-decoration: none;
             color: var(--dark-grey);
             margin-left: 2rem;
@@ -82,8 +82,12 @@
             transition: color 0.3s;
         }
 
-        .nav-links > a:hover {
+        .nav-links > a:not(.btn-primary):hover {
             color: var(--primary-green);
+        }
+
+        .nav-links > .btn-primary {
+            margin-left: 2rem;
         }
 
         /* Dropdown Menu Styles */
@@ -465,7 +469,7 @@
 </head>
 <body>
 
-    <header>
+<header>
         <div class="nav-container">
             <div class="logo">
                 <a href="index.html">
@@ -473,9 +477,25 @@
                 </a>
             </div>
             <nav class="nav-links">
-                <!-- How It Works Dropdown -->
+                <!-- 1. Free IT Disposal Dropdown -->
                 <div class="dropdown">
-                    <a href="Howitworks.html" class="dropbtn">How it works &#711;</a>
+                    <a href="FreeITDisposal.html" class="dropbtn">Free IT Disposal &#711;</a>
+                    <div class="dropdown-content single-column">
+                        <div class="dropdown-columns">
+                            <div class="column">
+                                <h4>IT recycling services</h4>
+                                <a href="Computerrecycling.html">Computer recycling</a>
+                                <a href="Laptoprecycling.html">Laptop recycling</a>
+                                <a href="Mobiledevicerecycling.html">Mobile device recycling</a>
+                                <a href="Monitorscreenrecycling.html">Monitor &amp; screen recycling</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Our Services Dropdown -->
+                <div class="dropdown">
+                    <a href="#services" class="dropbtn">Our Services &#711;</a>
                     <div class="dropdown-content single-column">
                         <div class="dropdown-columns">
                             <div class="column">
@@ -486,38 +506,35 @@
                     </div>
                 </div>
 
-                <!-- Free IT Disposal Dropdown -->
+                <!-- 3. Data Destruction Dropdown -->
                 <div class="dropdown">
-                    <a href="FreeITDisposal.html" class="dropbtn">Free IT Disposal &#711;</a>
+                    <a href="Howitworks.html" class="dropbtn">Data Destruction &#711;</a>
                     <div class="dropdown-content single-column">
                         <div class="dropdown-columns">
                             <div class="column">
-                                <h4>IT recycling services</h4>
-                                <a href="Computerrecycling.html">Computer recycling</a>
+                                <a href="DataDestructionMethods.html">Data destruction methods</a>
+                                <a href="Articles.html">Articles</a>
                                 <a href="Harddrivemediadestruction.html">Hard drive &amp; media destruction</a>
-                                <a href="Laptoprecycling.html">Laptop recycling</a>
-                                <a href="Mobiledevicerecycling.html">Mobile device recycling</a>
-                                <a href="Monitorscreenrecycling.html">Monitor &amp; screen recycling</a>
+                                <a href="SecureDataDestruction.html">Secure data destruction</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                <a href="index.html#services">Our Services</a>
 
-                <!-- About Us Dropdown -->
+                <!-- 4. About Us Dropdown -->
                 <div class="dropdown">
                     <a href="AboutUs.html" class="dropbtn">About Us &#711;</a>
                     <div class="dropdown-content single-column">
                         <div class="dropdown-columns">
                             <div class="column">
                                 <a href="Documentscertificates.html">Documents &amp; Certificates</a>
+                                <a href="Blogs.html">Blogs</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <a href="index.html#book">Request Collection</a>
+                <a href="Book.html#form-section" style="background-color: var(--primary-green); color: var(--white); padding: 0.6rem 1.25rem; border-radius: 4px; text-decoration: none; font-weight: 700;">Book a Collection</a>
             </nav>
         </div>
     </header>
@@ -529,7 +546,7 @@
                 <p><a href="index.html" class="inline-link" style="color: inherit; text-decoration: none;">Home</a> &rarr; Why us</p>
                 <h1>Why businesses choose Saving Tech for IT recycling</h1>
                 <p>There are plenty of IT recycling companies in the UK. Most will collect your old equipment, issue a certificate, and move on. We do things differently: find out how.</p>
-                <a href="index.html#book" class="btn-primary">Book a Free Collection</a>
+                <a href="Book.html#form-section" class="btn-primary">Book a Free Collection</a>
                 <p class="hero-note">Free collections when you recycle at least 10 laptops, PCs &amp; servers (any combination). It's also <a href="FreeITDisposal.html" class="inline-link">free to recycle almost all waste IT with us</a>.</p>
             </div>
         </section>
@@ -634,7 +651,7 @@
                 </div>
 
                 <div class="action-buttons">
-                    <a href="index.html#book" class="btn-primary">Book a Collection</a>
+                    <a href="Book.html#form-section" class="btn-primary">Book a Collection</a>
                     <a href="Assetswecollectrecycle.html" class="btn-secondary">What We Collect</a>
                 </div>
             </div>
