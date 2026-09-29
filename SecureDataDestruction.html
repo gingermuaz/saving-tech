@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saving Tech | Secure Data Destruction</title>
+    
+    <!-- Favicon link -->
+    <link rel="icon" type="image/x-icon" href="icon.ico">
+    
+    <style>
+        :root {
+            --primary-green: #2E8B57; /* Matched to logo */
+            --lime-accent: #D4F34A;
+            --hero-blue: #2A8BCA;
+            --dark-grey: #1F2937;
+            --text-grey: #374151;
+            --light-bg: #F3F4F6;
+            --white: #FFFFFF;
+            --cream-bg: #fef3e2;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: var(--dark-grey);
+            line-height: 1.6;
+            background-color: var(--cream-bg);
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.5rem 2rem; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            overflow: hidden; 
+            height: 80px; 
+        }
+
+        .logo a {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .logo img {
+            height: 250px; 
+            width: auto;
+            object-fit: contain;
+            margin-left: -20px; 
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links > a:not(.btn-primary) {
+            text-decoration: none;
+            color: var(--dark-grey);
+            margin-left: 2rem;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links > a:not(.btn-primary):hover {
+            color: var(--primary-green);
+        }
+
+        .nav-links > .btn-primary {
+            margin-left: 2rem;
+        }
+
+        /* Dropdown Menu Styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            margin-left: 2rem;
+        }
+
+        .dropdown .dropbtn {
+            background: none;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-weight: 600;
+            color: var(--dark-grey);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-family: inherit;
+            padding: 1rem 0;
+        }
+
+        .dropdown:hover .dropbtn {
+            color: var(--primary-green);
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--white);
+            min-width: 500px;
+            box-shadow: 0px 8px 24px rgba(0,0,0,0.12);
+            z-index: 100;
+            border-radius: 8px;
+            top: 100%;
+            left: 0;
+            padding: 1.5rem;
+            border-top: 3px solid var(--primary-green);
+        }
+
+        .dropdown-content.single-column {
+            min-width: 260px;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-columns {
+            display: flex;
+            gap: 3rem;
+        }
+
+        .column {
+            flex: 1;
+        }
+
+        .column h4 {
+            font-size: 1.05rem;
+            margin-bottom: 0.8rem;
+            color: var(--dark-grey);
+            border-bottom: 1px solid #E5E7EB;
+            padding-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .column a {
+            color: #4B5563;
+            padding: 0.5rem 0;
+            text-decoration: none;
+            display: block;
+            margin-left: 0;
+            font-weight: 400;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .column a:hover {
+            color: var(--primary-green);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-green);
+            color: var(--white);
+            padding: 0.5rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #246B43;
+        }
+
+        .btn-hero-green {
+            background-color: #a3e635;
+            color: #111827;
+            padding: 0.85rem 1.75rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1rem;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: background-color 0.2s;
+        }
+
+        .btn-hero-green:hover {
+            background-color: #84cc16;
+        }
+
+        a.inline-link {
+            color: #0284c7;
+            text-decoration: underline;
+        }
+
+        a.inline-link:hover {
+            color: #0369a1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('Images/Securedatadestruction.jpeg') center/cover no-repeat;
+            background-color: #1E293B;
+            padding: 4rem 2rem;
+            min-height: 440px;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content-box {
+            background-color: #fffde8;
+            padding: 3rem;
+            max-width: 580px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            margin-left: max(2rem, calc((100vw - 1200px) / 2));
+            border-radius: 4px;
+        }
+
+        .breadcrumbs {
+            font-size: 0.9rem;
+            color: #4b5563;
+            margin-bottom: 1rem;
+        }
+
+        .breadcrumbs a {
+            color: #0284c7;
+            text-decoration: underline;
+        }
+
+        .hero-content-box h1 {
+            font-size: 2.2rem;
+            color: var(--dark-grey);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            font-weight: 800;
+        }
+
+        .hero-content-box p.hero-text {
+            font-size: 1.05rem;
+            color: var(--text-grey);
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+
+        .hero-subtext {
+            font-size: 0.88rem;
+            color: #4b5563;
+            line-height: 1.4;
+        }
+
+        /* Section Intro */
+        .intro-section {
+            padding: 4rem 2rem 2rem 2rem;
+        }
+
+        .intro-section h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: #111827;
+        }
+
+        .intro-section p {
+            font-size: 1.05rem;
+            color: #374151;
+            margin-bottom: 1.2rem;
+            line-height: 1.6;
+        }
+
+        /* Service Promise Section */
+        .promise-section {
+            padding: 2rem 2rem 4rem 2rem;
+        }
+
+        .promise-section h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: #111827;
+        }
+
+        .promise-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .promise-card {
+            background-color: #f3f4e2;
+            padding: 2rem;
+            border-radius: 12px;
+        }
+
+        .promise-card svg {
+            width: 40px;
+            height: 40px;
+            stroke: #1e3a8a;
+            margin-bottom: 1rem;
+        }
+
+        .promise-card h3 {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #111827;
+            margin-bottom: 0.75rem;
+        }
+
+        .promise-card p {
+            font-size: 0.98rem;
+            color: #4b5563;
+            line-height: 1.5;
+        }
+
+        /* Form + Levels Split Section */
+        .details-section {
+            padding: 2rem 2rem 4rem 2rem;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: 420px 1fr;
+            gap: 2.5rem;
+            align-items: start;
+        }
+
+        .left-column {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        /* Booking Form Card */
+        .booking-card {
+            background-color: #0d4b56;
+            color: var(--white);
+            padding: 2.5rem;
+            border-radius: 8px;
+        }
+
+        .booking-card h2 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #c0f035;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .booking-card p.form-subtitle {
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .booking-card p.form-desc {
+            font-size: 0.9rem;
+            color: #e5e7eb;
+            margin-bottom: 1.5rem;
+            line-height: 1.4;
+        }
+
+        .booking-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .form-group label {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 0.2rem;
+        }
+
+        .radio-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+            cursor: pointer;
+            font-weight: 400;
+        }
+
+        .radio-label input[type="radio"] {
+            accent-color: #a3e635;
+            width: 16px;
+            height: 16px;
+        }
+
+        .form-note {
+            font-size: 0.8rem;
+            color: #d1d5db;
+            line-height: 1.3;
+        }
+
+        .name-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+        }
+
+        .booking-form input[type="text"],
+        .booking-form input[type="email"],
+        .booking-form input[type="tel"],
+        .booking-form textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            background-color: #fffde8;
+            color: #111827;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+            font-size: 0.85rem;
+            color: #e5e7eb;
+            cursor: pointer;
+            line-height: 1.4;
+        }
+
+        .checkbox-label input[type="checkbox"] {
+            margin-top: 0.2rem;
+            accent-color: #a3e635;
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+        }
+
+        .checkbox-label a {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        .btn-submit-green {
+            background-color: #a3e635;
+            color: #111827;
+            padding: 0.9rem;
+            border-radius: 4px;
+            font-weight: 800;
+            font-size: 1.05rem;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            text-transform: uppercase;
+            text-align: center;
+            transition: background-color 0.2s;
+            margin-top: 0.5rem;
+        }
+
+        .btn-submit-green:hover {
+            background-color: #84cc16;
+        }
+
+        /* Levels of Destruction */
+        .levels-content h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #111827;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .levels-content p.levels-intro {
+            font-size: 1.05rem;
+            color: #374151;
+            margin-bottom: 2rem;
+        }
+
+        .level-card {
+            background-color: #ebdcb9;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+        }
+
+        .level-card h3 {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: #111827;
+            margin-bottom: 0.5rem;
+        }
+
+        .level-card p.level-price {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 0.75rem;
+        }
+
+        .level-card p.level-desc {
+            font-size: 0.98rem;
+            color: #374151;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .level-card ul {
+            margin-left: 1.5rem;
+            font-size: 0.95rem;
+            color: #374151;
+            line-height: 1.6;
+        }
+
+        .level-card ul li {
+            margin-bottom: 0.4rem;
+        }
+
+        /* Speed & Protection Sections */
+        .info-block {
+            margin-top: 3rem;
+        }
+
+        .info-block h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #111827;
+            margin-bottom: 1rem;
+        }
+
+        .info-block p {
+            font-size: 1.05rem;
+            color: #374151;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .step-card {
+            background-color: #f3f4e2;
+            padding: 1.5rem 1rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .step-number {
+            width: 44px;
+            height: 44px;
+            border: 2px solid #0284c7;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem auto;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #0284c7;
+        }
+
+        .step-card p {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 0;
+            line-height: 1.3;
+        }
+
+        /* What data do we delete */
+        .delete-list {
+            margin: 1.5rem 0 1.5rem 1.5rem;
+            font-size: 1.05rem;
+            color: #374151;
+            line-height: 1.8;
+        }
+
+        .delete-list li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Policy Callout Box */
+        .policy-box {
+            background-color: #e3f2d9;
+            padding: 2rem;
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            position: relative;
+        }
+
+        .policy-box h3 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #111827;
+            margin-bottom: 0.75rem;
+            line-height: 1.2;
+        }
+
+        .policy-box p {
+            font-size: 0.95rem;
+            color: #374151;
+            line-height: 1.5;
+            margin-bottom: 0.8rem;
+        }
+
+        .policy-box svg {
+            width: 50px;
+            height: 50px;
+            align-self: flex-end;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 2rem 2rem 4rem 2rem;
+        }
+
+        .faq-section h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #111827;
+            margin-bottom: 2rem;
+        }
+
+        .faq-item {
+            background-color: #ebdcb9;
+            padding: 1.8rem 2rem;
+            border-radius: 12px;
+            margin-bottom: 1.2rem;
+        }
+
+        .faq-item h3 {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: #111827;
+            margin-bottom: 0.75rem;
+        }
+
+        .faq-item p {
+            font-size: 1rem;
+            color: #374151;
+            line-height: 1.6;
+            margin-bottom: 0.75rem;
+        }
+
+        .faq-item p:last-child {
+            margin-bottom: 0;
+        }
+
+        .faq-item p strong {
+            color: #111827;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-grey);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+        }
+
+        @media (max-width: 992px) {
+            .details-grid {
+                grid-template-columns: 1fr;
+            }
+            .promise-grid {
+                grid-template-columns: 1fr;
+            }
+            .steps-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-content-box {
+                margin-left: 0;
+                padding: 2rem;
+            }
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="1-01.png" alt="Saving Tech Logo">
+                </a>
+            </div>
+            <nav class="nav-links">
+                <!-- 1. Free IT Disposal Dropdown -->
+                <div class="dropdown">
+                    <a href="FreeITDisposal.html" class="dropbtn">Free IT Disposal &#711;</a>
+                    <div class="dropdown-content single-column">
+                        <div class="dropdown-columns">
+                            <div class="column">
+                                <h4>IT recycling services</h4>
+                                <a href="Computerrecycling.html">Computer recycling</a>
+                                <a href="Laptoprecycling.html">Laptop recycling</a>
+                                <a href="Mobiledevicerecycling.html">Mobile device recycling</a>
+                                <a href="Monitorscreenrecycling.html">Monitor &amp; screen recycling</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Our Services Dropdown -->
+                <div class="dropdown">
+                    <a href="#services" class="dropbtn">Our Services &#711;</a>
+                    <div class="dropdown-content single-column">
+                        <div class="dropdown-columns">
+                            <div class="column">
+                                <a href="Assetswecollectrecycle.html">Assets we collect &amp; recycle</a>
+                                <a href="FAQs.html">FAQs</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Data Destruction Dropdown -->
+                <div class="dropdown">
+                    <a href="Howitworks.html" class="dropbtn">Data Destruction &#711;</a>
+                    <div class="dropdown-content single-column">
+                        <div class="dropdown-columns">
+                            <div class="column">
+                                <a href="DataDestructionMethods.html">Data destruction methods</a>
+                                <a href="Articles.html">Articles</a>
+                                <a href="Harddrivemediadestruction.html">Hard drive &amp; media destruction</a>
+                                <a href="SecureDataDestruction.html">Secure data destruction</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. About Us Dropdown -->
+                <div class="dropdown">
+                    <a href="AboutUs.html" class="dropbtn">About Us &#711;</a>
+                    <div class="dropdown-content single-column">
+                        <div class="dropdown-columns">
+                            <div class="column">
+                                <a href="Documentscertificates.html">Documents &amp; Certificates</a>
+                                <a href="Blogs.html">Blogs</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="Book.html#form-section" class="btn-primary">Book a Collection</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content-box">
+                <div class="breadcrumbs">
+                    <a href="index.html">Home</a> &rarr; <a href="Howitworks.html">Data Destruction</a> &rarr; Secure data destruction
+                </div>
+                <h1>What does secure data destruction involve?</h1>
+                <p class="hero-text">Your old IT equipment still holds live data. Our secure data destruction process protects it: vetted staff, tracked vehicles and secure premises.</p>
+                <div style="margin-bottom: 1rem;">
+                    <a href="#book" class="btn-hero-green">BOOK A COLLECTION</a>
+                </div>
+                <p class="hero-subtext">Free collections when you recycle at least 10 laptops, PCs &amp; servers (any combination). It's also <a href="FreeITDisposal.html" class="inline-link">free to recycle almost all waste IT with us</a>.</p>
+            </div>
+        </section>
+
+        <!-- Intro Section -->
+        <section class="intro-section">
+            <div class="container">
+                <h2>What is data destruction and why does it matter?</h2>
+                <p>Data destruction permanently erases digital information from storage devices, so it can't be accessed, recovered or misused. Deleting a file or formatting a drive isn't enough, since both leave data recoverable with widely available tools. Your business holds more sensitive data than you might expect, from financial records to personal data and intellectual property, all sitting on devices you'll eventually replace. If any of it resurfaces on a resold or discarded device, that's a data breach, regardless of intention, which is why we treat destruction as importantly as recycling the hardware itself.</p>
+            </div>
+        </section>
+
+        <!-- Service Promise Section -->
+        <section class="promise-section">
+            <div class="container">
+                <h2>Our service promise</h2>
+                <div class="promise-grid">
+                    <div class="promise-card">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="3" width="15" height="13" rx="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                        <h3>Free qualifying collections</h3>
+                        <p>Free for 10+ qualifying laptops, PCs or servers. Nationwide service.</p>
+                    </div>
+                    <div class="promise-card">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/><circle cx="12" cy="16" r="1"/></svg>
+                        <h3>Secure data destruction</h3>
+                        <p>Erasure, degaussing or physical destruction, matched to the risk. GDPR &amp; WEEE compliant.</p>
+                    </div>
+                    <div class="promise-card">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="20 6 9 17 4 12"/></svg>
+                        <h3>Certificates always provided</h3>
+                        <p>Waste Transfer Note, Certificate of Destruction and carbon offset certificate.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Split Grid: Left Column (Form + Policy) & Right Column (Levels & Content) -->
+        <section id="book" class="details-section">
+            <div class="container">
+                <div class="details-grid">
+                    
+                    <!-- Left Column -->
+                    <div class="left-column">
+                        <!-- Booking Form Card -->
+                        <div class="booking-card">
+                            <h2>Book your laptop recycling collection</h2>
+                            <p class="form-subtitle">Takes less than 2 minutes. We'll confirm collection options by email or phone.</p>
+                            <p class="form-desc">Tell us what you need collected and we'll confirm the next available collection slot. We'll collect from your premises, securely process your equipment, destroy sensitive data, and provide the certificates you need.</p>
+                            
+                            <form class="booking-form" id="destructionBookingForm">
+                                <div class="form-group">
+                                    <label>Enquiry type *</label>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="enquiry_type" value="Business" checked> Business
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="enquiry_type" value="Personal"> Personal
+                                        </label>
+                                    </div>
+                                    <span class="form-note">We serve businesses, local authorities, educational institutions and charities. Personal enquiries are also welcome.</span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Name *</label>
+                                    <div class="name-row">
+                                        <input type="text" id="firstName" placeholder="First" required>
+                                        <input type="text" id="lastName" placeholder="Last" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="companyName">Company name</label>
+                                    <input type="text" id="companyName" placeholder="Your company name">
+                                    <span class="form-note">We serve businesses, local authorities and charities. Personal enquiries are also welcome.</span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="email">Email *</label>
+                                    <input type="email" id="email" placeholder="Your email address" required>
+                                    <span class="form-note">One of our team will email you to arrange collection</span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="phone">Phone</label>
+                                    <input type="tel" id="phone" placeholder="Your phone number">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="postcode">Collection postcode *</label>
+                                    <input type="text" id="postcode" placeholder="Where in the UK would you like us to collect from?" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="items">What you'd like us to collect *</label>
+                                    <textarea id="items" rows="4" placeholder="Describe the amount and type of items you want us to collect." required></textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="newsletter">
+                                        <span><strong>Stay informed:</strong> Yes, I'd like to receive occasional emails. Join our email list for occasional updates on secure IT recycling, data destruction best practices, &amp; e-waste sustainability. Unsubscribe at any time.</span>
+                                    </label>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="consent" required>
+                                        <span><strong>Your consent *:</strong> I have read and agree to the Zero Tech Waste Terms and Conditions and for them to process my data in accordance with their Privacy Notice.</span>
+                                    </label>
+                                    <span class="form-note" style="margin-top: 0.3rem; color: #e5e7eb;">Our <a href="#">Terms and Conditions</a> and <a href="#">Privacy Notice</a>.</span>
+                                </div>
+
+                                <button type="submit" class="btn-submit-green">REQUEST MY COLLECTION</button>
+                            </form>
+                        </div>
+
+                        <!-- Policy Box (Moved to Left Column) -->
+                        <div class="policy-box">
+                            <div>
+                                <h3>Should I create a Data Destruction Policy?</h3>
+                                <p>If your business handles sensitive or confidential information, and most do, a written data destruction policy is worth having in place before you need it. It sets out when data should be destroyed, who's responsible for making it happen, and what evidence you keep to prove it took place. Without one, these decisions tend to get made ad hoc, by whoever happens to be clearing out a cupboard or a store room, which is exactly how sensitive data ends up leaving a business unaccounted for.</p>
+                                <p>We've covered what a good policy should include in our guide &ndash; <a href="Articles.html" class="inline-link">Data security in IT Recycling</a>.</p>
+                            </div>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="1.5">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                <rect x="9" y="11" width="6" height="5" rx="1"/>
+                                <path d="M10 11V9a2 2 0 1 1 4 0v2"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Levels & Further Content -->
+                    <div class="levels-content">
+                        <h2>What levels of secure data destruction do we offer?</h2>
+                        <p class="levels-intro">Every collection includes data destruction as standard &ndash; at no extra cost. We offer two service levels, depending on how much documentation you need:</p>
+
+                        <div class="level-card">
+                            <h3>Standard data destruction</h3>
+                            <p class="level-price">This is free of charge with every collection.</p>
+                            <p class="level-desc">All data-bearing devices are erased, degaussed or destroyed, and you receive a general <a href="Documentscertificates.html" class="inline-link">Certificate of Destruction</a>.</p>
+                        </div>
+
+                        <div class="level-card">
+                            <h3>Enhanced data destruction</h3>
+                            <p class="level-price">This service costs £5 (ex. VAT) per asset.</p>
+                            <p class="level-desc">This is an optional additional service, and provides a full end-to-end asset list and an individual wiping report for each asset (if cryptographically erased), giving you a complete audit trail for compliance or client reporting.</p>
+                            <ul>
+                                <li>Read more about <a href="Harddrivemediadestruction.html" class="inline-link">hard drive destruction certificates and audit trails</a>.</li>
+                                <li>For the specific methods behind each service level, see <a href="DataDestructionMethods.html" class="inline-link">data destruction methods</a>.</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-block">
+                            <h2>Speed of service</h2>
+                            <p>It's important that your data is collected promptly and properly erased as soon as possible thereafter to minimise risk. We're an agile SME, and can usually collect any volume of IT assets from anywhere in the UK within a few days.</p>
+                        </div>
+
+                        <div class="info-block">
+                            <h2>How we protect your data during collection and storage?</h2>
+                            <p>Data security depends on the people and processes handling your equipment, not just the destruction method itself. Everyone who handles your data-bearing devices, from collection driver to processing technician, is vetted and DBS-checked. Our fleet has full tracking capabilities, so your equipment is accounted for from the moment it's collected, and it's stored at a facility that meets Environment Agency requirements for secure storage. Review a full list of our <a href="Documentscertificates.html" class="inline-link">licenses and accreditations</a> for more detail.</p>
+
+                            <div class="steps-grid">
+                                <div class="step-card">
+                                    <div class="step-number">1</div>
+                                    <p>Vetted, DBS-checked staff</p>
+                                </div>
+                                <div class="step-card">
+                                    <div class="step-number">2</div>
+                                    <p>Tracked, monitored vehicles</p>
+                                </div>
+                                <div class="step-card">
+                                    <div class="step-number">3</div>
+                                    <p>Secure premises</p>
+                                </div>
+                                <div class="step-card">
+                                    <div class="step-number">4</div>
+                                    <p>Signed chain of custody</p>
+                                </div>
+                            </div>
+
+                            <p>On collection, our driver will ask you to sign a Duty of Care Waste Transfer Note, and we send a copy by email straight away, so you have a documented chain of custody from the outset. Everything we do is <a href="#" class="inline-link">GDPR</a> and <a href="#" class="inline-link">WEEE compliant</a>, and we're ICO registered for data protection, and every job is carried out to standards approved by the <a href="#" class="inline-link">National Cyber Security Centre (NCSC)</a>.</p>
+                        </div>
+
+                        <div class="info-block">
+                            <h2>What data do we delete</h2>
+                            <p>We securely destroy data held on:</p>
+                            <ul class="delete-list">
+                                <li><a href="Harddrivemediadestruction.html" class="inline-link">Hard drives</a>, SSDs and other internal storage in <a href="Computerrecycling.html" class="inline-link">computers</a> and <a href="Laptoprecycling.html" class="inline-link">laptops</a></li>
+                                <li><a href="#" class="inline-link">Servers</a>, storage arrays and networking hardware</li>
+                                <li><a href="Mobiledevicerecycling.html" class="inline-link">Mobile phones</a>, tablets and EPOS devices</li>
+                                <li><a href="#" class="inline-link">Printers and copiers</a> with internal memory</li>
+                                <li>USB drives, memory cards, backup tapes and other removable media</li>
+                                <li>Confidential paper documents, via our <a href="#" class="inline-link">secure paper shredding service</a></li>
+                            </ul>
+                            <p>See our <a href="Assetswecollectrecycle.html" class="inline-link">full list of what we collect</a> for the complete range. For the specific methods behind each service level, see <a href="DataDestructionMethods.html" class="inline-link">data destruction methods</a>, and our <a href="Documentscertificates.html" class="inline-link">accreditations and compliance</a>.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Frequently Asked Questions -->
+        <section class="faq-section">
+            <div class="container">
+                <h2>Frequently asked questions</h2>
+
+                <div class="faq-item">
+                    <h3>Do you provide a certificate of data destruction?</h3>
+                    <p>Yes. Every collection includes a Certificate of Destruction as standard, and our enhanced service adds a full asset list and individual wiping reports for a complete audit trail. See <a href="Documentscertificates.html" class="inline-link">examples of our certificates</a>.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>How quickly can my IT equipment be collected?</h3>
+                    <p>Data left sitting on redundant equipment is a risk, so speed matters. We can usually collect any volume of IT assets from anywhere in the UK within a few days, and typically within 24 to 72 hours of your enquiry. To organise secure data destruction of your devices <a href="#book" class="inline-link">get in touch</a>.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Where does data destruction actually take place?</h3>
+                    <p>Your equipment is transported in tracked vehicles to our secure facility in Reading, where destruction takes place under restricted access. We don't process data on-site during collection.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Is your data destruction service GDPR compliant?</h3>
+                    <p>Yes. We're ICO registered for data protection, and every job is carried out to standards approved by the National Cyber Security Centre (NCSC).</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Do you offer data destruction as a standalone service, without a full IT recycling collection?</h3>
+                    <p>Yes. If you only need drives or devices destroyed rather than a wider IT clearout, our <a href="Harddrivemediadestruction.html" class="inline-link">hard drive and media destruction service</a> covers this.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Do I need an enhanced data destruction certificate?</h3>
+                    <p>Not always. A standard Certificate of Destruction is enough for most businesses, and it's included free with every collection. If you're in a regulated sector such as healthcare, finance or legal, or you need to prove destruction of a specific device to a client or auditor, the enhanced service's individual wiping reports give you that level of detail.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Who is responsible for data security after IT equipment is recycled?</h3>
+                    <p>Under UK GDPR law your business is responsible until you can prove destruction has taken place. &mdash; <a href="Articles.html" class="inline-link">IT recycling is a legal matter not a logistics one</a>.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Whose responsibility is it to destroy data securely?</h3>
+                    <p>Under UK GDPR, your organisation remains responsible for the data on equipment you dispose of, even once it's left your premises. Handing devices to an unaccredited recycler, or assuming deletion happens automatically, doesn't transfer that responsibility. It stays with you until you can prove destruction has taken place.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>What are the risks of inadequate data destruction?</h3>
+                    <p><strong>Data breaches.</strong> Data that hasn't been properly erased can be recovered and used for fraud or further attacks, even from devices that look wiped or physically damaged.</p>
+                    <p><strong>Regulatory non-compliance.</strong> UK GDPR sets strict requirements for how personal data is handled and disposed of, with significant penalties for organisations that get it wrong.</p>
+                    <p><strong>Reputational damage.</strong> A breach caused by improper disposal can damage client trust and disrupt business operations, often at a cost well beyond the breach itself.</p>
+                    <p>Working with an accredited IT asset disposal (ITAD) partner closes off this exposure. We're ICO registered and NCSC-approved, and every device we process comes with a Certificate of Destruction, so you have evidence the risk has been dealt with, not just an assumption that it has.</p>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Saving Tech. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        document.getElementById('destructionBookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const firstName = document.getElementById('firstName').value;
+            alert(`Thanks, ${firstName}! Your collection request has been submitted.`);
+            this.reset();
+        });
+    </script>
+
+</body>
+</html>

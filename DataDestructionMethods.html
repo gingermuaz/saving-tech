@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Destruction Methods | Saving Tech</title>
+    
+    <!-- Favicon link -->
+    <link rel="icon" type="image/x-icon" href="icon.ico">
+    
+    <style>
+        :root {
+            --primary-green: #2E8B57; /* Matched to logo */
+            --lime-accent: #D4F34A;
+            --hero-blue: #2A8BCA;
+            --dark-grey: #1F2937;
+            --text-grey: #374151;
+            --light-bg: #F3F4F6;
+            --white: #FFFFFF;
+            --cream-bg: #fef3e2;
+            --card-bg: #fff9ed;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: var(--dark-grey);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.5rem 2rem; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            overflow: hidden; 
+            height: 80px; 
+        }
+
+        .logo a {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .logo img {
+            height: 250px; 
+            width: auto;
+            object-fit: contain;
+            margin-left: -20px; 
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links > a:not(.btn-primary) {
+            text-decoration: none;
+            color: var(--dark-grey);
+            margin-left: 2rem;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links > a:not(.btn-primary):hover {
+            color: var(--primary-green);
+        }
+
+        .nav-links > .btn-primary {
+            margin-left: 2rem;
+        }
+
+        /* Dropdown Menu Styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            margin-left: 2rem;
+        }
+
+        .dropdown .dropbtn {
+            background: none;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-weight: 600;
+            color: var(--dark-grey);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-family: inherit;
+            padding: 1rem 0;
+        }
+
+        .dropdown:hover .dropbtn {
+            color: var(--primary-green);
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--white);
+            min-width: 500px;
+            box-shadow: 0px 8px 24px rgba(0,0,0,0.12);
+            z-index: 100;
+            border-radius: 8px;
+            top: 100%;
+            left: 0;
+            padding: 1.5rem;
+            border-top: 3px solid var(--primary-green);
+        }
+
+        .dropdown-content.single-column {
+            min-width: 260px;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-columns {
+            display: flex;
+            gap: 3rem;
+        }
+
+        .column {
+            flex: 1;
+        }
+
+        .column h4 {
+            font-size: 1.05rem;
+            margin-bottom: 0.8rem;
+            color: var(--dark-grey);
+            border-bottom: 1px solid #E5E7EB;
+            padding-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .column a {
+            color: #4B5563;
+            padding: 0.5rem 0;
+            text-decoration: none;
+            display: block;
+            margin-left: 0;
+            font-weight: 400;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .column a:hover {
+            color: var(--primary-green);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-green);
+            color: var(--white);
+            padding: 0.5rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #246B43;
+        }
+
+        /* Buttons */
+        .btn-hero-green {
+            background-color: var(--primary-green);
+            color: var(--white);
+            padding: 0.85rem 1.75rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1rem;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: background-color 0.2s;
+        }
+
+        .btn-hero-green:hover {
+            background-color: #246B43;
+        }
+
+        .phone-btn {
+            background-color: #fef3c7;
+            color: #000;
+            font-weight: 800;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        a.inline-link {
+            color: var(--hero-blue);
+            text-decoration: underline;
+        }
+
+        a.inline-link:hover {
+            color: #1a6291;
+        }
+
+        /* Hero / Header Section */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('Images/data_destruction.webp') center/cover no-repeat;
+            background-color: #1E293B;
+            padding: 4rem 2rem;
+            min-height: 440px;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content-box {
+            background-color: var(--white);
+            padding: 3rem;
+            max-width: 650px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            margin-left: max(2rem, calc((100vw - 1200px) / 2));
+            border-radius: 4px;
+        }
+
+        .breadcrumbs {
+            font-size: 0.9rem;
+            color: #6B7280;
+            margin-bottom: 1rem;
+        }
+
+        .breadcrumbs a {
+            color: var(--hero-blue);
+            text-decoration: none;
+        }
+
+        .hero-content-box h1 {
+            font-size: 2.2rem;
+            color: var(--dark-grey);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            font-weight: 800;
+        }
+
+        .hero-content-box p.hero-text {
+            font-size: 1.05rem;
+            color: var(--text-grey);
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+
+        .hero-subtext {
+            font-size: 0.88rem;
+            color: #6B7280;
+            margin-top: 1rem;
+            border-top: 1px solid #E5E7EB;
+            padding-top: 0.8rem;
+        }
+
+        /* Section Containers */
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-heading {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--dark-grey);
+        }
+
+        .intro-text {
+            font-size: 1.05rem;
+            color: #374151;
+            margin-bottom: 1.2rem;
+            max-width: 1000px;
+        }
+
+        /* Methods Grid Cards */
+        .methods-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin: 2.5rem 0;
+        }
+
+        .method-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            border: 1px solid #f3ebd8;
+        }
+
+        .method-icon {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 1.2rem;
+            color: var(--dark-grey);
+        }
+
+        .method-card h3 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-bottom: 0.8rem;
+            color: var(--dark-grey);
+        }
+
+        .method-card p {
+            font-size: 0.98rem;
+            color: #4B5563;
+            line-height: 1.55;
+        }
+
+        /* Accreditations Box */
+        .accreditations-box {
+            background-color: #EBF8FF;
+            border: 1px solid #BEE3F8;
+            border-radius: 8px;
+            padding: 2.5rem;
+            margin: 3rem 0;
+            position: relative;
+        }
+
+        .accreditations-box h3 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 1.2rem;
+            color: var(--dark-grey);
+        }
+
+        .accreditations-box p {
+            font-size: 1rem;
+            color: #374151;
+            margin-bottom: 1rem;
+        }
+
+        .accreditations-list {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .accreditations-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.6rem;
+            font-size: 0.98rem;
+            color: #374151;
+        }
+
+        .accreditations-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0.5rem;
+            color: var(--primary-green);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .shield-icon {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            color: #2B6CB0;
+            opacity: 0.8;
+        }
+
+        /* Evidence Section */
+        .evidence-section {
+            margin: 3rem 0;
+        }
+
+        .evidence-section h3 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .evidence-section p {
+            font-size: 1rem;
+            color: #374151;
+            margin-bottom: 1.2rem;
+            line-height: 1.6;
+        }
+
+        /* Trust Banner (Ready to book?) */
+        .trust-section {
+            background-color: #0d4b56;
+            color: var(--white);
+            padding: 3.5rem 2rem;
+            border-radius: 8px;
+            margin: 4rem 0 2rem 0;
+        }
+
+        .trust-header h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #c0f035;
+            margin-bottom: 0.5rem;
+        }
+
+        .trust-header p {
+            font-size: 1.05rem;
+            color: #e5e7eb;
+            margin-bottom: 2rem;
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .trust-card {
+            background-color: #fff9ed;
+            color: var(--dark-grey);
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .trust-card svg {
+            width: 32px;
+            height: 32px;
+            stroke: var(--dark-grey);
+            margin-bottom: 0.75rem;
+        }
+
+        .trust-card h4 {
+            font-size: 1.15rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .trust-card p {
+            font-size: 0.9rem;
+            color: #4b5563;
+        }
+
+        .trust-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        /* FAQs Section */
+        .faq-section {
+            background-color: #fff9ed;
+            padding: 4rem 2rem;
+            margin-top: 2rem;
+        }
+
+        .faq-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .faq-container h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+        }
+
+        .faq-item {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+        }
+
+        .faq-item h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--dark-grey);
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-item p {
+            font-size: 0.98rem;
+            color: #4B5563;
+            line-height: 1.55;
+        }
+
+        /* Booking Form */
+        .booking-section {
+            padding: 4rem 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .booking-section h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-form input, .contact-form textarea {
+            padding: 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+            width: 100%;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-grey);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content-box {
+                margin-left: 0;
+                padding: 2rem;
+            }
+            .accreditations-box .shield-icon {
+                display: none;
+            }
+            .trust-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="1-01.png" alt="Saving Tech Logo">
+                </a>
+            </div>
+            <nav class="nav-links">
+                <!-- 1. Free IT Disposal Dropdown -->
+                <div class="dropdown">
+                    <a href="FreeITDisposal.html" class="dropbtn">Free IT Disposal &#711;</a>
+                    <div class="dropdown-content single-column">
+                        <div class="dropdown-columns">
+                            <div class="column">
+                                <h4>IT recycling services</h4>
+                                <a href="Computerrecycling.html">Computer recycling</a>
+                                <a href="Laptoprecycling.html">Laptop recycling</a>
+                                <a href="Mobiledevicerecycling.html">Mobile device recycling</a>
+                                <a href="Monitorscreenrecycling.html">Monitor &amp; screen recycling</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Our Services Dropdown -->
+                <div class="dropdown">
+                    <a href="#services" class="dropbtn">Our Services &#711;</a>
+                    <div class="dropdown-content single-column">
+                        <div class="dropdown-columns">
+                            <div class="column">
+                                <a href="Assetswecollectrecycle.html">Assets we collect &amp; recycle</a>
+                                <a href="FAQs.html">FAQs</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Data Destruction Dropdown -->
+                <div class="dropdown">
+                    <a href="Howitworks.html" class="dropbtn">Data Destruction &#711;</a>
+                    <div class="dropdown-content single-column">
+                        <div class="dropdown-columns">
+                            <div class="column">
+                                <a href="DataDestructionMethods.html">Data destruction methods</a>
+                                <a href="Articles.html">Articles</a>
+                                <a href="Harddrivemediadestruction.html">Hard drive &amp; media destruction</a>
+                                <a href="SecureDataDestruction.html">Secure data destruction</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. About Us Dropdown -->
+                <div class="dropdown">
+                    <a href="AboutUs.html" class="dropbtn">About Us &#711;</a>
+                    <div class="dropdown-content single-column">
+                        <div class="dropdown-columns">
+                            <div class="column">
+                                <a href="Documentscertificates.html">Documents &amp; Certificates</a>
+                                <a href="Blogs.html">Blogs</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="Book.html#form-section" class="btn-primary">Book a Collection</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content-box">
+                <div class="breadcrumbs">
+                    <a href="index.html">Home</a> &rarr; <a href="Howitworks.html">Data Destruction</a> &rarr; Data destruction methods
+                </div>
+                <h1>How do we destroy your data securely?</h1>
+                <p class="hero-text">We use different data destruction methods depending on your device, backed by NCSC-approved standards, accreditations and certificates.</p>
+                
+                <a href="Book.html#form-section" class="btn-hero-green">BOOK A COLLECTION</a>
+
+                <p class="hero-subtext">Free collections when you recycle at least 10 laptops, PCs &amp; servers (any combination). It's also free to recycle almost all waste IT with us.</p>
+            </div>
+        </section>
+
+        <!-- Main Content Section -->
+        <section class="content-container">
+            <h2 class="section-heading">How do we destroy your data?</h2>
+            
+            <p class="intro-text">Data sanitisation is the process of treating data on storage media so it can't be retrieved or reconstructed. It covers everything from a simple overwrite to complete physical destruction, and which one applies depends on the device, its condition and how sensitive the data on it is.</p>
+            
+            <p class="intro-text">Our approach follows the principles set out in <a href="#" class="inline-link">NCSC guidance on secure sanitisation and disposal of storage media</a>, the benchmark for secure data sanitisation in the UK. This applies across both our standard and enhanced service levels, whichever method below is used for a given device.</p>
+
+            <!-- 3 Destruction Methods Grid -->
+            <div class="methods-grid">
+                <!-- Data Wiping -->
+                <div class="method-card">
+                    <svg class="method-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
+                    <h3>Data Wiping</h3>
+                    <p>Our preferred method wherever reuse is possible. We use NCSC-approved erasure software to overwrite the entire accessible memory space, so the original data can never be recovered, but the device itself can be used again. This is the option that supports refurbishment and reuse rather than scrapping, and it's central to how we put <a href="#" class="inline-link">circular economy principles</a> into practice.</p>
+                </div>
+
+                <!-- Degaussing -->
+                <div class="method-card">
+                    <svg class="method-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 15a6 6 0 1 0 12 0V4H6v11z"/><path d="M6 9h12"/></svg>
+                    <h3>Degaussing</h3>
+                    <p>Used on magnetic media, such as hard disk drives and tapes, where software-based erasure isn't suitable. This destroys data by eliminating the magnetic field on the device. It doesn't work on solid-state drives or flash-based media, and it renders the device unusable, so it's a less sustainable option than wiping.</p>
+                </div>
+
+                <!-- IT Asset Shredding -->
+                <div class="method-card">
+                    <svg class="method-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="6" rx="1"/><path d="M5 9v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9"/><path d="M8 13v4"/><path d="M12 13v4"/><path d="M16 13v4"/></svg>
+                    <h3>IT Asset Shredding</h3>
+                    <p>IT asset shredding. Physical destruction, breaking devices into fragments no larger than 6mm, the same benchmark set out in NCSC guidance. This is used when a drive can't be wiped or degaussed, and completely destroys the platters, mechanisms and electronic components. Where possible, data is still erased before shredding, as an added layer of assurance.</p>
+                </div>
+            </div>
+
+            <p class="intro-text">Every drive we collect, including USB drives, hard drives, SSDs and removable media such as CDs, tapes and floppy disks, goes through one of these processes. Where a device can be wiped rather than destroyed, we prioritise that route, since it's the better outcome for the circular economy as well as for cost.</p>
+            
+            <p class="intro-text">See our <a href="Harddrivemediadestruction.html" class="inline-link">hard drive and media destruction service</a> for more on how this applies to specific device types.</p>
+
+            <!-- Accreditations Card -->
+            <div class="accreditations-box">
+                <svg class="shield-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><circle cx="12" cy="11" r="3"/></svg>
+                <h3>What accreditations back our data destruction process?</h3>
+                <p>Our data destruction processes are backed by:</p>
+                <ul class="accreditations-list">
+                    <li>ICO registration for data protection (ZB782110)</li>
+                    <li>Environment Agency Waste Carriers Registration (CBDU563597)</li>
+                    <li>Waste exemptions covering secure storage and the repair or refurbishment of WEEE</li>
+                    <li>NCSC-approved data erasure software and CPNI-approved shredding technology</li>
+                    <li>Membership of TechUK and the Federation of Small Businesses</li>
+                    <li>Full insurance, including employers' liability, public liability, products liability and professional liability</li>
+                </ul>
+                <p>NCSC also runs a Sanitisation Assurance (CAS-S) scheme for providers working with government customers, a useful reference point if you're comparing sanitisation providers against a recognised standard.</p>
+                <p>Read more on our <a href="Documentscertificates.html" class="inline-link">accreditations and compliance page</a>.</p>
+            </div>
+
+            <!-- Evidence Section -->
+            <div class="evidence-section">
+                <h3>What evidence of data destruction will I receive?</h3>
+                <p>For data security specifically, every job comes with the following:</p>
+                <p>Every job comes with a Duty of Care Waste Transfer Note, signed at collection and emailed to you straight away, and a Certificate of Destruction once your equipment has been processed, usually within 72 hours. For the pricing difference between our standard and enhanced certification, see <a href="#" class="inline-link">our charges</a>.</p>
+                <p>What matters here is what the certificate actually records: the method used for each device, the date of destruction, and, for enhanced jobs, an individual wiping report per drive. That level of detail is what gives you evidence you can show to auditors, clients or regulators, not just a general assurance that the job was done. For more on how this works specifically for hard drives, see our guide to <a href="#" class="inline-link">hard drive destruction certificates</a>.</p>
+                <p>These sit alongside the other certificates we supply, including a Carbon Offset Certificate detailing the carbon emitted and offset across transport and processing for your job. See <a href="Documentscertificates.html" class="inline-link">examples of our certificates</a> for what each of these looks like.</p>
+                <p>To discuss data destruction methods of your old IT assets <a href="#book" class="inline-link">get in touch</a>, or <a href="SecureDataDestruction.html" class="inline-link">read more about data security</a> and how we handle your equipment before it reaches this stage.</p>
+            </div>
+
+            <!-- Ready to book Banner -->
+            <div class="trust-section">
+                <div class="trust-header">
+                    <h2>Ready to book?</h2>
+                    <h3>Here's why businesses trust us to recycle their IT</h3>
+                    <p>Secure IT recycling with free qualifying collections, data destruction and <a href="Documentscertificates.html" style="color: #c0f035; text-decoration: underline;">certificates always provided</a>.</p>
+                </div>
+                <div class="trust-grid">
+                    <div class="trust-card">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                        <h4>Free qualifying collections</h4>
+                        <p>Free for 10+ qualifying laptops, PCs or servers.</p>
+                    </div>
+                    <div class="trust-card">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/><circle cx="12" cy="16" r="1"/></svg>
+                        <h4>Secure data destruction</h4>
+                        <p>Sensitive data handled properly.</p>
+                    </div>
+                    <div class="trust-card">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                        <h4>Certificates provided</h4>
+                        <p>Documentation for your records.</p>
+                    </div>
+                </div>
+                <div class="trust-actions">
+                    <a href="#book" class="btn-hero-green">BOOK A COLLECTION</a>
+                    <a href="tel:07904010708" class="phone-btn">07904010708</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Frequently Asked Questions -->
+        <section class="faq-section">
+            <div class="faq-container">
+                <h2>Frequently asked questions</h2>
+                
+                <div class="faq-item">
+                    <h3>What's the difference between data wiping and degaussing?</h3>
+                    <p>Data wiping overwrites a drive with NCSC-approved erasure software so the device can be reused. Degaussing destroys the magnetic field on the drive so it can no longer be used at all. We only degauss where wiping isn't a suitable option.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Can data ever be recovered after wiping?</h3>
+                    <p>No. NCSC-approved erasure software overwrites the drive so completely that the original data can't be recovered, even though the physical device remains intact and usable.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Do you provide evidence of your accreditations?</h3>
+                    <p>Yes. Our Environment Agency Waste Carriers Registration and ICO registration numbers are published on our <a href="Documentscertificates.html" class="inline-link">accreditations and compliance page</a>, and available on request.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>What happens if a drive can't be wiped or degaussed?</h3>
+                    <p>It goes for physical shredding, which breaks the device into fragments no larger than 6mm, destroying the platters, mechanisms and electronic components completely.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Are your methods compliant with government and public sector requirements?</h3>
+                    <p>Yes. Our processes are approved by the National Cyber Security Centre (NCSC), which is increasingly required for public sector and other regulated procurement.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Do you destroy data from damaged or non-functioning devices?</h3>
+                    <p>Yes. Even if a device won't power on, we can still destroy any data held on its storage media, usually via degaussing or shredding.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Booking Form Section -->
+        <section id="book" class="booking-section">
+            <h2>Book a Collection</h2>
+            <form class="contact-form" id="collectionForm">
+                <input type="text" id="name" placeholder="Company / Contact Name" required>
+                <input type="email" id="email" placeholder="Email Address" required>
+                <input type="tel" id="phone" placeholder="Phone Number" required>
+                <textarea id="details" rows="5" placeholder="Please list the approximate quantity and types of devices (e.g., 10 laptops, 5 desktops, 1 server)..." required></textarea>
+                <button type="submit" class="btn-primary">Submit Request</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Saving Tech. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        document.getElementById('collectionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            alert(`Thanks, ${name}! Your collection request has been submitted.`);
+            this.reset();
+        });
+    </script>
+
+</body>
+</html>

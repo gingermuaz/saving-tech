@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Collection | Saving Tech</title>
+    
+    <!-- Favicon link -->
+    <link rel="icon" type="image/x-icon" href="icon.ico">
+    
+    <style>
+        :root {
+            --primary-green: #2E8B57;
+            --lime-accent: #D4F34A;
+            --hero-blue: #2A8BCA;
+            --dark-teal: #084c53;
+            --dark-grey: #1F2937;
+            --text-grey: #374151;
+            --light-bg: #F3F4F6;
+            --white: #FFFFFF;
+            --light-cream: #fefce8;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: var(--dark-grey);
+            line-height: 1.6;
+            background-color: #fefefe;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.5rem 2rem; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            overflow: hidden; 
+            height: 80px; 
+        }
+
+        .logo a {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .logo img {
+            height: 250px; 
+            width: auto;
+            object-fit: contain;
+            margin-left: -20px; 
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links > a:not(.btn-primary) {
+            text-decoration: none;
+            color: var(--dark-grey);
+            margin-left: 2rem;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links > a:not(.btn-primary):hover {
+            color: var(--primary-green);
+        }
+
+        .nav-links > .btn-primary {
+            margin-left: 2rem;
+        }
+
+        /* Dropdown Menu Styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            margin-left: 2rem;
+        }
+
+        .dropdown .dropbtn {
+            background: none;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-weight: 600;
+            color: var(--dark-grey);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-family: inherit;
+            padding: 1rem 0;
+        }
+
+        .dropdown:hover .dropbtn {
+            color: var(--primary-green);
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--white);
+            min-width: 500px;
+            box-shadow: 0px 8px 24px rgba(0,0,0,0.12);
+            z-index: 100;
+            border-radius: 8px;
+            top: 100%;
+            left: 0;
+            padding: 1.5rem;
+            border-top: 3px solid var(--primary-green);
+        }
+
+        .dropdown-content.single-column {
+            min-width: 260px;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-columns {
+            display: flex;
+            gap: 3rem;
+        }
+
+        .column {
+            flex: 1;
+        }
+
+        .column h4 {
+            font-size: 1.05rem;
+            margin-bottom: 0.8rem;
+            color: var(--dark-grey);
+            border-bottom: 1px solid #E5E7EB;
+            padding-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .column a {
+            color: #4B5563;
+            padding: 0.5rem 0;
+            text-decoration: none;
+            display: block;
+            margin-left: 0;
+            font-weight: 400;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .column a:hover {
+            color: var(--primary-green);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-green);
+            color: var(--white);
+            padding: 0.5rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #246B43;
+        }
+
+        /* Top Booking Hero Section */
+        .booking-hero {
+            background-color: var(--dark-teal);
+            color: var(--white);
+            padding: 3.5rem 2rem;
+        }
+
+        .booking-hero-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .booking-hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--lime-accent);
+            line-height: 1.15;
+            margin-bottom: 1.2rem;
+        }
+
+        .booking-hero p.call-text {
+            font-size: 1.15rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .booking-hero p.call-text a {
+            color: var(--lime-accent);
+            text-decoration: underline;
+        }
+
+        .booking-hero p.sub-text {
+            font-size: 1.05rem;
+            color: #e5e7eb;
+            max-width: 850px;
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-scroll-btn {
+            background-color: var(--lime-accent);
+            color: var(--dark-teal);
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 800;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+
+        .hero-scroll-btn:hover {
+            background-color: #c0f035;
+        }
+
+        /* Value Props Section */
+        .value-props-section {
+            background-color: #fefde8;
+            padding: 3.5rem 2rem;
+        }
+
+        .value-props-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .process-steps h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--dark-teal);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .process-steps p.intro {
+            font-size: 1.05rem;
+            color: var(--text-grey);
+            margin-bottom: 1.5rem;
+        }
+
+        .process-steps ol {
+            padding-left: 1.2rem;
+        }
+
+        .process-steps li {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            color: var(--text-grey);
+        }
+
+        .process-steps li strong {
+            color: var(--dark-grey);
+        }
+
+        .feature-cards-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+        }
+
+        .feature-card {
+            background-color: #f7f9e8;
+            border-radius: 8px;
+            padding: 1.5rem;
+            border: 1px solid #ebf0c5;
+        }
+
+        .feature-card svg {
+            width: 32px;
+            height: 32px;
+            stroke: var(--dark-teal);
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--dark-teal);
+            margin-bottom: 0.4rem;
+        }
+
+        .feature-card p {
+            font-size: 0.9rem;
+            color: #4b5563;
+            line-height: 1.4;
+        }
+
+        /* Keep the form heading visible below the sticky header when using anchor links */
+        #form-section {
+            scroll-margin-top: 100px;
+        }
+
+        /* Options & Form Area */
+        .form-container-section {
+            background-color: var(--dark-teal);
+            color: var(--white);
+            padding: 3.5rem 2rem;
+        }
+
+        .form-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .form-header h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--lime-accent);
+            margin-bottom: 0.75rem;
+        }
+
+        .method-selection-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--lime-accent);
+            margin-bottom: 1.25rem;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .option-box {
+            background-color: #fefde8;
+            color: var(--dark-grey);
+            padding: 1.5rem 1rem;
+            border-radius: 8px;
+            text-align: center;
+            border: 3px solid transparent;
+            cursor: pointer;
+            transition: all 0.2s;
+            user-select: none;
+        }
+
+        .option-box.active {
+            border-color: var(--lime-accent);
+            box-shadow: 0 0 0 2px var(--lime-accent);
+        }
+
+        .option-box svg {
+            width: 36px;
+            height: 36px;
+            stroke: var(--dark-teal);
+            margin-bottom: 0.5rem;
+        }
+
+        .option-box h3 {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--dark-teal);
+            text-decoration: underline;
+            margin-bottom: 0.25rem;
+        }
+
+        .option-box p {
+            font-size: 0.85rem;
+            color: #4b5563;
+        }
+
+        /* Forms Switch Logic */
+        .form-content {
+            display: none;
+        }
+
+        .form-content.active {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .booking-form h3.form-section-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--lime-accent);
+            margin-bottom: -0.5rem;
+        }
+
+        .booking-form p.form-subtitle {
+            font-size: 1rem;
+            color: #e5e7eb;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .form-group.row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-group label {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--lime-accent);
+        }
+
+        .form-group label span.required {
+            color: var(--lime-accent);
+        }
+
+        .radio-options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            margin-top: 0.25rem;
+        }
+
+        .radio-item {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            color: #ffffff;
+            font-size: 1.05rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .radio-item input[type="radio"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--lime-accent);
+            cursor: pointer;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="tel"],
+        .form-group textarea {
+            background-color: #fefde8;
+            border: 1px solid #d1d5db;
+            padding: 0.8rem 1rem;
+            border-radius: 4px;
+            font-size: 1rem;
+            color: var(--dark-grey);
+            width: 100%;
+        }
+
+        .form-group textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+
+        .form-group p.input-hint {
+            font-size: 0.85rem;
+            color: #d1d5db;
+        }
+
+        .form-group p.input-hint a {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        .file-upload-box {
+            background-color: #fefde8;
+            border: 2px dashed #cbd5e1;
+            border-radius: 6px;
+            padding: 2rem;
+            text-align: center;
+            color: var(--dark-grey);
+            cursor: pointer;
+            transition: border-color 0.2s;
+        }
+
+        .file-upload-box svg {
+            width: 32px;
+            height: 32px;
+            stroke: #64748b;
+            margin-bottom: 0.5rem;
+        }
+
+        .file-upload-box p {
+            font-size: 0.95rem;
+            color: #475569;
+        }
+
+        .file-upload-box span.upload-link {
+            color: var(--dark-teal);
+            font-weight: 700;
+            text-decoration: underline;
+        }
+
+        /* Order Summary Card Section */
+        .order-summary-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .summary-card {
+            background-color: #fefde8;
+            color: var(--dark-grey);
+            border-radius: 12px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .summary-card h4 {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--dark-teal);
+            margin-bottom: 0.5rem;
+        }
+
+        .summary-card p.card-subtext {
+            font-size: 0.95rem;
+            color: #6b7280;
+        }
+
+        .summary-card .price-amount {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--dark-teal);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .summary-card p.vat-detail {
+            font-size: 0.85rem;
+            color: #4b5563;
+        }
+
+        .hr-divider {
+            border: none;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            margin: 1.5rem 0;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-top: 0.5rem;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            margin-top: 0.3rem;
+            width: 18px;
+            height: 18px;
+            accent-color: var(--primary-green);
+        }
+
+        .checkbox-group label {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .checkbox-desc {
+            font-size: 0.85rem;
+            color: #d1d5db;
+            margin-left: 2rem;
+            margin-top: -0.25rem;
+        }
+
+        .checkbox-group label a {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        .submit-btn {
+            background-color: var(--lime-accent);
+            color: var(--dark-teal);
+            font-size: 1.3rem;
+            font-weight: 800;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 1rem;
+            transition: background-color 0.2s;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background-color: #c0f035;
+        }
+
+        .form-footer-note {
+            text-align: center;
+            font-size: 1rem;
+            color: #e5e7eb;
+            margin-top: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-grey);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+        }
+
+        @media (max-width: 850px) {
+            .value-props-container, .order-summary-grid {
+                grid-template-columns: 1fr;
+            }
+            .options-grid {
+                grid-template-columns: 1fr;
+            }
+            .form-group.row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="1-01.png" alt="Saving Tech Logo">
+                </a>
+            </div>
+            <nav class="nav-links">
+                <!-- 1. Free IT Disposal Dropdown -->
+                <div class="dropdown">
+                    <a href="FreeITDisposal.html" class="dropbtn">Free IT Disposal &#711;</a>
+                    <div class="dropdown-content single-column">
+                        <div class="dropdown-columns">
+                            <div class="column">
+                                <h4>IT recycling services</h4>
+                                <a href="Computerrecycling.html">Computer recycling</a>
+                                <a href="Laptoprecycling.html">Laptop recycling</a>
+                                <a href="Mobiledevicerecycling.html">Mobile device recycling</a>
+                                <a href="Monitorscreenrecycling.html">Monitor &amp; screen recycling</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Our Services Dropdown -->
+                <div class="dropdown">
+                    <a href="index.html#services" class="dropbtn">Our Services &#711;</a>
+                    <div class="dropdown-content single-column">
+                        <div class="dropdown-columns">
+                            <div class="column">
+                                <a href="Assetswecollectrecycle.html">Assets we collect &amp; recycle</a>
+                                <a href="FAQs.html">FAQs</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Data Destruction Dropdown -->
+                <div class="dropdown">
+                    <a href="Howitworks.html" class="dropbtn">Data Destruction &#711;</a>
+                    <div class="dropdown-content single-column">
+                        <div class="dropdown-columns">
+                            <div class="column">
+                                <a href="DataDestructionMethods.html">Data destruction methods</a>
+                                <a href="Articles.html">Articles</a>
+                                <a href="Harddrivemediadestruction.html">Hard drive &amp; media destruction</a>
+                                <a href="SecureDataDestruction.html">Secure data destruction</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. About Us Dropdown -->
+                <div class="dropdown">
+                    <a href="AboutUs.html" class="dropbtn">About Us &#711;</a>
+                    <div class="dropdown-content single-column">
+                        <div class="dropdown-columns">
+                            <div class="column">
+                                <a href="Documentscertificates.html">Documents &amp; Certificates</a>
+                                <a href="Blogs.html">Blogs</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="#form-section" class="btn-primary">Book a Collection</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Booking Hero Section -->
+        <section class="booking-hero">
+            <div class="booking-hero-container">
+                <h1>Book your secure, carbon-negative IT recycling collection</h1>
+                <p class="call-text">Call <a href="tel:07904010708">07904010708</a>, or <a href="#form-section" style="color: var(--lime-accent); text-decoration: underline;">complete the form below</a>.</p>
+                <p class="sub-text">Saving Tech makes IT recycling simple, secure and fully documented. Tell us what you need collected and we'll confirm the best collection option by email or phone. Free collection is available for 10+ qualifying laptops, PCs or servers.</p>
+                
+                <!-- Working Scroll-Down Button -->
+                <a href="#form-section" class="hero-scroll-btn">Complete the Form Below &darr;</a>
+            </div>
+        </section>
+
+        <!-- Process & Features Section -->
+        <section class="value-props-section">
+            <div class="value-props-container">
+                <div class="process-steps">
+                    <h2>We make IT recycling simple, secure and stress-free</h2>
+                    <p class="intro">Wherever you are in the UK, we collect redundant business IT, securely process data-bearing equipment, provide certificates, and recycle responsibly through our carbon-negative, reuse-first process.</p>
+                    
+                    <ol>
+                        <li><strong>Tell us what you have</strong> &ndash; List the equipment you need collected.</li>
+                        <li><strong>We confirm your collection option</strong> &ndash; We'll check whether your collection qualifies as free and arrange the best slot.</li>
+                        <li><strong>We collect, process and provide proof</strong> &ndash; We securely handle your equipment, destroy data where required, and provide certificates for your records.</li>
+                    </ol>
+                </div>
+
+                <div class="feature-cards-grid">
+                    <div class="feature-card">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                        <h3>Free qualifying collections</h3>
+                        <p>Free for 10+ qualifying laptops, PCs or servers.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/><circle cx="12" cy="16" r="1"/></svg>
+                        <h3>Secure data destruction</h3>
+                        <p>Sensitive data handled properly.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                        <h3>Certificates provided</h3>
+                        <p>Documentation for your records.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                        <h3>Carbon-negative recycling</h3>
+                        <p>Responsible, reuse-first processing.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Form Area Section with target ID for smooth scrolling -->
+        <section class="form-container-section" id="form-section">
+            <div class="form-wrapper">
+                <div class="form-header">
+                    <h2>Tell us what you need collected</h2>
+                </div>
+
+                <h3 class="method-selection-title">How would you like to recycle your IT?</h3>
+                
+                <!-- Interactive Option Radio Boxes -->
+                <div class="options-grid" role="radiogroup" aria-label="Recycling Method Selection">
+                    <div class="option-box active" data-target="it-collection" role="radio" aria-checked="true" tabindex="0">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                        <h3>IT collection</h3>
+                        <p>We collect from your business.</p>
+                    </div>
+                    <div class="option-box" data-target="onsite-recycling" role="radio" aria-checked="false" tabindex="0">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>
+                        <h3>On-site recycling</h3>
+                        <p>For ongoing IT disposal at your premises.</p>
+                    </div>
+                    <div class="option-box" data-target="send-post" role="radio" aria-checked="false" tabindex="0">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                        <h3>Send IT by post</h3>
+                        <p>For smaller quantities.</p>
+                    </div>
+                </div>
+
+                <!-- Form 1: IT Collection -->
+                <form class="booking-form form-content active" id="form-it-collection">
+                    <h3 class="form-section-title">IT collection</h3>
+                    <p class="form-subtitle">Tell us what IT and devices you need collected.</p>
+
+                    <div class="form-group row">
+                        <div>
+                            <label>Name <span class="required">*</span></label>
+                            <input type="text" placeholder="First" required>
+                        </div>
+                        <div style="margin-top: auto;">
+                            <input type="text" placeholder="Last" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Company name</label>
+                        <input type="text" placeholder="Your company name">
+                        <p class="input-hint">Not a business? Ignore this part instead.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email <span class="required">*</span></label>
+                        <input type="email" placeholder="Your email address" required>
+                        <p class="input-hint">We'll email you to arrange collection</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Phone</label>
+                        <input type="tel" placeholder="Your phone number">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Collection postcode <span class="required">*</span></label>
+                        <input type="text" placeholder="" style="max-width: 250px;" required>
+                        <p class="input-hint">Where in the UK would you like us to collect from?</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label>What you'd like us to collect <span class="required">*</span></label>
+                        <textarea required></textarea>
+                        <p class="input-hint">Describe the amount and type of items you want us to collect. We collect for free when you have <a href="#">10 or more qualifying items</a>.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label style="font-size: 1.1rem; color: #ffffff;">IT asset recycling checklist</label>
+                        <div class="file-upload-box">
+                            <input type="file" class="file-input" style="display: none;" multiple>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                            <p>Drag &amp; Drop Files, <span class="upload-link">Choose Files to Upload</span></p>
+                            <p class="file-name-display" style="font-size: 0.85rem; color: var(--lime-accent); margin-top: 0.5rem; font-weight: 600;"></p>
+                        </div>
+                        <p class="input-hint">If you completed our handy <a href="#">IT recycling checklist</a>, you can upload it here.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label style="font-size: 1.1rem; color: #ffffff;">Stay informed</label>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="stayInformedCol">
+                            <label for="stayInformedCol">Yes, I'd like to receive occasional emails</label>
+                        </div>
+                        <p class="checkbox-desc">Join our email list for occasional updates on secure IT recycling, data destruction best practices, &amp; e-waste sustainability. Unsubscribe at any time.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label style="font-size: 1.1rem; color: #ffffff;">Your consent <span class="required">*</span></label>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="consentCol" required>
+                            <label for="consentCol">I have read and agree to the <a href="#">Terms and Conditions</a> and for you to process my data in accordance with the <a href="#">Privacy Notice</a>.</label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn">REQUEST MY COLLECTION</button>
+                    <p class="form-footer-note">No obligation. We'll review your request and confirm whether your collection qualifies as free.</p>
+                </form>
+
+                <!-- Form 2: On-site IT Recycling -->
+                <form class="booking-form form-content" id="form-onsite-recycling">
+                    <h3 class="form-section-title">On-site IT recycling</h3>
+                    <p class="form-subtitle">Tell us about your ongoing recycling requirements.</p>
+
+                    <div class="form-group">
+                        <label>What size bin do you need? <span class="required">*</span></label>
+                        <div class="radio-options">
+                            <label class="radio-item">
+                                <input type="radio" name="bin_size" value="165" data-vat="25.00" checked>
+                                <span>240L Zero Bin &ndash; &pound;165.00</span>
+                            </label>
+                            <label class="radio-item">
+                                <input type="radio" name="bin_size" value="285" data-vat="45.00">
+                                <span>660L Zero Bin &ndash; &pound;285.00</span>
+                            </label>
+                            <label class="radio-item">
+                                <input type="radio" name="bin_size" value="315" data-vat="50.00">
+                                <span>1100L Zero Bin &ndash; &pound;315.00</span>
+                            </label>
+                            <label class="radio-item">
+                                <input type="radio" name="bin_size" value="315" data-vat="50.00">
+                                <span>820L Pallet box &ndash; &pound;315.00</span>
+                            </label>
+                        </div>
+                        <p class="input-hint"><a href="#">See above for sizing &amp; specifications</a>.<br>Prices include VAT.</p>
+                    </div>
+
+                    <div class="form-group row">
+                        <div>
+                            <label>Name <span class="required">*</span></label>
+                            <input type="text" placeholder="First" required>
+                        </div>
+                        <div style="margin-top: auto;">
+                            <input type="text" placeholder="Last" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Company name <span class="required">*</span></label>
+                        <input type="text" placeholder="Your company name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email <span class="required">*</span></label>
+                        <input type="email" placeholder="Your email address" required>
+                        <p class="input-hint">We'll email you to arrange delivery</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Phone</label>
+                        <input type="tel" placeholder="Your phone number">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Delivery postcode <span class="required">*</span></label>
+                        <input type="text" placeholder="" style="max-width: 250px;" required>
+                        <p class="input-hint">Where in the UK would you like us to deliver to? We'll contact you to arrange details.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Billing Address <span class="required">*</span></label>
+                        <input type="text" placeholder="Address Line 1" required style="margin-bottom: 0.8rem;">
+                        <input type="text" placeholder="Address Line 2" style="margin-bottom: 0.8rem;">
+                        <div class="form-group row" style="margin-bottom: 0.8rem;">
+                            <input type="text" placeholder="City" required>
+                            <input type="text" placeholder="State / Province / Region">
+                        </div>
+                        <input type="text" placeholder="Postal Code" style="max-width: 250px;" required>
+                    </div>
+
+                    <hr class="hr-divider">
+
+                    <h3 style="font-size: 1.8rem; font-weight: 800; color: var(--lime-accent);">Your order</h3>
+
+                    <div class="order-summary-grid">
+                        <div class="summary-card">
+                            <div>
+                                <h4>Secure payment <span class="required">*</span></h4>
+                                <p class="card-subtext">Secure payments are handled with Stripe.</p>
+                            </div>
+                        </div>
+
+                        <div class="summary-card">
+                            <div>
+                                <h4>Order total</h4>
+                                <div class="price-amount" id="orderTotalDisplay">&pound;165.00</div>
+                                <p class="vat-detail" id="vatDetailDisplay">Includes VAT of &pound;25.00</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="margin-top: 1rem;">
+                        <label style="font-size: 1.1rem; color: #ffffff;">Stay informed</label>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="stayInformedOnsite">
+                            <label for="stayInformedOnsite">Yes, I'd like to receive occasional emails</label>
+                        </div>
+                        <p class="checkbox-desc">Join our email list for occasional updates on secure IT recycling, data destruction best practices, &amp; e-waste sustainability. Unsubscribe at any time.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label style="font-size: 1.1rem; color: #ffffff;">Your consent <span class="required">*</span></label>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="consentOnsite" required>
+                            <label for="consentOnsite">I have read and agree to the <a href="#">Terms and Conditions</a> and for you to process my data in accordance with the <a href="#">Privacy Notice</a>.</label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn">PLACE ORDER</button>
+                </form>
+
+                <!-- Form 3: Send IT by Post -->
+                <form class="booking-form form-content" id="form-send-post">
+                    <h3 class="form-section-title">Send IT by post</h3>
+                    <p class="form-subtitle">Tell us what you'd like to send.</p>
+
+                    <div class="form-group">
+                        <label>How many boxes do you need to send? <span class="required">*</span></label>
+                        <div class="radio-options">
+                            <label class="radio-item">
+                                <input type="radio" name="box_quantity" value="1" checked>
+                                <span>1 box</span>
+                            </label>
+                            <label class="radio-item">
+                                <input type="radio" name="box_quantity" value="2">
+                                <span>2 boxes</span>
+                            </label>
+                            <label class="radio-item">
+                                <input type="radio" name="box_quantity" value="3_plus">
+                                <span>3+ boxes...</span>
+                            </label>
+                        </div>
+                        <p class="input-hint">Each box can weigh up to 30kg, if the box weighs more than this, please let us know and we can arrange for multiple labels or a collection by one of our team.</p>
+                    </div>
+
+                    <div class="form-group row">
+                        <div>
+                            <label>Name <span class="required">*</span></label>
+                            <input type="text" placeholder="First" required>
+                        </div>
+                        <div style="margin-top: auto;">
+                            <input type="text" placeholder="Last" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Company name <span class="required">*</span></label>
+                        <input type="text" placeholder="Your company name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email <span class="required">*</span></label>
+                        <input type="email" placeholder="Your email address" required>
+                        <p class="input-hint">We'll email the postage labels for you to print.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Phone</label>
+                        <input type="tel" placeholder="Your phone number">
+                    </div>
+
+                    <div class="form-group">
+                        <label>What you'd like to send us <span class="required">*</span></label>
+                        <textarea required placeholder="Describe the amount and type of items you want to send to us."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label style="font-size: 1.1rem; color: #ffffff;">IT asset recycling checklist</label>
+                        <div class="file-upload-box">
+                            <input type="file" class="file-input" style="display: none;" multiple>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                            <p>Drag &amp; Drop Files, <span class="upload-link">Choose Files to Upload</span></p>
+                            <p class="file-name-display" style="font-size: 0.85rem; color: var(--lime-accent); margin-top: 0.5rem; font-weight: 600;"></p>
+                        </div>
+                        <p class="input-hint">If you completed our handy <a href="#">IT recycling checklist</a>, you can upload it here.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label style="font-size: 1.1rem; color: #ffffff;">Stay informed</label>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="stayInformedPost">
+                            <label for="stayInformedPost">Yes, I'd like to receive occasional emails</label>
+                        </div>
+                        <p class="checkbox-desc">Join our email list for occasional updates on secure IT recycling, data destruction best practices, &amp; e-waste sustainability. Unsubscribe at any time.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label style="font-size: 1.1rem; color: #ffffff;">Your consent <span class="required">*</span></label>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="consentPost" required>
+                            <label for="consentPost">I have read and agree to the <a href="#">Terms and Conditions</a> and for you to process my data in accordance with the <a href="#">Privacy Notice</a>.</label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn">SEND ENQUIRY</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; <span id="year"></span> Saving Tech. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Option Box Radio Switch Logic
+        const optionBoxes = document.querySelectorAll('.option-box');
+        const formContents = document.querySelectorAll('.form-content');
+
+        optionBoxes.forEach(box => {
+            box.addEventListener('click', () => {
+                // Update active option box UI
+                optionBoxes.forEach(b => {
+                    b.classList.remove('active');
+                    b.setAttribute('aria-checked', 'false');
+                });
+                box.classList.add('active');
+                box.setAttribute('aria-checked', 'true');
+
+                // Toggle target form display
+                const targetId = 'form-' + box.getAttribute('data-target');
+                formContents.forEach(form => {
+                    if (form.id === targetId) {
+                        form.classList.add('active');
+                    } else {
+                        form.classList.remove('active');
+                    }
+                });
+            });
+
+            // Accessibility key navigation (Enter or Space)
+            box.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    box.click();
+                }
+            });
+        });
+
+        // Dynamic Order Total Calculation for On-site Recycling Bin Selection
+        const binRadios = document.querySelectorAll('input[name="bin_size"]');
+        const orderTotalDisplay = document.getElementById('orderTotalDisplay');
+        const vatDetailDisplay = document.getElementById('vatDetailDisplay');
+
+        binRadios.forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                const val = parseFloat(e.target.value).toFixed(2);
+                const vat = parseFloat(e.target.getAttribute('data-vat')).toFixed(2);
+                orderTotalDisplay.innerHTML = `&pound;${val}`;
+                vatDetailDisplay.innerHTML = `Includes VAT of &pound;${vat}`;
+            });
+        });
+
+        // File Upload Interactivity
+        document.querySelectorAll('.file-upload-box').forEach(box => {
+            const fileInput = box.querySelector('input[type="file"]');
+            const fileNameDisplay = box.querySelector('.file-name-display');
+
+            // Trigger file dialog on box click
+            box.addEventListener('click', () => {
+                fileInput.click();
+            });
+
+            fileInput.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+
+            // Show selected file name(s)
+            fileInput.addEventListener('change', (e) => {
+                if (fileInput.files.length > 0) {
+                    const fileNames = Array.from(fileInput.files).map(f => f.name).join(', ');
+                    fileNameDisplay.textContent = `Selected: ${fileNames}`;
+                } else {
+                    fileNameDisplay.textContent = '';
+                }
+            });
+
+            // Drag and drop support
+            box.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                box.style.borderColor = 'var(--lime-accent)';
+            });
+
+            box.addEventListener('dragleave', () => {
+                box.style.borderColor = '#cbd5e1';
+            });
+
+            box.addEventListener('drop', (e) => {
+                e.preventDefault();
+                box.style.borderColor = '#cbd5e1';
+                if (e.dataTransfer.files.length > 0) {
+                    fileInput.files = e.dataTransfer.files;
+                    const fileNames = Array.from(e.dataTransfer.files).map(f => f.name).join(', ');
+                    fileNameDisplay.textContent = `Selected: ${fileNames}`;
+                }
+            });
+        });
+
+        // Form submission handling
+        formContents.forEach(form => {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your submission!');
+                this.reset();
+                // Clear file display names after reset
+                document.querySelectorAll('.file-name-display').forEach(el => el.textContent = '');
+            });
+        });
+    </script>
+</body>
+</html>

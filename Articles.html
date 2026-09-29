@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Security Articles | Saving Tech</title>
+    
+    <!-- Favicon link -->
+    <link rel="icon" type="image/x-icon" href="icon.ico">
+    
+    <style>
+        :root {
+            --primary-green: #2E8B57; /* Matched to logo */
+            --lime-accent: #D4F34A;
+            --hero-blue: #2A8BCA;
+            --dark-grey: #1F2937;
+            --text-grey: #374151;
+            --light-bg: #F3F4F6;
+            --white: #FFFFFF;
+            --cream-bg: #fef3e2;
+            --articles-hero-bg: #0d4b56;
+            --articles-card-bg: #fff9ed;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: var(--dark-grey);
+            line-height: 1.6;
+            background-color: var(--articles-card-bg);
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.5rem 2rem; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            overflow: hidden; 
+            height: 80px; 
+        }
+
+        .logo a {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .logo img {
+            height: 250px; 
+            width: auto;
+            object-fit: contain;
+            margin-left: -20px; 
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links > a:not(.btn-primary) {
+            text-decoration: none;
+            color: var(--dark-grey);
+            margin-left: 2rem;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links > a:not(.btn-primary):hover {
+            color: var(--primary-green);
+        }
+
+        .nav-links > .btn-primary {
+            margin-left: 2rem;
+        }
+
+        /* Dropdown Menu Styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            margin-left: 2rem;
+        }
+
+        .dropdown .dropbtn {
+            background: none;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-weight: 600;
+            color: var(--dark-grey);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-family: inherit;
+            padding: 1rem 0;
+        }
+
+        .dropdown:hover .dropbtn {
+            color: var(--primary-green);
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--white);
+            min-width: 500px;
+            box-shadow: 0px 8px 24px rgba(0,0,0,0.12);
+            z-index: 100;
+            border-radius: 8px;
+            top: 100%;
+            left: 0;
+            padding: 1.5rem;
+            border-top: 3px solid var(--primary-green);
+        }
+
+        .dropdown-content.single-column {
+            min-width: 260px;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-columns {
+            display: flex;
+            gap: 3rem;
+        }
+
+        .column {
+            flex: 1;
+        }
+
+        .column h4 {
+            font-size: 1.05rem;
+            margin-bottom: 0.8rem;
+            color: var(--dark-grey);
+            border-bottom: 1px solid #E5E7EB;
+            padding-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .column a {
+            color: #4B5563;
+            padding: 0.5rem 0;
+            text-decoration: none;
+            display: block;
+            margin-left: 0;
+            font-weight: 400;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .column a:hover {
+            color: var(--primary-green);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-green);
+            color: var(--white);
+            padding: 0.5rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #246B43;
+        }
+
+        /* Articles Page Header Banner Section */
+        .articles-hero {
+            background-color: var(--articles-hero-bg);
+            color: var(--white);
+            padding: 3rem 2rem;
+        }
+
+        .articles-hero-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .breadcrumb {
+            font-size: 0.9rem;
+            color: #cbd5e1;
+            margin-bottom: 0.75rem;
+        }
+
+        .breadcrumb a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .articles-hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #c0f035;
+            margin-bottom: 0.5rem;
+        }
+
+        .articles-hero p {
+            font-size: 1.05rem;
+            color: #e2e8f0;
+            margin-bottom: 1.5rem;
+        }
+
+        .search-box {
+            display: flex;
+            gap: 0.5rem;
+            max-width: 450px;
+        }
+
+        .search-box input[type="text"] {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            border-radius: 6px;
+            border: none;
+            outline: none;
+            font-size: 0.95rem;
+            background-color: #fff9ed;
+        }
+
+        .search-box button {
+            background-color: #c0f035;
+            border: none;
+            border-radius: 6px;
+            width: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .search-box button:hover {
+            background-color: #a8d62a;
+        }
+
+        .search-box button svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--dark-grey);
+        }
+
+        /* Articles Listing Section */
+        .articles-section {
+            padding: 3rem 2rem 5rem 2rem;
+            background-color: var(--articles-card-bg);
+        }
+
+        .articles-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+
+        .article-card {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+        }
+
+        .article-image {
+            width: 320px;
+            height: 180px;
+            flex-shrink: 0;
+            border-radius: 12px;
+            overflow: hidden;
+            background-color: #e5e7eb;
+        }
+
+        .article-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .article-details {
+            flex: 1;
+        }
+
+        .article-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #1e5f74;
+            text-decoration: underline;
+            margin-bottom: 0.4rem;
+            line-height: 1.3;
+            display: inline-block;
+        }
+
+        .article-title:hover {
+            color: #123c4a;
+        }
+
+        .article-date {
+            font-size: 0.88rem;
+            color: #6b7280;
+            margin-bottom: 0.8rem;
+        }
+
+        .article-excerpt {
+            font-size: 0.98rem;
+            color: #374151;
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-grey);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .article-card {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .article-image {
+                width: 100%;
+                height: 200px;
+            }
+            .articles-hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="1-01.png" alt="Saving Tech Logo">
+                </a>
+            </div>
+            <nav class="nav-links">
+                <!-- 1. Free IT Disposal Dropdown -->
+                <div class="dropdown">
+                    <a href="FreeITDisposal.html" class="dropbtn">Free IT Disposal &#711;</a>
+                    <div class="dropdown-content single-column">
+                        <div class="dropdown-columns">
+                            <div class="column">
+                                <h4>IT recycling services</h4>
+                                <a href="Computerrecycling.html">Computer recycling</a>
+                                <a href="Laptoprecycling.html">Laptop recycling</a>
+                                <a href="Mobiledevicerecycling.html">Mobile device recycling</a>
+                                <a href="Monitorscreenrecycling.html">Monitor &amp; screen recycling</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Our Services Dropdown -->
+                <div class="dropdown">
+                    <a href="#services" class="dropbtn">Our Services &#711;</a>
+                    <div class="dropdown-content single-column">
+                        <div class="dropdown-columns">
+                            <div class="column">
+                                <a href="Assetswecollectrecycle.html">Assets we collect &amp; recycle</a>
+                                <a href="FAQs.html">FAQs</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Data Destruction Dropdown -->
+                <div class="dropdown">
+                    <a href="Howitworks.html" class="dropbtn">Data Destruction &#711;</a>
+                    <div class="dropdown-content single-column">
+                        <div class="dropdown-columns">
+                            <div class="column">
+                                <a href="DataDestructionMethods.html">Data destruction methods</a>
+                                <a href="Articles.html">Articles</a>
+                                <a href="Harddrivemediadestruction.html">Hard drive &amp; media destruction</a>
+                                <a href="SecureDataDestruction.html">Secure data destruction</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. About Us Dropdown -->
+                <div class="dropdown">
+                    <a href="AboutUs.html" class="dropbtn">About Us &#711;</a>
+                    <div class="dropdown-content single-column">
+                        <div class="dropdown-columns">
+                            <div class="column">
+                                <a href="Documentscertificates.html">Documents &amp; Certificates</a>
+                                <a href="Blogs.html">Blogs</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="Book.html#form-section" class="btn-primary">Book a Collection</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero / Search Section -->
+        <section class="articles-hero">
+            <div class="articles-hero-container">
+                <nav class="breadcrumb">
+                    <a href="index.html">Home</a> &rarr; <a href="Howitworks.html">Data Destruction</a> &rarr; Data Security
+                </nav>
+                <h1>Data Security</h1>
+                <p>Everything you need to know about data security and protecting sensitive information when recycling old tech.</p>
+                
+                <form class="search-box" action="#" method="GET" onsubmit="event.preventDefault();">
+                    <input type="text" placeholder="Search articles">
+                    <button type="submit" aria-label="Search">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Articles List Section -->
+        <section class="articles-section">
+            <div class="articles-container">
+                
+                <!-- Article 1 -->
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" alt="8 common myths about free IT recycling, debunked">
+                    </div>
+                    <div class="article-details">
+                        <a href="#" class="article-title">8 common myths about free IT recycling, debunked</a>
+                        <div class="article-date">September 21, 2026</div>
+                        <p class="article-excerpt">Free IT recycling raises a lot of questions before businesses commit. Here are the eight most common misconceptions – and what the reality actually looks like.</p>
+                    </div>
+                </article>
+
+                <!-- Article 2 -->
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80" alt="6 questions to ask any IT recycling company before you book a collection">
+                    </div>
+                    <div class="article-details">
+                        <a href="#" class="article-title">6 questions to ask any IT recycling company before you book a collection</a>
+                        <div class="article-date">September 14, 2026</div>
+                        <p class="article-excerpt">Not all IT recycling companies operate to the same standard. These six questions will help you identify whether a provider can actually protect your business over your equipment.</p>
+                    </div>
+                </article>
+
+                <!-- Article 3 -->
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=600&q=80" alt="Office move IT disposal: what to do with the equipment you're leaving behind">
+                    </div>
+                    <div class="article-details">
+                        <a href="#" class="article-title">Office move IT disposal: what to do with the equipment you're leaving behind</a>
+                        <div class="article-date">September 1, 2026</div>
+                        <p class="article-excerpt">Relocating or closing a site? This guide covers how to audit, decommission and clear redundant IT before the removal vans arrive – with certified data destruction and the documentation to close out the building.</p>
+                    </div>
+                </article>
+
+                <!-- Article 4 -->
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80" alt="Why every business should have an IT asset disposal policy">
+                    </div>
+                    <div class="article-details">
+                        <a href="#" class="article-title">Why every business should have an IT asset disposal policy</a>
+                        <div class="article-date">August 25, 2026</div>
+                        <p class="article-excerpt">An IT asset disposal policy turns ad hoc decisions about old equipment into a documented, repeatable process – and gives you the evidence trail to back it up when it matters.</p>
+                    </div>
+                </article>
+
+                <!-- Article 5 -->
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&w=600&q=80" alt="Laptop recycling for business – recovering devices from remote workers">
+                    </div>
+                    <div class="article-details">
+                        <a href="#" class="article-title">Laptop recycling for business – recovering devices from remote workers</a>
+                        <div class="article-date">August 11, 2026</div>
+                        <p class="article-excerpt">Remote and hybrid working has scattered company laptops across hundreds of homes. This guide covers how to recover devices from leavers, close the data gap, and arrange certified disposal.</p>
+                    </div>
+                </article>
+
+                <!-- Article 6 -->
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=600&q=80" alt="How to catalogue and prepare your IT assets before recycling">
+                    </div>
+                    <div class="article-details">
+                        <a href="#" class="article-title">How to catalogue and prepare your IT assets before recycling</a>
+                        <div class="article-date">July 28, 2026</div>
+                        <p class="article-excerpt">Good IT asset inventory management starts before the recycler arrives. This guide covers what to capture, how to build an inventory, and how to prepare for collection day.</p>
+                    </div>
+                </article>
+
+                <!-- Article 7 -->
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600&q=80" alt="IT asset disposal the right way (and the mistakes to avoid)">
+                    </div>
+                    <div class="article-details">
+                        <a href="#" class="article-title">IT asset disposal the right way (and the mistakes to avoid)</a>
+                        <div class="article-date">July 21, 2026</div>
+                        <p class="article-excerpt">Disposing of old office IT equipment incorrectly puts your business at risk. This guide covers the right approach, common mistakes, and the documentation you need.</p>
+                    </div>
+                </article>
+
+                <!-- Article 8 -->
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=600&q=80" alt="Laptop recycling for financial services: meeting FCA & GDPR requirements">
+                    </div>
+                    <div class="article-details">
+                        <a href="#" class="article-title">Laptop recycling for financial services: meeting FCA &amp; GDPR requirements</a>
+                        <div class="article-date">June 19, 2026</div>
+                        <p class="article-excerpt">Regulated firms face specific FCA, PRA and GDPR requirements for laptop recycling. Financial services organisations need documented data destruction standards and full audit trails to demonstrate compliance.</p>
+                    </div>
+                </article>
+
+                <!-- Article 9 -->
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="What happens to your business computers after they are collected for recycling?">
+                    </div>
+                    <div class="article-details">
+                        <a href="#" class="article-title">What happens to your business computers after they are collected for recycling?</a>
+                        <div class="article-date">June 2, 2026</div>
+                        <p class="article-excerpt">A step-by-step guide to business computer recycling – how data is destroyed, devices assessed for reuse, and why circularity is important.</p>
+                    </div>
+                </article>
+
+                <!-- Article 10 -->
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=600&q=80" alt="IT recycling for charities and non-profits">
+                    </div>
+                    <div class="article-details">
+                        <a href="#" class="article-title">IT recycling for charities and non-profits</a>
+                        <div class="article-date">May 20, 2026</div>
+                        <p class="article-excerpt">The same IT disposal rules apply to charities as to commercial organisations. Free, certified collection is available — here is what you need to know.</p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Saving Tech. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>
