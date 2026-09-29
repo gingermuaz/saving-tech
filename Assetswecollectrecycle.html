@@ -86,7 +86,7 @@
             align-items: center;
         }
 
-        .nav-links > a {
+        .nav-links > a:not(.btn-primary) {
             text-decoration: none;
             color: var(--text-dark);
             margin-left: 2rem;
@@ -94,8 +94,12 @@
             transition: color 0.3s;
         }
 
-        .nav-links > a:hover {
+        .nav-links > a:not(.btn-primary):hover {
             color: var(--primary-green);
+        }
+
+        .nav-links > .btn-primary {
+            margin-left: 2rem;
         }
 
         /* Dropdown Menu */
@@ -339,13 +343,6 @@
             padding: 4rem 2rem;
         }
 
-        .intro-grid {
-            display: grid;
-            grid-template-columns: 1fr 400px;
-            gap: 3.5rem;
-            align-items: start;
-        }
-
         .intro-text h2 {
             font-size: 3rem;
             line-height: 1;
@@ -364,27 +361,12 @@
             text-decoration: underline;
         }
 
-        .jump-list {
-            list-style: none;
-            margin-top: 1rem;
-        }
-
-        .jump-list li {
-            margin-bottom: 0.6rem;
-        }
-
-        .jump-list li a {
-            color: var(--hero-blue);
-            text-decoration: underline;
-            font-size: 1.05rem;
-            font-weight: 500;
-        }
-
         .side-callout-card {
             background-color: var(--light-bg);
             border-radius: 12px;
             padding: 2rem;
             border: 1px solid var(--border-color);
+            margin-top: 2rem;
         }
 
         .side-callout-card h3 {
@@ -671,9 +653,6 @@
         }
 
         @media (max-width: 900px) {
-            .intro-grid {
-                grid-template-columns: 1fr;
-            }
             .hero-card {
                 max-width: 100%;
             }
@@ -685,7 +664,7 @@
 </head>
 <body>
 
-    <header>
+<header>
         <div class="nav-container">
             <div class="logo">
                 <a href="index.html">
@@ -693,9 +672,25 @@
                 </a>
             </div>
             <nav class="nav-links">
-                <!-- How It Works Dropdown -->
+                <!-- 1. Free IT Disposal Dropdown -->
                 <div class="dropdown">
-                    <a href="Howitworks.html" class="dropbtn">How it works &#711;</a>
+                    <a href="FreeITDisposal.html" class="dropbtn">Free IT Disposal &#711;</a>
+                    <div class="dropdown-content single-column">
+                        <div class="dropdown-columns">
+                            <div class="column">
+                                <h4>IT recycling services</h4>
+                                <a href="Computerrecycling.html">Computer recycling</a>
+                                <a href="Laptoprecycling.html">Laptop recycling</a>
+                                <a href="Mobiledevicerecycling.html">Mobile device recycling</a>
+                                <a href="Monitorscreenrecycling.html">Monitor &amp; screen recycling</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Our Services Dropdown -->
+                <div class="dropdown">
+                    <a href="#services" class="dropbtn">Our Services &#711;</a>
                     <div class="dropdown-content single-column">
                         <div class="dropdown-columns">
                             <div class="column">
@@ -706,38 +701,35 @@
                     </div>
                 </div>
 
-                <!-- Free IT Disposal Dropdown -->
+                <!-- 3. Data Destruction Dropdown -->
                 <div class="dropdown">
-                    <a href="FreeITDisposal.html" class="dropbtn">Free IT Disposal &#711;</a>
+                    <a href="Howitworks.html" class="dropbtn">Data Destruction &#711;</a>
                     <div class="dropdown-content single-column">
                         <div class="dropdown-columns">
                             <div class="column">
-                                <h4>IT recycling services</h4>
-                                <a href="Computerrecycling.html">Computer recycling</a>
+                                <a href="DataDestructionMethods.html">Data destruction methods</a>
+                                <a href="Articles.html">Articles</a>
                                 <a href="Harddrivemediadestruction.html">Hard drive &amp; media destruction</a>
-                                <a href="Laptoprecycling.html">Laptop recycling</a>
-                                <a href="Mobiledevicerecycling.html">Mobile device recycling</a>
-                                <a href="Monitorscreenrecycling.html">Monitor &amp; screen recycling</a>
+                                <a href="SecureDataDestruction.html">Secure data destruction</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                <a href="index.html#services">Our Services</a>
 
-                <!-- About Us Dropdown -->
+                <!-- 4. About Us Dropdown -->
                 <div class="dropdown">
                     <a href="AboutUs.html" class="dropbtn">About Us &#711;</a>
                     <div class="dropdown-content single-column">
                         <div class="dropdown-columns">
                             <div class="column">
                                 <a href="Documentscertificates.html">Documents &amp; Certificates</a>
+                                <a href="Blogs.html">Blogs</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <a href="#book" class="trigger-modal">Request Collection</a>
+                <a href="Book.html#form-section" style="background-color: var(--primary-green); color: var(--white); padding: 0.6rem 1.25rem; border-radius: 4px; text-decoration: none; font-weight: 700;">Book a Collection</a>
             </nav>
         </div>
     </header>
@@ -749,7 +741,7 @@
             <div class="hero-inner">
                 <div class="hero-card">
                     <div class="breadcrumb">
-                        <a href="index.html">Home</a> &rarr; <a href="Howitworks.html">How it works</a> &rarr; What we collect
+                        <a href="index.html">Home</a> &rarr; <a href="index.html#services">Our Services</a> &rarr; What we collect
                     </div>
                     <h1>Complete list of IT equipment &amp; e-waste we collect &amp; recycle</h1>
                     
@@ -763,30 +755,18 @@
             </div>
         </section>
 
-        <!-- Intro Section & Jump Links -->
+        <!-- Intro Section -->
         <section class="section-container">
-            <div class="intro-grid">
+            <div class="intro-text">
+                <h2>What we collect</h2>
+                <p>This page gives you a general idea of what we handle — and almost all of it is free to recycle except where noted. See our <a href="FAQs.html">frequently-asked questions</a> or <a href="#bookingModal" class="trigger-modal">drop us an email</a> if you have any questions. We are here to help.</p>
                 
-                <div class="intro-text">
-                    <h2>What we collect</h2>
-                    <p>This page gives you a general idea of what we handle — and almost all of it is free to recycle except where noted. See our <a href="FAQs.html">frequently-asked questions</a> or <a href="#bookingModal" class="trigger-modal">drop us an email</a> if you have any questions. We are here to help.</p>
-                    
-                    <ul class="jump-list">
-                        <li><a href="Computerrecycling.html">Computer recycling</a></li>
-                        <li><a href="Harddrivemediadestruction.html">Hard drive &amp; media destruction</a></li>
-                        <li><a href="Laptoprecycling.html">Laptop recycling</a></li>
-                        <li><a href="Mobiledevicerecycling.html">Mobile device recycling</a></li>
-                        <li><a href="Monitorscreenrecycling.html">Monitor &amp; screen recycling</a></li>
-                    </ul>
-                </div>
-
                 <div class="side-callout-card">
                     <h3>How do I get a free collection?</h3>
                     <p>We will collect from your premises free of charge — All you need to do is have at least 10 qualifying items for us to collect, and the collection will be free of charge from your premises.</p>
                     <p>It can be any combination of laptops, PCs or servers (including Apple macs &amp; laptops), you just need 10 or more of these items, and to be in mainland UK.</p>
                     <a href="#screens-displays" class="btn-outline-dark">IT RECYCLING CHARGES</a>
                 </div>
-
             </div>
         </section>
 
@@ -1048,7 +1028,7 @@
         <!-- Why Zero Tech Waste Section -->
         <section class="why-section">
             <div class="why-container">
-                <h2>Why Zero Tech Waste?</h2>
+                <h2>Why Saving Tech?</h2>
                 <p class="why-subheading">Secure, carbon-negative IT recycling for businesses that need old equipment handled properly — with free qualifying collections, data destruction and certificates provided where applicable.</p>
                 
                 <div class="why-grid">
@@ -1066,8 +1046,8 @@
 
                     <div class="why-card">
                         <div class="num-badge">3</div>
-                        <h3>Carbon-negative recycling</h3>
-                        <p>We prioritise reuse before materials recycling and offset twice the CO<sub>2</sub> generated through our service, helping your old IT take a more responsible route.</p>
+                        <h3>Responsible & Sustainable</h3>
+                        <p>We prioritise reuse before materials recycling and offset twice the generated through our service, helping your old IT take a more responsible route.</p>
                     </div>
                 </div>
 
@@ -1085,23 +1065,12 @@
     <div class="modal-overlay" id="bookingModal">
         <div class="modal-card">
             <button class="modal-close" id="closeModal">&times;</button>
-            <h2>Request a Collection</h2>
+            <h2>Book a Collection</h2>
             
             <form class="contact-form" id="collectionForm">
                 <input type="text" id="name" placeholder="Company / Contact Name" required>
                 <input type="email" id="email" placeholder="Email Address" required>
                 <input type="tel" id="phone" placeholder="Phone Number" required>
-                <select id="serviceType" required>
-                    <option value="" disabled selected>Select Service Required</option>
-                    <option value="itad">IT Asset Disposal (ITAD)</option>
-                    <option value="remarketing">Remarketing &amp; Value Recovery</option>
-                    <option value="decommissioning">Data Centre &amp; Server Decommissioning</option>
-                    <option value="computers">Computer &amp; Laptop Recycling</option>
-                    <option value="mobile">Mobile Phone &amp; Tablet Recycling</option>
-                    <option value="destruction">Product &amp; Data Destruction</option>
-                    <option value="weee">WEEE Recycling Bins</option>
-                    <option value="specialist">Specialist Waste (Tubes &amp; Cartridges)</option>
-                </select>
                 <textarea id="details" rows="4" placeholder="Please list the approximate quantity and types of devices (e.g., 10 laptops, 5 desktops, 1 server)..." required></textarea>
                 <button type="submit" class="btn-submit">Submit Request</button>
             </form>
