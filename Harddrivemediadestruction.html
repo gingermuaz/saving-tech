@@ -10,12 +10,13 @@
     <style>
         :root {
             --primary-green: #2E8B57; 
-            --lime-accent: #D4F34A; 
-            --hero-blue: #0284C7; 
-            --dark-blue: #0C4A6E; /* Trust banner background */
-            --icon-blue: #0284C7;
+            --lime-accent: #D4F34A;
+            --light-lime: #EEF8CD;
+            --hero-blue: #2A8BCA; 
+            --dark-blue: #0B4A6F;
+            --icon-blue: #1085C5;
             --dark-grey: #1F2937;
-            --text-grey: #4B5563;
+            --text-grey: #374151;
             --light-bg: #F8FAFC; 
             --border-grey: #E5E7EB;
             --white: #FFFFFF;
@@ -190,8 +191,8 @@
 
         /* --- Common Buttons & Links --- */
         .btn-lime {
-            background-color: var(--primary-green);
-            color: var(--white);
+            background-color: var(--lime-accent);
+            color: var(--dark-grey);
             padding: 0.85rem 1.75rem;
             border-radius: 4px;
             text-decoration: none;
@@ -205,10 +206,12 @@
             margin: 1rem 0;
         }
 
-        .btn-lime:hover { background-color: #246B43; }
-        
-        .btn-light {
-            background-color: #E2F0B3; 
+        .btn-lime:hover {
+            background-color: #C3E239;
+        }
+
+        .btn-phone {
+            background-color: #E2E8F0;
             color: var(--dark-grey);
             padding: 0.85rem 1.75rem;
             border-radius: 4px;
@@ -222,20 +225,24 @@
             margin: 1rem 0;
         }
 
+        .btn-phone:hover {
+            background-color: #CBD5E1;
+        }
+
         a.inline-link {
             color: var(--hero-blue);
             text-decoration: underline;
         }
         
-        a.inline-link:hover { color: #0369A1; }
+        a.inline-link:hover { color: #1a6291; }
 
         /* --- Hero Section --- */
         .hero-split {
             background-color: #2F3640; 
             background-image: url('Images/hero-split.jpg');
-			background-size: cover;
-			background-position: center;
-			background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             padding: 4rem 2rem;
             display: flex;
             align-items: center;
@@ -351,111 +358,111 @@
             line-height: 1.4;
         }
 
-        /* --- Ready to Book / Trust Banner --- */
-        .trust-banner {
+        /* --- Ready to Book Banner --- */
+        .cta-banner {
             background-color: var(--dark-blue);
-            border-radius: 16px;
-            padding: 3rem;
-            margin: 2rem 0;
-            color: var(--white);
-        }
-
-        .trust-banner h3 {
-            color: var(--lime-accent);
-            font-size: 2.2rem;
-            margin: 0 0 0.5rem 0;
-            letter-spacing: -0.5px;
-        }
-
-        .trust-banner > p {
-            font-size: 1.15rem;
-            color: #E0F2FE;
-            margin-bottom: 2.5rem;
-        }
-
-        .trust-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 2.5rem;
-        }
-
-        .trust-card {
-            background: var(--white);
-            color: var(--dark-grey);
-            padding: 1.5rem;
             border-radius: 12px;
+            padding: 3.5rem 2rem;
+            color: var(--white);
+            margin-bottom: 3rem;
+        }
+
+        .cta-banner h2 {
+            font-size: 2.2rem;
+            color: var(--lime-accent);
+            margin-bottom: 0.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .cta-banner p.sub-heading {
+            font-size: 1.15rem;
+            color: #E2E8F0;
+            margin-bottom: 2.5rem;
+        }
+
+        .cta-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .cta-card {
+            background-color: var(--white);
+            color: var(--dark-grey);
+            border-radius: 8px;
+            padding: 1.5rem 1rem;
             display: flex;
             flex-direction: column;
+            align-items: flex-start;
         }
 
-        .trust-card svg {
+        .cta-card-icon {
             width: 40px;
             height: 40px;
+            margin-bottom: 0.85rem;
             color: var(--icon-blue);
-            margin-bottom: 1rem;
         }
 
-        .trust-card h4 {
-            font-size: 1.15rem;
+        .cta-card h4 {
+            font-size: 1.05rem;
             margin-bottom: 0.5rem;
-            color: var(--dark-grey);
+            line-height: 1.2;
+            font-weight: 700;
         }
 
-        .trust-card p {
-            font-size: 1rem;
-            color: var(--text-grey);
-            margin: 0;
+        .cta-card p {
+            font-size: 0.88rem;
+            color: #4B5563;
+            line-height: 1.4;
         }
 
-        .trust-actions {
+        .cta-footer-text {
+            font-size: 1.05rem;
+            color: #E2E8F0;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-actions {
             display: flex;
             gap: 1rem;
-            flex-wrap: wrap;
-        }
-        
-        .trust-actions .btn-lime, .trust-actions .btn-light {
-            margin: 0;
+            align-items: center;
         }
 
-        /* --- Social Share --- */
-        .share-section {
+        /* --- Social Share Section --- */
+        .share-bar {
             display: flex;
             align-items: center;
-            gap: 1rem;
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border-grey);
-            font-weight: 600;
-            color: var(--dark-grey);
+            gap: 0.75rem;
+            margin-bottom: 4rem;
+            font-size: 0.95rem;
+            color: #4B5563;
         }
 
-        .share-icons {
-            display: flex;
-            gap: 0.5rem;
-        }
-
-        .share-icons span {
+        .share-bar a {
             display: inline-flex;
             align-items: center;
             justify-content: center;
             width: 32px;
             height: 32px;
+            background-color: #0077B5;
+            color: var(--white);
             border-radius: 4px;
-            color: white;
+            text-decoration: none;
             font-weight: bold;
-            font-size: 0.9rem;
-            cursor: pointer;
         }
-        .icon-in { background-color: #0A66C2; }
-        .icon-teams { background-color: #6264A7; }
-        .icon-wa { background-color: #25D366; }
-        .icon-link { background-color: #9CA3AF; }
+
+        @media (max-width: 1200px) {
+            .cta-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
 
         @media (max-width: 768px) {
-            .hero-content-box { padding: 2rem; }
-            .trust-banner { padding: 2rem; }
-            .trust-grid { grid-template-columns: 1fr; }
+            .hero-content-box { padding: 2rem; margin-left: 0; }
+            .cta-grid { grid-template-columns: 1fr; }
+            .cta-actions { flex-direction: column; align-items: stretch; }
         }
 
         footer {
@@ -487,6 +494,7 @@
                                 <a href="Laptoprecycling.html">Laptop recycling</a>
                                 <a href="Mobiledevicerecycling.html">Mobile device recycling</a>
                                 <a href="Monitorscreenrecycling.html">Monitor &amp; screen recycling</a>
+                                <a href="ServerRecycling.html">Server recycling</a>
                             </div>
                         </div>
                     </div>
@@ -511,7 +519,7 @@
                     <div class="dropdown-content single-column">
                         <div class="dropdown-columns">
                             <div class="column">
-                                <a href="DataDestructionMethods.html">Data destruction methods</a>
+                                <a href="DataDestructionMethods.html">Secure Data erasure</a>
                                 <a href="Articles.html">Articles</a>
                                 <a href="Harddrivemediadestruction.html">Hard drive &amp; media destruction</a>
                                 <a href="SecureDataDestruction.html">Secure data destruction</a>
@@ -527,7 +535,6 @@
                         <div class="dropdown-columns">
                             <div class="column">
                                 <a href="Documentscertificates.html">Documents &amp; Certificates</a>
-                                <a href="Blogs.html">Blogs</a>
                             </div>
                         </div>
                     </div>
@@ -566,7 +573,7 @@
                 KEY TAKEAWAYS
             </div>
 
-            <p>Sensitive data doesn’t disappear when storage media reaches the end of its life. We securely destroy data on hard drives, SSDs, backup tapes and other storage media, whether they’re supplied as part of a wider IT recycling collection or on their own. Our <a href="Harddrivemediadestruction.html" class="inline-link">secure data destruction service</a> explains the end-to-end security measures we follow, while our <a href="Howitworks.html" class="inline-link">data destruction methods</a> provide more detail on the techniques we use. Here, you'll find the information that's specific to hard drive and media destruction, including what we accept, how the process works and what certification you'll receive.</p>
+            <p>Sensitive data doesn’t disappear when storage media reaches the end of its life. We securely destroy data on hard drives, SSDs, backup tapes and other storage media, whether they’re supplied as part of a wider IT recycling collection or on their own. Our <a href="Harddrivemediadestruction.html" class="inline-link">secure data destruction service</a> explains the end-to-end security measures we follow, while our <a href="Howitworks.html" class="inline-link">Secure Data erasure</a> provide more detail on the techniques we use. Here, you'll find the information that's specific to hard drive and media destruction, including what we accept, how the process works and what certification you'll receive.</p>
 
             <h3>Which drives and media do we destroy data on?</h3>
             <p>We destroy data held on:</p>
@@ -596,7 +603,7 @@
             <p>Take an inventory of what you are sending, particularly anything holding confidential or business-critical information. Back up anything you still need, using secure cloud storage or a network-attached drive, and check the backup before it leaves your premises. Keep the media secure while you wait for collection. For a full checklist, see our guide to <a href="Howitworks.html" class="inline-link">preparing your IT equipment for recycling</a>.</p>
 
             <h3>How do we destroy media that cannot be wiped?</h3>
-            <p>Where wiping is not suitable, we degauss magnetic media to remove the magnetic field, or shred devices into fragments no larger than 6mm using CPNI-approved technology, backed throughout by NCSC-approved standards. For the full detail on when each method applies and why, see our guide to <a href="Howitworks.html" class="inline-link">data destruction methods</a>.</p>
+            <p>Where wiping is not suitable, we degauss magnetic media to remove the magnetic field, or shred devices into fragments no larger than 6mm using CPNI-approved technology, backed throughout by NCSC-approved standards. For the full detail on when each method applies and why, see our guide to <a href="Howitworks.html" class="inline-link">Secure Data erasure</a>.</p>
 
             <h3>How do we keep data destruction secure without compromising sustainability?</h3>
             <p>Wherever a hard drive, SSD or other storage media can be securely wiped, we do that first. This allows the device to be reused rather than destroyed, supporting our approach of prioritising reuse before recycling, and recycling before disposal.</p>
@@ -606,55 +613,91 @@
             <h3>What certification will I receive?</h3>
             <p>Every job comes with a Duty of Care Waste Transfer Note at collection and a <a href="Documentscertificates.html" class="inline-link">Certificate of Destruction</a> once processing is complete. You can also choose an individual wiping report for each drive for audit purposes. Read more in our guide to <a href="Documentscertificates.html" class="inline-link">hard drive destruction certificates and audit trails</a>, or see the wider picture in our overview of <a href="Documentscertificates.html" class="inline-link">data destruction certificates</a>.</p>
 
-            <!-- Trust Banner / Ready to Book -->
-            <h2>Ready to book?</h2>
-            
-            <div class="trust-banner" id="book">
-                <h3>Here's why businesses trust us to recycle their IT</h3>
-                <p>Secure, carbon-negative IT recycling with free qualifying collections, data destruction and <a href="Documentscertificates.html" style="color:white; text-decoration: underline;">certificates always provided</a>.</p>
+            <!-- Ready to Book Section -->
+            <section id="book">
+                <h2 style="font-size: 2.2rem; color: var(--dark-grey); margin-bottom: 1.5rem; font-weight: 800;">Ready to book?</h2>
                 
-                <div class="trust-grid">
-                    <div class="trust-card">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 16h16M4 16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2m-16 0v-6c0-1.1.9-2 2-2h8l4 3v5"></path><circle cx="7" cy="18" r="2"></circle><circle cx="17" cy="18" r="2"></circle></svg>
-                        <h4>Free qualifying collections</h4>
-                        <p>Free for 10+ qualifying laptops, PCs or servers.</p>
+                <div class="cta-banner">
+                    <h2>Our ITAD Process is simple!</h2>
+                    <p class="sub-heading">We make sustainable IT disposal simple for all businesses &amp; institutions.</p>
+
+                    <div class="cta-grid">
+                        <!-- Card 1 -->
+                        <div class="cta-card">
+                            <svg class="cta-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M2 12h20"/>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                            </svg>
+                            <h4>Book</h4>
+                            <p>Fill in the form and book a collection date. Free qualifying collections for 10+ devices.</p>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="cta-card">
+                            <svg class="cta-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M1 3h15v13H1z"/>
+                                <path d="M16 8h4l3 3v5h-7V8z"/>
+                                <circle cx="5.5" cy="18.5" r="2.5"/>
+                                <circle cx="18.5" cy="18.5" r="2.5"/>
+                            </svg>
+                            <h4>Collect</h4>
+                            <p>We securely collect your IT equipment directly from your premises, ensuring every device is handled safely and transported.</p>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="cta-card">
+                            <svg class="cta-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                            </svg>
+                            <h4>We handle the data</h4>
+                            <p>All <a href="SecureDataDestruction.html" class="inline-link">data is securely erased.</a> Devices that cannot be securely erased are <a href="DataDestructionMethods.html" class="inline-link">securely destroyed </a> and disposed of responsibly.</p>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div class="cta-card">
+                            <svg class="cta-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M7 19H3v-4"/>
+                                <path d="M21 12a9 9 0 0 0-15-6.7L3 9"/>
+                                <path d="M3 5v4h4"/>
+                                <path d="M17 5h4v4"/>
+                                <path d="M3 12a9 9 0 0 0 15 6.7l3-3.7"/>
+                                <path d="M21 19v-4h-4"/>
+                            </svg>
+                            <h4>Recycle &amp; Reuse</h4>
+                            <p>Suitable equipment is refurbished, reused or responsibly recycled.</p>
+                        </div>
+                        
+                        <!-- Card 5 -->
+                        <div class="cta-card">
+                            <svg class="cta-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                            <h4>Certifications provided</h4>
+                            <p>We provide <a href="Documentscertificates.html" class="inline-link">all the certificates and records</a> for your compliance.</p>
+                        </div>
                     </div>
-                    <div class="trust-card">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                        <h4>Secure data destruction</h4>
-                        <p>Sensitive data handled properly.</p>
-                    </div>
-                    <div class="trust-card">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-                        <h4>Certificates provided</h4>
-                        <p>Documentation for your records.</p>
-                    </div>
-                    <div class="trust-card">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10z"></path></svg>
-                        <h4>Carbon-negative recycling</h4>
-                        <p>Responsible, reuse-first processing.</p>
+
+                    <p class="cta-footer-text">Book your collection today and let us take care of compliance, security, and sustainability with transparent, certified recycling:</p>
+
+                    <div class="cta-actions">
+                        <a href="Book.html#form-section" class="btn-lime">BOOK A COLLECTION</a>
+                        <a href="tel:07904010708" class="btn-phone">07904010708</a>
                     </div>
                 </div>
 
-                <div class="trust-actions">
-                    <a href="Book.html#form-section" class="btn-lime">BOOK A COLLECTION</a>
-                    <a href="tel:07904010708" class="btn-light">07904010708</a>
+                <div class="share-bar">
+                    <span>Share this:</span>
+                    <a href="#" title="Share on LinkedIn">in</a>
+                    <a href="#" style="background-color: #5B5FC7;" title="Share on Teams">T</a>
+                    <a href="#" style="background-color: #25D366;" title="Share on WhatsApp">WA</a>
+                    <a href="#" style="background-color: #6B7280;" title="Copy Link">&#128279;</a>
                 </div>
-            </div>
-
-            <!-- Social Share Links -->
-            <div class="share-section">
-                <span>Share this:</span>
-                <div class="share-icons">
-                    <span class="icon-in" title="LinkedIn">in</span>
-                    <span class="icon-teams" title="Microsoft Teams">T</span>
-                    <span class="icon-wa" title="WhatsApp">W</span>
-                    <span class="icon-link" title="Copy Link">&#128279;</span>
-                </div>
-            </div>
+            </section>
 
         </article>
-
     </main>
 
     <footer>
