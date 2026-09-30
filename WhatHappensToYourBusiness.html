@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What happens to your business computers after they are collected for recycling? | Saving Tech Waste</title>
+  
+  <!-- Favicon link -->
+  <link rel="icon" type="image/x-icon" href="icon.ico">
+
+  <style>
+    :root {
+      --primary-green: #2E8B57;
+      --dark-grey: #1F2937;
+      --bg-teal: #013b46;
+      --bg-teal-dark: #002d36;
+      --bg-cream: #faf9e6;
+      --bg-card: #f2f1d5;
+      --text-dark: #102a30;
+      --text-muted: #4a5d63;
+      --accent-lime: #c2f04d;
+      --accent-lime-hover: #b0e038;
+      --lime-accent: #D4F34A;
+      --white: #ffffff;
+      --font-heading: 'Oswald', 'Arial Narrow', sans-serif;
+      --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --dark-blue: #0B4A6F;
+      --icon-blue: #1085C5;
+      --hero-blue: #2A8BCA;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-cream);
+      color: var(--text-dark);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    a {
+      color: #0066cc;
+      text-decoration: underline;
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+
+    /* Container Utility */
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header & Navigation */
+    header {
+      background-color: var(--white);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0.5rem 2rem; 
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      overflow: hidden; 
+      height: 80px; 
+    }
+
+    .logo a {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .logo img {
+      height: 250px; 
+      width: auto;
+      object-fit: contain;
+      margin-left: -20px; 
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-links > a:not(.btn-primary) {
+      text-decoration: none;
+      color: var(--dark-grey);
+      margin-left: 2rem;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    .nav-links > a:not(.btn-primary):hover {
+      color: var(--primary-green);
+    }
+
+    .nav-links > .btn-primary {
+      margin-left: 2rem;
+    }
+
+    /* Dropdown Menu Styles */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+      margin-left: 2rem;
+    }
+
+    .dropdown .dropbtn {
+      background: none;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-weight: 600;
+      color: var(--dark-grey);
+      text-decoration: none;
+      transition: color 0.3s;
+      font-family: inherit;
+      padding: 1rem 0;
+    }
+
+    .dropdown:hover .dropbtn {
+      color: var(--primary-green);
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: var(--white);
+      min-width: 500px;
+      box-shadow: 0px 8px 24px rgba(0,0,0,0.12);
+      z-index: 100;
+      border-radius: 8px;
+      top: 100%;
+      left: 0;
+      padding: 1.5rem;
+      border-top: 3px solid var(--primary-green);
+    }
+
+    .dropdown-content.single-column {
+      min-width: 260px;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-columns {
+      display: flex;
+      gap: 3rem;
+    }
+
+    .column {
+      flex: 1;
+    }
+
+    .column h4 {
+      font-size: 1.05rem;
+      margin-bottom: 0.8rem;
+      color: var(--dark-grey);
+      border-bottom: 1px solid #E5E7EB;
+      padding-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .column a {
+      color: #4B5563;
+      padding: 0.5rem 0;
+      text-decoration: none;
+      display: block;
+      margin-left: 0;
+      font-weight: 400;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    .column a:hover {
+      color: var(--primary-green);
+    }
+
+    .btn-primary {
+      background-color: var(--primary-green);
+      color: var(--white);
+      padding: 0.5rem 1.5rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .btn-primary:hover {
+      background-color: #246B43;
+    }
+
+    /* Buttons & Utility Links */
+    .btn-lime {
+      background-color: var(--lime-accent);
+      color: var(--dark-grey);
+      padding: 0.85rem 1.75rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 1.1rem;
+      display: inline-block;
+      border: none;
+      cursor: pointer;
+      text-transform: uppercase;
+      transition: background 0.2s;
+    }
+
+    .btn-lime:hover {
+      background-color: #C3E239;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      background-color: var(--bg-teal);
+      color: var(--white);
+      padding: 48px 0;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .breadcrumbs {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 16px;
+    }
+
+    .breadcrumbs a {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+    }
+
+    .breadcrumbs a:hover {
+      text-decoration: underline;
+    }
+
+    .hero-title {
+      font-family: var(--font-heading);
+      font-size: 42px;
+      line-height: 1.15;
+      font-weight: 700;
+      color: var(--accent-lime);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .hero-subtitle {
+      font-size: 18px;
+      line-height: 1.4;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 24px;
+    }
+
+    .reading-time {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.85);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hero-image-container img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    /* Article Main Layout */
+    .article-section {
+      padding: 48px 0;
+    }
+
+    .article-container {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    /* Table of Contents */
+    .toc-box {
+      background-color: var(--bg-card);
+      border: 1px solid rgba(0,0,0,0.06);
+      border-radius: 8px;
+      padding: 24px;
+      margin-bottom: 40px;
+    }
+
+    .toc-title {
+      font-family: var(--font-heading);
+      font-size: 18px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+      color: var(--text-dark);
+    }
+
+    .toc-list {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .toc-list li {
+      margin-bottom: 8px;
+      padding-left: 16px;
+      position: relative;
+    }
+
+    .toc-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--text-dark);
+    }
+
+    .toc-list a {
+      color: #005a9e;
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    .toc-list a:hover {
+      text-decoration: underline;
+    }
+
+    .key-takeaways-btn {
+      margin-top: 16px;
+      background: none;
+      border: none;
+      font-family: var(--font-heading);
+      font-size: 15px;
+      font-weight: bold;
+      text-transform: uppercase;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--text-dark);
+    }
+
+    /* Content Styling */
+    .content-body p {
+      margin-bottom: 20px;
+      font-size: 17px;
+      color: #1a2e33;
+    }
+
+    .content-body h2 {
+      font-family: var(--font-heading);
+      font-size: 28px;
+      text-transform: uppercase;
+      margin-top: 40px;
+      margin-bottom: 16px;
+      color: var(--text-dark);
+      line-height: 1.2;
+    }
+
+    .content-body ul {
+      margin-bottom: 24px;
+      padding-left: 24px;
+    }
+
+    .content-body li {
+      margin-bottom: 10px;
+      font-size: 17px;
+    }
+
+    /* FAQ Section */
+    .faq-section {
+      margin-top: 48px;
+    }
+
+    .faq-item {
+      background-color: var(--bg-card);
+      border-radius: 8px;
+      padding: 24px;
+      margin-bottom: 16px;
+    }
+
+    .faq-question {
+      font-size: 19px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--text-dark);
+    }
+
+    .faq-answer {
+      font-size: 16px;
+      color: #2c3e42;
+      line-height: 1.5;
+    }
+
+    /* Share Bar */
+    .share-bar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 40px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(0,0,0,0.1);
+    }
+
+    .share-title {
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    .social-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .icon-linkedin { background-color: #0077b5; }
+    .icon-teams { background-color: #6264a7; }
+    .icon-whatsapp { background-color: #25d366; }
+    .icon-link { background-color: #718096; }
+
+    /* Newsletter CTA Banner */
+    .newsletter-banner {
+      background-color: var(--bg-teal);
+      color: var(--white);
+      padding: 48px 0;
+      margin-top: 60px;
+    }
+
+    .newsletter-title {
+      font-family: var(--font-heading);
+      font-size: 32px;
+      text-transform: uppercase;
+      text-align: center;
+      color: var(--accent-lime);
+      margin-bottom: 8px;
+    }
+
+    .newsletter-subtitle {
+      text-align: center;
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 28px;
+    }
+
+    .newsletter-form {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      min-width: 220px;
+    }
+
+    .form-group label {
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 6px;
+      font-family: var(--font-heading);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .form-group input {
+      padding: 12px 16px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      font-size: 15px;
+      background-color: var(--bg-cream);
+    }
+
+    .btn-subscribe {
+      background-color: var(--accent-lime);
+      color: var(--bg-teal-dark);
+      font-family: var(--font-heading);
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 12px 28px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      align-self: flex-end;
+      font-size: 16px;
+      transition: background-color 0.2s;
+    }
+
+    .btn-subscribe:hover {
+      background-color: var(--accent-lime-hover);
+    }
+
+    /* CTA Section & ITAD Process Box */
+    #book {
+      max-width: 1100px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      color: var(--dark-grey);
+      margin-bottom: 1.5rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .cta-banner {
+      background-color: var(--dark-blue);
+      border-radius: 12px;
+      padding: 3.5rem 2rem;
+      color: var(--white);
+      margin-bottom: 3rem;
+    }
+
+    .cta-banner h2 {
+      font-size: 2.2rem;
+      color: var(--lime-accent);
+      margin-bottom: 0.5rem;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    .cta-banner p.sub-heading {
+      font-size: 1.15rem;
+      color: #E2E8F0;
+      margin-bottom: 2.5rem;
+    }
+
+    .cta-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .cta-card {
+      background-color: var(--white);
+      color: var(--dark-grey);
+      border-radius: 8px;
+      padding: 1.5rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .cta-card-icon {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 0.85rem;
+      color: var(--icon-blue);
+    }
+
+    .cta-card h4 {
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+      font-weight: 700;
+    }
+
+    .cta-card p {
+      font-size: 0.88rem;
+      color: #4B5563;
+      line-height: 1.4;
+    }
+
+    .cta-footer-text {
+      font-size: 1.05rem;
+      color: #E2E8F0;
+      margin-bottom: 1.5rem;
+    }
+
+    .cta-actions {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .btn-phone {
+      background-color: #E2E8F0;
+      color: var(--dark-grey);
+      padding: 0.85rem 1.75rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 1.1rem;
+      display: inline-block;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-phone:hover {
+      background-color: #CBD5E1;
+    }
+
+    a.inline-link {
+      color: var(--hero-blue);
+      text-decoration: underline;
+    }
+
+    a.inline-link:hover {
+      color: #1a6291;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--dark-grey);
+      color: var(--white);
+      text-align: center;
+      padding: 2rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 1200px) {
+      .cta-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 868px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-title {
+        font-size: 32px;
+      }
+      .newsletter-form {
+        flex-direction: column;
+      }
+      .btn-subscribe {
+        align-self: stretch;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .cta-grid {
+        grid-template-columns: 1fr;
+      }
+      .cta-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Navigation -->
+  <header>
+    <div class="nav-container">
+      <div class="logo">
+        <a href="index.html">
+          <img src="1-01.png" alt="Saving Tech Logo">
+        </a>
+      </div>
+      <nav class="nav-links">
+        <!-- 1. Free IT Disposal Dropdown -->
+        <div class="dropdown">
+          <a href="FreeITDisposal.html" class="dropbtn">Free IT Disposal &#711;</a>
+          <div class="dropdown-content single-column">
+            <div class="dropdown-columns">
+              <div class="column">
+                <h4>IT recycling services</h4>
+                <a href="Computerrecycling.html">Computer recycling</a>
+                <a href="Laptoprecycling.html">Laptop recycling</a>
+                <a href="Mobiledevicerecycling.html">Mobile device recycling</a>
+                <a href="Monitorscreenrecycling.html">Monitor &amp; screen recycling</a>
+                <a href="ServerRecycling.html">Server recycling</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Our Services Dropdown -->
+        <div class="dropdown">
+          <a href="index.html#services" class="dropbtn">Our Services &#711;</a>
+          <div class="dropdown-content single-column">
+            <div class="dropdown-columns">
+              <div class="column">
+                <a href="Assetswecollectrecycle.html">Assets we collect &amp; recycle</a>
+                <a href="FAQs.html">FAQs</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Data Destruction Dropdown -->
+        <div class="dropdown">
+          <a href="Howitworks.html" class="dropbtn">Data Destruction &#711;</a>
+          <div class="dropdown-content single-column">
+            <div class="dropdown-columns">
+              <div class="column">
+                <a href="DataDestructionMethods.html">Secure Data erasure</a>
+                <a href="Articles.html">Articles</a>
+                <a href="Harddrivemediadestruction.html">Hard drive &amp; media destruction</a>
+                <a href="SecureDataDestruction.html">Secure data destruction</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. About Us Dropdown -->
+        <div class="dropdown">
+          <a href="AboutUs.html" class="dropbtn">About Us &#711;</a>
+          <div class="dropdown-content single-column">
+            <div class="dropdown-columns">
+              <div class="column">
+                <a href="Documentscertificates.html">Documents &amp; Certificates</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a href="Book.html#form-section" class="btn-primary">Book a Collection</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="breadcrumbs">
+          <a href="index.html">Home</a> &rsaquo; <a href="Articles.html">Data Destruction</a> &rsaquo; <a href="Articles.html">Articles</a> &rsaquo; What happens to your business computers after they are collected for recycling?
+        </div>
+        <h1 class="hero-title">What happens to your business computers after they are collected for recycling?</h1>
+        <p class="hero-subtitle">A step-by-step guide to business computer recycling – how data is destroyed, devices assessed for reuse, and why circularity is important.</p>
+        <div class="reading-time">
+          &#128338; Estimated reading time: 6 minutes
+        </div>
+      </div>
+      <div class="hero-image-container">
+        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="Engineers dismantling and recycling computer components">
+      </div>
+    </div>
+  </section>
+
+  <!-- Article Body Section -->
+  <main class="article-section">
+    <div class="container article-container">
+
+      <!-- Table of Contents Box -->
+      <div class="toc-box">
+        <div class="toc-title">Article Contents</div>
+        <ul class="toc-list">
+          <li><a href="#step-1">Step 1: Collection from your premises</a></li>
+          <li><a href="#step-2">Step 2: Secure transport and UK-based processing</a></li>
+          <li><a href="#step-3">Step 3: Data destruction and sanitisation</a></li>
+          <li><a href="#step-4">Step 4: Assessment and triage</a></li>
+          <li><a href="#step-5">Step 5: Refurbishment and reuse</a></li>
+          <li><a href="#step-6">Step 6: Material recycling</a></li>
+          <li><a href="#book-collection">Book a certified collection</a></li>
+          <li><a href="#faq">Frequently asked questions</a></li>
+        </ul>
+        <button class="key-takeaways-btn">&#9654; KEY TAKEAWAYS</button>
+      </div>
+
+      <div class="content-body">
+        <p>Handing over old business computers to a recycling provider is an act of trust. Those devices may contain years of sensitive company information, client records, financial data or internal communications, so understanding what happens after collection matters.</p>
+
+        <p>For most organisations, business computer recycling is not simply about clearing storage space or removing unwanted equipment. It is about protecting data, meeting compliance obligations and ensuring equipment is handled responsibly once it leaves the premises.</p>
+
+        <p>This guide walks through the full IT recycling process, explained at each stage from secure transport and data destruction through to refurbishment, recycling and final certification.</p>
+
+        <p>Understanding what happens to recycled computers once they leave your premises is also important. Recycling is not always the first or best outcome. Where equipment can be refurbished and reused, extending its working life is generally considered the more environmentally responsible option. Recycling remains essential, but it should sit behind reuse wherever possible.</p>
+
+        <p>Different IT recycling providers operate in different ways, and processes can vary considerably between companies. This article explains how Saving Tech Waste approaches collections, data destruction, refurbishment and recycling within the UK.</p>
+
+        <!-- Step 1 -->
+        <h2 id="step-1">Step 1: Collection from your premises</h2>
+        <p>The business computer recycling process begins with collection and asset logging. Devices are typically recorded against a collection order using details such as make, model and serial number where available. This creates the beginning of a documented chain of custody that tracks equipment throughout the disposal process.</p>
+        <p>At Saving Tech Waste, collections are carried out by background-checked staff using tracked vehicles, helping ensure equipment remains secure during transit. Maintaining visibility over equipment from the point of collection onwards is an important part of responsible IT disposal, particularly for organisations handling commercially sensitive or regulated data.</p>
+
+        <!-- Step 2 -->
+        <h2 id="step-2">Step 2: Secure transport and UK-based processing</h2>
+        <p>Once collected, equipment is transported to our secure processing facility for assessment and data destruction. Some providers consolidate loads through multiple depots or transfer sites before processing, while others transport equipment directly to their facility.</p>
+        <p>Where IT equipment is exported overseas for processing, visibility can become more limited. The export of waste electrical equipment carries risks if downstream handling is not properly monitored. In some cases, exported equipment may end up in countries with weaker environmental regulation, informal dismantling practices or poor worker protections.</p>
+        <p>Keeping processing within the UK helps maintain clearer accountability over how equipment, components and recovered materials are ultimately handled. It also supports UK recycling infrastructure and reduces the environmental impact associated with overseas transportation.</p>
+        <p>At Saving Tech Waste, 100% of all processing takes place within the UK and devices remain within a documented chain of custody throughout the process – no waste is ever exported.</p>
+        <p>For businesses operating in regulated sectors such as finance, healthcare and legal services, retaining an auditable domestic chain of custody can also simplify compliance and reporting requirements.</p>
+
+        <!-- Step 3 -->
+        <h2 id="step-3">Step 3: Data destruction and sanitisation</h2>
+        <p>Before any device is reused, refurbished or dismantled, secure data destruction takes priority.</p>
+        <p>This stage is often the single biggest concern for businesses disposing of IT equipment, particularly where devices may contain confidential client information, employee records, financial data or commercially sensitive documents.</p>
+        <p>Importantly, deleting files or formatting a hard drive does not fully remove data. In many cases, deleted information can still be recovered using relatively accessible forensic software. Proper sanitisation requires more rigorous methods designed to prevent recovery altogether.</p>
+        <p>Computer recycling <a href="#">data destruction processes</a> can vary depending on the type, condition and intended fate of the device. Common approaches include:</p>
+        
+        <ul>
+          <li><strong>Software-based data wiping</strong> using certified overwriting tools that replace existing data multiple times</li>
+          <li><strong>Degaussing</strong>, which uses strong magnetic fields to disrupt data stored on magnetic drives</li>
+          <li><strong>IT Asset shredding</strong> – In other words physical destruction, including shredding, crushing or drilling storage media so it cannot be reconstructed</li>
+        </ul>
+
+        <p>At Saving Tech Waste, <a href="#">NCSC</a>-aligned sanitisation methods are used before any further processing takes place. Devices that are suitable for reuse are securely wiped and tested prior to refurbishment, while damaged or non-functional storage media may be physically destroyed instead.</p>
+
+        <p>For audit processes a <a href="#">Certificate of Destruction</a> is provided for the consignment in total, or clients can opt for individual certificates for every data-bearing device. This provides documented evidence that can support <a href="#">GDPR</a> accountability requirements and internal audit processes.</p>
+
+        <p>The balance between reuse and destruction is important here. Effective sanitisation allows functional equipment to remain in circulation safely, without compromising data security. Without reliable data destruction, refurbishment and reuse would not be possible at scale.</p>
+
+        <!-- Step 4 -->
+        <h2 id="step-4">Step 4: Assessment and triage</h2>
+        <p>Once data destruction has been completed, devices are assessed to determine the most appropriate next step.</p>
+        <p>This stage typically considers factors such as:</p>
+        <ul>
+          <li>Device age and specification</li>
+          <li>Physical condition</li>
+          <li>Functional performance</li>
+          <li>Repair viability</li>
+          <li>Current reuse demand</li>
+        </ul>
+        <p>At Saving Tech Waste we prioritise refurbishment and reuse over material recycling to support a circular economy. Most IT kit still has working life left. Scrapping destroys that value. Truly <a href="#">sustainable IT recycling</a> always means refurbishment first, materials recovery last.</p>
+        <p>This reflects the wider <a href="#">waste hierarchy</a>, which places reuse above recycling from an environmental perspective. Extending the life of existing equipment preserves the energy, raw materials and manufacturing emissions already invested in the device.</p>
+        <p>For laptops and desktops in good condition, refurbishment may involve hardware testing, component replacement, cleaning, operating system installation and quality assurance checks before the device is introduced back into the market.</p>
+        <p>Devices that are obsolete, heavily damaged or beyond economical repair are instead directed towards material recovery and recycling.</p>
+
+        <!-- Step 5 -->
+        <h2 id="step-5">Step 5: Refurbishment and reuse</h2>
+        <p>Refurbishment is often the most environmentally beneficial outcome for business IT equipment.</p>
+        <p>Manufacturing new computers requires significant quantities of raw materials, including aluminium, copper, lithium, cobalt and rare earth elements, alongside substantial energy and water consumption. Extending the lifespan of existing devices helps reduce demand for new manufacturing and lowers overall environmental impact.</p>
+        <p>At Saving Tech Waste, suitable devices are refurbished and directed towards reuse channels, including resale through partners such as <a href="#">Back Market</a>.</p>
+        <p>Importantly, refurbishment does not simply mean reselling old equipment without checks or preparation. Devices intended for reuse are always securely sanitised, tested and restored to working condition before being reintroduced into the market.</p>
+        <p>Saving Tech Waste works with the UK Governments <a href="#">IT Reuse for Good Charter</a> to tackle digital exclusion, supporting wider accessibility to technology by making lower-cost devices available to smaller businesses, students and consumers who may not require brand-new hardware.</p>
+
+        <!-- Step 6 -->
+        <h2 id="step-6">Step 6: Material recycling</h2>
+        <p>Not every device can or should be refurbished. Equipment that is damaged beyond repair, obsolete or unsuitable for reuse moves into material-level recycling.</p>
+        <p>Where recycled computers go from this point depends on their material composition. During this stage, devices are dismantled and separated into individual material streams, including:</p>
+        <ul>
+          <li>Steel</li>
+          <li>Aluminium</li>
+          <li>Copper</li>
+          <li>Plastics</li>
+          <li>Circuit boards</li>
+          <li>Batteries</li>
+          <li>Cabling</li>
+        </ul>
+        <p>These materials are then sent to authorised downstream processors for recovery and re-entry into manufacturing supply chains.</p>
+        <p>Responsible recycling helps reduce the need for virgin material extraction and diverts electronic waste away from landfill. However, recycling itself still consumes energy and resources, which is why reuse remains preferable where feasible.</p>
+        <p>At Saving Tech Waste, the aim is to achieve zero landfill disposal and keep processing within the UK recycling network.</p>
+
+        <!-- Book a collection -->
+        <h2 id="book-collection">Book a certified collection</h2>
+        <p>This article has followed what happens to recycled computers from collection through to certified disposal, covering secure transport, data destruction, assessment and the channels used to extend equipment life wherever possible.</p>
+        <p>Responsible business computer recycling depends on a documented chain of custody, a rigorous computer recycling data destruction process and a genuine commitment to reuse before materials recovery.</p>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq-section">
+          <h2>Frequently asked questions</h2>
+
+          <div class="faq-item">
+            <div class="faq-question">Can individual devices be tracked through the process?</div>
+            <div class="faq-answer">Yes. Asset tracking can be carried out using serial numbers, allowing businesses to maintain records for individual devices throughout collection, data destruction and processing.</div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">How is data permanently destroyed?</div>
+            <div class="faq-answer">This depends on the device and its condition. Common methods include certified software wiping, degaussing and physical destruction such as shredding. Proper sanitisation goes significantly beyond deleting files or formatting drives.</div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">Where do recycled computers go?</div>
+            <div class="faq-answer">That depends on their condition. Functional equipment may be refurbished and returned to use, while non-repairable devices are dismantled and processed for material recovery through authorised recycling partners.</div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">Why does UK-based processing matter?</div>
+            <div class="faq-answer">Keeping processing within the UK helps maintain clearer oversight, traceability and accountability throughout the disposal chain. It can also reduce the risks associated with poorly controlled overseas processing and supports domestic recycling infrastructure.</div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">Does all old IT equipment get recycled?</div>
+            <div class="faq-answer">No. Where possible, refurbishment and reuse are generally prioritised over recycling because extending a device's lifespan usually delivers a lower environmental impact than breaking it down into raw materials.</div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Newsletter Section -->
+  <section class="newsletter-banner">
+    <div class="container">
+      <h2 class="newsletter-title">Join our email list for occasional updates on secure IT recycling, data destruction best practices, & e-waste sustainability.</h2>
+      <p class="newsletter-subtitle">Occasional messages, unsubscribe at any time.</p>
+
+      <form class="newsletter-form" onsubmit="event.preventDefault();">
+        <div class="form-group">
+          <label for="fname">First name *</label>
+          <input type="text" id="fname" placeholder="First name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email: *</label>
+          <input type="email" id="email" placeholder="Email address" required>
+        </div>
+        <button type="submit" class="btn-subscribe">SUBSCRIBE</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Bottom ITAD Process & CTA Section -->
+  <section id="book">
+    <h2 class="section-title">Ready to book?</h2>
+    
+    <div class="cta-banner">
+      <h2>Our ITAD Process is simple!</h2>
+      <p class="sub-heading">We make sustainable IT disposal simple for all businesses &amp; institutions.</p>
+
+      <div class="cta-grid">
+        <!-- Card 1 -->
+        <div class="cta-card">
+          <svg class="cta-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M2 12h20"/>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+          <h4>Book</h4>
+          <p>Fill in the form and book a collection date. Free qualifying collections for 10+ devices.</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="cta-card">
+          <svg class="cta-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M1 3h15v13H1z"/>
+            <path d="M16 8h4l3 3v5h-7V8z"/>
+            <circle cx="5.5" cy="18.5" r="2.5"/>
+            <circle cx="18.5" cy="18.5" r="2.5"/>
+          </svg>
+          <h4>Collect</h4>
+          <p>We securely collect your IT equipment directly from your premises, ensuring every device is handled safely and transported.</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="cta-card">
+          <svg class="cta-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+          <h4>We handle the data</h4>
+          <p>All <a href="SecureDataDestruction.html" class="inline-link">data is securely erased.</a> Devices that cannot be securely erased are <a href="DataDestructionMethods.html" class="inline-link">securely destroyed </a> and disposed of responsibly.</p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="cta-card">
+          <svg class="cta-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 19H3v-4"/>
+            <path d="M21 12a9 9 0 0 0-15-6.7L3 9"/>
+            <path d="M3 5v4h4"/>
+            <path d="M17 5h4v4"/>
+            <path d="M3 12a9 9 0 0 0 15 6.7l3-3.7"/>
+            <path d="M21 19v-4h-4"/>
+          </svg>
+          <h4>Recycle & Reuse</h4>
+          <p>Suitable equipment is refurbished, reused or responsibly recycled.</p>
+        </div>
+        
+        <!-- Card 5 -->
+        <div class="cta-card">
+          <svg class="cta-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+            <polyline points="22 4 12 14.01 9 11.01"/>
+          </svg>
+          <h4>Certifications provided</h4>
+          <p>We provide <a href="Documentscertificates.html" class="inline-link">all the certificates and records</a> for your compliance.</p>
+        </div>
+      </div>
+
+      <p class="cta-footer-text">Book your collection today and let us take care of compliance, security, and sustainability with transparent, certified recycling:</p>
+
+      <div class="cta-actions">
+        <a href="Book.html#form-section" class="btn-lime">BOOK A COLLECTION</a>
+        <a href="tel:07904010708" class="btn-phone">07904010708</a>
+      </div>
+    </div>
+
+    <div class="share-bar">
+      <span>Share this:</span>
+      <a href="#" class="social-icon icon-linkedin" title="Share on LinkedIn">in</a>
+      <a href="#" class="social-icon icon-teams" title="Share on Teams">T</a>
+      <a href="#" class="social-icon icon-whatsapp" title="Share on WhatsApp">WA</a>
+      <a href="#" class="social-icon icon-link" title="Copy Link">&#128279;</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; <span id="year"></span> Saving Tech. All rights reserved.</p>
+  </footer>
+  
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

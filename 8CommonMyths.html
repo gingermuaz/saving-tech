@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8 Common Myths About Free IT Recycling, Debunked | Saving Tech</title>
+    
+    <!-- Favicon link -->
+    <link rel="icon" type="image/x-icon" href="icon.ico">
+    
+    <style>
+        :root {
+            --primary-green: #2E8B57; /* Matched to logo */
+            --lime-accent: #D4F34A;
+            --hero-blue: #2A8BCA;
+            --dark-teal: #0d4b56;
+            --dark-grey: #1F2937;
+            --text-grey: #374151;
+            --light-bg: #F3F4F6;
+            --white: #FFFFFF;
+            --cream-bg: #fff9ed;
+			--dark-blue: #0B4A6F;
+			--icon-blue: #1085C5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            color: var(--dark-grey);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.5rem 2rem; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            overflow: hidden; 
+            height: 80px; 
+        }
+
+        .logo a {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .logo img {
+            height: 250px; 
+            width: auto;
+            object-fit: contain;
+            margin-left: -20px; 
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links > a:not(.btn-primary) {
+            text-decoration: none;
+            color: var(--dark-grey);
+            margin-left: 2rem;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links > a:not(.btn-primary):hover {
+            color: var(--primary-green);
+        }
+
+        .nav-links > .btn-primary {
+            margin-left: 2rem;
+        }
+
+        /* Dropdown Menu Styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            margin-left: 2rem;
+        }
+
+        .dropdown .dropbtn {
+            background: none;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-weight: 600;
+            color: var(--dark-grey);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-family: inherit;
+            padding: 1rem 0;
+        }
+
+        .dropdown:hover .dropbtn {
+            color: var(--primary-green);
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--white);
+            min-width: 500px;
+            box-shadow: 0px 8px 24px rgba(0,0,0,0.12);
+            z-index: 100;
+            border-radius: 8px;
+            top: 100%;
+            left: 0;
+            padding: 1.5rem;
+            border-top: 3px solid var(--primary-green);
+        }
+
+        .dropdown-content.single-column {
+            min-width: 260px;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-columns {
+            display: flex;
+            gap: 3rem;
+        }
+
+        .column {
+            flex: 1;
+        }
+
+        .column h4 {
+            font-size: 1.05rem;
+            margin-bottom: 0.8rem;
+            color: var(--dark-grey);
+            border-bottom: 1px solid #E5E7EB;
+            padding-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .column a {
+            color: #4B5563;
+            padding: 0.5rem 0;
+            text-decoration: none;
+            display: block;
+            margin-left: 0;
+            font-weight: 400;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .column a:hover {
+            color: var(--primary-green);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-green);
+            color: var(--white);
+            padding: 0.5rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #246B43;
+        }
+
+        /* Article Hero Section */
+        .article-hero {
+            background-color: var(--dark-teal);
+            color: var(--white);
+            padding: 3.5rem 2rem;
+        }
+
+        .article-hero-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .breadcrumbs {
+            font-size: 0.9rem;
+            color: #A7F3D0;
+            margin-bottom: 1rem;
+        }
+
+        .breadcrumbs a {
+            color: #A7F3D0;
+            text-decoration: none;
+        }
+
+        .breadcrumbs a:hover {
+            text-decoration: underline;
+        }
+
+        .article-hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.15;
+            color: var(--lime-accent);
+            margin-bottom: 1.2rem;
+        }
+
+        .article-hero p.subtitle {
+            font-size: 1.15rem;
+            color: #E5E7EB;
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+
+        .meta-info {
+            font-size: 0.9rem;
+            color: #D1D5DB;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .hero-img-box {
+            width: 100%;
+            height: 320px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        .hero-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Main Article Layout */
+        .article-container {
+            max-width: 900px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        /* Table of Contents Box */
+        .toc-box {
+            background-color: var(--cream-bg);
+            border: 1px solid #F3E8FF;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .toc-box h3 {
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: #4B5563;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .toc-box ul {
+            list-style: none;
+        }
+
+        .toc-box ul li {
+            margin-bottom: 0.6rem;
+            position: relative;
+            padding-left: 1.2rem;
+        }
+
+        .toc-box ul li::before {
+            content: "•";
+            color: var(--primary-green);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .toc-box ul li a {
+            color: #1F2937;
+            text-decoration: underline;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .toc-box ul li a:hover {
+            color: var(--primary-green);
+        }
+
+        /* Article Body Content */
+        .article-body {
+            font-size: 1.05rem;
+            color: var(--text-grey);
+            line-height: 1.7;
+        }
+
+        .article-body h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--dark-grey);
+            margin-top: 2.5rem;
+            margin-bottom: 1.2rem;
+            line-height: 1.25;
+        }
+
+        .article-body h3 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--dark-grey);
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+            scroll-margin-top: 100px;
+        }
+
+        .article-body p {
+            margin-bottom: 1.25rem;
+        }
+
+        .article-body p.concern {
+            font-style: italic;
+            color: #4B5563;
+            margin-bottom: 0.75rem;
+        }
+
+        .article-body p.reality {
+            margin-bottom: 2rem;
+        }
+
+        .article-body a {
+            color: var(--hero-blue);
+            text-decoration: underline;
+        }
+
+        .article-body a:hover {
+            color: #1a6291;
+        }
+
+        /* FAQ Accordion Section */
+        .faq-section {
+            margin-top: 3.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid #E5E7EB;
+        }
+
+        .faq-item {
+            background-color: var(--cream-bg);
+            border-radius: 8px;
+            padding: 1.5rem 1.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .faq-item h4 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--dark-grey);
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-item p {
+            font-size: 1rem;
+            color: var(--text-grey);
+            margin-bottom: 0;
+        }
+
+        /* Newsletter Signup Banner */
+        .newsletter-banner {
+            background-color: var(--dark-teal);
+            color: var(--white);
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .newsletter-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .newsletter-container h3 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .newsletter-container p {
+            font-size: 0.95rem;
+            color: #D1D5DB;
+            margin-bottom: 1.5rem;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 1rem;
+            max-width: 700px;
+            align-items: flex-end;
+        }
+
+        .form-group {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .form-group label {
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        .form-group input {
+            padding: 0.75rem 1rem;
+            border-radius: 4px;
+            border: 1px solid #D1D5DB;
+            font-size: 1rem;
+            background-color: #FFFBEB;
+            width: 100%;
+        }
+
+        .btn-subscribe {
+            background-color: var(--lime-accent);
+            color: var(--dark-grey);
+            font-weight: 800;
+            padding: 0.75rem 2rem;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-size: 0.95rem;
+            transition: background-color 0.2s;
+            height: 46px;
+        }
+
+        .btn-subscribe:hover {
+            background-color: #c0e23b;
+        }
+
+        /* Pillars / Sustainable Section */
+        .pillars-section {
+            background-color: var(--cream-bg);
+            padding: 4rem 2rem;
+        }
+
+        .pillars-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .pillars-header {
+            margin-bottom: 2.5rem;
+        }
+
+        .pillars-header h2 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            color: var(--dark-teal);
+            margin-bottom: 0.5rem;
+        }
+
+        .pillars-header p {
+            font-size: 1.1rem;
+            color: var(--text-grey);
+        }
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .pillar-card {
+            background-color: var(--white);
+            padding: 2rem 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .pillar-icon {
+            width: 48px;
+            height: 48px;
+            stroke: var(--dark-teal);
+            margin-bottom: 1.25rem;
+        }
+
+        .pillar-card h3 {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--dark-teal);
+            margin-bottom: 0.75rem;
+        }
+
+        .pillar-card p {
+            font-size: 0.95rem;
+            color: #4B5563;
+        }
+
+        .pillars-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-lime {
+            background-color: var(--lime-accent);
+            color: var(--dark-grey);
+            font-weight: 800;
+            padding: 0.85rem 1.75rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+        }
+
+        .btn-lime:hover {
+            background-color: #c0e23b;
+        }
+
+        .btn-lime-secondary {
+            background-color: #F3F4F6;
+            color: var(--dark-grey);
+            font-weight: 800;
+            padding: 0.85rem 1.75rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-grey);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+        }
+
+        @media (max-width: 900px) {
+            .article-hero-container {
+                grid-template-columns: 1fr;
+            }
+            .hero-img-box {
+                height: 250px;
+            }
+            .newsletter-form {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .btn-subscribe {
+                height: auto;
+            }
+        }
+		/* CTA Section & ITAD Process Box */
+#book {
+    max-width: 1100px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: var(--dark-grey);
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.cta-banner {
+    background-color: var(--dark-blue);
+    border-radius: 12px;
+    padding: 3.5rem 2rem;
+    color: var(--white);
+    margin-bottom: 3rem;
+}
+
+.cta-banner h2 {
+    font-size: 2.2rem;
+    color: var(--lime-accent);
+    margin-bottom: 0.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.cta-banner p.sub-heading {
+    font-size: 1.15rem;
+    color: #E2E8F0;
+    margin-bottom: 2.5rem;
+}
+
+.cta-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.cta-card {
+    background-color: var(--white);
+    color: var(--dark-grey);
+    border-radius: 8px;
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.cta-card-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 0.85rem;
+    color: var(--icon-blue);
+}
+
+.cta-card h4 {
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.cta-card p {
+    font-size: 0.88rem;
+    color: #4B5563;
+    line-height: 1.4;
+}
+
+.cta-footer-text {
+    font-size: 1.05rem;
+    color: #E2E8F0;
+    margin-bottom: 1.5rem;
+}
+
+.cta-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.btn-phone {
+    background-color: #E2E8F0;
+    color: var(--dark-grey);
+    padding: 0.85rem 1.75rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 1.1rem;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-phone:hover {
+    background-color: #CBD5E1;
+}
+
+a.inline-link {
+    color: var(--hero-blue);
+    text-decoration: underline;
+}
+
+a.inline-link:hover {
+    color: #1a6291;
+}
+
+.share-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 4rem;
+    font-size: 0.95rem;
+    color: #4B5563;
+}
+
+.share-bar a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background-color: #0077B5;
+    color: var(--white);
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Responsive styling for the grid */
+@media (max-width: 1200px) {
+    .cta-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .cta-grid {
+        grid-template-columns: 1fr;
+    }
+    .cta-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="1-01.png" alt="Saving Tech Logo">
+                </a>
+            </div>
+            <nav class="nav-links">
+                <!-- 1. Free IT Disposal Dropdown -->
+                <div class="dropdown">
+                    <a href="FreeITDisposal.html" class="dropbtn">Free IT Disposal &#711;</a>
+                    <div class="dropdown-content single-column">
+                        <div class="dropdown-columns">
+                            <div class="column">
+                                <h4>IT recycling services</h4>
+                                <a href="Computerrecycling.html">Computer recycling</a>
+                                <a href="Laptoprecycling.html">Laptop recycling</a>
+                                <a href="Mobiledevicerecycling.html">Mobile device recycling</a>
+                                <a href="Monitorscreenrecycling.html">Monitor &amp; screen recycling</a>
+                                <a href="ServerRecycling.html">Server recycling</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Our Services Dropdown -->
+                <div class="dropdown">
+                    <a href="#services" class="dropbtn">Our Services &#711;</a>
+                    <div class="dropdown-content single-column">
+                        <div class="dropdown-columns">
+                            <div class="column">
+                                <a href="Assetswecollectrecycle.html">Assets we collect &amp; recycle</a>
+                                <a href="FAQs.html">FAQs</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Data Destruction Dropdown -->
+                <div class="dropdown">
+                    <a href="Howitworks.html" class="dropbtn">Data Destruction &#711;</a>
+                    <div class="dropdown-content single-column">
+                        <div class="dropdown-columns">
+                            <div class="column">
+                                <a href="DataDestructionMethods.html">Secure Data erasure</a>
+                                <a href="Articles.html">Articles</a>
+                                <a href="Harddrivemediadestruction.html">Hard drive &amp; media destruction</a>
+                                <a href="SecureDataDestruction.html">Secure data destruction</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. About Us Dropdown -->
+                <div class="dropdown">
+                    <a href="AboutUs.html" class="dropbtn">About Us &#711;</a>
+                    <div class="dropdown-content single-column">
+                        <div class="dropdown-columns">
+                            <div class="column">
+                                <a href="Documentscertificates.html">Documents &amp; Certificates</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="Book.html#form-section" class="btn-primary">Book a Collection</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Article Hero Header -->
+        <section class="article-hero">
+            <div class="article-hero-container">
+                <div class="article-hero-text">
+                    <div class="breadcrumbs">
+                        <a href="index.html">Home</a> &rsaquo; <a href="Articles.html">Data Destruction</a> &rsaquo; <a href="Articles.html">Articles</a> &rsaquo; 8 common myths about free IT recycling, debunked
+                    </div>
+                    <h1>8 common myths about free IT recycling, debunked</h1>
+                    <p class="subtitle">Free IT recycling raises a lot of questions before businesses commit. Here are the eight most common misconceptions – and what the reality actually looks like.</p>
+                    <div class="meta-info">
+                        <span>&#128338; Estimated reading time: 6 minutes</span>
+                    </div>
+                </div>
+                <div class="hero-img-box">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" alt="Professional reviewing IT recycling options">
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Article Container -->
+        <div class="article-container">
+            <!-- Table of Contents Box -->
+            <div class="toc-box">
+                <h3>Article Contents</h3>
+                <ul>
+                    <li><a href="#intro">Why scepticism about free IT recycling is understandable — but often misplaced</a></li>
+                    <li><a href="#myth1">Myth 1: if it is free, someone must be profiting from your data</a></li>
+                    <li><a href="#myth2">Myth 2: free services do not provide proper data destruction</a></li>
+                    <li><a href="#myth3">Myth 3: there must be hidden charges that appear after collection</a></li>
+                    <li><a href="#myth4">Myth 4: free IT recycling is not WEEE compliant</a></li>
+                    <li><a href="#myth5">Myth 5: equipment recycled for free just gets exported or sent to landfill</a></li>
+                    <li><a href="#myth6">Myth 6: free IT recycling is only available to large businesses with big volumes</a></li>
+                    <li><a href="#myth7">Myth 7: a free service will not give you the documentation you need for compliance</a></li>
+                    <li><a href="#myth8">Myth 8: sustainable IT recycling cannot be free</a></li>
+                    <li><a href="#booking">Book your free IT recycling collection with confidence</a></li>
+                    <li><a href="#faq">Frequently asked questions</a></li>
+                </ul>
+            </div>
+
+            <!-- Article Body Text -->
+            <article class="article-body">
+                <h2 id="intro">Why scepticism about free IT recycling is understandable — but often misplaced</h2>
+                <p>Scepticism about free IT recycling is completely understandable. In most business contexts, free services often come with conditions, hidden costs or compromises in quality. Depending on the supplier, free IT recycling is one of the few cases where a legitimate, accredited service can genuinely match – or exceed – the standard of a paid one.</p>
+                <p>The eight myths below are the most common reasons businesses hold back from booking a collection. Each one deserves a direct answer. If you want to go further, our article on <a href="Articles.html">whether free IT recycling is too good to be true</a> covers how to verify a provider’s credentials before you commit.</p>
+
+                <!-- Myth 1 -->
+                <h3 id="myth1">Myth 1: if it is free, someone must be profiting from your data</h3>
+                <p class="concern"><strong>The concern:</strong> free digital services frequently monetise user data. Why would free IT recycling be different?</p>
+                <p class="reality"><strong>The reality:</strong> IT recycling has a completely different commercial model. The revenue comes from the residual value of recovered materials and refurbishable hardware – not from anything stored on devices. Data is destroyed as part of the process, not accessed, retained or sold. A reputable provider holds all required data protection accreditations and destroys data before any refurbishment assessment takes place. The economics are built on hardware value, not data value.</p>
+
+                <!-- Myth 2 -->
+                <h3 id="myth2">Myth 2: free services do not provide proper data destruction</h3>
+                <p class="concern"><strong>The concern:</strong> paying for data destruction means it will be done properly. A free service will cut corners.</p>
+                <p class="reality"><strong>The reality:</strong> the level of data destruction applied to your devices is determined by the provider’s accreditations and procedures, not by the price of the collection. Saving Tech Waste uses NCSC-approved data sanitisation methods on every data-bearing device we collect and issues a Certificate of Data Destruction per device – regardless of whether a collection charge was made. The question is not whether you paid, but whether the provider can show you the certificate. You can view <a href="Howitworks.html">how our data destruction works</a> and <a href="Documentscertificates.html">examples of our certificates</a> on our website.</p>
+
+                <!-- Myth 3 -->
+                <h3 id="myth3">Myth 3: there must be hidden charges that appear after collection</h3>
+                <p class="concern"><strong>The concern:</strong> the service is advertised as free IT recycling but there will likely be an invoice for something.</p>
+                <p class="reality"><strong>The reality:</strong> for qualifying collections, the service is genuinely free with no invoice to follow. The conditions are clear in advance: Saving Tech Waste provides free collections for businesses with at least 10 laptops, PCs and servers in any combination. Most other IT equipment is also free. Some screen and printer types carry a processing charge, and this is communicated and agreed before collection, not discovered afterwards. Our <a href="FreeITDisposal.html">recycling charges page</a> sets out exactly what applies. A credible provider confirms in writing what is and is not included before collecting a single device.</p>
+
+                <!-- Myth 4 -->
+                <h3 id="myth4">Myth 4: free IT recycling is not WEEE compliant</h3>
+                <p class="concern"><strong>The concern:</strong> WEEE compliance costs money to maintain, so a free service must be cutting corners somewhere.</p>
+                <p class="reality"><strong>The reality:</strong> <a href="Howitworks.html">WEEE compliance</a> is a legal requirement for every provider operating in this space, regardless of what they charge. A provider either holds the necessary authorisations and processes equipment through authorised channels, or it does not. Price is not a factor. Free WEEE collection for UK businesses, when offered by a properly authorised provider, is subject to exactly the same regulatory requirements as any paid service. Before using any IT recycling provider, free or paid, ask to see their Environment Agency authorisation. Our accreditations are documented on our <a href="AboutUs.html">why us page</a>.</p>
+
+                <!-- Myth 5 -->
+                <h3 id="myth5">Myth 5: equipment recycled for free just gets exported or sent to landfill</h3>
+                <p class="concern"><strong>The concern:</strong> free IT recycling too good to be true because corners must be cut somewhere — and disposal is where that happens.</p>
+                <p class="reality"><strong>The reality:</strong> exporting equipment to countries with weaker environmental standards, or directing it to landfill, is the sign of an unethical poorly operated service – not a free one. The two have nothing to do with each other. The harm caused by irresponsible e-waste exports is real and well-documented – our article on the <a href="Articles.html">environmental impact of e-waste</a> covers how informal processing operations in developing countries cause serious environmental and human health damage. That is precisely why UK-based, zero-export processing matters. Saving Tech Waste processes all collected equipment in the UK, operates a zero landfill policy, and documents all downstream material streams. None of this is conditional on whether a collection charge was made.</p>
+
+                <!-- Myth 6 -->
+                <h3 id="myth6">Myth 6: free IT recycling is only available to large businesses with big volumes</h3>
+                <p class="concern"><strong>The concern:</strong> the free threshold must be set so high that it is only accessible to large organisations.</p>
+                <p class="reality"><strong>The reality:</strong> the minimum qualifying volume for a free collection with Saving Tech Waste is 10 laptops, PCs and servers in any combination. Most businesses undergoing any kind of IT refresh will meet this threshold. Smaller volumes can still be discussed, depending on device types, a collection below the standard threshold may still be possible – you can see what’s included in our free service on our <a href="FreeITDisposal.html">IT recycling charges page</a>. Free IT disposal myths about scale are among the most persistent, and they stop smaller businesses from claiming a service they are fully entitled to use.</p>
+
+                <!-- Myth 7 -->
+                <h3 id="myth7">Myth 7: a free service will not give you the documentation you need for compliance</h3>
+                <p class="concern"><strong>The concern:</strong> documentation is a premium feature that comes with a paid service, not a free one.</p>
+                <p class="reality"><strong>The reality:</strong> documentation is not a premium feature. It is a legal requirement of operating a compliant WEEE service. Saving Tech Waste provides a Certificate of Recycling for all collected equipment and a Certificate of Data Destruction for whole collections or individual assets – regardless of whether a charge was made. <a href="Documentscertificates.html">Examples of our certificates</a> are available on our website before you book. If a provider – free or paid – cannot show you their certificates in advance, that is a more significant concern than the price they charge.</p>
+
+                <!-- Myth 8 -->
+                <h3 id="myth8">Myth 8: sustainable IT recycling cannot be free</h3>
+                <p class="concern"><strong>The concern:</strong> being carbon negative and maintaining a reuse-first policy costs money. A free service cannot also be genuinely sustainable.</p>
+                <p class="reality"><strong>The reality:</strong> Saving Tech Waste operates as a 100% carbon-negative business. This applies to all collections, not only those that carry a charge. The carbon-negative position is achieved through efficient processing, use of electric vehicles where possible, and verified carbon offsetting. A reuse-first approach – assessing every device for refurbishment potential before directing it to material recycling – also generates commercial value that helps fund the free collection model. You can read more about our <a href="AboutUs.html">carbon-negative operations</a> on our website. Free IT recycling and genuine sustainability are not in conflict, in our case, the same operating model that makes the service financially viable is also what makes it environmentally credible.</p>
+
+                <!-- Booking Section -->
+                <h2 id="booking">Book your free IT recycling collection with confidence</h2>
+                <p>If you have been holding back from booking because the free aspect raised questions, the best thing to do is ask us directly. <a href="Book.html#form-section">Contact us</a> to confirm your collection qualifies and to arrange a date. We will answer every concern in this article with evidence.</p>
+
+                <!-- FAQs Section -->
+                <div id="faq" class="faq-section">
+                    <h2>Frequently asked questions</h2>
+                    
+                    <div class="faq-item">
+                        <h4>How do I know if a free IT recycling service is legitimate?</h4>
+                        <p>Businesses often ask is free IT recycling legit before committing. The answer is straightforward: ask for the provider’s Environment Agency authorisation, examples of their certificates, confirmation of where processing takes place, and their data sanitisation standard. A legitimate provider answers all of these directly.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h4>Is Saving Tech Waste really free?</h4>
+                        <p>For businesses with at least 10 qualifying devices, collection and standard recycling is free. Some screen and printer types carry a charge, confirmed before collection takes place.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h4>Can I get a free collection if some of my devices are broken or very old?</h4>
+                        <p>Yes. Broken, damaged, or legacy devices are accepted and do not need to be in working order to qualify. If you have faults worth noting, include them when you book so we can prepare accordingly.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h4>What if my collection includes items that carry a charge – does that mean nothing is free?</h4>
+                        <p>No. Most IT equipment qualifies for free collection. Where a charge applies – typically to certain screen or printer types – only those specific items carry a cost. Everything else in the same collection remains free.</p>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <!-- Email Subscription Banner -->
+        <section class="newsletter-banner">
+            <div class="newsletter-container">
+                <h3>Join our email list for occasional updates on secure IT recycling, data destruction best practices, &amp; e-waste sustainability.</h3>
+                <p>Occasional messages, unsubscribe at any time.</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+                    <div class="form-group">
+                        <label for="fname">First name *</label>
+                        <input type="text" id="fname" placeholder="First name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email: *</label>
+                        <input type="email" id="email" placeholder="Email address" required>
+                    </div>
+                    <button type="submit" class="btn-subscribe">SUBSCRIBE</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Sustainable IT Asset Recycling Section (4 Pillars) -->
+        <section id="book">
+                <h2 class="section-title">Ready to book?</h2>
+                
+                <div class="cta-banner">
+                    <h2>Our  ITAD Process is simple!</h2>
+                    <p class="sub-heading">We make sustainable IT disposal simple for all businesses &amp; institutions.</p>
+
+                    <div class="cta-grid">
+                        <!-- Card 1 -->
+                        <div class="cta-card">
+                            <svg class="cta-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M2 12h20"/>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                            </svg>
+                            <h4>Book</h4>
+                            <p>Fill in the form and book a collection date. Free qualifying collections for 10+ devices.</p>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="cta-card">
+                            <svg class="cta-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M1 3h15v13H1z"/>
+                                <path d="M16 8h4l3 3v5h-7V8z"/>
+                                <circle cx="5.5" cy="18.5" r="2.5"/>
+                                <circle cx="18.5" cy="18.5" r="2.5"/>
+                            </svg>
+                            <h4>Collect</h4>
+                            <p>We securely collect your IT equipment directly from your premises, ensuring every device is handled safely and transported.</p>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="cta-card">
+                            <svg class="cta-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                            </svg>
+                            <h4>We handle the data</h4>
+                            <p>All <a href="SecureDataDestruction.html" class="inline-link">data is securely erased.</a> Devices that cannot be securely erased are <a href="DataDestructionMethods.html" class="inline-link">securely destroyed </a> and disposed of responsibly.</p>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div class="cta-card">
+                            <svg class="cta-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M7 19H3v-4"/>
+                                <path d="M21 12a9 9 0 0 0-15-6.7L3 9"/>
+                                <path d="M3 5v4h4"/>
+                                <path d="M17 5h4v4"/>
+                                <path d="M3 12a9 9 0 0 0 15 6.7l3-3.7"/>
+                                <path d="M21 19v-4h-4"/>
+                            </svg>
+                            <h4>Recycle & Reuse</h4>
+                            <p>Suitable equipment is refurbished, reused or responsibly recycled.</p>
+                        </div>
+						
+                        <!-- Card 5 -->
+                        <div class="cta-card">
+                            <svg class="cta-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                            <h4>Certifications provided</h4>
+                            <p>We provide <a href="Documentscertificates.html" class="inline-link">all the certificates and records</a> for your compliance.</p>
+                        </div>
+                    </div>
+
+                    <p class="cta-footer-text">Book your collection today and let us take care of compliance, security, and sustainability with transparent, certified recycling:</p>
+
+                    <div class="cta-actions">
+                        <a href="Book.html#form-section" class="btn-lime">BOOK A COLLECTION</a>
+                        <a href="tel:07904010708" class="btn-phone">07904010708</a>
+                    </div>
+                </div>
+
+                <div class="share-bar">
+                    <span>Share this:</span>
+                    <a href="#" title="Share on LinkedIn">in</a>
+                    <a href="#" style="background-color: #5B5FC7;" title="Share on Teams">T</a>
+                    <a href="#" style="background-color: #25D366;" title="Share on WhatsApp">WA</a>
+                    <a href="#" style="background-color: #6B7280;" title="Copy Link">&#128279;</a>
+                </div>
+            </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Saving Tech. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>

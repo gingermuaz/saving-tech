@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Asset Disposal the Right Way (and Mistakes to Avoid) | Saving Tech</title>
+    
+    <!-- Favicon link -->
+    <link rel="icon" type="image/x-icon" href="icon.ico">
+    
+    <style>
+        :root {
+            --primary-green: #2E8B57; /* Matched to logo */
+            --lime-accent: #D4F34A;
+            --hero-blue: #2A8BCA;
+            --dark-grey: #1F2937;
+            --text-grey: #374151;
+            --light-bg: #F3F4F6;
+            --white: #FFFFFF;
+            --cream-bg: #fff9ed;
+            --dark-teal: #0d4b56;
+            --card-pink: #fdf2f2;
+            --card-pink-border: #fecaca;
+            --error-red: #991b1b;
+			--dark-blue: #0B4A6F;
+			--icon-blue: #1085C5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: var(--dark-grey);
+            line-height: 1.6;
+            background-color: var(--cream-bg);
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.5rem 2rem; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            overflow: hidden; 
+            height: 80px; 
+        }
+
+        .logo a {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .logo img {
+            height: 250px; 
+            width: auto;
+            object-fit: contain;
+            margin-left: -20px; 
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links > a:not(.btn-primary) {
+            text-decoration: none;
+            color: var(--dark-grey);
+            margin-left: 2rem;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links > a:not(.btn-primary):hover {
+            color: var(--primary-green);
+        }
+
+        .nav-links > .btn-primary {
+            margin-left: 2rem;
+        }
+
+        /* Dropdown Menu Styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            margin-left: 2rem;
+        }
+
+        .dropdown .dropbtn {
+            background: none;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-weight: 600;
+            color: var(--dark-grey);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-family: inherit;
+            padding: 1rem 0;
+        }
+
+        .dropdown:hover .dropbtn {
+            color: var(--primary-green);
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--white);
+            min-width: 500px;
+            box-shadow: 0px 8px 24px rgba(0,0,0,0.12);
+            z-index: 100;
+            border-radius: 8px;
+            top: 100%;
+            left: 0;
+            padding: 1.5rem;
+            border-top: 3px solid var(--primary-green);
+        }
+
+        .dropdown-content.single-column {
+            min-width: 260px;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-columns {
+            display: flex;
+            gap: 3rem;
+        }
+
+        .column {
+            flex: 1;
+        }
+
+        .column h4 {
+            font-size: 1.05rem;
+            margin-bottom: 0.8rem;
+            color: var(--dark-grey);
+            border-bottom: 1px solid #E5E7EB;
+            padding-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .column a {
+            color: #4B5563;
+            padding: 0.5rem 0;
+            text-decoration: none;
+            display: block;
+            margin-left: 0;
+            font-weight: 400;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .column a:hover {
+            color: var(--primary-green);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-green);
+            color: var(--white);
+            padding: 0.5rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #246B43;
+        }
+
+        .btn-lime {
+            background-color: var(--lime-accent);
+            color: var(--dark-grey);
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 800;
+            display: inline-block;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            transition: opacity 0.2s;
+        }
+
+        .btn-lime:hover {
+            opacity: 0.9;
+        }
+
+        a.inline-link {
+            color: var(--primary-green);
+            text-decoration: underline;
+            font-weight: 600;
+        }
+
+        a.inline-link:hover {
+            color: #1e5e3a;
+        }
+
+        /* Article Hero / Header Banner Section */
+        .article-hero {
+            background-color: var(--dark-teal);
+            color: var(--white);
+            padding: 3.5rem 2rem;
+        }
+
+        .article-hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .breadcrumbs {
+            font-size: 0.9rem;
+            color: #a7f3d0;
+            margin-bottom: 1rem;
+        }
+
+        .breadcrumbs a {
+            color: #a7f3d0;
+            text-decoration: none;
+        }
+
+        .breadcrumbs a:hover {
+            text-decoration: underline;
+        }
+
+        .article-hero h1 {
+            font-size: 2.6rem;
+            font-weight: 800;
+            line-height: 1.2;
+            color: var(--lime-accent);
+            margin-bottom: 1.2rem;
+        }
+
+        .article-hero p.lead {
+            font-size: 1.15rem;
+            color: #e5e7eb;
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+
+        .reading-time {
+            font-size: 0.9rem;
+            color: #d1d5db;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .hero-img-wrapper img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+        }
+
+        /* Main Article Layout */
+        .article-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        /* Article Contents Box */
+        .toc-box {
+            background-color: #fefce8;
+            border: 1px solid #fef08a;
+            border-radius: 8px;
+            padding: 1.75rem;
+            margin-bottom: 3rem;
+        }
+
+        .toc-box h3 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #854d0e;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .toc-box ul {
+            list-style: none;
+        }
+
+        .toc-box ul li {
+            margin-bottom: 0.6rem;
+            position: relative;
+            padding-left: 1.2rem;
+        }
+
+        .toc-box ul li::before {
+            content: "•";
+            color: var(--primary-green);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .toc-box ul li a {
+            color: #1f2937;
+            text-decoration: underline;
+            font-weight: 500;
+            font-size: 1.02rem;
+        }
+
+        .toc-box ul li a:hover {
+            color: var(--primary-green);
+        }
+
+        .key-takeaways-toggle {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #fef08a;
+            font-weight: 700;
+            color: var(--dark-grey);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Content Sections */
+        .article-section {
+            margin-bottom: 3.5rem;
+        }
+
+        .article-section h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--dark-grey);
+            margin-bottom: 1.2rem;
+            line-height: 1.25;
+        }
+
+        .article-section p {
+            font-size: 1.08rem;
+            color: #374151;
+            margin-bottom: 1.2rem;
+            line-height: 1.65;
+        }
+
+        /* Common Mistakes Grid */
+        .mistakes-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .mistake-card {
+            background-color: var(--card-pink);
+            border: 1px solid var(--card-pink-border);
+            border-radius: 8px;
+            padding: 1.75rem;
+        }
+
+        .mistake-card-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            border: 2px solid var(--error-red);
+            color: var(--error-red);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .mistake-card h3 {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--error-red);
+            margin-bottom: 0.8rem;
+            line-height: 1.25;
+        }
+
+        .mistake-card p {
+            font-size: 0.98rem;
+            color: #4b5563;
+            margin-bottom: 0;
+            line-height: 1.55;
+        }
+
+        /* List Items Styling */
+        .equipment-list {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .equipment-list li {
+            font-size: 1.05rem;
+            padding: 0.5rem 0 0.5rem 1.75rem;
+            position: relative;
+            color: var(--dark-grey);
+            font-weight: 500;
+        }
+
+        .equipment-list li::before {
+            content: "•";
+            color: var(--primary-green);
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0.5rem;
+            top: 0.1rem;
+        }
+
+        /* FAQ Accordion Section */
+        .faq-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .faq-item {
+            background-color: #fefce8;
+            border: 1px solid #fef08a;
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        .faq-item h3 {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--dark-grey);
+            margin-bottom: 0.6rem;
+        }
+
+        .faq-item p {
+            font-size: 1rem;
+            color: #4b5563;
+            margin-bottom: 0;
+            line-height: 1.55;
+        }
+
+        /* Bottom Sustainable IT Section */
+        .sustainable-section {
+            background-color: #fef3e2;
+            padding: 4rem 2rem;
+            margin-top: 3rem;
+            border-top: 1px solid #fde68a;
+        }
+
+        .sustainable-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .sustainable-container h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--dark-teal);
+            margin-bottom: 0.5rem;
+        }
+
+        .sustainable-container p.subtitle {
+            font-size: 1.05rem;
+            color: #4b5563;
+            margin-bottom: 2.5rem;
+        }
+
+        .sustainable-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .sustainable-card {
+            background-color: #fefce8;
+            border-radius: 8px;
+            padding: 1.75rem 1.5rem;
+            border: 1px solid #fef08a;
+        }
+
+        .sustainable-card svg {
+            width: 48px;
+            height: 48px;
+            stroke: var(--dark-teal);
+            margin-bottom: 1.2rem;
+        }
+
+        .sustainable-card h3 {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: var(--dark-teal);
+            margin-bottom: 0.75rem;
+        }
+
+        .sustainable-card p {
+            font-size: 0.95rem;
+            color: #4b5563;
+            line-height: 1.5;
+        }
+
+        .sustainable-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-grey);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+        }
+
+        @media (max-width: 900px) {
+            .article-hero-container {
+                grid-template-columns: 1fr;
+            }
+            .mistakes-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+		/* CTA Section & ITAD Process Box */
+#book {
+    max-width: 1100px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: var(--dark-grey);
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.cta-banner {
+    background-color: var(--dark-blue);
+    border-radius: 12px;
+    padding: 3.5rem 2rem;
+    color: var(--white);
+    margin-bottom: 3rem;
+}
+
+.cta-banner h2 {
+    font-size: 2.2rem;
+    color: var(--lime-accent);
+    margin-bottom: 0.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.cta-banner p.sub-heading {
+    font-size: 1.15rem;
+    color: #E2E8F0;
+    margin-bottom: 2.5rem;
+}
+
+.cta-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.cta-card {
+    background-color: var(--white);
+    color: var(--dark-grey);
+    border-radius: 8px;
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.cta-card-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 0.85rem;
+    color: var(--icon-blue);
+}
+
+.cta-card h4 {
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.cta-card p {
+    font-size: 0.88rem;
+    color: #4B5563;
+    line-height: 1.4;
+}
+
+.cta-footer-text {
+    font-size: 1.05rem;
+    color: #E2E8F0;
+    margin-bottom: 1.5rem;
+}
+
+.cta-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.btn-phone {
+    background-color: #E2E8F0;
+    color: var(--dark-grey);
+    padding: 0.85rem 1.75rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 1.1rem;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-phone:hover {
+    background-color: #CBD5E1;
+}
+
+a.inline-link {
+    color: var(--hero-blue);
+    text-decoration: underline;
+}
+
+a.inline-link:hover {
+    color: #1a6291;
+}
+
+.share-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 4rem;
+    font-size: 0.95rem;
+    color: #4B5563;
+}
+
+.share-bar a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background-color: #0077B5;
+    color: var(--white);
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Responsive styling for the grid */
+@media (max-width: 1200px) {
+    .cta-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .cta-grid {
+        grid-template-columns: 1fr;
+    }
+    .cta-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="1-01.png" alt="Saving Tech Logo">
+                </a>
+            </div>
+            <nav class="nav-links">
+                <!-- 1. Free IT Disposal Dropdown -->
+                <div class="dropdown">
+                    <a href="FreeITDisposal.html" class="dropbtn">Free IT Disposal &#711;</a>
+                    <div class="dropdown-content single-column">
+                        <div class="dropdown-columns">
+                            <div class="column">
+                                <h4>IT recycling services</h4>
+                                <a href="Computerrecycling.html">Computer recycling</a>
+                                <a href="Laptoprecycling.html">Laptop recycling</a>
+                                <a href="Mobiledevicerecycling.html">Mobile device recycling</a>
+                                <a href="Monitorscreenrecycling.html">Monitor &amp; screen recycling</a>
+                                <a href="ServerRecycling.html">Server recycling</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Our Services Dropdown -->
+                <div class="dropdown">
+                    <a href="index.html#services" class="dropbtn">Our Services &#711;</a>
+                    <div class="dropdown-content single-column">
+                        <div class="dropdown-columns">
+                            <div class="column">
+                                <a href="Assetswecollectrecycle.html">Assets we collect &amp; recycle</a>
+                                <a href="FAQs.html">FAQs</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Data Destruction Dropdown -->
+                <div class="dropdown">
+                    <a href="Howitworks.html" class="dropbtn">Data Destruction &#711;</a>
+                    <div class="dropdown-content single-column">
+                        <div class="dropdown-columns">
+                            <div class="column">
+                                <a href="DataDestructionMethods.html">Secure Data erasure</a>
+                                <a href="Articles.html">Articles</a>
+                                <a href="Harddrivemediadestruction.html">Hard drive &amp; media destruction</a>
+                                <a href="SecureDataDestruction.html">Secure data destruction</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. About Us Dropdown -->
+                <div class="dropdown">
+                    <a href="AboutUs.html" class="dropbtn">About Us &#711;</a>
+                    <div class="dropdown-content single-column">
+                        <div class="dropdown-columns">
+                            <div class="column">
+                                <a href="Documentscertificates.html">Documents &amp; Certificates</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="Book.html#form-section" class="btn-primary">Book a Collection</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="article-hero">
+            <div class="article-hero-container">
+                <div class="hero-text-content">
+                    <div class="breadcrumbs">
+                       <a href="index.html">Home</a> &rsaquo; <a href="Articles.html">Data Destruction</a> &rsaquo; <a href="Articles.html">Articles</a> &rsaquo; IT asset disposal the right way (and the mistakes to avoid)
+                    </div>
+                    <h1>IT asset disposal the right way (and the mistakes to avoid)</h1>
+                    <p class="lead">Disposing of old office IT equipment incorrectly puts your business at risk. This guide covers the right approach, common mistakes, and the documentation you need.</p>
+                    <div class="reading-time">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        <span>Estimated reading time: 6 minutes</span>
+                    </div>
+                </div>
+                <div class="hero-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600&q=80" alt="IT asset disposal stack of laptops">
+                </div>
+            </div>
+        </section>
+
+        <!-- Article Main Content -->
+        <div class="article-container">
+            
+            <!-- Article Contents Box -->
+            <div class="toc-box">
+                <h3>ARTICLE CONTENTS</h3>
+                <ul>
+                    <li><a href="#section-1">What happens when businesses dispose of IT assets the wrong way?</a></li>
+                    <li><a href="#section-2">Why office IT asset disposal is not just a logistics problem</a></li>
+                    <li><a href="#section-3">The most common mistakes when businesses dispose of office IT equipment</a></li>
+                    <li><a href="#section-4">What does correct IT asset disposal for UK businesses look like?</a></li>
+                    <li><a href="#section-5">What types of office IT equipment need to be disposed of correctly?</a></li>
+                    <li><a href="#section-6">How Saving Tech Waste makes IT asset disposal legal and straightforward</a></li>
+                    <li><a href="#section-7">Frequently asked questions</a></li>
+                </ul>
+                <div class="key-takeaways-toggle">
+                    <span>&#9654; KEY TAKEAWAYS</span>
+                </div>
+            </div>
+
+            <!-- Section 1 -->
+            <section id="section-1" class="article-section">
+                <h2>What happens when businesses dispose of IT assets the wrong way?</h2>
+                <p>Most businesses treat the disposal of old office IT assets as an afterthought. Equipment gets passed to a member of staff to sort out, stacked in a storeroom until someone makes a decision, or handed over to whoever offers to take it away. Each of these approaches carries risk that is not always obvious until something goes wrong.</p>
+                <p>This guide covers the right way to approach IT asset disposal, the most common mistakes that create legal and data security problems, and what documentation you should expect to receive. For the legal framework that underpins these requirements, our article on <a href="Articles.html" class="inline-link">legal obligations when disposing of old IT assets</a> provides a detailed overview of <a href="Assetswecollectrecycle.html" class="inline-link">WEEE</a> and <a href="SecureDataDestruction.html" class="inline-link">GDPR</a> obligations.</p>
+            </section>
+
+            <!-- Section 2 -->
+            <section id="section-2" class="article-section">
+                <h2>Why office IT asset disposal is not just a logistics problem</h2>
+                <p>Old IT equipment is not simply unwanted hardware. It contains business data, customer records, and personal information that remains on a device until it has been properly destroyed. That data is your responsibility under UK GDPR for as long as the device exists, regardless of whether you are still using it.</p>
+                <p>WEEE disposal for businesses is a legal requirement, not an optional standard. The WEEE Regulations prohibit disposal of electrical and electronic equipment through general waste channels. A laptop in a skip is not just an environmental issue &ndash; it is a regulatory breach and leaves your business with no audit trail. Our page on <a href="SecureDataDestruction.html" class="inline-link">secure data destruction</a> explains what proper sanitisation involves and why factory resets fall short.</p>
+                <p>Getting IT asset disposal right is not as complicated or costly as many businesses assume. The right provider handles both obligations &ndash; WEEE compliance and data destruction &ndash; as part of our standard service, and for qualifying volumes that service is provided free of charge.</p>
+            </section>
+
+            <!-- Section 3 -->
+            <section id="section-3" class="article-section">
+                <h2>The most common mistakes when businesses dispose of office IT equipment</h2>
+                <p>Understanding where things typically go wrong is a useful starting point. Below is a list of scenarios we encounter most often.</p>
+
+                <div class="mistakes-grid">
+                    <div class="mistake-card">
+                        <div class="mistake-card-icon">&#10005;</div>
+                        <h3>Donating or selling devices without wiping them first</h3>
+                        <p>Donating or selling devices without wiping them is one of the most frequent errors. A factory reset or standard delete does not constitute secure data destruction. Data can be recovered from devices that have not been properly sanitised using widely available tools. The fact that the device was gifted rather than sold is not a defence under GDPR.</p>
+                    </div>
+
+                    <div class="mistake-card">
+                        <div class="mistake-card-icon">&#10005;</div>
+                        <h3>Using a skip or unlicensed collector</h3>
+                        <p>Using a general waste skip or an unlicensed collector breaches WEEE regulations and leaves no audit trail. If the ICO or Environment Agency later investigates, the absence of documentation is itself evidence of non-compliance, even if the disposal was otherwise handled responsibly.</p>
+                    </div>
+
+                    <div class="mistake-card">
+                        <div class="mistake-card-icon">&#10005;</div>
+                        <h3>Storing old devices indefinitely</h3>
+                        <p>Storing devices indefinitely is a common way of deferring a decision that feels complicated. It is not a solution. Devices sitting in a storeroom still represent an active data liability and an unmet WEEE obligation. The risk does not reduce over time; it compounds it.</p>
+                    </div>
+
+                    <div class="mistake-card">
+                        <div class="mistake-card-icon">&#10005;</div>
+                        <h3>Handling disposal informally without a certified provider</h3>
+                        <p>Relying on a staff member to handle disposal informally, without involving a certified provider, means the business has no certificates, no audit trail, and no way to demonstrate compliance if it is ever challenged. Good intentions are not documentation.</p>
+                    </div>
+
+                    <div class="mistake-card" style="grid-column: span 2;">
+                        <div class="mistake-card-icon">&#10005;</div>
+                        <h3>Assuming a manufacturer take-back scheme is sufficient</h3>
+                        <p>Assuming a manufacturer take-back scheme covers your obligations is another frequent miscalculation. Take-back schemes vary considerably in the documentation they provide and the data destruction standards they apply. Before using one, it is worth confirming whether it meets the standard your business needs.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 4 -->
+            <section id="section-4" class="article-section">
+                <h2>What does correct IT asset disposal for UK businesses look like?</h2>
+                <p>Correct IT asset disposal for UK businesses involves a small number of clear steps, consistently applied.</p>
+                <p>The first is using a <a href="Documentscertificates.html" class="inline-link">certified WEEE recycler</a> authorised by the relevant UK environmental agency. This is not optional &ndash; it is the legal baseline. An authorised recycler will maintain the chain of custody, process equipment through licensed facilities, and provide the documentation your business needs to demonstrate compliance.</p>
+                <p>The second is ensuring that all data-bearing devices are sanitised using <a href="DataDestructionMethods.html" class="inline-link">NCSC</a>-approved methods. Deletion and formatting are not sufficient. The standard required is one that renders data unrecoverable by forensic means.</p>
+                <p>The third is retaining documentation. That means a <a href="Documentscertificates.html" class="inline-link">Certificate of Recycling</a> confirming equipment has been processed through an authorised facility, and a Certificate of Data Destruction for each data-bearing device, providing an individual audit trail. These records should be kept for a minimum of three years and made available if requested during an audit or investigation.</p>
+                <p>You can view <a href="Documentscertificates.html" class="inline-link">examples of our certificates</a> on the website to understand what properly constituted documentation looks like.</p>
+            </section>
+
+            <!-- Section 5 -->
+            <section id="section-5" class="article-section">
+                <h2>What types of office IT equipment need to be disposed of correctly?</h2>
+                <p>Knowing how to dispose of office IT equipment correctly starts with understanding which devices are covered. The WEEE Regulations apply to a broad range of hardware. Our <a href="Assetswecollectrecycle.html" class="inline-link">full list of what we collect</a> covers the complete range, but for most office environments the relevant categories include:</p>
+
+                <ul class="equipment-list">
+                    <li>Desktop computers and tower PCs</li>
+                    <li>Laptops and portable devices</li>
+                    <li>Servers and networking hardware</li>
+                    <li>Monitors and screens</li>
+                    <li>Printers and copiers</li>
+                    <li>Mobile phones and tablets used for business purposes</li>
+                    <li>External storage devices, hard drives and USB media</li>
+                </ul>
+
+                <p>If a device has ever held business or personal data, it should be treated as data-bearing and processed accordingly, regardless of its age or condition. Broken or legacy devices are accepted and do not need to be in working order to qualify for collection.</p>
+            </section>
+
+            <!-- Section 6 -->
+            <section id="section-6" class="article-section">
+                <h2>How Saving Tech Waste makes IT asset disposal legal and straightforward</h2>
+                <p>We provide free collection for businesses with at least ten laptops, PCs, or servers to recycle in any combination. Every device is assessed for refurbishment and reuse potential before any recycling or materials recovery decision is made. Reuse is always the preferred outcome. Where refurbishment is not viable, equipment proceeds to material recycling through our authorised downstream processors. Nothing we collect goes to landfill, and all material streams are accounted for. You can read more about <a href="Howitworks.html" class="inline-link">how the process works</a> on the website.</p>
+                <p>All data-bearing devices are processed using NCSC-approved sanitisation methods as standard. Certificates of Recycling and Data Destruction are provided for every collection. Our staff are background-checked, our vehicles are tracked, and chain of custody is maintained from collection through to destruction. All processing takes place in the UK.</p>
+                <p>If you have a backlog of old devices or are planning an IT refresh, <a href="Book.html#form-section" class="inline-link">contact us</a> to arrange a compliant, free collection. We handle the process from collection through to certification, so your business is covered from the moment we collect.</p>
+            </section>
+
+            <!-- Section 7 -->
+            <section id="section-7" class="article-section">
+                <h2>Frequently asked questions</h2>
+                
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <h3>Do I need to wipe devices before collection?</h3>
+                        <p>No. We carry out all data sanitisation as part of the standard service using NCSC-approved methods. You do not need to take any action on devices before collection.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>What if some of our devices are broken or very old?</h3>
+                        <p>Broken and legacy devices are accepted. Equipment does not need to be in working order to qualify for collection and recycling. If a device has ever held data, it will be processed as a data-bearing item regardless of condition.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Is storing old office IT assets an acceptable long-term solution?</h3>
+                        <p>No. Devices in storage still represent an active data liability and a continuing WEEE obligation. Disposal should not be deferred indefinitely. If you have a backlog of equipment that has been sitting in storage, we can arrange collection and deal with it in a single visit.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>What documentation will we receive?</h3>
+                        <p>You will receive a Certificate of Recycling for all items collected and a Certificate of Data Destruction for each data-bearing device processed. These are the documents you need to retain in order to demonstrate compliance during an audit or investigation. <a href="Documentscertificates.html" class="inline-link">Examples of our certificates</a> are available on the website.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Does the correct process cost more than informal disposal?</h3>
+                        <p>Not necessarily. Our free collection service covers businesses with at least ten qualifying items. The certificates, data destruction, and WEEE-compliant processing are all included. The cost of getting it wrong &ndash; through ICO investigations, Environment Agency enforcement, or audit findings could be considerable.</p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Sustainable IT Asset Recycling Section -->
+        <section id="book">
+                <h2 class="section-title">Ready to book?</h2>
+                
+                <div class="cta-banner">
+                    <h2>Our  ITAD Process is simple!</h2>
+                    <p class="sub-heading">We make sustainable IT disposal simple for all businesses &amp; institutions.</p>
+
+                    <div class="cta-grid">
+                        <!-- Card 1 -->
+                        <div class="cta-card">
+                            <svg class="cta-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M2 12h20"/>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                            </svg>
+                            <h4>Book</h4>
+                            <p>Fill in the form and book a collection date. Free qualifying collections for 10+ devices.</p>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="cta-card">
+                            <svg class="cta-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M1 3h15v13H1z"/>
+                                <path d="M16 8h4l3 3v5h-7V8z"/>
+                                <circle cx="5.5" cy="18.5" r="2.5"/>
+                                <circle cx="18.5" cy="18.5" r="2.5"/>
+                            </svg>
+                            <h4>Collect</h4>
+                            <p>We securely collect your IT equipment directly from your premises, ensuring every device is handled safely and transported.</p>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="cta-card">
+                            <svg class="cta-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                            </svg>
+                            <h4>We handle the data</h4>
+                            <p>All <a href="SecureDataDestruction.html" class="inline-link">data is securely erased.</a> Devices that cannot be securely erased are <a href="DataDestructionMethods.html" class="inline-link">securely destroyed </a> and disposed of responsibly.</p>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div class="cta-card">
+                            <svg class="cta-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M7 19H3v-4"/>
+                                <path d="M21 12a9 9 0 0 0-15-6.7L3 9"/>
+                                <path d="M3 5v4h4"/>
+                                <path d="M17 5h4v4"/>
+                                <path d="M3 12a9 9 0 0 0 15 6.7l3-3.7"/>
+                                <path d="M21 19v-4h-4"/>
+                            </svg>
+                            <h4>Recycle & Reuse</h4>
+                            <p>Suitable equipment is refurbished, reused or responsibly recycled.</p>
+                        </div>
+						
+                        <!-- Card 5 -->
+                        <div class="cta-card">
+                            <svg class="cta-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                            <h4>Certifications provided</h4>
+                            <p>We provide <a href="Documentscertificates.html" class="inline-link">all the certificates and records</a> for your compliance.</p>
+                        </div>
+                    </div>
+
+                    <p class="cta-footer-text">Book your collection today and let us take care of compliance, security, and sustainability with transparent, certified recycling:</p>
+
+                    <div class="cta-actions">
+                        <a href="Book.html#form-section" class="btn-lime">BOOK A COLLECTION</a>
+                        <a href="tel:07904010708" class="btn-phone">07904010708</a>
+                    </div>
+                </div>
+
+                <div class="share-bar">
+                    <span>Share this:</span>
+                    <a href="#" title="Share on LinkedIn">in</a>
+                    <a href="#" style="background-color: #5B5FC7;" title="Share on Teams">T</a>
+                    <a href="#" style="background-color: #25D366;" title="Share on WhatsApp">WA</a>
+                    <a href="#" style="background-color: #6B7280;" title="Copy Link">&#128279;</a>
+                </div>
+            </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Saving Tech. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>
