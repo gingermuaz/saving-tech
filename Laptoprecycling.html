@@ -13,7 +13,7 @@
             --lime-accent: #D4F34A; 
             --hero-blue: #0284C7; 
             --dark-blue: #0C4A6E; /* Branded primary theme colour */
-            --icon-blue: #0284C7;
+            --icon-blue: #1085C5;
             --dark-grey: #1F2937;
             --text-grey: #4B5563;
             --light-bg: #F8FAFC; 
@@ -189,6 +189,25 @@
 
         .btn-lime:hover { background-color: #C3E239; }
 
+        .btn-phone {
+            background-color: #E2E8F0;
+            color: var(--dark-grey);
+            padding: 0.85rem 1.75rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.1rem;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin: 1rem 0;
+        }
+
+        .btn-phone:hover {
+            background-color: #CBD5E1;
+        }
+
         a.inline-link {
             color: var(--hero-blue);
             text-decoration: underline;
@@ -196,7 +215,7 @@
         
         a.inline-link:hover { color: #0369A1; }
 
-        /* --- Hero Section (Updated Color & Size Consistency) --- */
+        /* --- Hero Section --- */
         .hero-section {
             background: linear-gradient(rgba(12, 74, 110, 0.75), rgba(12, 74, 110, 0.75)), url('Images/laptop-recycling-hero.jpg') center/cover no-repeat;
             background-color: var(--dark-blue);
@@ -430,7 +449,7 @@
             color: var(--dark-grey);
         }
 
-        /* --- Process & Data Risk Section --- */
+        /* --- Data Risk & Process Section --- */
         .section-header-block {
             margin-bottom: 4rem;
         }
@@ -447,71 +466,77 @@
             margin-bottom: 1.25rem;
         }
 
-        /* 5-Step Process Cards */
-        .process-grid {
+        /* Ready to book Banner Styles */
+        .cta-banner {
+            background-color: var(--dark-blue);
+            border-radius: 12px;
+            padding: 3.5rem 2rem;
+            color: var(--white);
+            margin-bottom: 3rem;
+            margin-top: 2rem;
+        }
+
+        .cta-banner h2 {
+            font-size: 2.2rem;
+            color: var(--lime-accent);
+            margin-bottom: 0.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .cta-banner p.sub-heading {
+            font-size: 1.15rem;
+            color: #E2E8F0;
+            margin-bottom: 2.5rem;
+        }
+
+        .cta-grid {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
             gap: 1rem;
-            margin: 2.5rem 0;
+            margin-bottom: 2.5rem;
         }
 
-        .process-card {
-            background-color: var(--light-bg);
-            border: 1px solid var(--border-grey);
+        .cta-card {
+            background-color: var(--white);
+            color: var(--dark-grey);
             border-radius: 8px;
-            padding: 1.25rem;
+            padding: 1.5rem 1rem;
             display: flex;
             flex-direction: column;
+            align-items: flex-start;
         }
 
-        .step-number {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            border: 1px solid #94A3B8;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.1rem;
-            color: #475569;
-            margin-bottom: 1rem;
-            background-color: var(--white);
+        .cta-card-icon {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 0.85rem;
+            color: var(--icon-blue);
         }
 
-        .process-card h4 {
-            font-size: 1rem;
-            color: var(--dark-grey);
+        .cta-card h4 {
+            font-size: 1.05rem;
             margin-bottom: 0.5rem;
+            line-height: 1.2;
             font-weight: 700;
         }
 
-        .process-card p {
-            font-size: 0.875rem;
-            color: var(--text-grey);
+        .cta-card p {
+            font-size: 0.88rem;
+            color: #4B5563;
             line-height: 1.4;
         }
 
-        .action-banner {
-            margin: 2rem 0 0 0;
+        .cta-footer-text {
+            font-size: 1.05rem;
+            color: #E2E8F0;
+            margin-bottom: 1.5rem;
         }
 
-        .btn-outline-dark {
-            display: inline-block;
-            padding: 0.75rem 1.5rem;
-            border: 1px solid var(--dark-grey);
-            color: var(--dark-grey);
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 0.85rem;
-            border-radius: 2px;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            transition: all 0.2s;
-        }
-
-        .btn-outline-dark:hover {
-            background-color: var(--dark-grey);
-            color: var(--white);
+        .cta-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
         }
 
         /* --- What We Recycle Section --- */
@@ -669,12 +694,15 @@
         }
 
         /* --- Responsive Breakpoints --- */
+        @media (max-width: 1200px) {
+            .cta-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
         @media (max-width: 992px) {
             .split-section, .recycle-grid {
                 grid-template-columns: 1fr;
-            }
-            .process-grid {
-                grid-template-columns: repeat(2, 1fr);
             }
             .perks-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -686,10 +714,17 @@
                 margin-left: 0;
                 padding: 2rem; 
             }
+            .cta-grid {
+                grid-template-columns: 1fr;
+            }
+            .cta-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
         }
 
         @media (max-width: 600px) {
-            .process-grid, .perks-grid {
+            .perks-grid {
                 grid-template-columns: 1fr;
             }
             .hero-content-box h1 {
@@ -726,6 +761,7 @@
                                 <a href="Laptoprecycling.html">Laptop recycling</a>
                                 <a href="Mobiledevicerecycling.html">Mobile device recycling</a>
                                 <a href="Monitorscreenrecycling.html">Monitor &amp; screen recycling</a>
+								<a href="ServerRecycling.html">Server recycling</a>
                             </div>
                         </div>
                     </div>
@@ -750,7 +786,7 @@
                     <div class="dropdown-content single-column">
                         <div class="dropdown-columns">
                             <div class="column">
-                                <a href="DataDestructionMethods.html">Data destruction methods</a>
+                                <a href="DataDestructionMethods.html">Secure Data erasure</a>
                                 <a href="Articles.html">Articles</a>
                                 <a href="Harddrivemediadestruction.html">Hard drive &amp; media destruction</a>
                                 <a href="SecureDataDestruction.html">Secure data destruction</a>
@@ -766,7 +802,6 @@
                         <div class="dropdown-columns">
                             <div class="column">
                                 <a href="Documentscertificates.html">Documents &amp; Certificates</a>
-                                <a href="Blogs.html">Blogs</a>
                             </div>
                         </div>
                     </div>
@@ -909,145 +944,77 @@
                 <h3 style="font-size: 1.35rem; color: var(--dark-grey); margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 700;">Reuse before recycling</h3>
                 <p>A laptop should not become waste if it can still be useful. Where possible, we assess laptops for reuse, refurbishment or component recovery. Working devices and usable parts can be redeployed into the circular economy, helping reduce demand for new raw materials and unnecessary manufacturing.</p>
 
-                <h3 style="font-size: 1.35rem; color: var(--dark-grey); margin-top: 2rem; margin-bottom: 0.5rem; font-weight: 700;">Here's how it works</h3>
+                <!-- Replaced old process section with the blue "Our ITAD Process is simple!" CTA Banner -->
+                <div class="cta-banner">
+                    <h2>Our ITAD Process is simple!</h2>
+                    <p class="sub-heading">We make sustainable IT disposal simple for all businesses &amp; institutions.</p>
 
-                <div class="process-grid">
-                    <div class="process-card">
-                        <div class="step-number">1</div>
-                        <h4>Tell us what you have</h4>
-                        <p>Let us know how many laptops and other IT assets you need collected.</p>
-                    </div>
-                    <div class="process-card">
-                        <div class="step-number">2</div>
-                        <h4>We arrange collection</h4>
-                        <p>We confirm the best collection option and collect from your premises.</p>
-                    </div>
-                    <div class="process-card">
-                        <div class="step-number">3</div>
-                        <h4>We handle the data</h4>
-                        <p>Storage media is securely erased, degaussed or destroyed where required.</p>
-                    </div>
-                    <div class="process-card">
-                        <div class="step-number">4</div>
-                        <h4>We assess for reuse</h4>
-                        <p>Laptops are checked for reuse, refurbishment, component recovery or recycling.</p>
-                    </div>
-                    <div class="process-card">
-                        <div class="step-number">5</div>
-                        <h4>You receive documentation</h4>
-                        <p>We provide the relevant certificates and records for your compliance and ESG evidence.</p>
-                    </div>
-                </div>
+                    <div class="cta-grid">
+                        <!-- Card 1 -->
+                        <div class="cta-card">
+                            <svg class="cta-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M2 12h20"/>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                            </svg>
+                            <h4>Book</h4>
+                            <p>Fill in the form and book a collection date. Free qualifying collections for 10+ devices.</p>
+                        </div>
 
-                <p>When laptops cannot be reused, we responsibly recycle the materials through UK-based processes and partners. This is <a href="Howitworks.html" class="inline-link">laptop recycling built around value retention</a> — not just disposal.</p>
+                        <!-- Card 2 -->
+                        <div class="cta-card">
+                            <svg class="cta-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M1 3h15v13H1z"/>
+                                <path d="M16 8h4l3 3v5h-7V8z"/>
+                                <circle cx="5.5" cy="18.5" r="2.5"/>
+                                <circle cx="18.5" cy="18.5" r="2.5"/>
+                            </svg>
+                            <h4>Collect</h4>
+                            <p>We securely collect your IT equipment directly from your premises, ensuring every device is handled safely and transported.</p>
+                        </div>
 
-                <div class="action-banner">
-                    <a href="Harddrivemediadestruction.html" class="btn-outline-dark">LEARN ABOUT SECURE DATA DESTRUCTION</a>
-                </div>
-            </section>
+                        <!-- Card 3 -->
+                        <div class="cta-card">
+                            <svg class="cta-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                            </svg>
+                            <h4>We handle the data</h4>
+                            <p>All <a href="SecureDataDestruction.html" class="inline-link">data is securely erased.</a> Devices that cannot be securely erased are <a href="DataDestructionMethods.html" class="inline-link">securely destroyed </a> and disposed of responsibly.</p>
+                        </div>
 
-            <!-- What We Recycle Section -->
-            <section class="recycle-grid">
-                <div>
-                    <h2 style="font-size: 2.2rem; color: var(--dark-grey); font-weight: 800; margin-bottom: 1rem;">What we recycle</h2>
-                    <p style="font-size: 1.05rem;">We collect and recycle all brands and types of laptops, including:</p>
-
-                    <div class="pills-container">
-                        <span class="pill">Business laptops</span>
-                        <span class="pill">MacBooks</span>
-                        <span class="pill">Chromebooks</span>
-                        <span class="pill">Netbooks</span>
-                        <span class="pill">2-in-1 laptops</span>
-                        <span class="pill">Ultrabooks</span>
-                        <span class="pill">Rugged laptops</span>
-                        <span class="pill">Broken or obsolete laptops</span>
-                        <span class="pill">Laptop chargers and accessories</span>
-                        <span class="pill">External drives and storage media</span>
-                        <span class="pill">Associated monitors, docks and peripherals</span>
-                    </div>
-
-                    <p style="margin-top: 1.5rem; font-size: 1.05rem;">We collect all types of WEEE. Whether you are replacing staff devices, clearing old stock, closing an office or managing a hardware refresh, we can collect and process your redundant laptops securely. For more information, call us on <a href="tel:07904010708" class="inline-link">07904010708</a>, or <a href="#book" class="inline-link">make an enquiry online</a>.</p>
-                </div>
-
-                <div class="recycle-image-box">
-                    <img src="Images/laptop-components.webp" alt="Laptop internal circuitry and components for recycling">
-                    <p style="font-size: 0.85rem; color: #6B7280; margin-top: 0.5rem; text-align: center;"><a href="Howitworks.html" class="inline-link">Learn more about how laptop recycling contributes to the circular economy.</a></p>
-                </div>
-            </section>
-
-            <!-- What You Get With Every Collection -->
-            <section>
-                <h2 style="font-size: 2.2rem; color: var(--dark-grey); font-weight: 800; margin-bottom: 0.25rem;">What you get with every collection</h2>
-                <p style="font-size: 1.05rem; color: #4B5563; margin-bottom: 1.5rem;">Collections are free when you have 10+ qualifying items.</p>
-
-                <div class="perks-grid">
-                    <!-- Perk 1 -->
-                    <div class="perk-card">
-                        <svg class="perk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                            <path d="M1 3h15v13H1z"/>
-                            <path d="M16 8h4l3 3v5h-7V8z"/>
-                            <circle cx="5.5" cy="18.5" r="2.5"/>
-                            <circle cx="18.5" cy="18.5" r="2.5"/>
-                        </svg>
-                        <h4>Free qualifying collections</h4>
-                        <p>Free collection for 10+ qualifying laptops, PCs or servers.</p>
+                        <!-- Card 4 -->
+                        <div class="cta-card">
+                            <svg class="cta-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M7 19H3v-4"/>
+                                <path d="M21 12a9 9 0 0 0-15-6.7L3 9"/>
+                                <path d="M3 5v4h4"/>
+                                <path d="M17 5h4v4"/>
+                                <path d="M3 12a9 9 0 0 0 15 6.7l3-3.7"/>
+                                <path d="M21 19v-4h-4"/>
+                            </svg>
+                            <h4>Recycle &amp; Reuse</h4>
+                            <p>Suitable equipment is refurbished, reused or responsibly recycled.</p>
+                        </div>
+						
+                        <!-- Card 5 -->
+                        <div class="cta-card">
+                            <svg class="cta-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                            <h4>Certifications provided</h4>
+                            <p>We provide <a href="Documentscertificates.html" class="inline-link">all the certificates and records</a> for your compliance.</p>
+                        </div>
                     </div>
 
-                    <!-- Perk 2 -->
-                    <div class="perk-card">
-                        <svg class="perk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-                            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-                        </svg>
-                        <h4>Certified data destruction</h4>
-                        <p>Secure erasure, degaussing or destruction where required.</p>
-                    </div>
+                    <p class="cta-footer-text">Book your collection today and let us take care of compliance, security, and sustainability with transparent, certified recycling:</p>
 
-                    <!-- Perk 3 -->
-                    <div class="perk-card">
-                        <svg class="perk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                            <polyline points="22 4 12 14.01 9 11.01"/>
-                        </svg>
-                        <h4>Certificates provided</h4>
-                        <p>Waste Transfer Notes and certificates where applicable.</p>
-                    </div>
-
-                    <!-- Perk 4 -->
-                    <div class="perk-card">
-                        <svg class="perk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                            <circle cx="12" cy="12" r="10"/>
-                            <path d="M2 12h20"/>
-                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4 10z"/>
-                        </svg>
-                        <h4>Carbon-negative recycling</h4>
-                        <p>We offset twice the CO<sub>2</sub> generated through our service.</p>
-                    </div>
-
-                    <!-- Perk 5 -->
-                    <div class="perk-card">
-                        <svg class="perk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                            <path d="M17 1l4 4-4 4"/>
-                            <path d="M3 11V9a4 4 0 0 1 4-4h14"/>
-                            <path d="M7 23l-4-4 4-4"/>
-                            <path d="M21 13v2a4 4 0 0 1-4 4H3"/>
-                        </svg>
-                        <h4>Reuse-first processing</h4>
-                        <p>We prioritise reuse before materials recycling.</p>
-                    </div>
-
-                    <!-- Perk 6 -->
-                    <div class="perk-card">
-                        <svg class="perk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                            <circle cx="12" cy="12" r="10"/>
-                            <path d="M4.93 4.93l14.14 14.14"/>
-                        </svg>
-                        <h4>UK-based handling</h4>
-                        <p>Processing stays in the UK for better accountability.</p>
+                    <div class="cta-actions">
+                        <a href="#book" class="btn-lime">BOOK A COLLECTION</a>
+                        <a href="tel:07904010708" class="btn-phone">07904010708</a>
                     </div>
                 </div>
-
-                <a href="Assetswecollectrecycle.html" class="section-tag">WHAT WE COLLECT</a>
             </section>
 
             <!-- FAQ Section -->
