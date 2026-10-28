@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saving Tech | IT Disposal & Recycling</title>
+    
+    <!-- Favicon link -->
+    <link rel="icon" type="image/x-icon" href="icon.ico">
+    
+    <style>
+        :root {
+            --primary-green: #2E8B57; /* Matched to logo */
+            --lime-accent: #D4F34A;
+            --hero-blue: #2A8BCA;
+            --dark-grey: #1F2937;
+            --text-grey: #374151;
+            --light-bg: #F3F4F6;
+            --white: #FFFFFF;
+            --cream-bg: #fef3e2;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: var(--dark-grey);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.5rem 2rem; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            overflow: hidden; 
+            height: 80px; 
+        }
+
+        .logo a {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .logo img {
+            height: 250px; 
+            width: auto;
+            object-fit: contain;
+            margin-left: -20px; 
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links > a:not(.btn-primary) {
+            text-decoration: none;
+            color: var(--dark-grey);
+            margin-left: 2rem;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links > a:not(.btn-primary):hover {
+            color: var(--primary-green);
+        }
+
+        .nav-links > .btn-primary {
+            margin-left: 2rem;
+        }
+
+        /* Dropdown Menu Styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            margin-left: 2rem;
+        }
+
+        .dropdown .dropbtn {
+            background: none;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-weight: 600;
+            color: var(--dark-grey);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-family: inherit;
+            padding: 1rem 0;
+        }
+
+        .dropdown:hover .dropbtn {
+            color: var(--primary-green);
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--white);
+            min-width: 500px;
+            box-shadow: 0px 8px 24px rgba(0,0,0,0.12);
+            z-index: 100;
+            border-radius: 8px;
+            top: 100%;
+            left: 0;
+            padding: 1.5rem;
+            border-top: 3px solid var(--primary-green);
+        }
+
+        .dropdown-content.single-column {
+            min-width: 260px;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-columns {
+            display: flex;
+            gap: 3rem;
+        }
+
+        .column {
+            flex: 1;
+        }
+
+        .column h4 {
+            font-size: 1.05rem;
+            margin-bottom: 0.8rem;
+            color: var(--dark-grey);
+            border-bottom: 1px solid #E5E7EB;
+            padding-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .column a {
+            color: #4B5563;
+            padding: 0.5rem 0;
+            text-decoration: none;
+            display: block;
+            margin-left: 0;
+            font-weight: 400;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .column a:hover {
+            color: var(--primary-green);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-green);
+            color: var(--white);
+            padding: 0.5rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #246B43;
+        }
+
+        /* Hero Action Button - Dark Green Box with White Text */
+        .btn-hero-green {
+            background-color: var(--primary-green);
+            color: var(--white);
+            padding: 0.85rem 1.75rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1rem;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: background-color 0.2s;
+        }
+
+        .btn-hero-green:hover {
+            background-color: #246B43;
+        }
+
+        .btn-secondary-outline {
+            background-color: transparent;
+            color: var(--dark-grey);
+            font-weight: 700;
+            padding: 0.85rem 1.5rem;
+            border-radius: 4px;
+            border: 1px solid #d1d5db;
+            text-decoration: none;
+            display: inline-block;
+            text-transform: uppercase;
+            font-size: 0.95rem;
+        }
+
+        .btn-secondary-outline:hover {
+            background-color: #f3f4f6;
+        }
+
+        a.inline-link {
+            color: var(--hero-blue);
+            text-decoration: underline;
+        }
+
+        a.inline-link:hover {
+            color: #1a6291;
+        }
+
+        /* Hero / Header Banner Section */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('Images/hompage.webp') center/cover no-repeat;
+            background-color: #1E293B; /* Fallback color if image fails to load */
+            padding: 4rem 2rem;
+            min-height: 480px;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content-box {
+            background-color: var(--white);
+            padding: 3.5rem;
+            max-width: 620px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            margin-left: max(2rem, calc((100vw - 1200px) / 2));
+            border-radius: 4px;
+        }
+
+        .hero-content-box h1 {
+            font-size: 2.3rem;
+            color: var(--dark-grey);
+            margin-bottom: 1.2rem;
+            line-height: 1.15;
+            font-weight: 800;
+        }
+
+        .hero-content-box p.hero-text {
+            font-size: 1.05rem;
+            color: var(--text-grey);
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-badges {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            padding-top: 1rem;
+            border-top: 1px solid #E5E7EB;
+        }
+
+        .badge-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--dark-grey);
+        }
+
+        .badge-item svg {
+            color: var(--primary-green);
+        }
+
+        /* IT Asset Recycling Services Overview Section */
+        .recycling-overview {
+            background-color: #fff9ed;
+            padding: 4rem 2rem;
+        }
+
+        .overview-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .overview-left h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+        }
+
+        .overview-left p {
+            margin-bottom: 1.2rem;
+            color: #374151;
+            font-size: 1.05rem;
+        }
+
+        .overview-buttons {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .phone-btn {
+            background-color: #fef3c7;
+            color: #000;
+            font-weight: 800;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        .service-links-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        .service-link-card {
+            background-color: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            padding: 1.25rem 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+            color: var(--dark-grey);
+            font-weight: 700;
+            font-size: 1.05rem;
+            transition: box-shadow 0.2s;
+        }
+
+        .service-link-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .service-link-card svg {
+            width: 28px;
+            height: 28px;
+            stroke: var(--primary-green);
+            flex-shrink: 0;
+        }
+
+        /* Trust Section */
+        .trust-section {
+            background-color: #0d4b56;
+            color: var(--white);
+            padding: 4rem 2rem;
+        }
+
+        .trust-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .trust-header {
+            text-align: left;
+            margin-bottom: 2.5rem;
+        }
+
+        .trust-header h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #c0f035;
+            margin-bottom: 0.5rem;
+        }
+
+        .trust-header p {
+            font-size: 1.1rem;
+            color: #e5e7eb;
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .trust-card {
+            background-color: #fff9ed;
+            color: var(--dark-grey);
+            padding: 2rem;
+            border-radius: 8px;
+        }
+
+        .trust-card svg {
+            width: 36px;
+            height: 36px;
+            stroke: var(--dark-grey);
+            margin-bottom: 1rem;
+        }
+
+        .trust-card h3 {
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 0.75rem;
+        }
+
+        .trust-card p {
+            font-size: 0.95rem;
+            color: #4b5563;
+        }
+
+        .trust-footer-text {
+            font-size: 0.95rem;
+            color: #d1d5db;
+        }
+
+        .trust-footer-text a {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        /* Practical Advice Section */
+        .advice-section {
+            background-color: #fff9ed;
+            padding: 4rem 2rem;
+        }
+
+        .advice-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .advice-section h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .advice-section p.subtitle {
+            font-size: 1.05rem;
+            color: #4b5563;
+            margin-bottom: 2.5rem;
+        }
+
+        .advice-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .advice-card {
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .advice-card-img {
+            height: 200px;
+            background-color: #e5e7eb;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .advice-card-content {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex-grow: 1;
+        }
+
+        .advice-card-content h3 {
+            font-size: 1.2rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .advice-tag {
+            align-self: flex-start;
+            background-color: #f3f4f6;
+            color: #4b5563;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.25rem 0.5rem;
+            border-radius: 3px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Services Section - Reduced bottom padding */
+        .services {
+            padding: 4rem 2rem 1.5rem 2rem;
+            background-color: var(--light-bg);
+            text-align: center;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 2rem auto 0 auto;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--primary-green);
+            text-align: left;
+        }
+
+        .service-card h3 {
+            margin-bottom: 1rem;
+            color: var(--dark-grey);
+            font-size: 1.2rem;
+        }
+
+        .service-card p {
+            font-size: 0.95rem;
+            color: #4B5563;
+        }
+
+        /* It's easy to recycle e-waste with us - Vertical layout with larger icons */
+        .easy-recycle-section {
+            background-color: var(--white);
+            padding: 2.5rem 2rem 5rem 2rem;
+            border-top: 1px solid #E5E7EB;
+        }
+
+        .easy-recycle-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .easy-recycle-container h2 {
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            color: var(--text-dark, #1F2937);
+        }
+
+        .recycle-checklist {
+            list-style: none;
+            margin-bottom: 3.5rem;
+        }
+
+        .recycle-checklist li {
+            font-size: 1.05rem;
+            margin-bottom: 1rem;
+            padding-left: 2.5rem;
+            position: relative;
+            color: var(--text-dark, #1F2937);
+        }
+
+        .recycle-checklist li a {
+            color: var(--primary-green);
+            text-decoration: underline;
+        }
+
+        .recycle-checklist li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 2px;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: var(--primary-green);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FFFFFF' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+            background-size: 14px;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .process-vertical-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .process-row-card {
+            background-color: var(--light-bg);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--primary-green);
+            display: flex;
+            align-items: center;
+            padding: 2rem 2.5rem;
+            gap: 2.5rem;
+        }
+
+        .process-row-card .icon-box {
+            flex-shrink: 0;
+            width: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .process-row-card img.icon {
+            height: 85px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .process-row-card .content-box {
+            flex-grow: 1;
+        }
+
+        .process-row-card h3 {
+            font-size: 1.35rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark, #1F2937);
+        }
+
+        .process-row-card p {
+            font-size: 1rem;
+            color: #4B5563;
+            margin-bottom: 0.8rem;
+        }
+
+        .process-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .process-row-card a.process-link {
+            color: var(--primary-green);
+            text-decoration: underline;
+            font-size: 1rem;
+            font-weight: 600;
+            width: fit-content;
+        }
+
+        .process-row-card a.process-link:hover {
+            color: #246B43;
+        }
+
+        /* Modal Overlay & Card */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(4px);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+        }
+
+        .modal-card {
+            background: var(--white);
+            width: 100%;
+            max-width: 620px;
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+            position: relative;
+            animation: modalFadeIn 0.25s ease-out;
+        }
+
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(-15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1.2rem;
+            right: 1.5rem;
+            font-size: 1.8rem;
+            background: none;
+            border: none;
+            color: #4B5563;
+            cursor: pointer;
+            line-height: 1;
+            transition: color 0.2s;
+        }
+
+        .modal-close:hover {
+            color: var(--dark-grey);
+        }
+
+        .modal-card h2 {
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--dark-grey);
+            margin-bottom: 1.8rem;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .contact-form input, 
+        .contact-form select, 
+        .contact-form textarea {
+            width: 100%;
+            padding: 0.9rem 1rem;
+            border: 1px solid #D1D5DB;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            color: var(--dark-grey);
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .contact-form input:focus, 
+        .contact-form select:focus, 
+        .contact-form textarea:focus {
+            border-color: var(--primary-green);
+        }
+
+        .contact-form button.btn-submit {
+            background-color: var(--primary-green);
+            color: var(--white);
+            padding: 0.9rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            margin-top: 0.5rem;
+        }
+
+        .contact-form button.btn-submit:hover {
+            background-color: #246B43;
+        }
+
+        /* Form Section */
+        .booking-section {
+            padding: 4rem 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .booking-section h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-grey);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content-box {
+                margin-left: 0;
+                padding: 2rem;
+            }
+            .hero-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .overview-grid {
+                grid-template-columns: 1fr;
+            }
+            .process-row-card {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="1-01.png" alt="Saving Tech Logo">
+                </a>
+            </div>
+            <nav class="nav-links">
+                <!-- 1. Free IT Disposal Dropdown -->
+                <div class="dropdown">
+                    <a href="FreeITDisposal.html" class="dropbtn">Free IT Disposal ˇ</a>
+                    <div class="dropdown-content single-column">
+                        <div class="dropdown-columns">
+                            <div class="column">
+                                
+                                <a href="Computerrecycling.html">Computer recycling</a>
+                                <a href="Laptoprecycling.html">Laptop recycling</a>
+                                <a href="Mobiledevicerecycling.html">Mobile device recycling</a>
+                                <a href="Monitorscreenrecycling.html">Monitor & screen recycling</a>
+								<a href="ServerRecycling.html">Server recycling</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Our Services Dropdown -->
+                <div class="dropdown">
+                    <a href="#services" class="dropbtn">Our Services ˇ</a>
+                    <div class="dropdown-content single-column">
+                        <div class="dropdown-columns">
+                            <div class="column">
+                                <a href="Assetswecollectrecycle.html">Assets we collect & recycle</a>
+                                <a href="FAQs.html">FAQs</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Data Destruction Dropdown -->
+                <div class="dropdown">
+                    <a href="Howitworks.html" class="dropbtn">Data Destruction ˇ</a>
+                    <div class="dropdown-content single-column">
+                        <div class="dropdown-columns">
+                            <div class="column">
+                                <a href="DataDestructionMethods.html">Secure Data erasure</a>
+                                <a href="Articles.html">Data Security Articles</a>
+                                <a href="Harddrivemediadestruction.html">Hard drive & media destruction</a>
+                                <a href="SecureDataDestruction.html">Secure data destruction</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. About Us Dropdown -->
+                <div class="dropdown">
+                    <a href="AboutUs.html" class="dropbtn">About Us ˇ</a>
+                    <div class="dropdown-content single-column">
+                        <div class="dropdown-columns">
+                            <div class="column">
+                                <a href="Documentscertificates.html">Documents & Certificates</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="Book.html#form-section" class="btn-primary">Book a Collection</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content-box">
+                <h1>Free IT recycling & secure data destruction across the UK</h1>
+                <p class="hero-text">Saving Tech Waste makes IT recycling simple, secure and fully documented: with certificates always provided. Free collection is available when you recycle 10+ qualifying laptops, PCs or servers.</p>
+                
+                <div class="hero-actions">
+                    <a href="Book.html#form-section" class="btn-primary">Book a Collection</a>
+                    <a href="#services" class="btn-secondary-outline">WHAT WE RECYCLE</a>
+                </div>
+
+                <div class="hero-badges">
+                    <div class="badge-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                        <span>Secure data destruction</span>
+                    </div>
+                    <div class="badge-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                        <span>Certificates always provided</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- IT Asset Recycling Services Overview -->
+        <section class="recycling-overview">
+            <div class="overview-grid">
+                <div class="overview-left">
+                    <h2>Our IT asset recycling services</h2>
+                    <p>It's easy to recycle your e-waste with us. Don't let outdated or broken computers, laptops, servers, printers or bulky electrical equipment take up valuable office space.</p>
+                    <p>We collect, data-sanitise, reuse and recycle computers, electronics and IT equipment across the UK — with <a href="SecureDataDestruction.html" class="inline-link">secure destruction of sensitive data guaranteed</a>[cite: 22]. Every collection is carbon tracked and certified.</p>
+                    <p>We aim to recycle 100% of your IT assets, so nothing goes to landfill. Everything is processed in the UK.</p>
+                    <div class="overview-buttons">
+                        <a href="Book.html#form-section" class="btn-primary">Book a Collection</a>
+                        <a href="tel:07904010708" class="phone-btn">07904010708</a>
+                    </div>
+                </div>
+                <div class="overview-right">
+                    <div class="service-links-grid">
+                        <a href="Computerrecycling.html" class="service-link-card">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                            <span>Computer recycling</span>
+                        </a>
+                        <a href="Laptoprecycling.html" class="service-link-card">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M2 20h20"/></svg>
+                            <span>Laptop recycling</span>
+                        </a>
+                        <a href="Harddrivemediadestruction.html" class="service-link-card">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><circle cx="12" cy="14" r="4"/></svg>
+                            <span>Hard drive & media destruction</span>
+                        </a>
+                        <a href="Mobiledevicerecycling.html" class="service-link-card">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                            <span>Mobile device recycling</span>
+                        </a>
+                        <a href="Monitorscreenrecycling.html" class="service-link-card">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="12" y1="17" x2="12" y2="21"/><path d="M8 21h8"/></svg>
+                            <span>Monitor & screen recycling</span>
+                        </a>
+						<a href="ServerRecycling.html" class="service-link-card">
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<rect x="2" y="2" width="20" height="5" rx="1"/>
+							<rect x="2" y="9.5" width="20" height="5" rx="1"/>
+							<rect x="2" y="17" width="20" height="5" rx="1"/>
+							<line x1="6" y1="4.5" x2="6.01" y2="4.5"/>
+							<line x1="6" y1="12" x2="6.01" y2="12"/>
+							<line x1="6" y1="19.5" x2="6.01" y2="19.5"/>
+						</svg>
+						<span>Server recycling</span>
+</a>
+                        <a href="Assetswecollectrecycle.html" class="service-link-card">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span>Everything we collect</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Businesses Trust Us Section -->
+        <section class="trust-section">
+            <div class="trust-container">
+                <div class="trust-header">
+                    <h2>Here's why businesses trust us to recycle their IT</h2>
+                    <p>Secure IT recycling with free qualifying collections, data destruction and certificates always provided.</p>
+                </div>
+                <div class="trust-grid">
+                    <div class="trust-card">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                        <h3>Free qualifying collections</h3>
+                        <p>Free for 10+ qualifying laptops, PCs or servers.</p>
+                    </div>
+                    <div class="trust-card">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/><circle cx="12" cy="16" r="1"/></svg>
+                        <h3>Secure data destruction</h3>
+                        <p>Erasure, degaussing or physical destruction, matched to the risk.</p>
+                    </div>
+                    <div class="trust-card">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                        <h3>Certificates provided</h3>
+                        <p>Waste Transfer Note, Certificate of Destruction certificate.</p>
+                    </div>
+                </div>
+                <p class="trust-footer-text">We measure every job. Your certificates come as standard, <a href="Documentscertificates.html">our example certificates</a>.</p>
+            </div>
+        </section>
+
+        <section id="services" class="services">
+            <h2>What We Do</h2>
+            <div class="services-grid">
+                
+                <div class="service-card">
+                    <h3>IT Asset Disposal (ITAD) Services</h3>
+                    <p>Audited end-to-end ITAD for regulated industries - chain of custody, certificates of destruction and ESG reporting your board can sign off.</p>
+                </div>
+
+                <div class="service-card">
+                    <h3>Remarketing & Value Recovery</h3>
+                    <p>Refurbish and remarket healthy IT through vetted B2B channels, recover commodity value from the rest, returned as a transparent rebate.</p>
+                </div>
+
+                <div class="service-card">
+                    <h3>Asset Tracking & Reporting</h3>
+                    <p>Per-asset chain of custody, serial-level scans, audit-ready certificates and ESG metrics - the paperwork your auditors actually want.</p>
+                </div>
+
+                <div class="service-card">
+                    <h3>Data Centre & Server Decommissioning</h3>
+                    <p>Plan your data centre decommissioning with confidence. Safe rack pull, drive destruction and disposal of business server hardware, with full chain of custody and certified reporting.</p>
+                </div>
+
+                <div class="service-card">
+                    <h3>Computer & Laptop Recycling</h3>
+                    <p>Secure and effective computer recycling, with destruction services that ensure total erasure. Secure laptop collection, data wiping and reuse where it's safe to do so. Customers throughout the UK can benefit from our secure and free laptop recycling services.</p>
+                </div>
+
+                <div class="service-card">
+                    <h3>Mobile Phone & Tablet Recycling</h3>
+                    <p>Mobile phone recycling and tablet disposal for business across the UK. Secure, compliant and fully certified with data erasure and nationwide collection.</p>
+                </div>
+
+                <div class="service-card">
+                    <h3>Product Destruction</h3>
+                    <p>WEEE-compliant destruction of faulty, recalled and pre-launch electronics - witnessed and certified.</p>
+                </div>
+
+                <div class="service-card">
+                    <h3>WEEE Recycling Bins</h3>
+                    <p>Our WEEE recycling service helps businesses dispose of electronic waste across the UK with compliant disposal and destruction. Reliable WEEE bin and e-waste collection services. Choose from 240L to 1100L bins for safe, eco-friendly disposal.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Simplifying e-waste recycling (Vertical Layout with Stacked Links & Larger Icons) -->
+        <section class="easy-recycle-section">
+            <div class="easy-recycle-container">
+                <h2>Simplifying e-waste recycling</h2>
+                
+                <ul class="recycle-checklist">
+                    <li>Free collections are available when recycling at least 10 combined laptops, desktop PCs, and servers.</li>
+                    <li>Complete data security is ensured through <a href="Documentscertificates.html">fully certificated</a> and WEEE & GDPR compliant destruction.</li>
+                </ul>
+
+                <div class="process-vertical-stack">
+                    
+                    <!-- Row 1: Book a collection -->
+                    <div class="process-row-card">
+                        <div class="icon-box">
+                            <img src="Icons/collect.jpg" alt="Collection Icon" class="icon">
+                        </div>
+                        <div class="content-box">
+                            <h3>Book a collection</h3>
+                            <p>We retrieve redundant IT directly from your premises at a convenient time. Services are fully tracked, secure, and certified, with no charges for batches of 10 or more qualifying devices.</p>
+                            <div class="process-links">
+                                <a href="Book.html#form-section" class="process-link">→ Arrange a business collection</a>
+                                <a href="Book.html#form-section" class="process-link">→ Arrange a home collection</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 2: Saving Bin -->
+                    <div class="process-row-card">
+                        <div class="icon-box">
+                            <img src="Icons/bin.jpg" alt="Bin Icon" class="icon">
+                        </div>
+                        <div class="content-box">
+                            <h3>Saving Bin</h3>
+                            <p>An on-site container designed for managing e-waste at your location. You cover the initial cost of the bin, and processing is free once it holds 10 or more qualifying items.</p>
+                            <div class="process-links">
+                                <a href="Book.html#form-section" class="process-link">→ Purchase a Saving Bin</a>
+                                <a href="Book.html#form-section" class="process-link">→ Schedule bin clearance</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 3: Saving Post -->
+                    <div class="process-row-card">
+                        <div class="icon-box">
+                            <img src="Icons/post.png" alt="Post Icon" class="icon">
+                        </div>
+                        <div class="content-box">
+                            <h3>Saving Post</h3>
+                            <p>Utilize Saving Post, our secure mail-in recycling service. We provide a shipping label, you box your equipment, hand it to our trusted courier, and we take care of the rest.</p>
+                            <div class="process-links">
+                                <a href="Book.html#form-section" class="process-link">→ Mail-in IT recycling</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© <span id="year"></span> Saving Tech. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Modal triggers functionality
+        const modal = document.getElementById('bookingModal');
+        const closeModal = document.getElementById('closeModal');
+        const triggers = document.querySelectorAll('.trigger-modal');
+
+        triggers.forEach(trigger => {
+            trigger.addEventListener('click', (e) => {
+                e.preventDefault();
+                modal.style.display = 'flex';
+            });
+        });
+
+        closeModal.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        document.getElementById('collectionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            alert(`Thank you, ${name}! Your collection request has been submitted.`);
+            modal.style.display = 'none';
+            this.reset();
+        });
+    </script>
+
+</body>
+</html>
