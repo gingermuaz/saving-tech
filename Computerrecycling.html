@@ -3,190 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Computer Recycling & Free Disposal | Saving Tech</title>
-    
-    <link rel="icon" type="image/x-icon" href="icon.ico">
-    
+    <title>Computer Recycling &amp; Free Disposal | Saving Tech</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Styles used only on this page -->
     <style>
         :root {
-            --primary-green: #2E8B57; 
-            --lime-accent: #D4F34A;
             --light-lime: #EEF8CD;
-            --hero-blue: #2A8BCA; 
-            --dark-blue: #0B4A6F;
-            --icon-blue: #1085C5;
-            --dark-grey: #1F2937;
-            --text-grey: #374151;
-            --light-bg: #F8FAFC; 
+            --light-bg: #F8FAFC;
             --faq-bg: #F3F4F6;
-            --white: #FFFFFF;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
             color: var(--text-grey);
-            line-height: 1.6;
-            background-color: var(--white);
-        }
-
-        /* Header & Navigation */
-        header {
-            background-color: var(--white);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0.5rem 2rem; 
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            overflow: hidden; 
-            height: 80px; 
-        }
-
-        .logo a {
-            display: flex;
-            align-items: center;
-            height: 100%;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        .logo img {
-            height: 250px; 
-            width: auto;
-            object-fit: contain;
-            margin-left: -20px; 
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-        }
-
-        .nav-links > a:not(.btn-primary) {
-            text-decoration: none;
-            color: var(--dark-grey);
-            margin-left: 2rem;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-
-        .nav-links > a:not(.btn-primary):hover {
-            color: var(--primary-green);
-        }
-
-        .nav-links > .btn-primary {
-            margin-left: 2rem;
-        }
-
-        .dropdown {
-            position: relative;
-            display: inline-block;
-            margin-left: 2rem;
-        }
-
-        .dropdown .dropbtn {
-            background: none;
-            border: none;
-            font-size: 1rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            font-weight: 600;
-            color: var(--dark-grey);
-            text-decoration: none;
-            transition: color 0.3s;
-            font-family: inherit;
-            padding: 1rem 0; 
-        }
-
-        .dropdown:hover .dropbtn {
-            color: var(--primary-green);
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: var(--white);
-            min-width: 500px; 
-            box-shadow: 0px 8px 24px rgba(0,0,0,0.12);
-            z-index: 100;
-            border-radius: 8px;
-            top: 100%;
-            left: 0;
-            padding: 1.5rem;
-            border-top: 3px solid var(--primary-green);
-        }
-
-        .dropdown-content.single-column {
-            min-width: 260px;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        .dropdown-columns {
-            display: flex;
-            gap: 3rem;
-        }
-
-        .column { flex: 1; }
-
-        .column h4 {
-            font-size: 1.05rem;
-            margin-bottom: 0.8rem;
-            color: var(--dark-grey);
-            border-bottom: 1px solid #E5E7EB;
-            padding-bottom: 0.5rem;
-            font-weight: 600;
-        }
-
-        .column a {
-            color: #4B5563;
-            padding: 0.5rem 0;
-            text-decoration: none;
-            display: block;
-            margin-left: 0;
-            font-weight: 400;
-            font-size: 0.95rem;
-            transition: color 0.2s;
-        }
-
-        .column a:hover { color: var(--primary-green); }
-
-        .btn-primary {
-            background-color: var(--primary-green);
-            color: var(--white);
-            padding: 0.5rem 1.5rem;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            display: inline-block;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-primary:hover {
-            background-color: #246B43;
         }
 
         /* Buttons & Utility Links */
@@ -194,7 +24,7 @@
             background-color: var(--lime-accent);
             color: var(--dark-grey);
             padding: 0.85rem 1.75rem;
-            border-radius: 4px;
+            border-radius: 0.25rem;
             text-decoration: none;
             font-weight: 800;
             font-size: 1.1rem;
@@ -211,31 +41,7 @@
         }
 
         .btn-phone {
-            background-color: #E2E8F0;
-            color: var(--dark-grey);
-            padding: 0.85rem 1.75rem;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 800;
-            font-size: 1.1rem;
-            display: inline-block;
-            border: none;
-            cursor: pointer;
-            transition: background 0.2s;
             margin: 1rem 0;
-        }
-
-        .btn-phone:hover {
-            background-color: #CBD5E1;
-        }
-
-        a.inline-link {
-            color: var(--hero-blue);
-            text-decoration: underline;
-        }
-        
-        a.inline-link:hover {
-            color: #1a6291;
         }
 
         /* Hero Section */
@@ -243,7 +49,7 @@
             background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('Images/computer-recycling-hero.jpg') center/cover no-repeat;
             background-color: #1E293B;
             padding: 4rem 2rem;
-            min-height: 480px;
+            min-height: 30rem;
             display: flex;
             align-items: center;
         }
@@ -251,10 +57,10 @@
         .hero-content-box {
             background-color: var(--white);
             padding: 3.5rem;
-            max-width: 620px;
+            max-width: 38.75rem;
             box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            margin-left: max(2rem, calc((100vw - 1200px) / 2)); 
-            border-radius: 4px;
+            margin-left: max(2rem, calc((100vw - 75rem) / 2));
+            border-radius: 0.25rem;
         }
 
         .hero-content-box .breadcrumb {
@@ -262,14 +68,14 @@
             color: #4B5563;
             margin-bottom: 1rem;
         }
-        
+
         .breadcrumb a {
             color: var(--hero-blue);
             text-decoration: none;
         }
 
         .hero-content-box h1 {
-            font-size: 2.5rem;
+            font-size: clamp(1.75rem, 1.81vw + 1.343rem, 2.5rem);
             color: var(--dark-grey);
             margin-bottom: 1.2rem;
             line-height: 1.15;
@@ -292,7 +98,7 @@
 
         /* Container Layout */
         .container {
-            max-width: 1100px;
+            max-width: 68.75rem;
             margin: 0 auto;
             padding: 4rem 2rem;
         }
@@ -303,7 +109,7 @@
         }
 
         .section-title {
-            font-size: 2.5rem;
+            font-size: clamp(1.75rem, 1.81vw + 1.343rem, 2.5rem);
             color: var(--dark-grey);
             margin-bottom: 1.5rem;
             font-weight: 800;
@@ -313,11 +119,11 @@
         .key-takeaways-btn {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 0.375rem;
             background-color: #E0F2FE;
             color: #0369A1;
             padding: 0.4rem 0.8rem;
-            border-radius: 4px;
+            border-radius: 0.25rem;
             font-size: 0.85rem;
             font-weight: 700;
             margin-bottom: 2rem;
@@ -353,7 +159,7 @@
 
         .feature-img-box {
             width: 100%;
-            border-radius: 12px;
+            border-radius: 0.75rem;
             overflow: hidden;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
@@ -363,78 +169,6 @@
             height: auto;
             display: block;
             object-fit: cover;
-        }
-
-        /* Ready to Book Banner */
-        .cta-banner {
-            background-color: var(--dark-blue);
-            border-radius: 12px;
-            padding: 3.5rem 2rem;
-            color: var(--white);
-            margin-bottom: 3rem;
-        }
-
-        .cta-banner h2 {
-            font-size: 2.2rem;
-            color: var(--lime-accent);
-            margin-bottom: 0.5rem;
-            font-weight: 800;
-            line-height: 1.2;
-        }
-
-        .cta-banner p.sub-heading {
-            font-size: 1.15rem;
-            color: #E2E8F0;
-            margin-bottom: 2.5rem;
-        }
-
-        .cta-grid {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 1rem;
-            margin-bottom: 2.5rem;
-        }
-
-        .cta-card {
-            background-color: var(--white);
-            color: var(--dark-grey);
-            border-radius: 8px;
-            padding: 1.5rem 1rem;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-        .cta-card-icon {
-            width: 40px;
-            height: 40px;
-            margin-bottom: 0.85rem;
-            color: var(--icon-blue);
-        }
-
-        .cta-card h4 {
-            font-size: 1.05rem;
-            margin-bottom: 0.5rem;
-            line-height: 1.2;
-            font-weight: 700;
-        }
-
-        .cta-card p {
-            font-size: 0.88rem;
-            color: #4B5563;
-            line-height: 1.4;
-        }
-
-        .cta-footer-text {
-            font-size: 1.05rem;
-            color: #E2E8F0;
-            margin-bottom: 1.5rem;
-        }
-
-        .cta-actions {
-            display: flex;
-            gap: 1rem;
-            align-items: center;
         }
 
         /* Social Share Section */
@@ -451,11 +185,11 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 32px;
-            height: 32px;
+            width: 2rem;
+            height: 2rem;
             background-color: #0077B5;
             color: var(--white);
-            border-radius: 4px;
+            border-radius: 0.25rem;
             text-decoration: none;
             font-weight: bold;
         }
@@ -474,7 +208,7 @@
 
         .faq-item {
             background-color: var(--faq-bg);
-            border-radius: 8px;
+            border-radius: 0.5rem;
             padding: 1.75rem 2rem;
         }
 
@@ -492,19 +226,6 @@
         }
 
         /* Footer */
-        footer {
-            background-color: var(--dark-grey);
-            color: var(--white);
-            text-align: center;
-            padding: 2rem;
-        }
-
-        @media (max-width: 1200px) {
-            .cta-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
         @media (max-width: 992px) {
             .grid-2-col {
                 grid-template-columns: 1fr;
@@ -516,85 +237,81 @@
                 margin-left: 0;
                 padding: 2rem;
             }
-            .cta-grid {
-                grid-template-columns: 1fr;
+        }
+
+        /* Phones */
+        @media (max-width: 600px) {
+            .btn-lime {
+                padding: 0.85rem 1rem;
             }
-            .cta-actions {
-                flex-direction: column;
-                align-items: stretch;
+
+            .hero-section {
+                padding: 2.5rem 1rem;
+            }
+
+            .hero-content-box {
+                padding: 2rem 1rem;
+            }
+
+            .container {
+                padding: 2.5rem 1rem;
+            }
+
+            .grid-2-col {
+                gap: 1.5rem;
+            }
+
+            .faq-item {
+                padding: 1.75rem 1rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Top Navigation Header -->
-<header>
+    <!-- Site header (identical on every page) -->
+    <header class="site-header">
         <div class="nav-container">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="1-01.png" alt="Saving Tech Logo">
-                </a>
-            </div>
-            <nav class="nav-links">
-                <!-- 1. Free IT Disposal Dropdown -->
-                <div class="dropdown">
-                    <a href="FreeITDisposal.html" class="dropbtn">Free IT Disposal ˇ</a>
-                    <div class="dropdown-content single-column">
-                        <div class="dropdown-columns">
-                            <div class="column">
-                                
-                                <a href="Computerrecycling.html">Computer recycling</a>
-                                <a href="Laptoprecycling.html">Laptop recycling</a>
-                                <a href="Mobiledevicerecycling.html">Mobile device recycling</a>
-                                <a href="Monitorscreenrecycling.html">Monitor & screen recycling</a>
-								<a href="ServerRecycling.html">Server recycling</a>
-                            </div>
-                        </div>
+            <a href="index.html" class="logo">
+                <img src="Images/saving-tech-logo.png" alt="Saving Tech" width="200" height="40">
+            </a>
+            <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="site-nav" id="site-nav" aria-label="Main">
+                <div class="nav-item has-menu">
+                    <a href="FreeITDisposal.html" class="nav-link">Free IT Disposal</a>
+                    <div class="nav-menu">
+                        <a href="Computerrecycling.html">Computer recycling</a>
+                        <a href="Laptoprecycling.html">Laptop recycling</a>
+                        <a href="Mobiledevicerecycling.html">Mobile device recycling</a>
+                        <a href="Monitorscreenrecycling.html">Monitor &amp; screen recycling</a>
+                        <a href="ServerRecycling.html">Server recycling</a>
                     </div>
                 </div>
-
-                <!-- 2. Our Services Dropdown -->
-                <div class="dropdown">
-                    <a href="#services" class="dropbtn">Our Services ˇ</a>
-                    <div class="dropdown-content single-column">
-                        <div class="dropdown-columns">
-                            <div class="column">
-                                <a href="Assetswecollectrecycle.html">Assets we collect & recycle</a>
-                                <a href="FAQs.html">FAQs</a>
-                            </div>
-                        </div>
+                <div class="nav-item has-menu">
+                    <a href="index.html#services" class="nav-link">Our Services</a>
+                    <div class="nav-menu">
+                        <a href="Assetswecollectrecycle.html">Assets we collect &amp; recycle</a>
+                        <a href="FAQs.html">FAQs</a>
                     </div>
                 </div>
-
-                <!-- 3. Data Destruction Dropdown -->
-                <div class="dropdown">
-                    <a href="Howitworks.html" class="dropbtn">Data Destruction ˇ</a>
-                    <div class="dropdown-content single-column">
-                        <div class="dropdown-columns">
-                            <div class="column">
-                                <a href="DataDestructionMethods.html">Secure Data erasure</a>
-                                <a href="Articles.html">Data Security Articles</a>
-                                <a href="Harddrivemediadestruction.html">Hard drive & media destruction</a>
-                                <a href="SecureDataDestruction.html">Secure data destruction</a>
-                            </div>
-                        </div>
+                <div class="nav-item has-menu">
+                    <a href="Howitworks.html" class="nav-link">Data Destruction</a>
+                    <div class="nav-menu">
+                        <a href="DataDestructionMethods.html">Secure data erasure</a>
+                        <a href="Articles.html">Data security articles</a>
+                        <a href="Harddrivemediadestruction.html">Hard drive &amp; media destruction</a>
+                        <a href="SecureDataDestruction.html">Secure data destruction</a>
                     </div>
                 </div>
-
-                <!-- 4. About Us Dropdown -->
-                <div class="dropdown">
-                    <a href="AboutUs.html" class="dropbtn">About Us ˇ</a>
-                    <div class="dropdown-content single-column">
-                        <div class="dropdown-columns">
-                            <div class="column">
-                                <a href="Documentscertificates.html">Documents & Certificates</a>
-                            </div>
-                        </div>
+                <div class="nav-item has-menu">
+                    <a href="AboutUs.html" class="nav-link">About Us</a>
+                    <div class="nav-menu">
+                        <a href="Documentscertificates.html">Documents &amp; certificates</a>
                     </div>
                 </div>
-
-                <a href="Book.html#form-section" style="background-color: var(--primary-green); color: var(--white); padding: 0.6rem 1.25rem; border-radius: 4px; text-decoration: none; font-weight: 700;">Book a Collection</a>
+                <a href="Book.html#form-section" class="nav-cta">Book a Collection</a>
             </nav>
         </div>
     </header>
@@ -606,9 +323,9 @@
                 <p class="breadcrumb"><a href="index.html">Home</a> → <a href="FreeITDisposal.html">IT recycling services</a> → Computer recycling</p>
                 <h1>Free computer disposal with secure data destruction</h1>
                 <p>Manage your organisation's obsolete IT assets with our free nationwide computer disposal and recycling service. Whatever the size of your company, we securely collect all types of computers for disposal or recycling.</p>
-                
+
                 <a href="Book.html#form-section" class="btn-lime">BOOK A COLLECTION</a>
-                
+
                 <p class="hero-note">Free collections when you recycle at least 10 laptops, PCs & servers (any combination). It's also <a href="FreeITDisposal.html" class="inline-link">free to recycle almost all waste IT with us</a>.</p>
             </div>
         </section>
@@ -617,18 +334,18 @@
         <div class="container">
             <section class="content-section">
                 <h2 class="section-title">Secure & Sustainable Computer Disposal </h2>
-                
+
                 <button class="key-takeaways-btn">► KEY TAKEAWAYS</button>
 
                 <div class="grid-2-col">
                     <div class="text-block">
                         <h3>All computers have to be recycled by law in line with regulations</h3>
                         <p>Unwanted desktop computers can contain valuable components and sensitive business data. At SavingTech, we securely collect and process <strong>desktop PCs, tower computers, workstations and all-in-one systems</strong>, helping businesses dispose of their equipment responsibly.</p>
-						<p>Whether you have a small number of computers or a large-scale clearance, we manage the process from <strong>collection and secure data destruction through to reuse and responsible recycling</strong>.</p>
+                        <p>Whether you have a small number of computers or a large-scale clearance, we manage the process from <strong>collection and secure data destruction through to reuse and responsible recycling</strong>.</p>
                         <h3>Secure Data Destruction</h3>
                         <p>We follow documented data-erasure procedures aligned with <strong>NIST SP 800-88 Rev. 1</strong> and <strong>UK Government HMG Information Security standards</strong>, helping ensure data is securely removed before equipment is reused or recycled. </p>
-						<p>Data-erasure certificates and device-level reports are available for your records. </p>
-						<h3>Environment friendly  </h3>
+                        <p>Data-erasure certificates and device-level reports are available for your records. </p>
+                        <h3>Environment friendly  </h3>
                         <p>Under UK WEEE regulations, businesses are required to process retired desktop computers through certified e-waste channels. At <strong>SavingTech</strong>, we turn that compliance obligation into zero-landfill impact by recycling every single component of your PC setup. </p>
                     </div>
 
@@ -641,7 +358,7 @@
             <!-- Ready to book CTA Section -->
             <section id="book">
                 <h2 class="section-title">Ready to book?</h2>
-                
+
                 <div class="cta-banner">
                     <h2>Our  ITAD Process is simple!</h2>
                     <p class="sub-heading">We make sustainable IT disposal simple for all businesses & institutions.</p>
@@ -693,7 +410,7 @@
                             <h4>Recycle & Reuse</h4>
                             <p>Suitable equipment is refurbished, reused or responsibly recycled.</p>
                         </div>
-						
+
                         <!-- Card 5 -->
                         <div class="cta-card">
                             <svg class="cta-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -766,12 +483,11 @@
         </div>
     </main>
 
-    <footer>
-        <p>© <span id="year"></span> Saving Tech. All rights reserved.</p>
+    <!-- Site footer (identical on every page) -->
+    <footer class="site-footer">
+        <p>&copy; <span id="year">2026</span> Saving Tech. All rights reserved.</p>
     </footer>
 
-    <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
+    <script src="js/main.js"></script>
 </body>
 </html>

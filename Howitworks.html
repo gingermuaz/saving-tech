@@ -4,175 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>How It Works | Saving Tech</title>
-    
-    <!-- Favicon link -->
-    <link rel="icon" type="image/x-icon" href="icon.ico">
-    
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Styles used only on this page -->
     <style>
         :root {
-            --primary-green: #2E8B57;
-            --primary-green-hover: #246B43;
             --light-green-bg: #EAF5EC;
-            --dark-grey: #1F2937;
-            --light-bg: #F3F4F6;
-            --white: #FFFFFF;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            color: var(--dark-grey);
-            line-height: 1.6;
             background-color: var(--light-bg);
-        }
-
-        /* Header & Navigation */
-        header {
-            background-color: var(--white);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0.5rem 2rem; 
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            overflow: hidden; 
-            height: 80px; 
-        }
-
-        .logo a {
-            display: flex;
-            align-items: center;
-            height: 100%;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        .logo img {
-            height: 250px; 
-            width: auto;
-            object-fit: contain;
-            margin-left: -20px; 
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-        }
-
-        .nav-links > a {
-            text-decoration: none;
-            color: var(--dark-grey);
-            margin-left: 2rem;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-
-        .nav-links > a:hover {
-            color: var(--primary-green);
-        }
-
-        /* Dropdown Menu Styles */
-        .dropdown {
-            position: relative;
-            display: inline-block;
-            margin-left: 2rem;
-        }
-
-        .dropdown .dropbtn {
-            background: none;
-            border: none;
-            font-size: 1rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            font-weight: 600;
-            color: var(--dark-grey);
-            text-decoration: none;
-            transition: color 0.3s;
-            font-family: inherit;
-            padding: 1rem 0;
-        }
-
-        .dropdown:hover .dropbtn {
-            color: var(--primary-green);
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: var(--white);
-            min-width: 500px;
-            box-shadow: 0px 8px 24px rgba(0,0,0,0.12);
-            z-index: 100;
-            border-radius: 8px;
-            top: 100%;
-            left: 0;
-            padding: 1.5rem;
-            border-top: 3px solid var(--primary-green);
-        }
-
-        .dropdown-content.single-column {
-            min-width: 260px;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        .dropdown-columns {
-            display: flex;
-            gap: 3rem;
-        }
-
-        .column {
-            flex: 1;
-        }
-
-        .column h4 {
-            font-size: 1.05rem;
-            margin-bottom: 0.8rem;
-            color: var(--dark-grey);
-            border-bottom: 1px solid #E5E7EB;
-            padding-bottom: 0.5rem;
-            font-weight: 600;
-        }
-
-        .column a {
-            color: #4B5563;
-            padding: 0.5rem 0;
-            text-decoration: none;
-            display: block;
-            margin-left: 0;
-            font-weight: 400;
-            font-size: 0.95rem;
-            transition: color 0.2s;
-        }
-
-        .column a:hover {
-            color: var(--primary-green);
         }
 
         /* Page Layout & Container */
         .page-container {
-            max-width: 1200px;
+            max-width: 75rem;
             margin: 0 auto;
             padding: 2rem;
         }
@@ -181,7 +28,7 @@
         .hero-banner {
             background-color: var(--dark-grey);
             color: var(--white);
-            border-radius: 12px;
+            border-radius: 0.75rem;
             padding: 3rem;
             margin-bottom: 2rem;
         }
@@ -198,13 +45,13 @@
         }
 
         .hero-banner h1 {
-            font-size: 2.2rem;
+            font-size: clamp(1.5rem, 1.69vw + 1.12rem, 2.2rem);
             margin-bottom: 1rem;
             line-height: 1.2;
         }
 
         .hero-banner p {
-            max-width: 700px;
+            max-width: 43.75rem;
             color: #D1D5DB;
             font-size: 1.05rem;
         }
@@ -212,7 +59,7 @@
         /* Content Cards Grid */
         .grid-3 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(20rem, 100%), 1fr));
             gap: 1.5rem;
             margin-bottom: 3rem;
         }
@@ -220,7 +67,7 @@
         .info-card {
             background: var(--white);
             padding: 1.8rem;
-            border-radius: 10px;
+            border-radius: 0.625rem;
             box-shadow: 0 2px 8px rgba(0,0,0,0.04);
             transition: transform 0.2s, box-shadow 0.2s;
         }
@@ -252,13 +99,13 @@
         /* Feature / Easy Options Section */
         .easy-recycle-section {
             background-color: var(--light-green-bg);
-            border-radius: 12px;
+            border-radius: 0.75rem;
             padding: 3rem 2rem;
             margin-bottom: 3rem;
         }
 
         .easy-recycle-section h2 {
-            font-size: 2rem;
+            font-size: clamp(1.5rem, 1.2vw + 1.229rem, 2rem);
             margin-bottom: 1.5rem;
             color: var(--dark-grey);
         }
@@ -288,20 +135,20 @@
 
         .options-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(17.5rem, 100%), 1fr));
             gap: 1.5rem;
         }
 
         .option-card {
             background: var(--white);
             padding: 2rem;
-            border-radius: 8px;
+            border-radius: 0.5rem;
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
             border-top: 3px solid var(--primary-green);
         }
 
         .option-card img.icon {
-            height: 45px;
+            height: 2.8125rem;
             margin-bottom: 1.2rem;
             display: block;
         }
@@ -332,83 +179,79 @@
         }
 
         /* Footer */
-        footer {
-            background-color: var(--dark-grey);
-            color: var(--white);
-            text-align: center;
-            padding: 2rem;
+        .site-footer {
             margin-top: 2rem;
+        }
+
+        /* Phones */
+        @media (max-width: 600px) {
+            .page-container {
+                padding: 2rem 1rem;
+            }
+
+            .hero-banner {
+                padding: 2rem 1.5rem;
+            }
+
+            .info-card {
+                padding: 1.8rem 1rem;
+            }
+
+            .easy-recycle-section {
+                padding: 2rem 1rem;
+            }
+
+            .option-card {
+                padding: 2rem 1rem;
+            }
         }
     </style>
 </head>
 <body>
 
-<header>
+    <!-- Site header (identical on every page) -->
+    <header class="site-header">
         <div class="nav-container">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="1-01.png" alt="Saving Tech Logo">
-                </a>
-            </div>
-            <nav class="nav-links">
-                <!-- 1. Free IT Disposal Dropdown -->
-                <div class="dropdown">
-                    <a href="FreeITDisposal.html" class="dropbtn">Free IT Disposal &#711;</a>
-                    <div class="dropdown-content single-column">
-                        <div class="dropdown-columns">
-                            <div class="column">
-                                
-                                <a href="Computerrecycling.html">Computer recycling</a>
-                                <a href="Laptoprecycling.html">Laptop recycling</a>
-                                <a href="Mobiledevicerecycling.html">Mobile device recycling</a>
-                                <a href="Monitorscreenrecycling.html">Monitor &amp; screen recycling</a>
-								<a href="ServerRecycling.html">Server recycling</a>
-                            </div>
-                        </div>
+            <a href="index.html" class="logo">
+                <img src="Images/saving-tech-logo.png" alt="Saving Tech" width="200" height="40">
+            </a>
+            <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="site-nav" id="site-nav" aria-label="Main">
+                <div class="nav-item has-menu">
+                    <a href="FreeITDisposal.html" class="nav-link">Free IT Disposal</a>
+                    <div class="nav-menu">
+                        <a href="Computerrecycling.html">Computer recycling</a>
+                        <a href="Laptoprecycling.html">Laptop recycling</a>
+                        <a href="Mobiledevicerecycling.html">Mobile device recycling</a>
+                        <a href="Monitorscreenrecycling.html">Monitor &amp; screen recycling</a>
+                        <a href="ServerRecycling.html">Server recycling</a>
                     </div>
                 </div>
-
-                <!-- 2. Our Services Dropdown -->
-                <div class="dropdown">
-                    <a href="#services" class="dropbtn">Our Services &#711;</a>
-                    <div class="dropdown-content single-column">
-                        <div class="dropdown-columns">
-                            <div class="column">
-                                <a href="Assetswecollectrecycle.html">Assets we collect &amp; recycle</a>
-                                <a href="FAQs.html">FAQs</a>
-                            </div>
-                        </div>
+                <div class="nav-item has-menu">
+                    <a href="index.html#services" class="nav-link">Our Services</a>
+                    <div class="nav-menu">
+                        <a href="Assetswecollectrecycle.html">Assets we collect &amp; recycle</a>
+                        <a href="FAQs.html">FAQs</a>
                     </div>
                 </div>
-
-                <!-- 3. Data Destruction Dropdown -->
-                <div class="dropdown">
-                    <a href="Howitworks.html" class="dropbtn">Data Destruction &#711;</a>
-                    <div class="dropdown-content single-column">
-                        <div class="dropdown-columns">
-                            <div class="column">
-                                <a href="DataDestructionMethods.html">Secure Data erasure</a>
-                                <a href="Articles.html">Data Security Articles</a>
-                                <a href="Harddrivemediadestruction.html">Hard drive &amp; media destruction</a>
-                                <a href="SecureDataDestruction.html">Secure data destruction</a>
-                            </div>
-                        </div>
+                <div class="nav-item has-menu">
+                    <a href="Howitworks.html" class="nav-link">Data Destruction</a>
+                    <div class="nav-menu">
+                        <a href="DataDestructionMethods.html">Secure data erasure</a>
+                        <a href="Articles.html">Data security articles</a>
+                        <a href="Harddrivemediadestruction.html">Hard drive &amp; media destruction</a>
+                        <a href="SecureDataDestruction.html">Secure data destruction</a>
                     </div>
                 </div>
-
-                <!-- 4. About Us Dropdown -->
-                <div class="dropdown">
-                    <a href="AboutUs.html" class="dropbtn">About Us &#711;</a>
-                    <div class="dropdown-content single-column">
-                        <div class="dropdown-columns">
-                            <div class="column">
-                                <a href="Documentscertificates.html">Documents &amp; Certificates</a>
-                            </div>
-                        </div>
+                <div class="nav-item has-menu">
+                    <a href="AboutUs.html" class="nav-link">About Us</a>
+                    <div class="nav-menu">
+                        <a href="Documentscertificates.html">Documents &amp; certificates</a>
                     </div>
                 </div>
-
-                <a href="Book.html#form-section" style="background-color: var(--primary-green); color: var(--white); padding: 0.6rem 1.25rem; border-radius: 4px; text-decoration: none; font-weight: 700;">Book a Collection</a>
+                <a href="Book.html#form-section" class="nav-cta">Book a Collection</a>
             </nav>
         </div>
     </header>
@@ -493,12 +336,11 @@
         </section>
     </main>
 
-    <footer>
-        <p>&copy; <span id="year"></span> Saving Tech. All rights reserved.</p>
+    <!-- Site footer (identical on every page) -->
+    <footer class="site-footer">
+        <p>&copy; <span id="year">2026</span> Saving Tech. All rights reserved.</p>
     </footer>
 
-    <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
+    <script src="js/main.js"></script>
 </body>
 </html>

@@ -1,764 +1,484 @@
 <!DOCTYPE html>
-<html lang="en-GB">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>What happens to your business computers after they are collected for recycling? | Saving Tech Waste</title>
-  
-  <!-- Favicon link -->
-  <link rel="icon" type="image/x-icon" href="icon.ico">
-
-  <style>
-    :root {
-      --primary-green: #2E8B57;
-      --dark-grey: #1F2937;
-      --bg-teal: #013b46;
-      --bg-teal-dark: #002d36;
-      --bg-cream: #faf9e6;
-      --bg-card: #f2f1d5;
-      --text-dark: #102a30;
-      --text-muted: #4a5d63;
-      --accent-lime: #c2f04d;
-      --accent-lime-hover: #b0e038;
-      --lime-accent: #D4F34A;
-      --white: #ffffff;
-      --font-heading: 'Oswald', 'Arial Narrow', sans-serif;
-      --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      --dark-blue: #0B4A6F;
-      --icon-blue: #1085C5;
-      --hero-blue: #2A8BCA;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      background-color: var(--bg-cream);
-      color: var(--text-dark);
-      font-family: var(--font-body);
-      line-height: 1.6;
-      font-size: 16px;
-    }
-
-    a {
-      color: #0066cc;
-      text-decoration: underline;
-    }
-
-    a:hover {
-      text-decoration: none;
-    }
-
-    /* Container Utility */
-    .container {
-      max-width: 1140px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    /* Header & Navigation */
-    header {
-      background-color: var(--white);
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0.5rem 2rem; 
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      overflow: hidden; 
-      height: 80px; 
-    }
-
-    .logo a {
-      display: flex;
-      align-items: center;
-      height: 100%;
-      text-decoration: none;
-      cursor: pointer;
-    }
-
-    .logo img {
-      height: 250px; 
-      width: auto;
-      object-fit: contain;
-      margin-left: -20px; 
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-    }
-
-    .nav-links > a:not(.btn-primary) {
-      text-decoration: none;
-      color: var(--dark-grey);
-      margin-left: 2rem;
-      font-weight: 600;
-      transition: color 0.3s;
-    }
-
-    .nav-links > a:not(.btn-primary):hover {
-      color: var(--primary-green);
-    }
-
-    .nav-links > .btn-primary {
-      margin-left: 2rem;
-    }
-
-    /* Dropdown Menu Styles */
-    .dropdown {
-      position: relative;
-      display: inline-block;
-      margin-left: 2rem;
-    }
-
-    .dropdown .dropbtn {
-      background: none;
-      border: none;
-      font-size: 1rem;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      font-weight: 600;
-      color: var(--dark-grey);
-      text-decoration: none;
-      transition: color 0.3s;
-      font-family: inherit;
-      padding: 1rem 0;
-    }
-
-    .dropdown:hover .dropbtn {
-      color: var(--primary-green);
-    }
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: var(--white);
-      min-width: 500px;
-      box-shadow: 0px 8px 24px rgba(0,0,0,0.12);
-      z-index: 100;
-      border-radius: 8px;
-      top: 100%;
-      left: 0;
-      padding: 1.5rem;
-      border-top: 3px solid var(--primary-green);
-    }
-
-    .dropdown-content.single-column {
-      min-width: 260px;
-    }
-
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-
-    .dropdown-columns {
-      display: flex;
-      gap: 3rem;
-    }
-
-    .column {
-      flex: 1;
-    }
-
-    .column h4 {
-      font-size: 1.05rem;
-      margin-bottom: 0.8rem;
-      color: var(--dark-grey);
-      border-bottom: 1px solid #E5E7EB;
-      padding-bottom: 0.5rem;
-      font-weight: 600;
-    }
-
-    .column a {
-      color: #4B5563;
-      padding: 0.5rem 0;
-      text-decoration: none;
-      display: block;
-      margin-left: 0;
-      font-weight: 400;
-      font-size: 0.95rem;
-      transition: color 0.2s;
-    }
-
-    .column a:hover {
-      color: var(--primary-green);
-    }
-
-    .btn-primary {
-      background-color: var(--primary-green);
-      color: var(--white);
-      padding: 0.5rem 1.5rem;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
-      display: inline-block;
-      border: none;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    .btn-primary:hover {
-      background-color: #246B43;
-    }
-
-    /* Buttons & Utility Links */
-    .btn-lime {
-      background-color: var(--lime-accent);
-      color: var(--dark-grey);
-      padding: 0.85rem 1.75rem;
-      border-radius: 4px;
-      text-decoration: none;
-      font-weight: 800;
-      font-size: 1.1rem;
-      display: inline-block;
-      border: none;
-      cursor: pointer;
-      text-transform: uppercase;
-      transition: background 0.2s;
-    }
-
-    .btn-lime:hover {
-      background-color: #C3E239;
-    }
-
-    /* Hero Section */
-    .hero-section {
-      background-color: var(--bg-teal);
-      color: var(--white);
-      padding: 48px 0;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 40px;
-      align-items: center;
-    }
-
-    .breadcrumbs {
-      font-size: 13px;
-      color: rgba(255, 255, 255, 0.8);
-      margin-bottom: 16px;
-    }
-
-    .breadcrumbs a {
-      color: rgba(255, 255, 255, 0.8);
-      text-decoration: none;
-    }
-
-    .breadcrumbs a:hover {
-      text-decoration: underline;
-    }
-
-    .hero-title {
-      font-family: var(--font-heading);
-      font-size: 42px;
-      line-height: 1.15;
-      font-weight: 700;
-      color: var(--accent-lime);
-      text-transform: uppercase;
-      margin-bottom: 16px;
-    }
-
-    .hero-subtitle {
-      font-size: 18px;
-      line-height: 1.4;
-      color: rgba(255, 255, 255, 0.9);
-      margin-bottom: 24px;
-    }
-
-    .reading-time {
-      font-size: 14px;
-      color: rgba(255, 255, 255, 0.85);
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .hero-image-container img {
-      width: 100%;
-      height: 320px;
-      object-fit: cover;
-      border-radius: 12px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    }
-
-    /* Article Main Layout */
-    .article-section {
-      padding: 48px 0;
-    }
-
-    .article-container {
-      max-width: 860px;
-      margin: 0 auto;
-    }
-
-    /* Table of Contents */
-    .toc-box {
-      background-color: var(--bg-card);
-      border: 1px solid rgba(0,0,0,0.06);
-      border-radius: 8px;
-      padding: 24px;
-      margin-bottom: 40px;
-    }
-
-    .toc-title {
-      font-family: var(--font-heading);
-      font-size: 18px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-bottom: 12px;
-      color: var(--text-dark);
-    }
-
-    .toc-list {
-      list-style-type: none;
-      padding-left: 0;
-    }
-
-    .toc-list li {
-      margin-bottom: 8px;
-      padding-left: 16px;
-      position: relative;
-    }
-
-    .toc-list li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      color: var(--text-dark);
-    }
-
-    .toc-list a {
-      color: #005a9e;
-      text-decoration: none;
-      font-size: 15px;
-    }
-
-    .toc-list a:hover {
-      text-decoration: underline;
-    }
-
-    .key-takeaways-btn {
-      margin-top: 16px;
-      background: none;
-      border: none;
-      font-family: var(--font-heading);
-      font-size: 15px;
-      font-weight: bold;
-      text-transform: uppercase;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      color: var(--text-dark);
-    }
-
-    /* Content Styling */
-    .content-body p {
-      margin-bottom: 20px;
-      font-size: 17px;
-      color: #1a2e33;
-    }
-
-    .content-body h2 {
-      font-family: var(--font-heading);
-      font-size: 28px;
-      text-transform: uppercase;
-      margin-top: 40px;
-      margin-bottom: 16px;
-      color: var(--text-dark);
-      line-height: 1.2;
-    }
-
-    .content-body ul {
-      margin-bottom: 24px;
-      padding-left: 24px;
-    }
-
-    .content-body li {
-      margin-bottom: 10px;
-      font-size: 17px;
-    }
-
-    /* FAQ Section */
-    .faq-section {
-      margin-top: 48px;
-    }
-
-    .faq-item {
-      background-color: var(--bg-card);
-      border-radius: 8px;
-      padding: 24px;
-      margin-bottom: 16px;
-    }
-
-    .faq-question {
-      font-size: 19px;
-      font-weight: 700;
-      margin-bottom: 10px;
-      color: var(--text-dark);
-    }
-
-    .faq-answer {
-      font-size: 16px;
-      color: #2c3e42;
-      line-height: 1.5;
-    }
-
-    /* Share Bar */
-    .share-bar {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-top: 40px;
-      padding-top: 24px;
-      border-top: 1px solid rgba(0,0,0,0.1);
-    }
-
-    .share-title {
-      font-weight: 600;
-      font-size: 16px;
-    }
-
-    .social-icon {
-      width: 32px;
-      height: 32px;
-      border-radius: 4px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 14px;
-    }
-
-    .icon-linkedin { background-color: #0077b5; }
-    .icon-teams { background-color: #6264a7; }
-    .icon-whatsapp { background-color: #25d366; }
-    .icon-link { background-color: #718096; }
-
-    /* Newsletter CTA Banner */
-    .newsletter-banner {
-      background-color: var(--bg-teal);
-      color: var(--white);
-      padding: 48px 0;
-      margin-top: 60px;
-    }
-
-    .newsletter-title {
-      font-family: var(--font-heading);
-      font-size: 32px;
-      text-transform: uppercase;
-      text-align: center;
-      color: var(--accent-lime);
-      margin-bottom: 8px;
-    }
-
-    .newsletter-subtitle {
-      text-align: center;
-      font-size: 15px;
-      color: rgba(255, 255, 255, 0.85);
-      margin-bottom: 28px;
-    }
-
-    .newsletter-form {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      max-width: 800px;
-      margin: 0 auto;
-      flex-wrap: wrap;
-    }
-
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-      min-width: 220px;
-    }
-
-    .form-group label {
-      font-size: 14px;
-      font-weight: bold;
-      margin-bottom: 6px;
-      font-family: var(--font-heading);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .form-group input {
-      padding: 12px 16px;
-      border-radius: 4px;
-      border: 1px solid #ccc;
-      font-size: 15px;
-      background-color: var(--bg-cream);
-    }
-
-    .btn-subscribe {
-      background-color: var(--accent-lime);
-      color: var(--bg-teal-dark);
-      font-family: var(--font-heading);
-      font-weight: 700;
-      text-transform: uppercase;
-      padding: 12px 28px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      align-self: flex-end;
-      font-size: 16px;
-      transition: background-color 0.2s;
-    }
-
-    .btn-subscribe:hover {
-      background-color: var(--accent-lime-hover);
-    }
-
-    /* CTA Section & ITAD Process Box */
-    #book {
-      max-width: 1100px;
-      margin: 3rem auto;
-      padding: 0 2rem;
-    }
-
-    .section-title {
-      font-size: 2.5rem;
-      color: var(--dark-grey);
-      margin-bottom: 1.5rem;
-      font-weight: 800;
-      letter-spacing: -0.5px;
-    }
-
-    .cta-banner {
-      background-color: var(--dark-blue);
-      border-radius: 12px;
-      padding: 3.5rem 2rem;
-      color: var(--white);
-      margin-bottom: 3rem;
-    }
-
-    .cta-banner h2 {
-      font-size: 2.2rem;
-      color: var(--lime-accent);
-      margin-bottom: 0.5rem;
-      font-weight: 800;
-      line-height: 1.2;
-    }
-
-    .cta-banner p.sub-heading {
-      font-size: 1.15rem;
-      color: #E2E8F0;
-      margin-bottom: 2.5rem;
-    }
-
-    .cta-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 1rem;
-      margin-bottom: 2.5rem;
-    }
-
-    .cta-card {
-      background-color: var(--white);
-      color: var(--dark-grey);
-      border-radius: 8px;
-      padding: 1.5rem 1rem;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    .cta-card-icon {
-      width: 40px;
-      height: 40px;
-      margin-bottom: 0.85rem;
-      color: var(--icon-blue);
-    }
-
-    .cta-card h4 {
-      font-size: 1.05rem;
-      margin-bottom: 0.5rem;
-      line-height: 1.2;
-      font-weight: 700;
-    }
-
-    .cta-card p {
-      font-size: 0.88rem;
-      color: #4B5563;
-      line-height: 1.4;
-    }
-
-    .cta-footer-text {
-      font-size: 1.05rem;
-      color: #E2E8F0;
-      margin-bottom: 1.5rem;
-    }
-
-    .cta-actions {
-      display: flex;
-      gap: 1rem;
-      align-items: center;
-    }
-
-    .btn-phone {
-      background-color: #E2E8F0;
-      color: var(--dark-grey);
-      padding: 0.85rem 1.75rem;
-      border-radius: 4px;
-      text-decoration: none;
-      font-weight: 800;
-      font-size: 1.1rem;
-      display: inline-block;
-      border: none;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-
-    .btn-phone:hover {
-      background-color: #CBD5E1;
-    }
-
-    a.inline-link {
-      color: var(--hero-blue);
-      text-decoration: underline;
-    }
-
-    a.inline-link:hover {
-      color: #1a6291;
-    }
-
-    /* Footer */
-    footer {
-      background-color: var(--dark-grey);
-      color: var(--white);
-      text-align: center;
-      padding: 2rem;
-    }
-
-    /* Responsive */
-    @media (max-width: 1200px) {
-      .cta-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    @media (max-width: 868px) {
-      .hero-grid {
-        grid-template-columns: 1fr;
-      }
-      .hero-title {
-        font-size: 32px;
-      }
-      .newsletter-form {
-        flex-direction: column;
-      }
-      .btn-subscribe {
-        align-self: stretch;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .cta-grid {
-        grid-template-columns: 1fr;
-      }
-      .cta-actions {
-        flex-direction: column;
-        align-items: stretch;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What Happens to Your Business Computers After Collection? | Saving Tech</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Styles used only on this page -->
+    <style>
+        :root {
+            --bg-teal: #013b46;
+            --bg-teal-dark: #002d36;
+            --bg-cream: #faf9e6;
+            --bg-card: #f2f1d5;
+            --text-dark: #102a30;
+            --text-muted: #4a5d63;
+            --accent-lime: #c2f04d;
+            --accent-lime-hover: #b0e038;
+            --font-heading: 'Oswald', 'Arial Narrow', sans-serif;
+            --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            font-family: inherit;
+        }
+
+        body {
+            background-color: var(--bg-cream);
+            color: var(--text-dark);
+            font-family: var(--font-body);
+            font-size: 1rem;
+        }
+
+        a {
+            color: #0066cc;
+            text-decoration: underline;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        /* Container Utility */
+        .container {
+            max-width: 71.25rem;
+            margin: 0 auto;
+            padding: 0 1.25rem;
+        }
+
+        /* Buttons & Utility Links */
+        .btn-lime {
+            background-color: var(--lime-accent);
+            color: var(--dark-grey);
+            padding: 0.85rem 1.75rem;
+            border-radius: 0.25rem;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.1rem;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: background 0.2s;
+        }
+
+        .btn-lime:hover {
+            background-color: #C3E239;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background-color: var(--bg-teal);
+            color: var(--white);
+            padding: 3rem 0;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .breadcrumbs {
+            font-size: 0.8125rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1rem;
+        }
+
+        .breadcrumbs a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+        }
+
+        .hero-title {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 1.51vw + 1.661rem, 2.625rem);
+            line-height: 1.15;
+            font-weight: 700;
+            color: var(--accent-lime);
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.125rem;
+            line-height: 1.4;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1.5rem;
+        }
+
+        .reading-time {
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.85);
+            display: flex;
+            align-items: center;
+            gap: 0.375rem;
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: 20rem;
+            object-fit: cover;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        /* Article Main Layout */
+        .article-section {
+            padding: 3rem 0;
+        }
+
+        .article-container {
+            max-width: 53.75rem;
+            margin: 0 auto;
+        }
+
+        /* Table of Contents */
+        .toc-box {
+            background-color: var(--bg-card);
+            border: 1px solid rgba(0,0,0,0.06);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .toc-title {
+            font-family: var(--font-heading);
+            font-size: 1.125rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.75rem;
+            color: var(--text-dark);
+        }
+
+        .toc-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .toc-list li {
+            margin-bottom: 0.5rem;
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        .toc-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--text-dark);
+        }
+
+        .toc-list a {
+            color: #005a9e;
+            text-decoration: none;
+            font-size: 0.9375rem;
+        }
+
+        .toc-list a:hover {
+            text-decoration: underline;
+        }
+
+        .key-takeaways-btn {
+            margin-top: 1rem;
+            background: none;
+            border: none;
+            font-family: var(--font-heading);
+            font-size: 0.9375rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.375rem;
+            color: var(--text-dark);
+        }
+
+        /* Content Styling */
+        .content-body p {
+            margin-bottom: 1.25rem;
+            font-size: 1.0625rem;
+            color: #1a2e33;
+        }
+
+        .content-body h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(1.5rem, 0.6vw + 1.364rem, 1.75rem);
+            text-transform: uppercase;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            line-height: 1.2;
+        }
+
+        .content-body ul {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+
+        .content-body li {
+            margin-bottom: 0.625rem;
+            font-size: 1.0625rem;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            margin-top: 3rem;
+        }
+
+        .faq-item {
+            background-color: var(--bg-card);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .faq-question {
+            font-size: 1.1875rem;
+            font-weight: 700;
+            margin-bottom: 0.625rem;
+            color: var(--text-dark);
+        }
+
+        .faq-answer {
+            font-size: 1rem;
+            color: #2c3e42;
+            line-height: 1.5;
+        }
+
+        /* Share Bar */
+        .share-bar {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .social-icon {
+            width: 2rem;
+            height: 2rem;
+            border-radius: 0.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.875rem;
+        }
+
+        .icon-linkedin {
+            background-color: #0077b5;
+        }
+
+        .icon-teams {
+            background-color: #6264a7;
+        }
+
+        .icon-whatsapp {
+            background-color: #25d366;
+        }
+
+        .icon-link {
+            background-color: #718096;
+        }
+
+        /* Newsletter CTA Banner */
+        .newsletter-banner {
+            background-color: var(--bg-teal);
+            color: var(--white);
+            padding: 3rem 0;
+            margin-top: 3.75rem;
+        }
+
+        .newsletter-title {
+            font-family: var(--font-heading);
+            font-size: clamp(1.5rem, 1.2vw + 1.229rem, 2rem);
+            text-transform: uppercase;
+            text-align: center;
+            color: var(--accent-lime);
+            margin-bottom: 0.5rem;
+        }
+
+        .newsletter-subtitle {
+            text-align: center;
+            font-size: 0.9375rem;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 1.75rem;
+        }
+
+        .newsletter-form {
+            display: flex;
+            justify-content: center;
+            gap: 1.25rem;
+            max-width: 50rem;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            min-width: 13.75rem;
+        }
+
+        .form-group label {
+            font-size: 0.875rem;
+            font-weight: bold;
+            margin-bottom: 0.375rem;
+            font-family: var(--font-heading);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input {
+            padding: 0.75rem 1rem;
+            border-radius: 0.25rem;
+            border: 1px solid #ccc;
+            font-size: 0.9375rem;
+            background-color: var(--bg-cream);
+        }
+
+        .btn-subscribe {
+            background-color: var(--accent-lime);
+            color: var(--bg-teal-dark);
+            font-family: var(--font-heading);
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 0.75rem 1.75rem;
+            border: none;
+            border-radius: 0.25rem;
+            cursor: pointer;
+            align-self: flex-end;
+            font-size: 1rem;
+            transition: background-color 0.2s;
+        }
+
+        .btn-subscribe:hover {
+            background-color: var(--accent-lime-hover);
+        }
+
+        /* CTA Section & ITAD Process Box */
+        #book {
+            max-width: 68.75rem;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            font-size: clamp(1.75rem, 1.81vw + 1.343rem, 2.5rem);
+            color: var(--dark-grey);
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        /* Responsive */
+        @media (max-width: 868px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .btn-subscribe {
+                align-self: stretch;
+            }
+        }
+
+        /* Phones */
+        @media (max-width: 600px) {
+            .btn-lime {
+                padding: 0.85rem 1rem;
+            }
+
+            .hero-section {
+                padding: 2rem 0;
+            }
+
+            .hero-grid {
+                gap: 1.5rem;
+            }
+
+            .article-section {
+                padding: 2rem 0;
+            }
+
+            .newsletter-banner {
+                padding: 2rem 0;
+            }
+
+            .btn-subscribe {
+                padding: 0.75rem 1rem;
+            }
+
+            #book {
+                padding: 0 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
-  <!-- Header Navigation -->
-  <header>
-    <div class="nav-container">
-      <div class="logo">
-        <a href="index.html">
-          <img src="1-01.png" alt="Saving Tech Logo">
-        </a>
-      </div>
-      <nav class="nav-links">
-        <!-- 1. Free IT Disposal Dropdown -->
-        <div class="dropdown">
-          <a href="FreeITDisposal.html" class="dropbtn">Free IT Disposal &#711;</a>
-          <div class="dropdown-content single-column">
-            <div class="dropdown-columns">
-              <div class="column">
-                
-                <a href="Computerrecycling.html">Computer recycling</a>
-                <a href="Laptoprecycling.html">Laptop recycling</a>
-                <a href="Mobiledevicerecycling.html">Mobile device recycling</a>
-                <a href="Monitorscreenrecycling.html">Monitor &amp; screen recycling</a>
-                <a href="ServerRecycling.html">Server recycling</a>
-              </div>
-            </div>
-          </div>
+    <!-- Site header (identical on every page) -->
+    <header class="site-header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="Images/saving-tech-logo.png" alt="Saving Tech" width="200" height="40">
+            </a>
+            <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="site-nav" id="site-nav" aria-label="Main">
+                <div class="nav-item has-menu">
+                    <a href="FreeITDisposal.html" class="nav-link">Free IT Disposal</a>
+                    <div class="nav-menu">
+                        <a href="Computerrecycling.html">Computer recycling</a>
+                        <a href="Laptoprecycling.html">Laptop recycling</a>
+                        <a href="Mobiledevicerecycling.html">Mobile device recycling</a>
+                        <a href="Monitorscreenrecycling.html">Monitor &amp; screen recycling</a>
+                        <a href="ServerRecycling.html">Server recycling</a>
+                    </div>
+                </div>
+                <div class="nav-item has-menu">
+                    <a href="index.html#services" class="nav-link">Our Services</a>
+                    <div class="nav-menu">
+                        <a href="Assetswecollectrecycle.html">Assets we collect &amp; recycle</a>
+                        <a href="FAQs.html">FAQs</a>
+                    </div>
+                </div>
+                <div class="nav-item has-menu">
+                    <a href="Howitworks.html" class="nav-link">Data Destruction</a>
+                    <div class="nav-menu">
+                        <a href="DataDestructionMethods.html">Secure data erasure</a>
+                        <a href="Articles.html">Data security articles</a>
+                        <a href="Harddrivemediadestruction.html">Hard drive &amp; media destruction</a>
+                        <a href="SecureDataDestruction.html">Secure data destruction</a>
+                    </div>
+                </div>
+                <div class="nav-item has-menu">
+                    <a href="AboutUs.html" class="nav-link">About Us</a>
+                    <div class="nav-menu">
+                        <a href="Documentscertificates.html">Documents &amp; certificates</a>
+                    </div>
+                </div>
+                <a href="Book.html#form-section" class="nav-cta">Book a Collection</a>
+            </nav>
         </div>
-
-        <!-- 2. Our Services Dropdown -->
-        <div class="dropdown">
-          <a href="index.html#services" class="dropbtn">Our Services &#711;</a>
-          <div class="dropdown-content single-column">
-            <div class="dropdown-columns">
-              <div class="column">
-                <a href="Assetswecollectrecycle.html">Assets we collect &amp; recycle</a>
-                <a href="FAQs.html">FAQs</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 3. Data Destruction Dropdown -->
-        <div class="dropdown">
-          <a href="Howitworks.html" class="dropbtn">Data Destruction &#711;</a>
-          <div class="dropdown-content single-column">
-            <div class="dropdown-columns">
-              <div class="column">
-                <a href="DataDestructionMethods.html">Secure Data erasure</a>
-                <a href="Articles.html">Data Security Articles</a>
-                <a href="Harddrivemediadestruction.html">Hard drive &amp; media destruction</a>
-                <a href="SecureDataDestruction.html">Secure data destruction</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 4. About Us Dropdown -->
-        <div class="dropdown">
-          <a href="AboutUs.html" class="dropbtn">About Us &#711;</a>
-          <div class="dropdown-content single-column">
-            <div class="dropdown-columns">
-              <div class="column">
-                <a href="Documentscertificates.html">Documents &amp; Certificates</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <a href="Book.html#form-section" class="btn-primary">Book a Collection</a>
-      </nav>
-    </div>
-  </header>
+    </header>
 
   <!-- Hero Section -->
   <section class="hero-section">
@@ -829,7 +549,7 @@
         <p>This stage is often the single biggest concern for businesses disposing of IT equipment, particularly where devices may contain confidential client information, employee records, financial data or commercially sensitive documents.</p>
         <p>Importantly, deleting files or formatting a hard drive does not fully remove data. In many cases, deleted information can still be recovered using relatively accessible forensic software. Proper sanitisation requires more rigorous methods designed to prevent recovery altogether.</p>
         <p>Computer recycling <a href="#">data destruction processes</a> can vary depending on the type, condition and intended fate of the device. Common approaches include:</p>
-        
+
         <ul>
           <li><strong>Software-based data wiping</strong> using certified overwriting tools that replace existing data multiple times</li>
           <li><strong>Degaussing</strong>, which uses strong magnetic fields to disrupt data stored on magnetic drives</li>
@@ -928,7 +648,7 @@
       <h2 class="newsletter-title">Join our email list for occasional updates on secure IT recycling, data destruction best practices, & e-waste sustainability.</h2>
       <p class="newsletter-subtitle">Occasional messages, unsubscribe at any time.</p>
 
-      <form class="newsletter-form" onsubmit="event.preventDefault();">
+      <form class="newsletter-form">
         <div class="form-group">
           <label for="fname">First name *</label>
           <input type="text" id="fname" placeholder="First name" required>
@@ -945,7 +665,7 @@
   <!-- Bottom ITAD Process & CTA Section -->
   <section id="book">
     <h2 class="section-title">Ready to book?</h2>
-    
+
     <div class="cta-banner">
       <h2>Our ITAD Process is simple!</h2>
       <p class="sub-heading">We make sustainable IT disposal simple for all businesses &amp; institutions.</p>
@@ -997,7 +717,7 @@
           <h4>Recycle & Reuse</h4>
           <p>Suitable equipment is refurbished, reused or responsibly recycled.</p>
         </div>
-        
+
         <!-- Card 5 -->
         <div class="cta-card">
           <svg class="cta-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1026,14 +746,11 @@
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; <span id="year"></span> Saving Tech. All rights reserved.</p>
-  </footer>
-  
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+    <!-- Site footer (identical on every page) -->
+    <footer class="site-footer">
+        <p>&copy; <span id="year">2026</span> Saving Tech. All rights reserved.</p>
+    </footer>
 
+    <script src="js/main.js"></script>
 </body>
 </html>

@@ -4,196 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | Saving Tech</title>
-    
-    <link rel="icon" type="image/x-icon" href="icon.ico">
-    
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Styles used only on this page -->
     <style>
         :root {
-            --primary-green: #2E8B57; /* Matched to logo */
-            --dark-grey: #1F2937;
-            --light-bg: #F3F4F6;
-            --white: #FFFFFF;
-            --light-green: #E8F5E9; /* Lighter tint for banner boxes */
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            color: var(--dark-grey);
-            line-height: 1.6;
-            background-color: var(--white);
-        }
-
-        /* Header & Navigation */
-        header {
-            background-color: var(--white);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0.5rem 2rem; 
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            overflow: hidden; 
-            height: 80px; 
-        }
-
-        .logo a {
-            display: flex;
-            align-items: center;
-            height: 100%;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        .logo img {
-            height: 250px; 
-            width: auto;
-            object-fit: contain;
-            margin-left: -20px; 
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-        }
-
-        .nav-links > a:not(.btn-primary) {
-            text-decoration: none;
-            color: var(--dark-grey);
-            margin-left: 2rem;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-
-        .nav-links > a:not(.btn-primary):hover {
-            color: var(--primary-green);
-        }
-
-        .nav-links > .btn-primary {
-            margin-left: 2rem;
+            --light-green: #E8F5E9;
         }
 
         /* Dropdown Menu Styles */
-        .dropdown {
-            position: relative;
-            display: inline-block;
-            margin-left: 2rem;
-        }
-
-        .dropdown .dropbtn {
-            background: none;
-            border: none;
-            font-size: 1rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            font-weight: 600;
-            color: var(--dark-grey);
-            text-decoration: none;
-            transition: color 0.3s;
-            font-family: inherit;
-            padding: 1rem 0; 
-        }
-
-        .dropdown:hover .dropbtn {
-            color: var(--primary-green);
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: var(--white);
-            min-width: 500px; 
-            box-shadow: 0px 8px 24px rgba(0,0,0,0.12);
-            z-index: 100;
-            border-radius: 8px;
-            top: 100%;
-            left: 0;
-            padding: 1.5rem;
-            border-top: 3px solid var(--primary-green);
-        }
-
-        .dropdown-content.single-column {
-            min-width: 260px;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        .dropdown-columns {
-            display: flex;
-            gap: 3rem;
-        }
-
-        .column {
-            flex: 1;
-        }
-
-        .column h4 {
-            font-size: 1.05rem;
-            margin-bottom: 0.8rem;
-            color: var(--dark-grey);
-            border-bottom: 1px solid #E5E7EB;
-            padding-bottom: 0.5rem;
-            font-weight: 600;
-        }
-
-        .column a {
-            color: #4B5563;
-            padding: 0.5rem 0;
-            text-decoration: none;
-            display: block;
-            margin-left: 0;
-            font-weight: 400;
-            font-size: 0.95rem;
-            transition: color 0.2s;
-        }
-
-        .column a:hover {
-            color: var(--primary-green);
-        }
-
         .btn-primary {
-            background-color: var(--primary-green);
-            color: var(--white);
             padding: 0.75rem 1.5rem;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            display: inline-block;
-            border: none;
-            cursor: pointer;
             text-transform: uppercase;
         }
 
-        .btn-primary:hover {
-            background-color: #246B43;
-        }
-        
         .btn-secondary {
             background-color: var(--light-bg);
             color: var(--dark-grey);
             padding: 0.75rem 1.5rem;
-            border-radius: 5px;
+            border-radius: 0.3125rem;
             text-decoration: none;
             font-weight: bold;
             display: inline-block;
@@ -209,14 +39,13 @@
 
         /* Layout Container */
         .container {
-            max-width: 1200px;
+            max-width: 75rem;
             margin: 0 auto;
             padding: 4rem 2rem;
         }
 
         a.inline-link {
             color: var(--primary-green);
-            text-decoration: underline;
         }
 
         /* Hero Information Box Section */
@@ -230,14 +59,14 @@
         .hero-content-box {
             background-color: var(--white);
             padding: 3rem;
-            max-width: 650px;
-            border-radius: 8px;
+            max-width: 40.625rem;
+            border-radius: 0.5rem;
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            margin-left: max(2rem, calc((100vw - 1200px) / 2)); 
+            margin-left: max(2rem, calc((100vw - 75rem) / 2));
         }
 
         .hero-content-box h1 {
-            font-size: 2.5rem;
+            font-size: clamp(1.75rem, 1.81vw + 1.343rem, 2.5rem);
             color: var(--dark-grey);
             margin-bottom: 1rem;
             line-height: 1.2;
@@ -265,7 +94,7 @@
         }
 
         .section-header h2 {
-            font-size: 2.2rem;
+            font-size: clamp(1.5rem, 1.69vw + 1.12rem, 2.2rem);
             color: var(--dark-grey);
             margin-bottom: 1rem;
         }
@@ -273,14 +102,14 @@
         .section-header p {
             font-size: 1.1rem;
             color: #4B5563;
-            max-width: 900px;
+            max-width: 56.25rem;
             margin: 0 auto;
         }
 
         /* 3 Column Numbered Grid */
         .grid-three {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(18.75rem, 100%), 1fr));
             gap: 1.5rem;
             margin-bottom: 4rem;
         }
@@ -288,7 +117,7 @@
         .number-card {
             background: var(--light-bg);
             padding: 2.5rem 1.5rem;
-            border-radius: 8px;
+            border-radius: 0.5rem;
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -296,14 +125,14 @@
         }
 
         .circle-number {
-            width: 70px;
-            height: 70px;
+            width: 4.375rem;
+            height: 4.375rem;
             border-radius: 50%;
             border: 2px solid #9CA3AF;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.8rem;
+            font-size: clamp(1.5rem, 0.72vw + 1.337rem, 1.8rem);
             color: #6B7280;
             margin-bottom: 1.5rem;
             background: transparent;
@@ -324,12 +153,12 @@
         .text-block {
             margin-bottom: 4rem;
         }
-        
+
         .text-block h3 {
-            font-size: 1.8rem;
+            font-size: clamp(1.5rem, 0.72vw + 1.337rem, 1.8rem);
             margin-bottom: 1rem;
         }
-        
+
         .text-block p {
             font-size: 1.05rem;
             color: #4B5563;
@@ -350,7 +179,7 @@
         }
 
         .split-content h3 {
-            font-size: 1.8rem;
+            font-size: clamp(1.5rem, 0.72vw + 1.337rem, 1.8rem);
             margin-bottom: 1rem;
         }
 
@@ -363,46 +192,33 @@
         .split-image img {
             width: 100%;
             height: auto;
-            border-radius: 8px;
+            border-radius: 0.5rem;
             display: block;
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
-
-        .image-placeholder {
-            background-color: #E5E7EB;
-            width: 100%;
-            min-height: 300px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #9CA3AF;
-            font-weight: bold;
-            font-size: 1.2rem;
-            border: 2px dashed #D1D5DB;
         }
 
         @media (max-width: 768px) {
             .split-section, .split-section.reverse {
                 grid-template-columns: 1fr;
             }
+
             .split-section.reverse .split-image,
             .split-section.reverse .image-placeholder {
-                order: -1; /* Puts image above text on mobile */
+                order: -1;
             }
         }
 
         /* Highlight Banner Box */
         .highlight-banner {
             background-color: var(--light-green);
-            border-radius: 8px;
+            border-radius: 0.5rem;
             padding: 3rem;
             text-align: center;
             margin-bottom: 4rem;
         }
 
         .highlight-banner h2 {
-            font-size: 2rem;
+            font-size: clamp(1.5rem, 1.2vw + 1.229rem, 2rem);
             color: var(--dark-grey);
             margin-bottom: 1rem;
         }
@@ -410,7 +226,7 @@
         .highlight-banner p {
             font-size: 1.1rem;
             color: #4B5563;
-            max-width: 900px;
+            max-width: 56.25rem;
             margin: 0 auto;
         }
 
@@ -422,7 +238,7 @@
 
         .feature-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(15.625rem, 100%), 1fr));
             gap: 1.5rem;
             margin-bottom: 2rem;
         }
@@ -430,12 +246,12 @@
         .feature-card {
             background: var(--white);
             padding: 2rem;
-            border-radius: 8px;
+            border-radius: 0.5rem;
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
 
         .feature-icon {
-            font-size: 3rem;
+            font-size: clamp(2.25rem, 1.81vw + 1.843rem, 3rem);
             color: var(--primary-green);
             margin-bottom: 1rem;
             display: inline-block;
@@ -457,84 +273,84 @@
             gap: 1rem;
         }
 
-        /* Footer */
-        footer {
-            background-color: var(--dark-grey);
-            color: var(--white);
-            text-align: center;
-            padding: 2rem;
-        }
+        /* Phones */
+        @media (max-width: 600px) {
+            .container {
+                padding: 2.5rem 1rem;
+            }
 
+            .hero-alt {
+                padding: 2.5rem 1rem;
+            }
+
+            .hero-content-box {
+                padding: 2rem 1.5rem;
+                margin-left: 0;
+            }
+
+            .split-section {
+                gap: 1.5rem;
+            }
+
+            .highlight-banner {
+                padding: 2rem 1.5rem;
+            }
+
+            .bottom-features {
+                padding: 2.5rem 1rem;
+            }
+
+            .feature-card {
+                padding: 2rem 1rem;
+            }
+        }
     </style>
 </head>
 <body>
 
-<header>
+    <!-- Site header (identical on every page) -->
+    <header class="site-header">
         <div class="nav-container">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="1-01.png" alt="Saving Tech Logo">
-                </a>
-            </div>
-            <nav class="nav-links">
-                <!-- 1. Free IT Disposal Dropdown -->
-                <div class="dropdown">
-                    <a href="FreeITDisposal.html" class="dropbtn">Free IT Disposal &#711;</a>
-                    <div class="dropdown-content single-column">
-                        <div class="dropdown-columns">
-                            <div class="column">
-                                
-                                <a href="Computerrecycling.html">Computer recycling</a>
-                                <a href="Laptoprecycling.html">Laptop recycling</a>
-                                <a href="Mobiledevicerecycling.html">Mobile device recycling</a>
-                                <a href="Monitorscreenrecycling.html">Monitor &amp; screen recycling</a>
-								<a href="ServerRecycling.html">Server recycling</a>
-                            </div>
-                        </div>
+            <a href="index.html" class="logo">
+                <img src="Images/saving-tech-logo.png" alt="Saving Tech" width="200" height="40">
+            </a>
+            <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="site-nav" id="site-nav" aria-label="Main">
+                <div class="nav-item has-menu">
+                    <a href="FreeITDisposal.html" class="nav-link">Free IT Disposal</a>
+                    <div class="nav-menu">
+                        <a href="Computerrecycling.html">Computer recycling</a>
+                        <a href="Laptoprecycling.html">Laptop recycling</a>
+                        <a href="Mobiledevicerecycling.html">Mobile device recycling</a>
+                        <a href="Monitorscreenrecycling.html">Monitor &amp; screen recycling</a>
+                        <a href="ServerRecycling.html">Server recycling</a>
                     </div>
                 </div>
-
-                <!-- 2. Our Services Dropdown -->
-                <div class="dropdown">
-                    <a href="#services" class="dropbtn">Our Services &#711;</a>
-                    <div class="dropdown-content single-column">
-                        <div class="dropdown-columns">
-                            <div class="column">
-                                <a href="Assetswecollectrecycle.html">Assets we collect &amp; recycle</a>
-                                <a href="FAQs.html">FAQs</a>
-                            </div>
-                        </div>
+                <div class="nav-item has-menu">
+                    <a href="index.html#services" class="nav-link">Our Services</a>
+                    <div class="nav-menu">
+                        <a href="Assetswecollectrecycle.html">Assets we collect &amp; recycle</a>
+                        <a href="FAQs.html">FAQs</a>
                     </div>
                 </div>
-
-                <!-- 3. Data Destruction Dropdown -->
-                <div class="dropdown">
-                    <a href="Howitworks.html" class="dropbtn">Data Destruction &#711;</a>
-                    <div class="dropdown-content single-column">
-                        <div class="dropdown-columns">
-                            <div class="column">
-                                <a href="DataDestructionMethods.html">Secure Data erasure</a>
-                                <a href="Articles.html">Data Security Articles</a>
-                                <a href="Harddrivemediadestruction.html">Hard drive &amp; media destruction</a>
-                                <a href="SecureDataDestruction.html">Secure data destruction</a>
-                            </div>
-                        </div>
+                <div class="nav-item has-menu">
+                    <a href="Howitworks.html" class="nav-link">Data Destruction</a>
+                    <div class="nav-menu">
+                        <a href="DataDestructionMethods.html">Secure data erasure</a>
+                        <a href="Articles.html">Data security articles</a>
+                        <a href="Harddrivemediadestruction.html">Hard drive &amp; media destruction</a>
+                        <a href="SecureDataDestruction.html">Secure data destruction</a>
                     </div>
                 </div>
-
-                <!-- 4. About Us Dropdown -->
-                <div class="dropdown">
-                    <a href="AboutUs.html" class="dropbtn">About Us &#711;</a>
-                    <div class="dropdown-content single-column">
-                        <div class="dropdown-columns">
-                            <div class="column">
-                                <a href="Documentscertificates.html">Documents &amp; Certificates</a>
-                            </div>
-                        </div>
+                <div class="nav-item has-menu">
+                    <a href="AboutUs.html" class="nav-link">About Us</a>
+                    <div class="nav-menu">
+                        <a href="Documentscertificates.html">Documents &amp; certificates</a>
                     </div>
                 </div>
-
-                <a href="Book.html#form-section" style="background-color: var(--primary-green); color: var(--white); padding: 0.6rem 1.25rem; border-radius: 4px; text-decoration: none; font-weight: 700;">Book a Collection</a>
+                <a href="Book.html#form-section" class="nav-cta">Book a Collection</a>
             </nav>
         </div>
     </header>
@@ -553,7 +369,7 @@
 
         <!-- Main Content Area -->
         <div class="container">
-            
+
             <div class="section-header">
                 <h2>Sustainable IT recycling for UK business</h2>
                 <p>We provide a secure, ethical, and sustainable IT recycling service to UK businesses. We bring a wealth of expertise from our decade in the data destruction and IT recycling sector, and a bold commitment to secure, Reuse Refurbish Recycle practices.</p>
@@ -621,28 +437,28 @@
         <!-- Bottom Feature Cards Section -->
         <section class="bottom-features">
             <div class="container" style="padding-top: 0; padding-bottom: 0;">
-                <h2 style="font-size: 2.2rem; margin-bottom: 0.5rem;">Sustainable IT asset recycling in the UK</h2>
+                <h2 style="font-size: clamp(1.5rem, 1.69vw + 1.12rem, 2.2rem); margin-bottom: 0.5rem;">Sustainable IT asset recycling in the UK</h2>
                 <p style="font-size: 1.1rem; color: #4B5563; margin-bottom: 3rem;">Secure, carbon-negative IT recycling with free qualifying collections, data destruction and certificates always provided.</p>
-                
+
                 <div class="feature-grid">
                     <div class="feature-card">
                         <div class="feature-icon">&#128230;</div>
                         <h3>Free qualifying collections</h3>
                         <p>Free collection for 10+ qualifying laptops, PCs or servers.</p>
                     </div>
-                    
+
                     <div class="feature-card">
                         <div class="feature-icon">&#9993;&#65039;</div>
                         <h3>Certificates provided</h3>
                         <p>You receive the documentation you need for your records.</p>
                     </div>
-                    
+
                     <div class="feature-card">
                         <div class="feature-icon">&#128274;</div>
                         <h3>Secure data destruction</h3>
                         <p>Data-bearing devices are securely erased, degaussed or destroyed where required.</p>
                     </div>
-                    
+
                     <div class="feature-card">
                         <div class="feature-icon">&#127757;</div>
                         <h3>Carbon-negative recycling</h3>
@@ -658,13 +474,11 @@
         </section>
     </main>
 
-    <footer>
-        <p>&copy; <span id="year"></span> Saving Tech. All rights reserved.</p>
+    <!-- Site footer (identical on every page) -->
+    <footer class="site-footer">
+        <p>&copy; <span id="year">2026</span> Saving Tech. All rights reserved.</p>
     </footer>
 
-    <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
+    <script src="js/main.js"></script>
 </body>
 </html>

@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saving Tech | Assets We Collect & Recycle</title>
-    
-    <link rel="icon" type="image/x-icon" href="icon.ico">
-    
+    <title>Assets We Collect &amp; Recycle | Saving Tech</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Styles used only on this page -->
     <style>
         :root {
-            --primary-green: #2E8B57;
-            --primary-green-hover: #246B43;
             --accent-lime: #A3E635;
             --hero-blue: #0284C7;
             --dark-navy: #1F2937;
@@ -18,195 +17,21 @@
             --card-blue-bg: #F0F9FF;
             --card-pink-bg: #FFF0F3;
             --card-pink-border: #F43F5E;
-            --white: #FFFFFF;
             --border-color: #E5E7EB;
             --text-dark: #1F2937;
             --text-muted: #4B5563;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         html {
             scroll-behavior: smooth;
         }
 
-        body {
-            color: var(--text-dark);
-            line-height: 1.6;
-            background-color: var(--white);
-        }
-
-        /* Header & Navigation */
-        header {
-            background-color: var(--white);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0.5rem 2rem; 
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            overflow: hidden; 
-            height: 80px; 
-        }
-
-        .logo a {
-            display: flex;
-            align-items: center;
-            height: 100%;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        .logo img {
-            height: 250px; 
-            width: auto;
-            object-fit: contain;
-            margin-left: -20px; 
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-        }
-
-        .nav-links > a:not(.btn-primary) {
-            text-decoration: none;
-            color: var(--text-dark);
-            margin-left: 2rem;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-
-        .nav-links > a:not(.btn-primary):hover {
-            color: var(--primary-green);
-        }
-
-        .nav-links > .btn-primary {
-            margin-left: 2rem;
-        }
-
-        /* Dropdown Menu */
-        .dropdown {
-            position: relative;
-            display: inline-block;
-            margin-left: 2rem;
-        }
-
-        .dropdown .dropbtn {
-            background: none;
-            border: none;
-            font-size: 1rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            font-weight: 600;
-            color: var(--text-dark);
-            text-decoration: none;
-            transition: color 0.3s;
-            font-family: inherit;
-            padding: 1rem 0; 
-        }
-
-        .dropdown:hover .dropbtn {
-            color: var(--primary-green);
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: var(--white);
-            min-width: 500px;
-            box-shadow: 0px 8px 24px rgba(0,0,0,0.12);
-            z-index: 100;
-            border-radius: 8px;
-            top: 100%;
-            left: 0;
-            padding: 1.5rem;
-            border-top: 3px solid var(--primary-green);
-        }
-
-        .dropdown-content.single-column {
-            min-width: 260px;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        .dropdown-columns {
-            display: flex;
-            gap: 3rem;
-        }
-
-        .column {
-            flex: 1;
-        }
-
-        .column h4 {
-            font-size: 1.05rem;
-            margin-bottom: 0.8rem;
-            color: var(--text-dark);
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 0.5rem;
-            font-weight: 600;
-        }
-
-        .column a {
-            color: var(--text-muted);
-            padding: 0.5rem 0;
-            text-decoration: none;
-            display: block;
-            margin-left: 0;
-            font-weight: 400;
-            font-size: 0.95rem;
-            transition: color 0.2s;
-        }
-
-        .column a:hover {
-            color: var(--primary-green);
-        }
-
         /* Buttons */
-        .btn-primary {
-            background-color: var(--primary-green);
-            color: var(--white);
-            padding: 0.8rem 1.8rem;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            display: inline-block;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.2s;
-        }
-
-        .btn-primary:hover {
-            background-color: var(--primary-green-hover);
-        }
-
         .btn-lime {
             background-color: var(--accent-lime);
             color: var(--text-dark);
             padding: 0.9rem 1.8rem;
-            border-radius: 4px;
+            border-radius: 0.25rem;
             text-decoration: none;
             font-weight: 800;
             display: inline-block;
@@ -226,7 +51,7 @@
             color: var(--text-dark);
             border: 2px solid var(--text-dark);
             padding: 0.6rem 1.2rem;
-            border-radius: 4px;
+            border-radius: 0.25rem;
             font-weight: 700;
             font-size: 0.85rem;
             cursor: pointer;
@@ -263,22 +88,22 @@
         .collect-hero {
             background-color: var(--hero-blue);
             background-image: radial-gradient(rgba(255, 255, 255, 0.15) 2px, transparent 2px);
-            background-size: 30px 30px;
+            background-size: 1.875rem 1.875rem;
             padding: 4rem 2rem;
             color: var(--white);
         }
 
         .hero-inner {
-            max-width: 1200px;
+            max-width: 75rem;
             margin: 0 auto;
         }
 
         .hero-card {
             background-color: var(--white);
             color: var(--text-dark);
-            max-width: 540px;
+            max-width: 33.75rem;
             padding: 3rem;
-            border-radius: 4px;
+            border-radius: 0.25rem;
             box-shadow: 0 10px 25px rgba(0,0,0,0.15);
         }
 
@@ -294,7 +119,7 @@
         }
 
         .hero-card h1 {
-            font-size: 2.4rem;
+            font-size: clamp(1.75rem, 1.57vw + 1.398rem, 2.4rem);
             line-height: 1.15;
             margin-bottom: 1.8rem;
             font-weight: 800;
@@ -324,8 +149,8 @@
             position: absolute;
             left: 0;
             top: 0;
-            width: 30px;
-            height: 30px;
+            width: 1.875rem;
+            height: 1.875rem;
             border-radius: 50%;
             border: 2px solid #D1D5DB;
             color: #9CA3AF;
@@ -338,13 +163,13 @@
 
         /* General Section Layouts */
         .section-container {
-            max-width: 1200px;
+            max-width: 75rem;
             margin: 0 auto;
             padding: 4rem 2rem;
         }
 
         .intro-text h2 {
-            font-size: 3rem;
+            font-size: clamp(2.25rem, 1.81vw + 1.843rem, 3rem);
             line-height: 1;
             margin-bottom: 1.5rem;
             font-weight: 800;
@@ -363,7 +188,7 @@
 
         .side-callout-card {
             background-color: var(--light-bg);
-            border-radius: 12px;
+            border-radius: 0.75rem;
             padding: 2rem;
             border: 1px solid var(--border-color);
             margin-top: 2rem;
@@ -389,7 +214,7 @@
         }
 
         .category-header h2 {
-            font-size: 2.8rem;
+            font-size: clamp(2rem, 1.93vw + 1.566rem, 2.8rem);
             font-weight: 800;
             margin-bottom: 0.5rem;
         }
@@ -406,14 +231,14 @@
 
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(min(21.25rem, 100%), 1fr));
             gap: 1.5rem;
             margin-bottom: 3rem;
         }
 
         .asset-card {
             background-color: var(--card-blue-bg);
-            border-radius: 12px;
+            border-radius: 0.75rem;
             padding: 2rem;
             display: flex;
             flex-direction: column;
@@ -424,8 +249,8 @@
         }
 
         .asset-card .card-icon {
-            width: 45px;
-            height: 45px;
+            width: 2.8125rem;
+            height: 2.8125rem;
             object-fit: contain;
             margin-bottom: 1.2rem;
             stroke: var(--hero-blue);
@@ -473,12 +298,12 @@
         }
 
         .why-container {
-            max-width: 1200px;
+            max-width: 75rem;
             margin: 0 auto;
         }
 
         .why-section h2 {
-            font-size: 2.8rem;
+            font-size: clamp(2rem, 1.93vw + 1.566rem, 2.8rem);
             font-weight: 800;
             margin-bottom: 1rem;
             color: #0f172a;
@@ -486,7 +311,7 @@
 
         .why-subheading {
             font-size: 1.1rem;
-            max-width: 900px;
+            max-width: 56.25rem;
             margin-bottom: 2.5rem;
             color: #1e293b;
             line-height: 1.5;
@@ -501,15 +326,15 @@
 
         .why-card {
             background-color: #f7fee7;
-            border-radius: 12px;
+            border-radius: 0.75rem;
             padding: 2.2rem;
             display: flex;
             flex-direction: column;
         }
 
         .why-card .num-badge {
-            width: 52px;
-            height: 52px;
+            width: 3.25rem;
+            height: 3.25rem;
             border-radius: 50%;
             border: 1.5px solid #334155;
             display: flex;
@@ -547,196 +372,105 @@
         }
 
         /* Modal Overlay & Card */
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: rgba(15, 23, 42, 0.7);
-            backdrop-filter: blur(4px);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-            padding: 1rem;
-        }
-
-        .modal-card {
-            background: var(--white);
-            width: 100%;
-            max-width: 620px;
-            padding: 2.5rem;
-            border-radius: 10px;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
-            position: relative;
-            animation: modalFadeIn 0.25s ease-out;
-        }
-
-        @keyframes modalFadeIn {
-            from { opacity: 0; transform: translateY(-15px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 1.2rem;
-            right: 1.5rem;
-            font-size: 1.8rem;
-            background: none;
-            border: none;
-            color: var(--text-muted);
-            cursor: pointer;
-            line-height: 1;
-            transition: color 0.2s;
-        }
-
-        .modal-close:hover {
-            color: var(--text-dark);
-        }
-
-        .modal-card h2 {
-            text-align: center;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--text-dark);
-            margin-bottom: 1.8rem;
-        }
-
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 1.2rem;
-        }
-
-        .contact-form input, 
-        .contact-form select, 
-        .contact-form textarea {
-            width: 100%;
-            padding: 0.9rem 1rem;
-            border: 1px solid #D1D5DB;
-            border-radius: 6px;
-            font-size: 0.95rem;
-            color: var(--text-dark);
-            outline: none;
-            transition: border-color 0.2s;
-        }
-
-        .contact-form input:focus, 
-        .contact-form select:focus, 
-        .contact-form textarea:focus {
-            border-color: var(--primary-green);
-        }
-
-        .contact-form button.btn-submit {
-            background-color: var(--primary-green);
-            color: var(--white);
-            padding: 0.9rem;
-            border: none;
-            border-radius: 6px;
-            font-weight: 700;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background-color 0.2s;
-            margin-top: 0.5rem;
-        }
-
-        .contact-form button.btn-submit:hover {
-            background-color: var(--primary-green-hover);
-        }
 
         /* Footer */
-        footer {
-            background-color: var(--dark-navy);
-            color: var(--white);
-            text-align: center;
-            padding: 2rem;
-        }
-
         @media (max-width: 900px) {
             .hero-card {
                 max-width: 100%;
             }
+
             .why-grid {
                 grid-template-columns: 1fr;
+            }
+        }
+
+        /* Phones */
+        @media (max-width: 600px) {
+            .btn-lime {
+                padding: 0.9rem 1rem;
+            }
+
+            .collect-hero {
+                padding: 2.5rem 1rem;
+            }
+
+            .hero-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .section-container {
+                padding: 2.5rem 1rem;
+            }
+
+            .side-callout-card {
+                padding: 2rem 1rem;
+            }
+
+            .asset-card {
+                padding: 2rem 1rem;
+            }
+
+            .why-section {
+                padding: 2.5rem 1rem;
+            }
+
+            .why-card {
+                padding: 2.2rem 1rem;
             }
         }
     </style>
 </head>
 <body>
 
-<header>
+    <!-- Site header (identical on every page) -->
+    <header class="site-header">
         <div class="nav-container">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="1-01.png" alt="Saving Tech Logo">
-                </a>
-            </div>
-            <nav class="nav-links">
-                <!-- 1. Free IT Disposal Dropdown -->
-                <div class="dropdown">
-                    <a href="FreeITDisposal.html" class="dropbtn">Free IT Disposal ˇ</a>
-                    <div class="dropdown-content single-column">
-                        <div class="dropdown-columns">
-                            <div class="column">
-                                
-                                <a href="Computerrecycling.html">Computer recycling</a>
-                                <a href="Laptoprecycling.html">Laptop recycling</a>
-                                <a href="Mobiledevicerecycling.html">Mobile device recycling</a>
-                                <a href="Monitorscreenrecycling.html">Monitor & screen recycling</a>
-								<a href="ServerRecycling.html">Server recycling</a>
-                            </div>
-                        </div>
+            <a href="index.html" class="logo">
+                <img src="Images/saving-tech-logo.png" alt="Saving Tech" width="200" height="40">
+            </a>
+            <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="site-nav" id="site-nav" aria-label="Main">
+                <div class="nav-item has-menu">
+                    <a href="FreeITDisposal.html" class="nav-link">Free IT Disposal</a>
+                    <div class="nav-menu">
+                        <a href="Computerrecycling.html">Computer recycling</a>
+                        <a href="Laptoprecycling.html">Laptop recycling</a>
+                        <a href="Mobiledevicerecycling.html">Mobile device recycling</a>
+                        <a href="Monitorscreenrecycling.html">Monitor &amp; screen recycling</a>
+                        <a href="ServerRecycling.html">Server recycling</a>
                     </div>
                 </div>
-
-                <!-- 2. Our Services Dropdown -->
-                <div class="dropdown">
-                    <a href="#services" class="dropbtn">Our Services ˇ</a>
-                    <div class="dropdown-content single-column">
-                        <div class="dropdown-columns">
-                            <div class="column">
-                                <a href="Assetswecollectrecycle.html">Assets we collect & recycle</a>
-                                <a href="FAQs.html">FAQs</a>
-                            </div>
-                        </div>
+                <div class="nav-item has-menu">
+                    <a href="index.html#services" class="nav-link">Our Services</a>
+                    <div class="nav-menu">
+                        <a href="Assetswecollectrecycle.html">Assets we collect &amp; recycle</a>
+                        <a href="FAQs.html">FAQs</a>
                     </div>
                 </div>
-
-                <!-- 3. Data Destruction Dropdown -->
-                <div class="dropdown">
-                    <a href="Howitworks.html" class="dropbtn">Data Destruction ˇ</a>
-                    <div class="dropdown-content single-column">
-                        <div class="dropdown-columns">
-                            <div class="column">
-                                <a href="DataDestructionMethods.html">Secure Data erasure</a>
-                                <a href="Articles.html">Data Security Articles</a>
-                                <a href="Harddrivemediadestruction.html">Hard drive & media destruction</a>
-                                <a href="SecureDataDestruction.html">Secure data destruction</a>
-                            </div>
-                        </div>
+                <div class="nav-item has-menu">
+                    <a href="Howitworks.html" class="nav-link">Data Destruction</a>
+                    <div class="nav-menu">
+                        <a href="DataDestructionMethods.html">Secure data erasure</a>
+                        <a href="Articles.html">Data security articles</a>
+                        <a href="Harddrivemediadestruction.html">Hard drive &amp; media destruction</a>
+                        <a href="SecureDataDestruction.html">Secure data destruction</a>
                     </div>
                 </div>
-
-                <!-- 4. About Us Dropdown -->
-                <div class="dropdown">
-                    <a href="AboutUs.html" class="dropbtn">About Us ˇ</a>
-                    <div class="dropdown-content single-column">
-                        <div class="dropdown-columns">
-                            <div class="column">
-                                <a href="Documentscertificates.html">Documents & Certificates</a>
-                            </div>
-                        </div>
+                <div class="nav-item has-menu">
+                    <a href="AboutUs.html" class="nav-link">About Us</a>
+                    <div class="nav-menu">
+                        <a href="Documentscertificates.html">Documents &amp; certificates</a>
                     </div>
                 </div>
-
-                <a href="Book.html#form-section" style="background-color: var(--primary-green); color: var(--white); padding: 0.6rem 1.25rem; border-radius: 4px; text-decoration: none; font-weight: 700;">Book a Collection</a>
+                <a href="Book.html#form-section" class="nav-cta">Book a Collection</a>
             </nav>
         </div>
     </header>
 
     <main>
-        
+
         <!-- Blue Pattern Hero Section -->
         <section class="collect-hero">
             <div class="hero-inner">
@@ -745,13 +479,13 @@
                         <a href="index.html">Home</a> → <a href="index.html#services">Our Services</a> → What we collect
                     </div>
                     <h1>Complete list of IT equipment & e-waste we collect & recycle</h1>
-                    
+
                     <ul class="checklist-hero">
-                        <li>We recycle almost everything on this page for FREE, but we charge to recycle some types of <a href="#screens-displays">screens</a> and <a href="#printers-photocopiers">printers</a></li>
+                        <li>We recycle almost everything on this page for FREE, but we charge to recycle some types of <a href="#screens-displays">screens</a> and printers</li>
                         <li>We collect for free, if you have at least 10 laptops, PCs & servers to recycle (any combination of these).</li>
                     </ul>
-                    
-                    <button class="btn-lime trigger-modal">BOOK A COLLECTION</button>
+
+                    <a href="Book.html#form-section" class="btn-lime">BOOK A COLLECTION</a>
                 </div>
             </div>
         </section>
@@ -760,8 +494,8 @@
         <section class="section-container">
             <div class="intro-text">
                 <h2>What we collect</h2>
-                <p>This page gives you a general idea of what we handle — and almost all of it is free to recycle except where noted. See our <a href="FAQs.html">frequently-asked questions</a> or <a href="#bookingModal" class="trigger-modal">drop us an email</a> if you have any questions. We are here to help.</p>
-                
+                <p>This page gives you a general idea of what we handle — and almost all of it is free to recycle except where noted. See our <a href="FAQs.html">frequently-asked questions</a> or <a href="Book.html#form-section">get in touch</a> if you have any questions. We are here to help.</p>
+
                 <div class="side-callout-card">
                     <h3>How do I get a free collection?</h3>
                     <p>We will collect from your premises free of charge — All you need to do is have at least 10 qualifying items for us to collect, and the collection will be free of charge from your premises.</p>
@@ -779,7 +513,7 @@
             </div>
 
             <div class="cards-grid">
-                
+
                 <div class="asset-card">
                     <img src="Icons/Computer.png" alt="Desktop PCs" class="card-icon">
                     <h3>Desktop PCs</h3>
@@ -787,7 +521,7 @@
                 </div>
 
                 <div class="asset-card">
-                    <img src="Icons/applemac.png" alt="Apple Mac Desktops" class="card-icon">
+                    <img src="Icons/Monitor.png" alt="Apple Mac Desktops" class="card-icon">
                     <h3>Apple Mac Desktops</h3>
                     <p><strong>All Apple Macs:</strong> iMac, eMac, Mac Pro, Mac Studio, Mac Mini, all formats and generations.</p>
                 </div>
@@ -799,7 +533,7 @@
                 </div>
 
                 <div class="asset-card">
-                    <img src="Icons/WindowsLaptop.png" alt="Windows laptops" class="card-icon">
+                    <img src="Icons/Laptop.png" alt="Windows laptops" class="card-icon">
                     <h3>Windows laptops</h3>
                     <p><strong>All types:</strong> business laptops, netbooks, Chromebooks, 2-in-1, ultraportable, ultrathin laptops<br><br><strong>All brands:</strong> HP, Dell, Lenovo, Acer, ASUS, MSI, Microsoft, Samsung</p>
                 </div>
@@ -827,7 +561,7 @@
             </div>
 
             <div class="cards-grid">
-                
+
                 <div class="asset-card">
                     <img src="Icons/Server.png" alt="Servers" class="card-icon">
                     <h3>Servers</h3>
@@ -863,7 +597,7 @@
             </div>
 
             <div class="cards-grid">
-                
+
                 <div class="asset-card">
                     <img src="Icons/Mobile.png" alt="Mobile phones" class="card-icon">
                     <h3>Mobile phones</h3>
@@ -893,7 +627,7 @@
             </div>
 
             <div class="cards-grid">
-                
+
                 <div class="asset-card">
                     <img src="Icons/Monitor.png" alt="Monitors & televisions" class="card-icon">
                     <h3>Monitors & televisions</h3>
@@ -935,9 +669,9 @@
             </div>
 
             <div class="cards-grid">
-                
+
                 <div class="asset-card">
-                    <img src="Icons/Hard Drive.png" alt="Storage drives & media" class="card-icon">
+                    <img src="Icons/hard-drive.png" alt="Storage drives & media" class="card-icon">
                     <h3>Storage drives & media</h3>
                     <p><strong>Internal storage devices:</strong> internal hard drives, SSDs, external hard drives, flash drives...<br><br><strong>External devices:</strong> NAS devices, tape drives, tape cartridges, memory cards, USB sticks...</p>
                 </div>
@@ -977,7 +711,7 @@
             </div>
 
             <div class="cards-grid">
-                
+
                 <div class="asset-card">
                     <img src="Icons/audio.png" alt="Audio" class="card-icon">
                     <h3>Audio</h3>
@@ -1010,7 +744,7 @@
                 </div>
 
                 <div class="asset-card">
-                    <img src="Icons/AV Equipment.png" alt="Broadcast, production & venue" class="card-icon">
+                    <img src="Icons/av-equipment.png" alt="Broadcast, production & venue" class="card-icon">
                     <h3>Broadcast, production & venue</h3>
                     <ul class="bullet-list">
                         <li>Cables & connectors</li>
@@ -1031,7 +765,7 @@
             <div class="why-container">
                 <h2>Why Saving Tech?</h2>
                 <p class="why-subheading">Secure, carbon-negative IT recycling for businesses that need old equipment handled properly — with free qualifying collections, data destruction and certificates provided where applicable.</p>
-                
+
                 <div class="why-grid">
                     <div class="why-card">
                         <div class="num-badge">1</div>
@@ -1062,41 +796,11 @@
 
     </main>
 
-    <footer>
-        <p>© <span id="year"></span> Saving Tech. All rights reserved.</p>
+    <!-- Site footer (identical on every page) -->
+    <footer class="site-footer">
+        <p>&copy; <span id="year">2026</span> Saving Tech. All rights reserved.</p>
     </footer>
 
-    <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
-
-        const modal = document.getElementById('bookingModal');
-        const closeModal = document.getElementById('closeModal');
-        const triggers = document.querySelectorAll('.trigger-modal');
-
-        triggers.forEach(trigger => {
-            trigger.addEventListener('click', (e) => {
-                e.preventDefault();
-                modal.style.display = 'flex';
-            });
-        });
-
-        closeModal.addEventListener('click', () => {
-            modal.style.display = 'none';
-        });
-
-        window.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.style.display = 'none';
-            }
-        });
-
-        document.getElementById('collectionForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you! Your collection request has been submitted.');
-            modal.style.display = 'none';
-            this.reset();
-        });
-    </script>
-
+    <script src="js/main.js"></script>
 </body>
 </html>

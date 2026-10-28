@@ -4,195 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Security Articles | Saving Tech</title>
-    
-    <!-- Favicon link -->
-    <link rel="icon" type="image/x-icon" href="icon.ico">
-    
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Styles used only on this page -->
     <style>
         :root {
-            --primary-green: #2E8B57; /* Matched to logo */
-            --lime-accent: #D4F34A;
-            --hero-blue: #2A8BCA;
-            --dark-grey: #1F2937;
-            --text-grey: #374151;
-            --light-bg: #F3F4F6;
-            --white: #FFFFFF;
-            --cream-bg: #fef3e2;
             --articles-hero-bg: #0d4b56;
             --articles-card-bg: #fff9ed;
         }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
 
         body {
-            color: var(--dark-grey);
-            line-height: 1.6;
             background-color: var(--articles-card-bg);
-        }
-
-        /* Header & Navigation */
-        header {
-            background-color: var(--white);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0.5rem 2rem; 
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            overflow: hidden; 
-            height: 80px; 
-        }
-
-        .logo a {
-            display: flex;
-            align-items: center;
-            height: 100%;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        .logo img {
-            height: 250px; 
-            width: auto;
-            object-fit: contain;
-            margin-left: -20px; 
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-        }
-
-        .nav-links > a:not(.btn-primary) {
-            text-decoration: none;
-            color: var(--dark-grey);
-            margin-left: 2rem;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-
-        .nav-links > a:not(.btn-primary):hover {
-            color: var(--primary-green);
-        }
-
-        .nav-links > .btn-primary {
-            margin-left: 2rem;
-        }
-
-        /* Dropdown Menu Styles */
-        .dropdown {
-            position: relative;
-            display: inline-block;
-            margin-left: 2rem;
-        }
-
-        .dropdown .dropbtn {
-            background: none;
-            border: none;
-            font-size: 1rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            font-weight: 600;
-            color: var(--dark-grey);
-            text-decoration: none;
-            transition: color 0.3s;
-            font-family: inherit;
-            padding: 1rem 0;
-        }
-
-        .dropdown:hover .dropbtn {
-            color: var(--primary-green);
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: var(--white);
-            min-width: 500px;
-            box-shadow: 0px 8px 24px rgba(0,0,0,0.12);
-            z-index: 100;
-            border-radius: 8px;
-            top: 100%;
-            left: 0;
-            padding: 1.5rem;
-            border-top: 3px solid var(--primary-green);
-        }
-
-        .dropdown-content.single-column {
-            min-width: 260px;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        .dropdown-columns {
-            display: flex;
-            gap: 3rem;
-        }
-
-        .column {
-            flex: 1;
-        }
-
-        .column h4 {
-            font-size: 1.05rem;
-            margin-bottom: 0.8rem;
-            color: var(--dark-grey);
-            border-bottom: 1px solid #E5E7EB;
-            padding-bottom: 0.5rem;
-            font-weight: 600;
-        }
-
-        .column a {
-            color: #4B5563;
-            padding: 0.5rem 0;
-            text-decoration: none;
-            display: block;
-            margin-left: 0;
-            font-weight: 400;
-            font-size: 0.95rem;
-            transition: color 0.2s;
-        }
-
-        .column a:hover {
-            color: var(--primary-green);
-        }
-
-        .btn-primary {
-            background-color: var(--primary-green);
-            color: var(--white);
-            padding: 0.5rem 1.5rem;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            display: inline-block;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .btn-primary:hover {
-            background-color: #246B43;
         }
 
         /* Articles Page Header Banner Section */
@@ -203,7 +26,7 @@
         }
 
         .articles-hero-container {
-            max-width: 1000px;
+            max-width: 62.5rem;
             margin: 0 auto;
         }
 
@@ -223,7 +46,7 @@
         }
 
         .articles-hero h1 {
-            font-size: 2.8rem;
+            font-size: clamp(2rem, 1.93vw + 1.566rem, 2.8rem);
             font-weight: 800;
             color: #c0f035;
             margin-bottom: 0.5rem;
@@ -238,13 +61,13 @@
         .search-box {
             display: flex;
             gap: 0.5rem;
-            max-width: 450px;
+            max-width: 28.125rem;
         }
 
         .search-box input[type="text"] {
             flex: 1;
             padding: 0.75rem 1rem;
-            border-radius: 6px;
+            border-radius: 0.375rem;
             border: none;
             outline: none;
             font-size: 0.95rem;
@@ -254,8 +77,8 @@
         .search-box button {
             background-color: #c0f035;
             border: none;
-            border-radius: 6px;
-            width: 48px;
+            border-radius: 0.375rem;
+            width: 3rem;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -268,8 +91,8 @@
         }
 
         .search-box button svg {
-            width: 20px;
-            height: 20px;
+            width: 1.25rem;
+            height: 1.25rem;
             stroke: var(--dark-grey);
         }
 
@@ -280,7 +103,7 @@
         }
 
         .articles-container {
-            max-width: 1000px;
+            max-width: 62.5rem;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
@@ -294,10 +117,10 @@
         }
 
         .article-image {
-            width: 320px;
-            height: 180px;
+            width: 20rem;
+            height: 11.25rem;
             flex-shrink: 0;
-            border-radius: 12px;
+            border-radius: 0.75rem;
             overflow: hidden;
             background-color: #e5e7eb;
         }
@@ -339,97 +162,83 @@
         }
 
         /* Footer */
-        footer {
-            background-color: var(--dark-grey);
-            color: var(--white);
-            text-align: center;
-            padding: 2rem;
-        }
-
         @media (max-width: 768px) {
             .article-card {
                 flex-direction: column;
                 gap: 1rem;
             }
+
             .article-image {
                 width: 100%;
-                height: 200px;
+                height: 12.5rem;
             }
+
             .articles-hero h1 {
                 font-size: 2.2rem;
+            }
+        }
+
+        /* Phones */
+        @media (max-width: 600px) {
+            .articles-hero {
+                padding: 2rem 1rem;
+            }
+
+            .articles-section {
+                padding: 2rem 1rem 3rem 1rem;
+            }
+
+            .articles-container {
+                gap: 1.5rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header Navigation -->
-    <header>
+    <!-- Site header (identical on every page) -->
+    <header class="site-header">
         <div class="nav-container">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="1-01.png" alt="Saving Tech Logo">
-                </a>
-            </div>
-            <nav class="nav-links">
-                <!-- 1. Free IT Disposal Dropdown -->
-                <div class="dropdown">
-                    <a href="FreeITDisposal.html" class="dropbtn">Free IT Disposal &#711;</a>
-                    <div class="dropdown-content single-column">
-                        <div class="dropdown-columns">
-                            <div class="column">
-                                
-                                <a href="Computerrecycling.html">Computer recycling</a>
-                                <a href="Laptoprecycling.html">Laptop recycling</a>
-                                <a href="Mobiledevicerecycling.html">Mobile device recycling</a>
-                                <a href="Monitorscreenrecycling.html">Monitor &amp; screen recycling</a>
-								<a href="ServerRecycling.html">Server recycling</a>
-                            </div>
-                        </div>
+            <a href="index.html" class="logo">
+                <img src="Images/saving-tech-logo.png" alt="Saving Tech" width="200" height="40">
+            </a>
+            <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="site-nav" id="site-nav" aria-label="Main">
+                <div class="nav-item has-menu">
+                    <a href="FreeITDisposal.html" class="nav-link">Free IT Disposal</a>
+                    <div class="nav-menu">
+                        <a href="Computerrecycling.html">Computer recycling</a>
+                        <a href="Laptoprecycling.html">Laptop recycling</a>
+                        <a href="Mobiledevicerecycling.html">Mobile device recycling</a>
+                        <a href="Monitorscreenrecycling.html">Monitor &amp; screen recycling</a>
+                        <a href="ServerRecycling.html">Server recycling</a>
                     </div>
                 </div>
-
-                <!-- 2. Our Services Dropdown -->
-                <div class="dropdown">
-                    <a href="#services" class="dropbtn">Our Services &#711;</a>
-                    <div class="dropdown-content single-column">
-                        <div class="dropdown-columns">
-                            <div class="column">
-                                <a href="Assetswecollectrecycle.html">Assets we collect &amp; recycle</a>
-                                <a href="FAQs.html">FAQs</a>
-                            </div>
-                        </div>
+                <div class="nav-item has-menu">
+                    <a href="index.html#services" class="nav-link">Our Services</a>
+                    <div class="nav-menu">
+                        <a href="Assetswecollectrecycle.html">Assets we collect &amp; recycle</a>
+                        <a href="FAQs.html">FAQs</a>
                     </div>
                 </div>
-
-                <!-- 3. Data Destruction Dropdown -->
-                <div class="dropdown">
-                    <a href="Howitworks.html" class="dropbtn">Data Destruction &#711;</a>
-                    <div class="dropdown-content single-column">
-                        <div class="dropdown-columns">
-                            <div class="column">
-                                <a href="DataDestructionMethods.html">Secure Data erasure</a>
-                                <a href="Articles.html">Data Security Articles</a>
-                                <a href="Harddrivemediadestruction.html">Hard drive &amp; media destruction</a>
-                                <a href="SecureDataDestruction.html">Secure data destruction</a>
-                            </div>
-                        </div>
+                <div class="nav-item has-menu">
+                    <a href="Howitworks.html" class="nav-link">Data Destruction</a>
+                    <div class="nav-menu">
+                        <a href="DataDestructionMethods.html">Secure data erasure</a>
+                        <a href="Articles.html">Data security articles</a>
+                        <a href="Harddrivemediadestruction.html">Hard drive &amp; media destruction</a>
+                        <a href="SecureDataDestruction.html">Secure data destruction</a>
                     </div>
                 </div>
-
-                <!-- 4. About Us Dropdown -->
-                <div class="dropdown">
-                    <a href="AboutUs.html" class="dropbtn">About Us &#711;</a>
-                    <div class="dropdown-content single-column">
-                        <div class="dropdown-columns">
-                            <div class="column">
-                                <a href="Documentscertificates.html">Documents &amp; Certificates</a>
-                            </div>
-                        </div>
+                <div class="nav-item has-menu">
+                    <a href="AboutUs.html" class="nav-link">About Us</a>
+                    <div class="nav-menu">
+                        <a href="Documentscertificates.html">Documents &amp; certificates</a>
                     </div>
                 </div>
-
-                <a href="Book.html#form-section" class="btn-primary">Book a Collection</a>
+                <a href="Book.html#form-section" class="nav-cta">Book a Collection</a>
             </nav>
         </div>
     </header>
@@ -443,8 +252,8 @@
                 </nav>
                 <h1>Data Security</h1>
                 <p>Everything you need to know about data security and protecting sensitive information when recycling old tech.</p>
-                
-                <form class="search-box" action="#" method="GET" onsubmit="event.preventDefault();">
+
+                <form class="search-box" action="#" method="GET">
                     <input type="text" placeholder="Search articles">
                     <button type="submit" aria-label="Search">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -459,7 +268,7 @@
         <!-- Articles List Section -->
         <section class="articles-section">
             <div class="articles-container">
-                
+
                 <!-- Article 1 -->
                 <article class="article-card">
                     <div class="article-image">
@@ -584,13 +393,11 @@
         </section>
     </main>
 
-    <footer>
-        <p>&copy; <span id="year"></span> Saving Tech. All rights reserved.</p>
+    <!-- Site footer (identical on every page) -->
+    <footer class="site-footer">
+        <p>&copy; <span id="year">2026</span> Saving Tech. All rights reserved.</p>
     </footer>
 
-    <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
+    <script src="js/main.js"></script>
 </body>
 </html>

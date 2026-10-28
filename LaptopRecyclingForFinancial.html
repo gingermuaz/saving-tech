@@ -3,205 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laptop Recycling for Financial Services: Meeting FCA & GDPR Requirements | Saving Tech</title>
-    
-    <!-- Favicon link -->
-    <link rel="icon" type="image/x-icon" href="icon.ico">
-    
+    <title>Laptop Recycling for Financial Services: Meeting FCA &amp; GDPR Requirements | Saving Tech</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Styles used only on this page -->
     <style>
         :root {
-            --primary-green: #2E8B57;
-            --lime-accent: #D4F34A;
-            --hero-blue: #2A8BCA;
-            --dark-grey: #1F2937;
-            --text-grey: #374151;
-            --light-bg: #F3F4F6;
-            --white: #FFFFFF;
-            --cream-bg: #fef3e2;
             --card-bg: #FFF9ED;
             --dark-banner: #0d4b56;
-			--dark-blue: #0B4A6F;
-			--icon-blue: #1085C5;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            color: var(--dark-grey);
-            line-height: 1.6;
-            background-color: var(--white);
-        }
-
-        /* Header & Navigation */
-        header {
-            background-color: var(--white);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0.5rem 2rem; 
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            overflow: hidden; 
-            height: 80px; 
-        }
-
-        .logo a {
-            display: flex;
-            align-items: center;
-            height: 100%;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        .logo img {
-            height: 250px; 
-            width: auto;
-            object-fit: contain;
-            margin-left: -20px; 
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-        }
-
-        .nav-links > a:not(.btn-primary) {
-            text-decoration: none;
-            color: var(--dark-grey);
-            margin-left: 2rem;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-
-        .nav-links > a:not(.btn-primary):hover {
-            color: var(--primary-green);
-        }
-
-        .nav-links > .btn-primary {
-            margin-left: 2rem;
         }
 
         /* Dropdown Menu Styles */
-        .dropdown {
-            position: relative;
-            display: inline-block;
-            margin-left: 2rem;
-        }
-
-        .dropdown .dropbtn {
-            background: none;
-            border: none;
-            font-size: 1rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            font-weight: 600;
-            color: var(--dark-grey);
-            text-decoration: none;
-            transition: color 0.3s;
-            font-family: inherit;
-            padding: 1rem 0;
-        }
-
-        .dropdown:hover .dropbtn {
-            color: var(--primary-green);
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: var(--white);
-            min-width: 500px;
-            box-shadow: 0px 8px 24px rgba(0,0,0,0.12);
-            z-index: 100;
-            border-radius: 8px;
-            top: 100%;
-            left: 0;
-            padding: 1.5rem;
-            border-top: 3px solid var(--primary-green);
-        }
-
-        .dropdown-content.single-column {
-            min-width: 260px;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        .dropdown-columns {
-            display: flex;
-            gap: 3rem;
-        }
-
-        .column {
-            flex: 1;
-        }
-
-        .column h4 {
-            font-size: 1.05rem;
-            margin-bottom: 0.8rem;
-            color: var(--dark-grey);
-            border-bottom: 1px solid #E5E7EB;
-            padding-bottom: 0.5rem;
-            font-weight: 600;
-        }
-
-        .column a {
-            color: #4B5563;
-            padding: 0.5rem 0;
-            text-decoration: none;
-            display: block;
-            margin-left: 0;
-            font-weight: 400;
-            font-size: 0.95rem;
-            transition: color 0.2s;
-        }
-
-        .column a:hover {
-            color: var(--primary-green);
-        }
-
-        .btn-primary {
-            background-color: var(--primary-green);
-            color: var(--white);
-            padding: 0.5rem 1.5rem;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            display: inline-block;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .btn-primary:hover {
-            background-color: #246B43;
-        }
-
         .btn-lime {
             background-color: var(--lime-accent);
             color: var(--dark-grey);
             padding: 0.8rem 1.75rem;
-            border-radius: 4px;
+            border-radius: 0.25rem;
             text-decoration: none;
             font-weight: 800;
             font-size: 0.95rem;
@@ -214,41 +32,9 @@
             opacity: 0.9;
         }
 
-        .btn-secondary-outline {
-            background-color: transparent;
-            color: var(--dark-grey);
-            font-weight: 700;
-            padding: 0.8rem 1.5rem;
-            border-radius: 4px;
-            border: 1px solid #d1d5db;
-            text-decoration: none;
-            display: inline-block;
-            text-transform: uppercase;
-            font-size: 0.95rem;
-        }
-
-        .btn-secondary-outline:hover {
-            background-color: #f3f4f6;
-        }
-
-        a.inline-link {
-            color: var(--hero-blue);
-            text-decoration: underline;
-        }
-
-        a.inline-link:hover {
-            color: #1a6291;
-        }
-
         /* Hero / Banner Section */
-        .article-hero {
-            background-color: var(--dark-banner);
-            color: var(--white);
-            padding: 3.5rem 2rem;
-        }
-
         .hero-container {
-            max-width: 1200px;
+            max-width: 75rem;
             margin: 0 auto;
             display: grid;
             grid-template-columns: 1.2fr 0.8fr;
@@ -267,12 +53,8 @@
             text-decoration: none;
         }
 
-        .breadcrumbs a:hover {
-            text-decoration: underline;
-        }
-
         .article-hero h1 {
-            font-size: 2.5rem;
+            font-size: clamp(1.75rem, 1.81vw + 1.343rem, 2.5rem);
             font-weight: 800;
             color: var(--lime-accent);
             margin-bottom: 1rem;
@@ -294,10 +76,10 @@
         }
 
         .hero-img-box {
-            border-radius: 12px;
+            border-radius: 0.75rem;
             overflow: hidden;
             box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-            height: 320px;
+            height: 20rem;
         }
 
         .hero-img-box img {
@@ -313,7 +95,7 @@
         }
 
         .article-container {
-            max-width: 1000px;
+            max-width: 62.5rem;
             margin: 0 auto;
         }
 
@@ -321,7 +103,7 @@
         .toc-box {
             background-color: #fef3e2;
             border: 1px solid #fcd34d;
-            border-radius: 8px;
+            border-radius: 0.5rem;
             padding: 1.75rem 2rem;
             margin-bottom: 3rem;
         }
@@ -359,7 +141,7 @@
         }
 
         .content-block h2 {
-            font-size: 1.8rem;
+            font-size: clamp(1.5rem, 0.72vw + 1.337rem, 1.8rem);
             font-weight: 800;
             color: var(--dark-grey);
             margin-bottom: 1.25rem;
@@ -392,7 +174,7 @@
         }
 
         .faq-section h2 {
-            font-size: 1.8rem;
+            font-size: clamp(1.5rem, 0.72vw + 1.337rem, 1.8rem);
             font-weight: 800;
             margin-bottom: 1.5rem;
         }
@@ -407,7 +189,7 @@
             background-color: #fffbeb;
             border: 1px solid #fef3c7;
             padding: 1.5rem;
-            border-radius: 8px;
+            border-radius: 0.5rem;
         }
 
         .faq-item h3 {
@@ -431,12 +213,12 @@
         }
 
         .newsletter-container {
-            max-width: 1000px;
+            max-width: 62.5rem;
             margin: 0 auto;
         }
 
         .newsletter-container h2 {
-            font-size: 2rem;
+            font-size: clamp(1.5rem, 1.2vw + 1.229rem, 2rem);
             font-weight: 800;
             color: var(--lime-accent);
             margin-bottom: 0.5rem;
@@ -451,13 +233,13 @@
         .newsletter-form {
             display: flex;
             gap: 1rem;
-            max-width: 700px;
+            max-width: 43.75rem;
             flex-wrap: wrap;
         }
 
         .form-group {
             flex: 1;
-            min-width: 220px;
+            min-width: 13.75rem;
             display: flex;
             flex-direction: column;
             gap: 0.3rem;
@@ -471,7 +253,7 @@
 
         .form-group input {
             padding: 0.75rem 1rem;
-            border-radius: 4px;
+            border-radius: 0.25rem;
             border: 1px solid #ccc;
             font-size: 0.95rem;
             width: 100%;
@@ -484,7 +266,7 @@
             color: var(--dark-grey);
             font-weight: 800;
             border: none;
-            border-radius: 4px;
+            border-radius: 0.25rem;
             cursor: pointer;
             text-transform: uppercase;
             transition: opacity 0.2s;
@@ -494,313 +276,131 @@
             opacity: 0.9;
         }
 
-        /* Bottom Feature Grid Section */
-        .feature-grid-section {
-            background-color: var(--card-bg);
-            padding: 4rem 2rem;
-            border-top: 1px solid #fef3c7;
-        }
-
-        .feature-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .feature-header {
-            text-align: left;
-            margin-bottom: 2.5rem;
-        }
-
-        .feature-header h2 {
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: var(--dark-banner);
-            margin-bottom: 0.5rem;
-        }
-
-        .feature-header p {
-            font-size: 1.1rem;
-            color: #4b5563;
-        }
-
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 2.5rem;
-        }
-
-        .feature-card {
-            background-color: var(--white);
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .feature-card svg {
-            width: 48px;
-            height: 48px;
-            stroke: var(--dark-banner);
-        }
-
-        .feature-card h3 {
-            font-size: 1.25rem;
-            font-weight: 800;
-            color: var(--dark-grey);
-        }
-
-        .feature-card p {
-            font-size: 0.95rem;
-            color: #4b5563;
-        }
-
-        .feature-actions {
-            display: flex;
-            gap: 1rem;
-            align-items: center;
-        }
-
         /* Footer */
-        footer {
-            background-color: var(--dark-grey);
-            color: var(--white);
-            text-align: center;
-            padding: 2rem;
-        }
-
         @media (max-width: 868px) {
             .hero-container {
                 grid-template-columns: 1fr;
             }
+
             .hero-img-box {
-                height: 240px;
+                height: 15rem;
             }
         }
-		/* CTA Section & ITAD Process Box */
-#book {
-    max-width: 1100px;
-    margin: 3rem auto;
-    padding: 0 2rem;
-}
 
-.section-title {
-    font-size: 2.5rem;
-    color: var(--dark-grey);
-    margin-bottom: 1.5rem;
-    font-weight: 800;
-    letter-spacing: -0.5px;
-}
+        /* CTA Section & ITAD Process Box */
+        #book {
+            max-width: 68.75rem;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
 
-.cta-banner {
-    background-color: var(--dark-blue);
-    border-radius: 12px;
-    padding: 3.5rem 2rem;
-    color: var(--white);
-    margin-bottom: 3rem;
-}
+        .section-title {
+            font-size: clamp(1.75rem, 1.81vw + 1.343rem, 2.5rem);
+            color: var(--dark-grey);
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
 
-.cta-banner h2 {
-    font-size: 2.2rem;
-    color: var(--lime-accent);
-    margin-bottom: 0.5rem;
-    font-weight: 800;
-    line-height: 1.2;
-}
+        .share-bar {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 4rem;
+            font-size: 0.95rem;
+            color: #4B5563;
+        }
 
-.cta-banner p.sub-heading {
-    font-size: 1.15rem;
-    color: #E2E8F0;
-    margin-bottom: 2.5rem;
-}
+        .share-bar a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 2rem;
+            height: 2rem;
+            background-color: #0077B5;
+            color: var(--white);
+            border-radius: 0.25rem;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-.cta-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 1rem;
-    margin-bottom: 2.5rem;
-}
+        /* Phones */
+        @media (max-width: 600px) {
+            .btn-lime {
+                padding: 0.8rem 1rem;
+            }
 
-.cta-card {
-    background-color: var(--white);
-    color: var(--dark-grey);
-    border-radius: 8px;
-    padding: 1.5rem 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
+            .hero-container {
+                gap: 1.5rem;
+            }
 
-.cta-card-icon {
-    width: 40px;
-    height: 40px;
-    margin-bottom: 0.85rem;
-    color: var(--icon-blue);
-}
+            .article-section {
+                padding: 2rem 1rem;
+            }
 
-.cta-card h4 {
-    font-size: 1.05rem;
-    margin-bottom: 0.5rem;
-    line-height: 1.2;
-    font-weight: 700;
-}
+            .toc-box {
+                padding: 1.75rem 1rem;
+            }
 
-.cta-card p {
-    font-size: 0.88rem;
-    color: #4B5563;
-    line-height: 1.4;
-}
+            .newsletter-section {
+                padding: 2rem 1rem;
+            }
 
-.cta-footer-text {
-    font-size: 1.05rem;
-    color: #E2E8F0;
-    margin-bottom: 1.5rem;
-}
+            .newsletter-form button {
+                padding: 0.75rem 1rem;
+            }
 
-.cta-actions {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-}
-
-.btn-phone {
-    background-color: #E2E8F0;
-    color: var(--dark-grey);
-    padding: 0.85rem 1.75rem;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: 800;
-    font-size: 1.1rem;
-    display: inline-block;
-    border: none;
-    cursor: pointer;
-    transition: background 0.2s;
-}
-
-.btn-phone:hover {
-    background-color: #CBD5E1;
-}
-
-a.inline-link {
-    color: var(--hero-blue);
-    text-decoration: underline;
-}
-
-a.inline-link:hover {
-    color: #1a6291;
-}
-
-.share-bar {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 4rem;
-    font-size: 0.95rem;
-    color: #4B5563;
-}
-
-.share-bar a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 32px;
-    height: 32px;
-    background-color: #0077B5;
-    color: var(--white);
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* Responsive styling for the grid */
-@media (max-width: 1200px) {
-    .cta-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    .cta-grid {
-        grid-template-columns: 1fr;
-    }
-    .cta-actions {
-        flex-direction: column;
-        align-items: stretch;
-    }
-}
+            #book {
+                padding: 0 1rem;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <!-- Header Navigation -->
-    <header>
+    <!-- Site header (identical on every page) -->
+    <header class="site-header">
         <div class="nav-container">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="1-01.png" alt="Saving Tech Logo">
-                </a>
-            </div>
-            <nav class="nav-links">
-                <!-- 1. Free IT Disposal Dropdown -->
-                <div class="dropdown">
-                    <a href="FreeITDisposal.html" class="dropbtn">Free IT Disposal &#711;</a>
-                    <div class="dropdown-content single-column">
-                        <div class="dropdown-columns">
-                            <div class="column">
-                                
-                                <a href="Computerrecycling.html">Computer recycling</a>
-                                <a href="Laptoprecycling.html">Laptop recycling</a>
-                                <a href="Mobiledevicerecycling.html">Mobile device recycling</a>
-                                <a href="Monitorscreenrecycling.html">Monitor &amp; screen recycling</a>
-                                <a href="ServerRecycling.html">Server recycling</a>
-                            </div>
-                        </div>
+            <a href="index.html" class="logo">
+                <img src="Images/saving-tech-logo.png" alt="Saving Tech" width="200" height="40">
+            </a>
+            <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="site-nav" id="site-nav" aria-label="Main">
+                <div class="nav-item has-menu">
+                    <a href="FreeITDisposal.html" class="nav-link">Free IT Disposal</a>
+                    <div class="nav-menu">
+                        <a href="Computerrecycling.html">Computer recycling</a>
+                        <a href="Laptoprecycling.html">Laptop recycling</a>
+                        <a href="Mobiledevicerecycling.html">Mobile device recycling</a>
+                        <a href="Monitorscreenrecycling.html">Monitor &amp; screen recycling</a>
+                        <a href="ServerRecycling.html">Server recycling</a>
                     </div>
                 </div>
-
-                <!-- 2. Our Services Dropdown -->
-                <div class="dropdown">
-                    <a href="index.html#services" class="dropbtn">Our Services &#711;</a>
-                    <div class="dropdown-content single-column">
-                        <div class="dropdown-columns">
-                            <div class="column">
-                                <a href="Assetswecollectrecycle.html">Assets we collect &amp; recycle</a>
-                                <a href="FAQs.html">FAQs</a>
-                            </div>
-                        </div>
+                <div class="nav-item has-menu">
+                    <a href="index.html#services" class="nav-link">Our Services</a>
+                    <div class="nav-menu">
+                        <a href="Assetswecollectrecycle.html">Assets we collect &amp; recycle</a>
+                        <a href="FAQs.html">FAQs</a>
                     </div>
                 </div>
-
-                <!-- 3. Data Destruction Dropdown -->
-                <div class="dropdown">
-                    <a href="Howitworks.html" class="dropbtn">Data Destruction &#711;</a>
-                    <div class="dropdown-content single-column">
-                        <div class="dropdown-columns">
-                            <div class="column">
-                                <a href="DataDestructionMethods.html">Secure Data erasure</a>
-                                <a href="Articles.html">Data Security Articles</a>
-                                <a href="Harddrivemediadestruction.html">Hard drive &amp; media destruction</a>
-                                <a href="SecureDataDestruction.html">Secure data destruction</a>
-                            </div>
-                        </div>
+                <div class="nav-item has-menu">
+                    <a href="Howitworks.html" class="nav-link">Data Destruction</a>
+                    <div class="nav-menu">
+                        <a href="DataDestructionMethods.html">Secure data erasure</a>
+                        <a href="Articles.html">Data security articles</a>
+                        <a href="Harddrivemediadestruction.html">Hard drive &amp; media destruction</a>
+                        <a href="SecureDataDestruction.html">Secure data destruction</a>
                     </div>
                 </div>
-
-                <!-- 4. About Us Dropdown -->
-                <div class="dropdown">
-                    <a href="AboutUs.html" class="dropbtn">About Us &#711;</a>
-                    <div class="dropdown-content single-column">
-                        <div class="dropdown-columns">
-                            <div class="column">
-                                <a href="Documentscertificates.html">Documents &amp; Certificates</a>
-                            </div>
-                        </div>
+                <div class="nav-item has-menu">
+                    <a href="AboutUs.html" class="nav-link">About Us</a>
+                    <div class="nav-menu">
+                        <a href="Documentscertificates.html">Documents &amp; certificates</a>
                     </div>
                 </div>
-
-                <a href="Book.html#form-section" class="btn-primary">Book a Collection</a>
+                <a href="Book.html#form-section" class="nav-cta">Book a Collection</a>
             </nav>
         </div>
     </header>
@@ -829,7 +429,7 @@ a.inline-link:hover {
         <!-- Main Content Area -->
         <section class="article-section">
             <div class="article-container">
-                
+
                 <!-- Table of Contents Box -->
                 <div class="toc-box">
                     <h3>Article Contents</h3>
@@ -942,7 +542,7 @@ a.inline-link:hover {
             <div class="newsletter-container">
                 <h2>Join our email list for occasional updates on secure IT recycling, data destruction best practices, &amp; e-waste sustainability.</h2>
                 <p>Occasional messages, unsubscribe at any time.</p>
-                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+                <form class="newsletter-form">
                     <div class="form-group">
                         <label for="fname">First name *</label>
                         <input type="text" id="fname" placeholder="First name" required>
@@ -959,7 +559,7 @@ a.inline-link:hover {
         <!-- Sustainable IT Asset Recycling Section -->
         <section id="book">
                 <h2 class="section-title">Ready to book?</h2>
-                
+
                 <div class="cta-banner">
                     <h2>Our  ITAD Process is simple!</h2>
                     <p class="sub-heading">We make sustainable IT disposal simple for all businesses &amp; institutions.</p>
@@ -1011,7 +611,7 @@ a.inline-link:hover {
                             <h4>Recycle & Reuse</h4>
                             <p>Suitable equipment is refurbished, reused or responsibly recycled.</p>
                         </div>
-						
+
                         <!-- Card 5 -->
                         <div class="cta-card">
                             <svg class="cta-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1041,14 +641,11 @@ a.inline-link:hover {
             </section>
     </main>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; <span id="year"></span> Saving Tech. All rights reserved.</p>
+    <!-- Site footer (identical on every page) -->
+    <footer class="site-footer">
+        <p>&copy; <span id="year">2026</span> Saving Tech. All rights reserved.</p>
     </footer>
 
-    <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
+    <script src="js/main.js"></script>
 </body>
 </html>
