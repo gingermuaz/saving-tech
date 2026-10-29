@@ -1,9 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book a Collection | Saving Tech</title>
+    <meta name="description" content="Book a secure IT recycling collection online or call 07904010708. Free collection for 10+ qualifying laptops, PCs or servers across the UK.">
+    <link rel="canonical" href="https://savingtech.co.uk/Book.html">
+
+    <!-- Share previews (LinkedIn, Teams, WhatsApp, Facebook, X) -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Saving Tech">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:title" content="Book a Collection">
+    <meta property="og:description" content="Book a secure IT recycling collection online or call 07904010708. Free collection for 10+ qualifying laptops, PCs or servers across the UK.">
+    <meta property="og:url" content="https://savingtech.co.uk/Book.html">
+    <meta property="og:image" content="https://savingtech.co.uk/Images/share-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="css/styles.css">
 
@@ -358,7 +370,7 @@
             margin-top: 0.3rem;
             width: 1.125rem;
             height: 1.125rem;
-            accent-color: var(--primary-green);
+            accent-color: var(--primary-green-text);
         }
 
         .checkbox-group label {
@@ -423,6 +435,49 @@
 
         .page-hero-card .call-text {
             font-weight: 600;
+        }
+
+        /* Formerly inline styles */
+        div.name-last {
+            margin-top: auto;
+        }
+
+        input.input-short {
+            max-width: 15.625rem;
+        }
+
+        label.group-title {
+            font-size: 1.1rem;
+            color: #ffffff;
+        }
+
+        input.file-input.file-input-hidden {
+            display: none;
+        }
+
+        p.file-name-display.file-name-text {
+            font-size: 0.85rem;
+            color: var(--lime-accent);
+            margin-top: 0.5rem;
+            font-weight: 600;
+        }
+
+        input.address-line {
+            margin-bottom: 0.8rem;
+        }
+
+        div.form-group.row.address-line {
+            margin-bottom: 0.8rem;
+        }
+
+        h3.order-title {
+            font-size: clamp(1.5rem, 0.72vw + 1.337rem, 1.8rem);
+            font-weight: 800;
+            color: var(--lime-accent);
+        }
+
+        div.form-group.group-spaced {
+            margin-top: 1rem;
         }
 
         /* Phones */
@@ -590,73 +645,73 @@
 
                     <div class="form-group row">
                         <div>
-                            <label>Name <span class="required">*</span></label>
-                            <input type="text" placeholder="First" required>
+                            <label for="col-first-name">Name <span class="required">*</span></label>
+                            <input type="text" placeholder="First" required id="col-first-name" name="first_name" autocomplete="given-name">
                         </div>
-                        <div style="margin-top: auto;">
-                            <input type="text" placeholder="Last" required>
+                        <div class="name-last">
+                            <input type="text" placeholder="Last" required name="last_name" autocomplete="family-name" aria-label="Last name">
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label>Company name</label>
-                        <input type="text" placeholder="Your company name">
+                        <label for="col-company">Company name</label>
+                        <input type="text" placeholder="Your company name" id="col-company" name="company" autocomplete="organization">
                         <p class="input-hint">Not a business? Ignore this part instead.</p>
                     </div>
 
                     <div class="form-group">
-                        <label>Email <span class="required">*</span></label>
-                        <input type="email" placeholder="Your email address" required>
+                        <label for="col-email">Email <span class="required">*</span></label>
+                        <input type="email" placeholder="Your email address" required id="col-email" name="email" autocomplete="email">
                         <p class="input-hint">We'll email you to arrange collection</p>
                     </div>
 
                     <div class="form-group">
-                        <label>Phone</label>
-                        <input type="tel" placeholder="Your phone number">
+                        <label for="col-phone">Phone</label>
+                        <input type="tel" placeholder="Your phone number" id="col-phone" name="phone" autocomplete="tel">
                     </div>
 
                     <div class="form-group">
-                        <label>Collection postcode <span class="required">*</span></label>
-                        <input type="text" placeholder="" style="max-width: 15.625rem;" required>
+                        <label for="col-postcode">Collection postcode <span class="required">*</span></label>
+                        <input class="input-short" type="text" placeholder="" required id="col-postcode" name="postcode" autocomplete="postal-code">
                         <p class="input-hint">Where in the UK would you like us to collect from?</p>
                     </div>
 
                     <div class="form-group">
-                        <label>What you'd like us to collect <span class="required">*</span></label>
-                        <textarea required></textarea>
-                        <p class="input-hint">Describe the amount and type of items you want us to collect. We collect for free when you have <a href="#">10 or more qualifying items</a>.</p>
+                        <label for="col-items">What you'd like us to collect <span class="required">*</span></label>
+                        <textarea required id="col-items" name="items"></textarea>
+                        <p class="input-hint">Describe the amount and type of items you want us to collect. We collect for free when you have <a href="FreeITDisposal.html">10 or more qualifying items</a>.</p>
                     </div>
 
                     <div class="form-group">
-                        <label style="font-size: 1.1rem; color: #ffffff;">IT Asset Checklist</label>
+                        <label class="group-title">IT Asset Checklist</label>
                         <div class="file-upload-box">
-                            <input type="file" class="file-input" style="display: none;" multiple>
+                            <input type="file" class="file-input file-input-hidden" multiple name="asset_checklist">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
                             <p>Drag & Drop Files, <span class="upload-link">Choose Files to Upload</span></p>
-                            <p class="file-name-display" style="font-size: 0.85rem; color: var(--lime-accent); margin-top: 0.5rem; font-weight: 600;"></p>
+                            <p class="file-name-display file-name-text"></p>
                         </div>
                         <p class="input-hint">If you completed our handy <a href="downloads/asset-tracking.xlsx" download>IT recycling checklist</a>, you can upload it here.</p>
                     </div>
 
                     <div class="form-group">
-                        <label>Any Questions</label>
-                        <textarea required></textarea>
-                        <p class="input-hint">Feel free to ask us and questions or enquiries you have.</p>
+                        <label for="col-questions">Any Questions</label>
+                        <textarea id="col-questions" name="questions"></textarea>
+                        <p class="input-hint">Feel free to ask us any questions or enquiries you have.</p>
                     </div>
 
                     <div class="form-group">
-                        <label style="font-size: 1.1rem; color: #ffffff;">Stay informed</label>
+                        <label class="group-title">Stay informed</label>
                         <div class="checkbox-group">
-                            <input type="checkbox" id="stayInformedCol">
+                            <input type="checkbox" id="stayInformedCol" value="yes" name="newsletter">
                             <label for="stayInformedCol">Yes, I'd like to receive occasional emails</label>
                         </div>
                         <p class="checkbox-desc">Join our email list for occasional updates on secure IT recycling, data destruction best practices, & e-waste sustainability. Unsubscribe at any time.</p>
                     </div>
 
                     <div class="form-group">
-                        <label style="font-size: 1.1rem; color: #ffffff;">Your consent <span class="required">*</span></label>
+                        <label class="group-title">Your consent <span class="required">*</span></label>
                         <div class="checkbox-group">
-                            <input type="checkbox" id="consentCol" required>
+                            <input type="checkbox" id="consentCol" required value="yes" name="consent">
                             <label for="consentCol">I have read and agree to the <a href="#">Terms and Conditions</a> and for you to process my data in accordance with the <a href="#">Privacy Notice</a>.</label>
                         </div>
                     </div>
@@ -690,55 +745,55 @@
                                 <span>820L Pallet box – £315.00</span>
                             </label>
                         </div>
-                        <p class="input-hint"><a href="#">See above for sizing & specifications</a>.<br>Prices include VAT.</p>
+                        <p class="input-hint">Prices include VAT.</p>
                     </div>
 
                     <div class="form-group row">
                         <div>
-                            <label>Name <span class="required">*</span></label>
-                            <input type="text" placeholder="First" required>
+                            <label for="onsite-first-name">Name <span class="required">*</span></label>
+                            <input type="text" placeholder="First" required id="onsite-first-name" name="first_name" autocomplete="given-name">
                         </div>
-                        <div style="margin-top: auto;">
-                            <input type="text" placeholder="Last" required>
+                        <div class="name-last">
+                            <input type="text" placeholder="Last" required name="last_name" autocomplete="family-name" aria-label="Last name">
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label>Company name <span class="required">*</span></label>
-                        <input type="text" placeholder="Your company name" required>
+                        <label for="onsite-company">Company name <span class="required">*</span></label>
+                        <input type="text" placeholder="Your company name" required id="onsite-company" name="company" autocomplete="organization">
                     </div>
 
                     <div class="form-group">
-                        <label>Email <span class="required">*</span></label>
-                        <input type="email" placeholder="Your email address" required>
+                        <label for="onsite-email">Email <span class="required">*</span></label>
+                        <input type="email" placeholder="Your email address" required id="onsite-email" name="email" autocomplete="email">
                         <p class="input-hint">We'll email you to arrange delivery</p>
                     </div>
 
                     <div class="form-group">
-                        <label>Phone</label>
-                        <input type="tel" placeholder="Your phone number">
+                        <label for="onsite-phone">Phone</label>
+                        <input type="tel" placeholder="Your phone number" id="onsite-phone" name="phone" autocomplete="tel">
                     </div>
 
                     <div class="form-group">
-                        <label>Delivery postcode <span class="required">*</span></label>
-                        <input type="text" placeholder="" style="max-width: 15.625rem;" required>
+                        <label for="onsite-delivery-postcode">Delivery postcode <span class="required">*</span></label>
+                        <input class="input-short" type="text" placeholder="" required id="onsite-delivery-postcode" name="delivery_postcode" autocomplete="shipping postal-code">
                         <p class="input-hint">Where in the UK would you like us to deliver to? We'll contact you to arrange details.</p>
                     </div>
 
                     <div class="form-group">
-                        <label>Billing Address <span class="required">*</span></label>
-                        <input type="text" placeholder="Address Line 1" required style="margin-bottom: 0.8rem;">
-                        <input type="text" placeholder="Address Line 2" style="margin-bottom: 0.8rem;">
-                        <div class="form-group row" style="margin-bottom: 0.8rem;">
-                            <input type="text" placeholder="City" required>
-                            <input type="text" placeholder="State / Province / Region">
+                        <label for="onsite-billing-address-line1">Billing Address <span class="required">*</span></label>
+                        <input class="address-line" type="text" placeholder="Address Line 1" required id="onsite-billing-address-line1" name="billing_address_line1" autocomplete="billing address-line1">
+                        <input class="address-line" type="text" placeholder="Address Line 2" name="billing_address_line2" autocomplete="billing address-line2" aria-label="Address line 2">
+                        <div class="form-group row address-line">
+                            <input type="text" placeholder="City" required name="billing_city" autocomplete="billing address-level2" aria-label="City">
+                            <input type="text" placeholder="State / Province / Region" name="billing_region" autocomplete="billing address-level1" aria-label="County or region">
                         </div>
-                        <input type="text" placeholder="Postal Code" style="max-width: 15.625rem;" required>
+                        <input class="input-short" type="text" placeholder="Postal Code" required name="billing_postcode" autocomplete="billing postal-code" aria-label="Billing postcode">
                     </div>
 
                     <hr class="hr-divider">
 
-                    <h3 style="font-size: clamp(1.5rem, 0.72vw + 1.337rem, 1.8rem); font-weight: 800; color: var(--lime-accent);">Your order</h3>
+                    <h3 class="order-title">Your order</h3>
 
                     <div class="order-summary-grid">
                         <div class="summary-card">
@@ -757,19 +812,19 @@
                         </div>
                     </div>
 
-                    <div class="form-group" style="margin-top: 1rem;">
-                        <label style="font-size: 1.1rem; color: #ffffff;">Stay informed</label>
+                    <div class="form-group group-spaced">
+                        <label class="group-title">Stay informed</label>
                         <div class="checkbox-group">
-                            <input type="checkbox" id="stayInformedOnsite">
+                            <input type="checkbox" id="stayInformedOnsite" value="yes" name="newsletter">
                             <label for="stayInformedOnsite">Yes, I'd like to receive occasional emails</label>
                         </div>
                         <p class="checkbox-desc">Join our email list for occasional updates on secure IT recycling, data destruction best practices, & e-waste sustainability. Unsubscribe at any time.</p>
                     </div>
 
                     <div class="form-group">
-                        <label style="font-size: 1.1rem; color: #ffffff;">Your consent <span class="required">*</span></label>
+                        <label class="group-title">Your consent <span class="required">*</span></label>
                         <div class="checkbox-group">
-                            <input type="checkbox" id="consentOnsite" required>
+                            <input type="checkbox" id="consentOnsite" required value="yes" name="consent">
                             <label for="consentOnsite">I have read and agree to the <a href="#">Terms and Conditions</a> and for you to process my data in accordance with the <a href="#">Privacy Notice</a>.</label>
                         </div>
                     </div>
@@ -803,65 +858,65 @@
 
                     <div class="form-group row">
                         <div>
-                            <label>Name <span class="required">*</span></label>
-                            <input type="text" placeholder="First" required>
+                            <label for="post-first-name">Name <span class="required">*</span></label>
+                            <input type="text" placeholder="First" required id="post-first-name" name="first_name" autocomplete="given-name">
                         </div>
-                        <div style="margin-top: auto;">
-                            <input type="text" placeholder="Last" required>
+                        <div class="name-last">
+                            <input type="text" placeholder="Last" required name="last_name" autocomplete="family-name" aria-label="Last name">
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label>Company name <span class="required">*</span></label>
-                        <input type="text" placeholder="Your company name" required>
+                        <label for="post-company">Company name <span class="required">*</span></label>
+                        <input type="text" placeholder="Your company name" required id="post-company" name="company" autocomplete="organization">
                     </div>
 
                     <div class="form-group">
-                        <label>Email <span class="required">*</span></label>
-                        <input type="email" placeholder="Your email address" required>
+                        <label for="post-email">Email <span class="required">*</span></label>
+                        <input type="email" placeholder="Your email address" required id="post-email" name="email" autocomplete="email">
                         <p class="input-hint">We'll email the postage labels for you to print.</p>
                     </div>
 
                     <div class="form-group">
-                        <label>Phone</label>
-                        <input type="tel" placeholder="Your phone number">
+                        <label for="post-phone">Phone</label>
+                        <input type="tel" placeholder="Your phone number" id="post-phone" name="phone" autocomplete="tel">
                     </div>
 
                     <div class="form-group">
-                        <label>What you'd like to send us <span class="required">*</span></label>
-                        <textarea required placeholder="Describe the amount and type of items you want to send to us."></textarea>
+                        <label for="post-items">What you'd like to send us <span class="required">*</span></label>
+                        <textarea required placeholder="Describe the amount and type of items you want to send to us." id="post-items" name="items"></textarea>
                     </div>
 
                     <div class="form-group">
-                        <label style="font-size: 1.1rem; color: #ffffff;">IT Asset Checklist</label>
+                        <label class="group-title">IT Asset Checklist</label>
                         <div class="file-upload-box">
-                            <input type="file" class="file-input" style="display: none;" multiple>
+                            <input type="file" class="file-input file-input-hidden" multiple name="asset_checklist">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
                             <p>Drag & Drop Files, <span class="upload-link">Choose Files to Upload</span></p>
-                            <p class="file-name-display" style="font-size: 0.85rem; color: var(--lime-accent); margin-top: 0.5rem; font-weight: 600;"></p>
+                            <p class="file-name-display file-name-text"></p>
                         </div>
                         <p class="input-hint">If you completed our handy <a href="downloads/asset-tracking.xlsx" download>IT recycling checklist</a>, you can upload it here.</p>
                     </div>
 
                     <div class="form-group">
-                        <label>Any Questions</label>
-                        <textarea required></textarea>
-                        <p class="input-hint">Feel free to ask us and questions or enquiries you have.</p>
+                        <label for="post-questions">Any Questions</label>
+                        <textarea id="post-questions" name="questions"></textarea>
+                        <p class="input-hint">Feel free to ask us any questions or enquiries you have.</p>
                     </div>
 
                     <div class="form-group">
-                        <label style="font-size: 1.1rem; color: #ffffff;">Stay informed</label>
+                        <label class="group-title">Stay informed</label>
                         <div class="checkbox-group">
-                            <input type="checkbox" id="stayInformedPost">
+                            <input type="checkbox" id="stayInformedPost" value="yes" name="newsletter">
                             <label for="stayInformedPost">Yes, I'd like to receive occasional emails</label>
                         </div>
                         <p class="checkbox-desc">Join our email list for occasional updates on secure IT recycling, data destruction best practices, & e-waste sustainability. Unsubscribe at any time.</p>
                     </div>
 
                     <div class="form-group">
-                        <label style="font-size: 1.1rem; color: #ffffff;">Your consent <span class="required">*</span></label>
+                        <label class="group-title">Your consent <span class="required">*</span></label>
                         <div class="checkbox-group">
-                            <input type="checkbox" id="consentPost" required>
+                            <input type="checkbox" id="consentPost" required value="yes" name="consent">
                             <label for="consentPost">I have read and agree to the <a href="#">Terms and Conditions</a> and for you to process my data in accordance with the <a href="#">Privacy Notice</a>.</label>
                         </div>
                     </div>

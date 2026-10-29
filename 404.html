@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | Saving Tech</title>
+    <meta name="robots" content="noindex">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <!-- Styles used only on this page -->
+    <style>
+        .not-found {
+            max-width: 45rem;
+            min-height: 60vh;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .not-found h1 {
+            font-size: clamp(1.75rem, 2.41vw + 1.208rem, 2.75rem);
+            margin-bottom: 1rem;
+        }
+
+        .not-found p {
+            font-size: 1.1rem;
+            color: var(--text-grey);
+            margin-bottom: 2rem;
+        }
+
+        .not-found-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        /* Phones */
+        @media (max-width: 600px) {
+            .not-found {
+                padding: 3.5rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Site header (identical on every page) -->
+    <header class="site-header">
+        <div class="nav-container">
+            <a href="/index.html" class="logo">
+                <img src="/Images/saving-tech-logo.png" alt="Saving Tech" width="200" height="40">
+            </a>
+            <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="site-nav" id="site-nav" aria-label="Main">
+                <div class="nav-item has-menu">
+                    <a href="/FreeITDisposal.html" class="nav-link">Free IT Disposal</a>
+                    <div class="nav-menu">
+                        <a href="/Computerrecycling.html">Computer recycling</a>
+                        <a href="/Laptoprecycling.html">Laptop recycling</a>
+                        <a href="/Mobiledevicerecycling.html">Mobile device recycling</a>
+                        <a href="/Monitorscreenrecycling.html">Monitor &amp; screen recycling</a>
+                        <a href="/ServerRecycling.html">Server recycling</a>
+                    </div>
+                </div>
+                <div class="nav-item has-menu">
+                    <a href="/index.html#services" class="nav-link">Our Services</a>
+                    <div class="nav-menu">
+                        <a href="/Assetswecollectrecycle.html">Assets we collect &amp; recycle</a>
+                        <a href="/FAQs.html">FAQs</a>
+                    </div>
+                </div>
+                <div class="nav-item has-menu">
+                    <a href="/DataDestruction.html" class="nav-link">Data Destruction</a>
+                    <div class="nav-menu">
+                        <a href="/DataDestructionMethods.html">Secure data erasure</a>
+                        <a href="/DataSecurityArticles.html">Data security articles</a>
+                        <a href="/Harddrivemediadestruction.html">Hard drive &amp; media destruction</a>
+                        <a href="/SecureDataDestruction.html">Secure data destruction</a>
+                    </div>
+                </div>
+                <div class="nav-item has-menu">
+                    <a href="/AboutUs.html" class="nav-link">About Us</a>
+                    <div class="nav-menu">
+                        <a href="/Documentscertificates.html">Documents &amp; certificates</a>
+                    </div>
+                </div>
+                <a href="/Book.html#form-section" class="nav-cta">Book a Collection</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="not-found">
+        <h1>Sorry, we can't find that page</h1>
+        <p>The page may have moved or no longer exists. These links will help you find what you need, or call us on <a href="tel:07904010708" class="inline-link">07904010708</a>.</p>
+        <div class="not-found-links">
+            <a href="/" class="btn-primary">Home page</a>
+            <a href="/Book.html#form-section" class="btn-primary">Book a collection</a>
+            <a href="/FreeITDisposal.html" class="btn-primary">Our services</a>
+        </div>
+    </main>
+
+    <!-- Site footer (identical on every page) -->
+    <footer class="site-footer">
+        <p>&copy; <span id="year">2026</span> Saving Tech. All rights reserved.</p>
+    </footer>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>

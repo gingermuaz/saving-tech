@@ -1,9 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frequently Asked Questions | Saving Tech</title>
+    <meta name="description" content="Answers to common questions about our free IT recycling and data destruction service: collections, equipment, charges, compliance and more.">
+    <link rel="canonical" href="https://savingtech.co.uk/FAQs.html">
+
+    <!-- Share previews (LinkedIn, Teams, WhatsApp, Facebook, X) -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Saving Tech">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:title" content="Frequently Asked Questions">
+    <meta property="og:description" content="Answers to common questions about our free IT recycling and data destruction service: collections, equipment, charges, compliance and more.">
+    <meta property="og:url" content="https://savingtech.co.uk/FAQs.html">
+    <meta property="og:image" content="https://savingtech.co.uk/Images/share-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="css/styles.css">
 
@@ -102,6 +114,11 @@
             letter-spacing: -0.5px;
         }
 
+        /* Formerly inline styles */
+        div.card-action {
+            margin-top: 1.5rem;
+        }
+
         /* Phones */
         @media (max-width: 600px) {
             .btn-lime {
@@ -167,21 +184,24 @@
         </div>
     </header>
 
+    <main>
+
     <!-- Hero Header -->
     <section class="page-hero page-hero-pattern page-hero-pattern-faq">
         <div class="page-hero-card">
             <p class="breadcrumb"><a href="index.html">Home</a> &rarr; <a href="index.html#services">Our Services</a> &rarr; FAQs</p>
             <h1>Frequently asked questions</h1>
-            <p>Here are FAQs about <a href="#">our service</a> and about <a href="#">our charges</a>. If you can't find what you're looking for here, <a href="#">drop us an email</a>. We are here to help.</p>
+            <p>Here are FAQs about <a href="FreeITDisposal.html">our service</a> and about <a href="Assetswecollectrecycle.html#screens-displays">our charges</a>. If you can't find what you're looking for here, call us on <a href="tel:07904010708">07904010708</a>. We are here to help.</p>
             <a href="Book.html#form-section" class="btn-hero btn-hero-green">Book a collection</a>
         </div>
     </section>
 
     <!-- Main Content Body -->
-    <main class="main-content">
+    <div class="main-content">
       <div class="container">
 
         <!-- Top Two Highlight Cards -->
+        <h2 class="visually-hidden">Most popular questions</h2>
         <div class="grid-2">
           <div class="faq-card">
             <h3>How do I get a free collection?</h3>
@@ -191,7 +211,7 @@
           <div class="faq-card">
             <h3>What equipment do you collect?</h3>
             <p>We <a href="Assetswecollectrecycle.html">recycle all types of electronics</a>, including laptops, servers, mobile phones & tablets, monitors & screens, printers & copiers, network infrastructure equipment and specialist/sector-specific equipment.</p>
-            <div style="margin-top: 1.5rem;">
+            <div class="card-action">
               <a href="Assetswecollectrecycle.html" class="btn btn-outline">WHAT WE COLLECT</a>
             </div>
           </div>
@@ -248,7 +268,7 @@
           <p>We use NIST SP 800-88 Rev. 1 and follow British HMG IS5 alongside current UK <a href="https://www.ncsc.gov.uk/guidance/secure-sanitisation-storage-media" target="_blank" rel="noopener noreferrer">Government/NCSC</a> guidance for the secure sanitisation and disposal of data-bearing devices.</p>
         </div>
       </div>
-    </main>
+    </div>
 
     <!-- Ready to book: the ITAD process box (the same on every page, styled in css/styles.css) -->
     <section class="book-cta" id="book">
@@ -266,7 +286,7 @@
                         <path d="M2 12h20"/>
                         <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
                     </svg>
-                    <h4>Book</h4>
+                    <h3>Book</h3>
                     <p>Fill in the form and book a collection date. Free qualifying collections for 10+ devices.</p>
                 </div>
 
@@ -278,7 +298,7 @@
                         <circle cx="5.5" cy="18.5" r="2.5"/>
                         <circle cx="18.5" cy="18.5" r="2.5"/>
                     </svg>
-                    <h4>Collect</h4>
+                    <h3>Collect</h3>
                     <p>We securely collect your IT equipment directly from your premises, ensuring every device is handled safely and transported.</p>
                 </div>
 
@@ -288,7 +308,7 @@
                         <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
                         <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
                     </svg>
-                    <h4>We handle the data</h4>
+                    <h3>We handle the data</h3>
                     <p>All <a href="SecureDataDestruction.html" class="inline-link">data is securely erased.</a> Devices that cannot be securely erased are <a href="DataDestructionMethods.html" class="inline-link">securely destroyed </a> and disposed of responsibly.</p>
                 </div>
 
@@ -302,7 +322,7 @@
                         <path d="M3 12a9 9 0 0 0 15 6.7l3-3.7"/>
                         <path d="M21 19v-4h-4"/>
                     </svg>
-                    <h4>Recycle & Reuse</h4>
+                    <h3>Recycle & Reuse</h3>
                     <p>Suitable equipment is refurbished, reused or responsibly recycled.</p>
                 </div>
 
@@ -312,7 +332,7 @@
                         <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
                         <polyline points="22 4 12 14.01 9 11.01"/>
                     </svg>
-                    <h4>Certifications provided</h4>
+                    <h3>Certifications provided</h3>
                     <p>We provide <a href="Documentscertificates.html" class="inline-link">all the certificates and records</a> for your compliance.</p>
                 </div>
             </div>
@@ -325,6 +345,8 @@
             </div>
         </div>
     </section>
+
+    </main>
 
     <!-- Site footer (identical on every page) -->
     <footer class="site-footer">

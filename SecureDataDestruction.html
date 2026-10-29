@@ -1,9 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Secure Data Destruction | Saving Tech</title>
+    <meta name="description" content="What secure data destruction involves: vetted staff, tracked vehicles and secure premises, with a Certificate of Destruction for your records.">
+    <link rel="canonical" href="https://savingtech.co.uk/SecureDataDestruction.html">
+
+    <!-- Share previews (LinkedIn, Teams, WhatsApp, Facebook, X) -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Saving Tech">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:title" content="Secure Data Destruction">
+    <meta property="og:description" content="What secure data destruction involves: vetted staff, tracked vehicles and secure premises, with a Certificate of Destruction for your records.">
+    <meta property="og:url" content="https://savingtech.co.uk/SecureDataDestruction.html">
+    <meta property="og:image" content="https://savingtech.co.uk/Images/Securedatadestruction.jpeg">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="css/styles.css">
 
@@ -34,7 +46,7 @@
         }
 
         a.inline-link {
-            color: #0284c7;
+            color: #026598;
         }
 
         a.inline-link:hover {
@@ -73,7 +85,7 @@
         }
 
         .breadcrumbs a {
-            color: #0284c7;
+            color: #0274AF;
             text-decoration: underline;
         }
 
@@ -254,6 +266,11 @@
             line-height: 1.3;
         }
 
+        .form-note a {
+            color: var(--lime-accent);
+            text-decoration: underline;
+        }
+
         .name-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -409,7 +426,7 @@
             margin: 0 auto 1rem auto;
             font-size: 1.2rem;
             font-weight: 700;
-            color: #0284c7;
+            color: #0274AF;
         }
 
         .step-card p {
@@ -535,6 +552,16 @@
             .steps-grid {
                 grid-template-columns: 1fr 1fr;
             }
+        }
+
+        /* Formerly inline styles */
+        div.hero-actions {
+            margin-bottom: 1rem;
+        }
+
+        span.form-note.form-note-legal {
+            margin-top: 0.3rem;
+            color: #e5e7eb;
         }
 
         /* Phones */
@@ -663,7 +690,7 @@
                 </div>
                 <h1>What does secure data destruction involve?</h1>
                 <p class="hero-text">Your old IT equipment still holds live data. Our secure data destruction process protects it: vetted staff, tracked vehicles and secure premises.</p>
-                <div style="margin-bottom: 1rem;">
+                <div class="hero-actions">
                     <a href="#book" class="btn-hero-green">BOOK A COLLECTION</a>
                 </div>
                 <p class="hero-subtext">Free collections when you recycle at least 10 laptops, PCs &amp; servers (any combination). It's also <a href="FreeITDisposal.html" class="inline-link">free to recycle almost all waste IT with us</a>.</p>
@@ -730,53 +757,53 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label>Name *</label>
+                                    <label for="firstName">Name *</label>
                                     <div class="name-row">
-                                        <input type="text" id="firstName" placeholder="First" required>
-                                        <input type="text" id="lastName" placeholder="Last" required>
+                                        <input type="text" id="firstName" placeholder="First" required name="first_name" autocomplete="given-name">
+                                        <input type="text" id="lastName" placeholder="Last" required name="last_name" autocomplete="family-name" aria-label="Last name">
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="companyName">Company name</label>
-                                    <input type="text" id="companyName" placeholder="Your company name">
+                                    <input type="text" id="companyName" placeholder="Your company name" name="company" autocomplete="organization">
                                     <span class="form-note">We serve businesses, local authorities and charities. Personal enquiries are also welcome.</span>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="email">Email *</label>
-                                    <input type="email" id="email" placeholder="Your email address" required>
+                                    <input type="email" id="email" placeholder="Your email address" required name="email" autocomplete="email">
                                     <span class="form-note">One of our team will email you to arrange collection</span>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="phone">Phone</label>
-                                    <input type="tel" id="phone" placeholder="Your phone number">
+                                    <input type="tel" id="phone" placeholder="Your phone number" name="phone" autocomplete="tel">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="postcode">Collection postcode *</label>
-                                    <input type="text" id="postcode" placeholder="Where in the UK would you like us to collect from?" required>
+                                    <input type="text" id="postcode" placeholder="Where in the UK would you like us to collect from?" required name="postcode" autocomplete="postal-code">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="items">What you'd like us to collect *</label>
-                                    <textarea id="items" rows="4" placeholder="Describe the amount and type of items you want us to collect." required></textarea>
+                                    <textarea id="items" rows="4" placeholder="Describe the amount and type of items you want us to collect." required name="items"></textarea>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="checkbox-label">
-                                        <input type="checkbox" id="newsletter">
+                                        <input type="checkbox" id="newsletter" value="yes" name="newsletter">
                                         <span><strong>Stay informed:</strong> Yes, I'd like to receive occasional emails. Join our email list for occasional updates on secure IT recycling, data destruction best practices, &amp; e-waste sustainability. Unsubscribe at any time.</span>
                                     </label>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="checkbox-label">
-                                        <input type="checkbox" id="consent" required>
-                                        <span><strong>Your consent *:</strong> I have read and agree to the Saving Tech Waste Terms and Conditions and for them to process my data in accordance with their Privacy Notice.</span>
+                                        <input type="checkbox" id="consent" required value="yes" name="consent">
+                                        <span><strong>Your consent *:</strong> I have read and agree to the Saving Tech Terms and Conditions and for them to process my data in accordance with their Privacy Notice.</span>
                                     </label>
-                                    <span class="form-note" style="margin-top: 0.3rem; color: #e5e7eb;">Our <a href="#">Terms and Conditions</a> and <a href="#">Privacy Notice</a>.</span>
+                                    <span class="form-note form-note-legal">Our <a href="#">Terms and Conditions</a> and <a href="#">Privacy Notice</a>.</span>
                                 </div>
 
                                 <button type="submit" class="btn-submit-green">REQUEST MY COLLECTION</button>
@@ -847,7 +874,7 @@
                                 </div>
                             </div>
 
-                            <p>On collection, our driver will ask you to sign a Duty of Care Waste Transfer Note, and we send a copy by email straight away, so you have a documented chain of custody from the outset. Everything we do is <a href="#" class="inline-link">GDPR</a> and <a href="#" class="inline-link">WEEE compliant</a>, and we're ICO registered for data protection, and every job is carried out to standards approved by the <a href="#" class="inline-link">National Cyber Security Centre (NCSC)</a>.</p>
+                            <p>On collection, our driver will ask you to sign a Duty of Care Waste Transfer Note, and we send a copy by email straight away, so you have a documented chain of custody from the outset. Everything we do is <a href="https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/" class="inline-link" target="_blank" rel="noopener">GDPR</a> and <a href="https://www.legislation.gov.uk/uksi/2013/3113/contents" class="inline-link" target="_blank" rel="noopener">WEEE compliant</a>, and we're ICO registered for data protection, and every job is carried out to standards approved by the <a href="https://www.ncsc.gov.uk/guidance/secure-sanitisation-storage-media" class="inline-link" target="_blank" rel="noopener">National Cyber Security Centre (NCSC)</a>.</p>
                         </div>
 
                         <div class="info-block">
@@ -857,9 +884,9 @@
                                 <li><a href="Harddrivemediadestruction.html" class="inline-link">Hard drives</a>, SSDs and other internal storage in <a href="Computerrecycling.html" class="inline-link">computers</a> and <a href="Laptoprecycling.html" class="inline-link">laptops</a></li>
                                 <li><a href="ServerRecycling.html" class="inline-link">Servers</a>, storage arrays and networking hardware</li>
                                 <li><a href="Mobiledevicerecycling.html" class="inline-link">Mobile phones</a>, tablets and EPOS devices</li>
-                                <li><a href="#" class="inline-link">Printers and copiers</a> with internal memory</li>
+                                <li><a href="Assetswecollectrecycle.html" class="inline-link">Printers and copiers</a> with internal memory</li>
                                 <li>USB drives, memory cards, backup tapes and other removable media</li>
-                                <li>Confidential paper documents, via our <a href="#" class="inline-link">secure paper shredding service</a></li>
+                                <li>Confidential paper documents, via our secure paper shredding service</li>
                             </ul>
                             <p>See our <a href="Assetswecollectrecycle.html" class="inline-link">full list of what we collect</a> for the complete range. For the specific methods behind each service level, see <a href="DataDestructionMethods.html" class="inline-link">Secure Data erasure</a>, and our <a href="Documentscertificates.html" class="inline-link">accreditations and compliance</a>.</p>
                         </div>

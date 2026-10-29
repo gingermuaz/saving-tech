@@ -1,9 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Office Move IT Disposal - What to Do With Equipment Left Behind | Saving Tech</title>
+    <title>Office Move IT Disposal Guide | Saving Tech</title>
+    <meta name="description" content="Moving or closing an office? How to audit, decommission and clear redundant IT before the move, with certified data destruction.">
+    <link rel="canonical" href="https://savingtech.co.uk/OfficeMoveITDisposal.html">
+
+    <!-- Share previews (LinkedIn, Teams, WhatsApp, Facebook, X) -->
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Saving Tech">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:title" content="Office Move IT Disposal Guide">
+    <meta property="og:description" content="Moving or closing an office? How to audit, decommission and clear redundant IT before the move, with certified data destruction.">
+    <meta property="og:url" content="https://savingtech.co.uk/OfficeMoveITDisposal.html">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&amp;fit=crop&amp;w=1200&amp;h=630&amp;q=80">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="css/styles.css">
 
@@ -100,7 +112,7 @@
             margin-bottom: 3rem;
         }
 
-        .contents-box h3 {
+        .contents-box h2 {
             font-size: 1.15rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
@@ -121,7 +133,7 @@
 
         .contents-box ul li::before {
             content: "•";
-            color: var(--primary-green);
+            color: var(--primary-green-text);
             font-weight: bold;
             font-size: 1.2rem;
             position: absolute;
@@ -137,7 +149,7 @@
         }
 
         .contents-box ul li a:hover {
-            color: var(--primary-green);
+            color: var(--primary-green-text);
             text-decoration: underline;
         }
 
@@ -322,6 +334,19 @@
             font-weight: bold;
         }
 
+        /* Formerly inline styles */
+        .share-bar a[data-share="teams"] {
+            background-color: #5B5FC7;
+        }
+
+        .share-bar a[data-share="whatsapp"] {
+            background-color: #25D366;
+        }
+
+        .share-bar a[data-share="copy"] {
+            background-color: #6B7280;
+        }
+
         /* Phones */
         @media (max-width: 600px) {
             .hero-section {
@@ -428,7 +453,7 @@
 
             <!-- Table of Contents Box -->
             <div class="contents-box">
-                <h3>Article Contents</h3>
+                <h2>Article Contents</h2>
                 <ul>
                     <li><a href="#section1">Why does IT equipment so often get handled badly during a move or closure?</a></li>
                     <li><a href="#section2">How should you plan the IT side of a move or closure?</a></li>
@@ -561,7 +586,7 @@
                             <path d="M2 12h20"/>
                             <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
                         </svg>
-                        <h4>Book</h4>
+                        <h3>Book</h3>
                         <p>Fill in the form and book a collection date. Free qualifying collections for 10+ devices.</p>
                     </div>
 
@@ -573,7 +598,7 @@
                             <circle cx="5.5" cy="18.5" r="2.5"/>
                             <circle cx="18.5" cy="18.5" r="2.5"/>
                         </svg>
-                        <h4>Collect</h4>
+                        <h3>Collect</h3>
                         <p>We securely collect your IT equipment directly from your premises, ensuring every device is handled safely and transported.</p>
                     </div>
 
@@ -583,7 +608,7 @@
                             <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
                             <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
                         </svg>
-                        <h4>We handle the data</h4>
+                        <h3>We handle the data</h3>
                         <p>All <a href="SecureDataDestruction.html" class="inline-link">data is securely erased.</a> Devices that cannot be securely erased are <a href="DataDestructionMethods.html" class="inline-link">securely destroyed </a> and disposed of responsibly.</p>
                     </div>
 
@@ -597,7 +622,7 @@
                             <path d="M3 12a9 9 0 0 0 15 6.7l3-3.7"/>
                             <path d="M21 19v-4h-4"/>
                         </svg>
-                        <h4>Recycle & Reuse</h4>
+                        <h3>Recycle & Reuse</h3>
                         <p>Suitable equipment is refurbished, reused or responsibly recycled.</p>
                     </div>
 
@@ -607,7 +632,7 @@
                             <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
                             <polyline points="22 4 12 14.01 9 11.01"/>
                         </svg>
-                        <h4>Certifications provided</h4>
+                        <h3>Certifications provided</h3>
                         <p>We provide <a href="Documentscertificates.html" class="inline-link">all the certificates and records</a> for your compliance.</p>
                     </div>
                 </div>
@@ -623,9 +648,9 @@
             <div class="share-bar">
                 <span>Share this:</span>
                 <a href="#" data-share="linkedin" title="Share on LinkedIn">in</a>
-                <a href="#" data-share="teams" style="background-color: #5B5FC7;" title="Share on Teams">T</a>
-                <a href="#" data-share="whatsapp" style="background-color: #25D366;" title="Share on WhatsApp">WA</a>
-                <a href="#" data-share="copy" role="button" style="background-color: #6B7280;" title="Copy Link">&#128279;</a>
+                <a href="#" data-share="teams" title="Share on Teams">T</a>
+                <a href="#" data-share="whatsapp" title="Share on WhatsApp">WA</a>
+                <a href="#" data-share="copy" role="button" title="Copy Link">&#128279;</a>
             </div>
         </section>
 

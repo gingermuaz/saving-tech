@@ -1,9 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | Saving Tech</title>
+    <meta name="description" content="Why businesses choose Saving Tech for IT recycling: UK-only processing, secure data destruction and free collection for 10+ qualifying items.">
+    <link rel="canonical" href="https://savingtech.co.uk/AboutUs.html">
+
+    <!-- Share previews (LinkedIn, Teams, WhatsApp, Facebook, X) -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Saving Tech">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:title" content="About Us">
+    <meta property="og:description" content="Why businesses choose Saving Tech for IT recycling: UK-only processing, secure data destruction and free collection for 10+ qualifying items.">
+    <meta property="og:url" content="https://savingtech.co.uk/AboutUs.html">
+    <meta property="og:image" content="https://savingtech.co.uk/Images/share-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="css/styles.css">
 
@@ -45,7 +57,7 @@
         }
 
         a.inline-link {
-            color: var(--primary-green);
+            color: var(--primary-green-text);
         }
 
         /* Headings Generic */
@@ -163,8 +175,7 @@
                 grid-template-columns: 1fr;
             }
 
-            .split-section.reverse .split-image,
-            .split-section.reverse .image-placeholder {
+            .split-section.reverse .split-image {
                 order: -1;
             }
         }
@@ -213,7 +224,7 @@
 
         .feature-icon {
             font-size: clamp(2.25rem, 1.81vw + 1.843rem, 3rem);
-            color: var(--primary-green);
+            color: var(--primary-green-text);
             margin-bottom: 1rem;
             display: inline-block;
         }
@@ -233,6 +244,32 @@
             display: flex;
             flex-wrap: wrap;
             gap: 1rem;
+        }
+
+        /* Formerly inline styles */
+        p.fleet-note {
+            font-size: 0.9rem;
+            margin-top: 2rem;
+        }
+
+        svg.banner-icon {
+            margin-bottom: 1rem;
+        }
+
+        div.container.container-flush {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        h2.features-title {
+            font-size: clamp(1.5rem, 1.69vw + 1.12rem, 2.2rem);
+            margin-bottom: 0.5rem;
+        }
+
+        p.features-intro {
+            font-size: 1.1rem;
+            color: #4B5563;
+            margin-bottom: 3rem;
         }
 
         /* Phones */
@@ -357,18 +394,18 @@
             <!-- Split Section 2 (Image left, Text right) -->
             <div class="split-section reverse">
                 <div class="split-image">
-                    <img src="Images/van.webp" alt="Saving Tech Electric Fleet Van">
+                    <img src="Images/van.webp" alt="Saving Tech Electric Fleet Van" width="1200" height="800" loading="lazy" decoding="async">
                 </div>
                 <div class="split-content">
                     <h3>Why does UK-only processing matter?</h3>
                     <p>Everything we collect is processed within the UK. We do not export waste. That means shorter supply chains, full accountability at every stage, and no contribution to the global e-waste problem that characterises much of the industry.</p>
-                    <p style="font-size: 0.9rem; margin-top: 2rem;">We use our electric fleet wherever possible.</p>
+                    <p class="fleet-note">We use our electric fleet wherever possible.</p>
                 </div>
             </div>
 
             <!-- Green Highlight Banner -->
             <div class="highlight-banner">
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--dark-grey)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 1rem;">
+                <svg class="banner-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--dark-grey)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <rect x="1" y="3" width="15" height="13"></rect>
                     <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
                     <circle cx="5.5" cy="18.5" r="2.5"></circle>
@@ -389,9 +426,9 @@
 
         <!-- Bottom Feature Cards Section -->
         <section class="bottom-features">
-            <div class="container" style="padding-top: 0; padding-bottom: 0;">
-                <h2 style="font-size: clamp(1.5rem, 1.69vw + 1.12rem, 2.2rem); margin-bottom: 0.5rem;">Sustainable IT asset recycling in the UK</h2>
-                <p style="font-size: 1.1rem; color: #4B5563; margin-bottom: 3rem;">Secure, carbon-negative IT recycling with free qualifying collections, data destruction and certificates always provided.</p>
+            <div class="container container-flush">
+                <h2 class="features-title">Sustainable IT asset recycling in the UK</h2>
+                <p class="features-intro">Secure, carbon-negative IT recycling with free qualifying collections, data destruction and certificates always provided.</p>
 
                 <div class="feature-grid">
                     <div class="feature-card">
