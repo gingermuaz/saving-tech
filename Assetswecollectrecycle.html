@@ -10,7 +10,6 @@
     <!-- Styles used only on this page -->
     <style>
         :root {
-            --accent-lime: #A3E635;
             --hero-blue: #0284C7;
             --dark-navy: #1F2937;
             --light-bg: #F8FAFC;
@@ -27,25 +26,6 @@
         }
 
         /* Buttons */
-        .btn-lime {
-            background-color: var(--accent-lime);
-            color: var(--text-dark);
-            padding: 0.9rem 1.8rem;
-            border-radius: 0.25rem;
-            text-decoration: none;
-            font-weight: 800;
-            display: inline-block;
-            border: none;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            transition: opacity 0.2s;
-        }
-
-        .btn-lime:hover {
-            opacity: 0.9;
-        }
-
         .btn-outline-dark {
             background: transparent;
             color: var(--text-dark);
@@ -85,46 +65,6 @@
         }
 
         /* Hero Banner Section */
-        .collect-hero {
-            background-color: var(--hero-blue);
-            background-image: radial-gradient(rgba(255, 255, 255, 0.15) 2px, transparent 2px);
-            background-size: 1.875rem 1.875rem;
-            padding: 4rem 2rem;
-            color: var(--white);
-        }
-
-        .hero-inner {
-            max-width: 75rem;
-            margin: 0 auto;
-        }
-
-        .hero-card {
-            background-color: var(--white);
-            color: var(--text-dark);
-            max-width: 33.75rem;
-            padding: 3rem;
-            border-radius: 0.25rem;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-        }
-
-        .breadcrumb {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            margin-bottom: 1.2rem;
-        }
-
-        .breadcrumb a {
-            color: var(--hero-blue);
-            text-decoration: underline;
-        }
-
-        .hero-card h1 {
-            font-size: clamp(1.75rem, 1.57vw + 1.398rem, 2.4rem);
-            line-height: 1.15;
-            margin-bottom: 1.8rem;
-            font-weight: 800;
-        }
-
         .checklist-hero {
             list-style: none;
             margin-bottom: 2rem;
@@ -137,11 +77,6 @@
             font-size: 1rem;
             color: var(--text-dark);
             line-height: 1.4;
-        }
-
-        .checklist-hero li a {
-            color: var(--hero-blue);
-            text-decoration: underline;
         }
 
         .checklist-hero li::before {
@@ -375,10 +310,6 @@
 
         /* Footer */
         @media (max-width: 900px) {
-            .hero-card {
-                max-width: 100%;
-            }
-
             .why-grid {
                 grid-template-columns: 1fr;
             }
@@ -386,18 +317,6 @@
 
         /* Phones */
         @media (max-width: 600px) {
-            .btn-lime {
-                padding: 0.9rem 1rem;
-            }
-
-            .collect-hero {
-                padding: 2.5rem 1rem;
-            }
-
-            .hero-card {
-                padding: 2rem 1.5rem;
-            }
-
             .section-container {
                 padding: 2.5rem 1rem;
             }
@@ -450,10 +369,10 @@
                     </div>
                 </div>
                 <div class="nav-item has-menu">
-                    <a href="Howitworks.html" class="nav-link">Data Destruction</a>
+                    <a href="DataDestruction.html" class="nav-link">Data Destruction</a>
                     <div class="nav-menu">
                         <a href="DataDestructionMethods.html">Secure data erasure</a>
-                        <a href="Articles.html">Data security articles</a>
+                        <a href="DataSecurityArticles.html">Data security articles</a>
                         <a href="Harddrivemediadestruction.html">Hard drive &amp; media destruction</a>
                         <a href="SecureDataDestruction.html">Secure data destruction</a>
                     </div>
@@ -472,21 +391,15 @@
     <main>
 
         <!-- Blue Pattern Hero Section -->
-        <section class="collect-hero">
-            <div class="hero-inner">
-                <div class="hero-card">
-                    <div class="breadcrumb">
-                        <a href="index.html">Home</a> → <a href="index.html#services">Our Services</a> → What we collect
-                    </div>
-                    <h1>Complete list of IT equipment & e-waste we collect & recycle</h1>
-
-                    <ul class="checklist-hero">
-                        <li>We recycle almost everything on this page for FREE, but we charge to recycle some types of <a href="#screens-displays">screens</a> and printers</li>
-                        <li>We collect for free, if you have at least 10 laptops, PCs & servers to recycle (any combination of these).</li>
-                    </ul>
-
-                    <a href="Book.html#form-section" class="btn-lime">BOOK A COLLECTION</a>
-                </div>
+        <section class="page-hero page-hero-pattern page-hero-pattern-hardware">
+            <div class="page-hero-card">
+                <p class="breadcrumb"><a href="index.html">Home</a> &rarr; <a href="index.html#services">Our Services</a> &rarr; What we collect</p>
+                <h1>Complete list of IT equipment &amp; e-waste we collect &amp; recycle</h1>
+                <ul class="checklist-hero">
+                    <li>We recycle almost everything on this page for FREE, but we charge to recycle some types of <a href="#screens-displays">screens</a> and printers</li>
+                    <li>We collect for free, if you have at least 10 laptops, PCs &amp; servers to recycle (any combination of these).</li>
+                </ul>
+                <a href="Book.html#form-section" class="btn-hero btn-hero-green">Book a collection</a>
             </div>
         </section>
 

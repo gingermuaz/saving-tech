@@ -10,7 +10,6 @@
     <!-- Styles used only on this page -->
     <style>
         :root {
-            --dark-teal: #084c53;
             --light-cream: #fefce8;
         }
 
@@ -20,60 +19,6 @@
 
         body {
             background-color: #fefefe;
-        }
-
-        /* Top Booking Hero Section */
-        .booking-hero {
-            background-color: var(--dark-teal);
-            color: var(--white);
-            padding: 3.5rem 2rem;
-        }
-
-        .booking-hero-container {
-            max-width: 62.5rem;
-            margin: 0 auto;
-        }
-
-        .booking-hero h1 {
-            font-size: clamp(2rem, 1.93vw + 1.566rem, 2.8rem);
-            font-weight: 800;
-            color: var(--lime-accent);
-            line-height: 1.15;
-            margin-bottom: 1.2rem;
-        }
-
-        .booking-hero p.call-text {
-            font-size: 1.15rem;
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-
-        .booking-hero p.call-text a {
-            color: var(--lime-accent);
-            text-decoration: underline;
-        }
-
-        .booking-hero p.sub-text {
-            font-size: 1.05rem;
-            color: #e5e7eb;
-            max-width: 53.125rem;
-            line-height: 1.5;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero-scroll-btn {
-            background-color: var(--lime-accent);
-            color: var(--dark-teal);
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.3125rem;
-            text-decoration: none;
-            font-weight: 800;
-            display: inline-block;
-            transition: background-color 0.3s;
-        }
-
-        .hero-scroll-btn:hover {
-            background-color: #c0f035;
         }
 
         /* Value Props Section */
@@ -451,7 +396,7 @@
         }
 
         .submit-btn:hover {
-            background-color: #c0f035;
+            background-color: var(--lime-accent);
         }
 
         .form-footer-note {
@@ -476,12 +421,12 @@
             }
         }
 
+        .page-hero-card .call-text {
+            font-weight: 600;
+        }
+
         /* Phones */
         @media (max-width: 600px) {
-            .booking-hero {
-                padding: 2rem 1rem;
-            }
-
             .value-props-section {
                 padding: 2rem 1rem;
             }
@@ -538,10 +483,10 @@
                     </div>
                 </div>
                 <div class="nav-item has-menu">
-                    <a href="Howitworks.html" class="nav-link">Data Destruction</a>
+                    <a href="DataDestruction.html" class="nav-link">Data Destruction</a>
                     <div class="nav-menu">
                         <a href="DataDestructionMethods.html">Secure data erasure</a>
-                        <a href="Articles.html">Data security articles</a>
+                        <a href="DataSecurityArticles.html">Data security articles</a>
                         <a href="Harddrivemediadestruction.html">Hard drive &amp; media destruction</a>
                         <a href="SecureDataDestruction.html">Secure data destruction</a>
                     </div>
@@ -559,14 +504,12 @@
 
     <main>
         <!-- Booking Hero Section -->
-        <section class="booking-hero">
-            <div class="booking-hero-container">
+        <section class="page-hero page-hero-pattern page-hero-pattern-form">
+            <div class="page-hero-card">
                 <h1>Book your secure, carbon-negative IT recycling collection</h1>
-                <p class="call-text">Call <a href="tel:07904010708">07904010708</a>, or <a href="#form-section" style="color: var(--lime-accent); text-decoration: underline;">complete the form below</a>.</p>
-                <p class="sub-text">Saving Tech makes IT recycling simple, secure and fully documented. Tell us what you need collected and we'll confirm the best collection option by email or phone. Free collection is available for 10+ qualifying laptops, PCs or servers.</p>
-
-                <!-- Working Scroll-Down Button -->
-                <a href="#form-section" class="hero-scroll-btn">Complete the Form Below ↓</a>
+                <p class="call-text">Call <a href="tel:07904010708">07904010708</a>, or <a href="#form-section">complete the form below</a>.</p>
+                <p>Saving Tech makes IT recycling simple, secure and fully documented. Tell us what you need collected and we'll confirm the best collection option by email or phone. Free collection is available for 10+ qualifying laptops, PCs or servers.</p>
+                <a href="#form-section" class="btn-hero btn-hero-green">Complete the form below &darr;</a>
             </div>
         </section>
 

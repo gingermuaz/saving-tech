@@ -14,9 +14,9 @@
         }
 
         /* Buttons & Inline Links */
-        .btn-hero-lime {
-            background-color: var(--lime-accent);
-            color: var(--dark-grey);
+        .btn-hero-green {
+            background-color: var(--primary-green);
+            color: var(--white);
             padding: 0.75rem 1.5rem;
             border-radius: 0.25rem;
             text-decoration: none;
@@ -24,11 +24,11 @@
             font-size: 0.95rem;
             display: inline-block;
             text-transform: uppercase;
-            transition: opacity 0.2s;
+            transition: background-color 0.2s;
         }
 
-        .btn-hero-lime:hover {
-            opacity: 0.9;
+        .btn-hero-green:hover {
+            background-color: var(--primary-green-hover);
         }
 
         .btn-lime {
@@ -49,10 +49,6 @@
 
         .btn-lime:hover {
             background-color: #C3E239;
-        }
-
-        .btn-phone {
-            margin: 1rem 0;
         }
 
         /* Hero / Header Banner Section */
@@ -125,7 +121,7 @@
             margin: 0 auto;
         }
 
-        .section-heading, .section-title {
+        .section-heading {
             font-size: clamp(1.75rem, 1.57vw + 1.398rem, 2.4rem);
             font-weight: 800;
             color: var(--dark-grey);
@@ -178,7 +174,6 @@
         /* ITAD Process CTA Section */
         .booking-callout-section {
             background-color: var(--cream-bg);
-            padding: 0 2rem 4rem 2rem;
         }
 
         /* Social Share Section */
@@ -270,10 +265,6 @@
                 padding: 2.5rem 1rem;
             }
 
-            .booking-callout-section {
-                padding: 0 1rem 2.5rem 1rem;
-            }
-
             .faq-section {
                 padding: 2rem 1rem 3rem 1rem;
             }
@@ -314,10 +305,10 @@
                     </div>
                 </div>
                 <div class="nav-item has-menu">
-                    <a href="Howitworks.html" class="nav-link">Data Destruction</a>
+                    <a href="DataDestruction.html" class="nav-link">Data Destruction</a>
                     <div class="nav-menu">
                         <a href="DataDestructionMethods.html">Secure data erasure</a>
-                        <a href="Articles.html">Data security articles</a>
+                        <a href="DataSecurityArticles.html">Data security articles</a>
                         <a href="Harddrivemediadestruction.html">Hard drive &amp; media destruction</a>
                         <a href="SecureDataDestruction.html">Secure data destruction</a>
                     </div>
@@ -344,7 +335,7 @@
                 <p class="hero-text">Server recycling? We understand that businesses frequently update their IT infrastructure, resulting in old servers and networking equipment becoming obsolete. The migration to cloud-based computing environments within the last decade has also impacted the lifespan of the on-site server.</p>
 
                 <div class="hero-actions">
-                    <a href="Book.html#form-section" class="btn-hero-lime">BOOK A COLLECTION</a>
+                    <a href="Book.html#form-section" class="btn-hero-green">BOOK A COLLECTION</a>
                 </div>
 
                 <p class="hero-subtext">
@@ -390,13 +381,13 @@
             </div>
         </section>
 
-        <!-- Ready to Book / ITAD Process Section -->
-        <section class="booking-callout-section" id="book">
-            <div class="container">
-                <h2 class="section-title">Ready to book?</h2>
+        <div class="booking-callout-section">
+            <!-- Ready to book: the ITAD process box (the same on every page, styled in css/styles.css) -->
+            <section class="book-cta" id="book">
+                <h2 class="book-cta-title">Ready to book?</h2>
 
                 <div class="cta-banner">
-                    <h2>Our  ITAD Process is simple!</h2>
+                    <h2>Our ITAD Process is simple!</h2>
                     <p class="sub-heading">We make sustainable IT disposal simple for all businesses &amp; institutions.</p>
 
                     <div class="cta-grid">
@@ -468,13 +459,13 @@
 
                 <div class="share-bar">
                     <span>Share this:</span>
-                    <a href="#" title="Share on LinkedIn">in</a>
-                    <a href="#" style="background-color: #5B5FC7;" title="Share on Teams">T</a>
-                    <a href="#" style="background-color: #25D366;" title="Share on WhatsApp">WA</a>
-                    <a href="#" style="background-color: #6B7280;" title="Copy Link">&#128279;</a>
+                    <a href="#" data-share="linkedin" title="Share on LinkedIn">in</a>
+                    <a href="#" data-share="teams" style="background-color: #5B5FC7;" title="Share on Teams">T</a>
+                    <a href="#" data-share="whatsapp" style="background-color: #25D366;" title="Share on WhatsApp">WA</a>
+                    <a href="#" data-share="copy" role="button" style="background-color: #6B7280;" title="Copy Link">&#128279;</a>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
 
         <!-- Frequently Asked Questions Section -->
         <section class="faq-section">

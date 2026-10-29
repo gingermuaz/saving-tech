@@ -10,9 +10,7 @@
     <!-- Styles used only on this page -->
     <style>
         :root {
-            --light-lime: #EEF8CD;
             --light-bg: #F8FAFC;
-            --section-grey: #F3F4F6;
         }
 
         body {
@@ -20,100 +18,11 @@
         }
 
         /* Buttons */
-        .btn-lime {
-            background-color: var(--lime-accent);
-            color: var(--dark-grey);
-            padding: 0.85rem 1.75rem;
-            border-radius: 0.25rem;
-            text-decoration: none;
-            font-weight: 800;
-            font-size: 1.1rem;
-            display: inline-block;
-            border: none;
-            cursor: pointer;
-            text-transform: uppercase;
-            transition: background 0.2s;
-            margin: 1.5rem 0;
-        }
-
-        .btn-lime:hover {
-            background-color: #C3E239;
-        }
-
-        .btn-light-lime {
-            background-color: var(--light-lime);
-            color: var(--dark-grey);
-            padding: 0.85rem 1.75rem;
-            border-radius: 0.25rem;
-            text-decoration: none;
-            font-weight: 800;
-            font-size: 1.1rem;
-            display: inline-block;
-            border: none;
-            cursor: pointer;
-            text-transform: uppercase;
-            transition: background 0.2s;
-            margin: 1.5rem 0;
-        }
-
-        .btn-light-lime:hover {
-            background-color: #E2F0B3;
-        }
-
         /* Layout Container */
         .container {
             max-width: 62.5rem;
             margin: 0 auto;
             padding: 4rem 2rem;
-        }
-
-        /* Hero Document Box Section */
-        .hero-docs {
-            background-color: var(--hero-blue);
-            padding: 4rem 2rem;
-            display: flex;
-            align-items: center;
-        }
-
-        .hero-content-box {
-            background-color: var(--white);
-            padding: 3.5rem;
-            max-width: 42.5rem;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-            margin-left: max(2rem, calc((100vw - 75rem) / 2));
-        }
-
-        .hero-content-box .breadcrumb {
-            font-size: 0.95rem;
-            color: #4B5563;
-            margin-bottom: 1rem;
-        }
-
-        .breadcrumb a {
-            color: var(--hero-blue);
-            text-decoration: underline;
-        }
-
-        .hero-content-box h1 {
-            font-size: clamp(2rem, 1.93vw + 1.566rem, 2.8rem);
-            color: var(--dark-grey);
-            margin-bottom: 1.2rem;
-            line-height: 1.1;
-            letter-spacing: -0.5px;
-        }
-
-        .hero-content-box p {
-            font-size: 1.15rem;
-            color: var(--text-grey);
-            margin-bottom: 1rem;
-        }
-
-        .hero-content-box .hero-note {
-            font-size: 0.9rem;
-            color: #6B7280;
-            margin-top: 0.5rem;
-            margin-bottom: 0;
-            line-height: 1.5;
         }
 
         /* Content Text Sections */
@@ -252,87 +161,8 @@
         }
 
         /* Bottom Feature Cards */
-        .bottom-features {
-            background-color: var(--section-grey);
-            padding: 4rem 2rem;
-        }
-
-        .bottom-features .container {
-            padding: 0;
-            margin: 0 auto;
-        }
-
-        .bottom-features h2 {
-            font-size: clamp(1.5rem, 1.69vw + 1.12rem, 2.2rem);
-            color: var(--dark-grey);
-            margin-bottom: 1rem;
-            letter-spacing: -0.5px;
-        }
-
-        .bottom-features > .container > p {
-            font-size: 1.15rem;
-            color: var(--text-grey);
-            margin-bottom: 2.5rem;
-        }
-
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-            margin-bottom: 2.5rem;
-        }
-
-        .feature-card {
-            background: var(--white);
-            padding: 2.5rem 2rem;
-            border-radius: 0.75rem;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-        .feature-icon {
-            width: 4.6875rem;
-            height: 4.6875rem;
-            margin-bottom: 1.5rem;
-            color: var(--icon-blue);
-        }
-
-        .feature-card h3 {
-            font-size: 1.25rem;
-            color: var(--dark-grey);
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-
-        .feature-card p {
-            font-size: 1.05rem;
-            color: var(--text-grey);
-        }
-
-        .action-buttons {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .action-buttons .btn-lime, .action-buttons .btn-light-lime {
-            margin: 0;
-        }
-
-        @media (max-width: 900px) {
-            .feature-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
 
         @media (max-width: 768px) {
-            .hero-content-box {
-                margin-left: 0;
-                padding: 2rem;
-            }
-
             .examples-wrapper {
                 padding: 2rem;
             }
@@ -345,31 +175,95 @@
                 flex-direction: column;
             }
 
-            .feature-grid {
-                grid-template-columns: 1fr;
-            }
+        }
+
+        /* Sustainable IT asset recycling (same section as on the About Us page) */
+        .bottom-features {
+            background-color: #F3F4F6;
+            padding: 4rem 2rem;
+        }
+
+        .bottom-features .container {
+            max-width: 75rem;
+            padding: 0 2rem;
+        }
+
+        .bottom-features h2 {
+            font-size: clamp(1.5rem, 1.69vw + 1.12rem, 2.2rem);
+            color: var(--dark-grey);
+            margin-bottom: 0.5rem;
+        }
+
+        .bottom-features .container > p {
+            font-size: 1.1rem;
+            color: #4B5563;
+            margin-bottom: 3rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(15.625rem, 100%), 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .feature-icon {
+            font-size: clamp(2.25rem, 1.81vw + 1.843rem, 3rem);
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .feature-card h3 {
+            font-size: 1.1rem;
+            color: var(--dark-grey);
+            margin-bottom: 0.8rem;
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+            color: #4B5563;
+        }
+
+        .action-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .btn-primary {
+            padding: 0.75rem 1.5rem;
+            text-transform: uppercase;
+        }
+
+        .btn-secondary {
+            background-color: #F3F4F6;
+            color: var(--dark-grey);
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.3125rem;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            border: 1px solid #D1D5DB;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: background 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background-color: #E5E7EB;
         }
 
         /* Phones */
         @media (max-width: 600px) {
-            .btn-lime {
-                padding: 0.85rem 1rem;
-            }
-
-            .btn-light-lime {
-                padding: 0.85rem 1rem;
-            }
-
             .container {
                 padding: 2.5rem 1rem;
-            }
-
-            .hero-docs {
-                padding: 2.5rem 1rem;
-            }
-
-            .hero-content-box {
-                padding: 2rem 1rem;
             }
 
             .examples-wrapper {
@@ -388,8 +282,12 @@
                 padding: 2.5rem 1rem;
             }
 
+            .bottom-features .container {
+                padding: 0 1rem;
+            }
+
             .feature-card {
-                padding: 2.5rem 1rem;
+                padding: 2rem 1rem;
             }
         }
     </style>
@@ -424,10 +322,10 @@
                     </div>
                 </div>
                 <div class="nav-item has-menu">
-                    <a href="Howitworks.html" class="nav-link">Data Destruction</a>
+                    <a href="DataDestruction.html" class="nav-link">Data Destruction</a>
                     <div class="nav-menu">
                         <a href="DataDestructionMethods.html">Secure data erasure</a>
-                        <a href="Articles.html">Data security articles</a>
+                        <a href="DataSecurityArticles.html">Data security articles</a>
                         <a href="Harddrivemediadestruction.html">Hard drive &amp; media destruction</a>
                         <a href="SecureDataDestruction.html">Secure data destruction</a>
                     </div>
@@ -445,15 +343,13 @@
 
     <main>
         <!-- Hero Section -->
-        <section class="hero-docs">
-            <div class="hero-content-box">
-                <p class="breadcrumb"><a href="index.html">Home</a> &rarr; <a href="AboutUs.html">Why us</a> &rarr; Examples of our certificates</p>
-                <h1>Certificates of destruction & compliance documentation</h1>
+        <section class="page-hero page-hero-pattern page-hero-pattern-cert">
+            <div class="page-hero-card">
+                <p class="breadcrumb"><a href="index.html">Home</a> &rarr; <a href="AboutUs.html">About us</a> &rarr; Certificates of destruction</p>
+                <h1>Certificates of destruction &amp; compliance documentation</h1>
                 <p>Every collection we carry out comes with a complete set of compliance documentation as standard. This is not optional paperwork – it is the audit trail that protects your business.</p>
-
-                <a href="Book.html#form-section" class="btn-lime">BOOK A FREE COLLECTION</a>
-
-                <p class="hero-note">Free collections when you recycle at least 10 laptops, PCs & servers (any combination). It's also <a href="FreeITDisposal.html" class="inline-link">free to recycle almost all waste IT with us</a>.</p>
+                <a href="Book.html#form-section" class="btn-hero btn-hero-green">Book a free collection</a>
+                <p class="hero-note">Free collections when you recycle at least 10 laptops, PCs &amp; servers (any combination). It's also <a href="FreeITDisposal.html">free to recycle almost all waste IT with us</a>.</p>
             </div>
         </section>
 
@@ -547,56 +443,34 @@
                 <p>Secure, carbon-negative IT recycling with free qualifying collections, data destruction and certificates always provided.</p>
 
                 <div class="feature-grid">
-                    <!-- Card 1: Collections -->
                     <div class="feature-card">
-                        <svg class="feature-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 9v6l10 5 10-5V9l-10 5-10-5z" opacity="0.9" />
-                            <rect x="9" y="4" width="6" height="10" rx="1" fill="#fff" />
-                            <circle cx="12" cy="7" r="1.5" fill="var(--icon-blue)" />
-                            <path d="M11 11l1 1 2-2" stroke="var(--icon-blue)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
+                        <div class="feature-icon">&#128230;</div>
                         <h3>Free qualifying collections</h3>
                         <p>Free collection for 10+ qualifying laptops, PCs or servers.</p>
                     </div>
 
-                    <!-- Card 2: Certificates -->
                     <div class="feature-card">
-                        <svg class="feature-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/>
-                            <circle cx="12" cy="12" r="4" fill="#fff" />
-                            <path d="M12 9.5c-1.38 0-2.5 1.12-2.5 2.5s1.12 2.5 2.5 2.5 2.5-1.12 2.5-2.5-1.12-2.5-2.5-2.5zm1 3.5l-1.5-1.5.7-.7.8.8 2-2 .7.7-2.7 2.7z" fill="var(--icon-blue)" />
-                            <path d="M10 15.5l-1.5 2.5L12 17l3.5 1-1.5-2.5z" fill="#fff" />
-                        </svg>
+                        <div class="feature-icon">&#9993;&#65039;</div>
                         <h3>Certificates provided</h3>
                         <p>You receive the documentation you need for your records.</p>
                     </div>
 
-                    <!-- Card 3: Secure Destruction -->
                     <div class="feature-card">
-                        <svg class="feature-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-1 6h2v3h1c.55 0 1 .45 1 1v4c0 .55-.45 1-1 1h-4c-.55 0-1-.45-1-1v-4c0-.55.45-1 1-1h1V7z" />
-                            <path d="M11 7h2v3h-2z" fill="#fff" />
-                            <rect x="9" y="10" width="6" height="6" fill="#fff" rx="0.5" />
-                        </svg>
+                        <div class="feature-icon">&#128274;</div>
                         <h3>Secure data destruction</h3>
                         <p>Data-bearing devices are securely erased, degaussed or destroyed where required.</p>
                     </div>
 
-                    <!-- Card 4: Carbon-negative -->
                     <div class="feature-card">
-                        <svg class="feature-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
-                            <path d="M14 20c0 0 4-1 5.5-4C18 16 16 18 14 20z" fill="#fff"/>
-                            <path d="M15.5 21.5c0 0 5-1 6.5-5-2 1-4 3.5-6.5 5z" fill="#fff"/>
-                        </svg>
+                        <div class="feature-icon">&#127757;</div>
                         <h3>Carbon-negative recycling</h3>
-                        <p>Reuse-first processing, UK-based handling and twice the CO&sub2; offset.</p>
+                        <p>Reuse-first processing, UK-based handling and twice the CO2 offset.</p>
                     </div>
                 </div>
 
                 <div class="action-buttons">
-                    <a href="Book.html#form-section" class="btn-lime">BOOK A COLLECTION</a>
-                    <a href="Assetswecollectrecycle.html" class="btn-light-lime">WHAT WE COLLECT</a>
+                    <a href="Book.html#form-section" class="btn-primary">Book a Collection</a>
+                    <a href="Assetswecollectrecycle.html" class="btn-secondary">What We Collect</a>
                 </div>
             </div>
         </section>

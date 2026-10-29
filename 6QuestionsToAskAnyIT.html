@@ -11,10 +11,8 @@
     <style>
         :root {
             --cream-bg: #FCF9F0;
-            --dark-teal: #083C44;
             --card-yellow: #FEF9E7;
-            --lime-button: #C1E838;
-        }
+            }
 
         body {
             background-color: var(--cream-bg);
@@ -263,7 +261,7 @@
         }
 
         .btn-subscribe {
-            background-color: var(--lime-button);
+            background-color: var(--lime-accent);
             color: #0F172A;
             font-weight: 800;
             padding: 0.75rem 2rem;
@@ -278,21 +276,6 @@
 
         .btn-subscribe:hover {
             background-color: #a8cd2d;
-        }
-
-        /* CTA Section & ITAD Process Box */
-        #book {
-            max-width: 68.75rem;
-            margin: 3rem auto;
-            padding: 0 2rem;
-        }
-
-        .section-title {
-            font-size: clamp(1.75rem, 1.81vw + 1.343rem, 2.5rem);
-            color: var(--dark-grey);
-            margin-bottom: 1.5rem;
-            font-weight: 800;
-            letter-spacing: -0.5px;
         }
 
         .share-bar {
@@ -366,10 +349,6 @@
             .btn-subscribe {
                 padding: 0.75rem 1rem;
             }
-
-            #book {
-                padding: 0 1rem;
-            }
         }
     </style>
 </head>
@@ -403,10 +382,10 @@
                     </div>
                 </div>
                 <div class="nav-item has-menu">
-                    <a href="Howitworks.html" class="nav-link">Data Destruction</a>
+                    <a href="DataDestruction.html" class="nav-link">Data Destruction</a>
                     <div class="nav-menu">
                         <a href="DataDestructionMethods.html">Secure data erasure</a>
-                        <a href="Articles.html">Data security articles</a>
+                        <a href="DataSecurityArticles.html">Data security articles</a>
                         <a href="Harddrivemediadestruction.html">Hard drive &amp; media destruction</a>
                         <a href="SecureDataDestruction.html">Secure data destruction</a>
                     </div>
@@ -428,7 +407,7 @@
             <div class="hero-container">
                 <div class="hero-text-box">
                     <div class="breadcrumbs">
-                        <a href="index.html">Home</a> &rsaquo; <a href="Articles.html">Data Destruction</a> &rsaquo; <a href="Articles.html">Articles</a> &rsaquo; 6 questions to ask any IT recycling company before you book a collection
+                        <a href="index.html">Home</a> &rsaquo; <a href="DataSecurityArticles.html">Data Destruction</a> &rsaquo; <a href="DataSecurityArticles.html">Data Security Articles</a> &rsaquo; 6 questions to ask any IT recycling company before you book a collection
                     </div>
                     <h1>6 questions to ask any IT recycling company before you book a collection</h1>
                     <p class="hero-subtitle">Not all IT recycling companies operate to the same standard. These six questions will help you identify whether a provider can actually protect your business before you hand over your equipment.</p>
@@ -499,7 +478,7 @@
                 <h2>Question 3: what data destruction method do you use and can you evidence it?</h2>
                 <p>Look for companies promoting a named sanitisation standard – NCSC-approved methods are the benchmark for UK businesses – and confirmation that options for Certificates of Data Destruction can be issued per device, not just per collection. A blanket certificate covering a whole collection does not provide the audit trail some UK GDPR compliance requires. Factory resets, formatting and standard deletion are not secure data destruction. Data can often be recovered from devices that have not been properly sanitised using widely available tools.</p>
                 <div class="ztw-answer-box">
-                    <strong>Saving Tech Waste:</strong> We use NCSC-approved data sanitisation methods and issue a Certificate of Data Destruction per device if required, referencing the serial number and the sanitisation method applied. You can view <a href="Howitworks.html">how our secure data destruction works</a> and <a href="Documentscertificates.html">examples of our certificates</a> on our website before making any commitment.
+                    <strong>Saving Tech Waste:</strong> We use NCSC-approved data sanitisation methods and issue a Certificate of Data Destruction per device if required, referencing the serial number and the sanitisation method applied. You can view <a href="DataDestruction.html">how our secure data destruction works</a> and <a href="Documentscertificates.html">examples of our certificates</a> on our website before making any commitment.
                 </div>
             </section>
 
@@ -527,7 +506,7 @@
                 <h2>Question 6: are your staff background-checked and are vehicles tracked?</h2>
                 <p>Get confirmation that staff handling data-bearing devices have been through background checks, and that collection vehicles are tracked throughout the journey from your premises to the processing facility. The chain of custody must be maintained from the moment devices leave your building. A provider with unvetted staff or untracked vehicles cannot guarantee that chain of custody, and cannot evidence it if challenged.</p>
                 <div class="ztw-answer-box">
-                    <strong>Saving Tech Waste:</strong> All staff are background-checked. Collection vehicles are tracked throughout every journey, and chain of custody is maintained and documented from collection to processing. You can read more about <a href="Howitworks.html">how our process works</a> on our website.
+                    <strong>Saving Tech Waste:</strong> All staff are background-checked. Collection vehicles are tracked throughout every journey, and chain of custody is maintained and documented from collection to processing. You can read more about <a href="DataDestruction.html">how our process works</a> on our website.
                 </div>
             </section>
 
@@ -581,9 +560,9 @@
             </section>
         </article>
 
-        <!-- Sustainable IT asset recycling section -->
-        <section id="book">
-            <h2 class="section-title">Ready to book?</h2>
+        <!-- Ready to book: the ITAD process box (the same on every page, styled in css/styles.css) -->
+        <section class="book-cta" id="book">
+            <h2 class="book-cta-title">Ready to book?</h2>
 
             <div class="cta-banner">
                 <h2>Our ITAD Process is simple!</h2>
@@ -620,7 +599,7 @@
                             <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
                         </svg>
                         <h4>We handle the data</h4>
-                        <p>All <a href="SecureDataDestruction.html" class="inline-link">data is securely erased.</a> Devices that cannot be securely erased are <a href="DataDestructionMethods.html" class="inline-link">securely destroyed</a> and disposed of responsibly.</p>
+                        <p>All <a href="SecureDataDestruction.html" class="inline-link">data is securely erased.</a> Devices that cannot be securely erased are <a href="DataDestructionMethods.html" class="inline-link">securely destroyed </a> and disposed of responsibly.</p>
                     </div>
 
                     <!-- Card 4 -->
@@ -658,10 +637,10 @@
 
             <div class="share-bar">
                 <span>Share this:</span>
-                <a href="#" title="Share on LinkedIn">in</a>
-                <a href="#" style="background-color: #5B5FC7;" title="Share on Teams">T</a>
-                <a href="#" style="background-color: #25D366;" title="Share on WhatsApp">WA</a>
-                <a href="#" style="background-color: #6B7280;" title="Copy Link">&#128279;</a>
+                <a href="#" data-share="linkedin" title="Share on LinkedIn">in</a>
+                <a href="#" data-share="teams" style="background-color: #5B5FC7;" title="Share on Teams">T</a>
+                <a href="#" data-share="whatsapp" style="background-color: #25D366;" title="Share on WhatsApp">WA</a>
+                <a href="#" data-share="copy" role="button" style="background-color: #6B7280;" title="Copy Link">&#128279;</a>
             </div>
         </section>
     </main>

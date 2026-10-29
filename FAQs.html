@@ -29,70 +29,7 @@
             padding: 0 1.25rem;
         }
 
-        /* Hero Banner Section */
-        .hero-section {
-            background-color: #0d82c3;
-            background-image: radial-gradient(rgba(255, 255, 255, 0.2) 2px, transparent 2px);
-            background-size: 1.5rem 1.5rem;
-            padding: 3.125rem 0;
-        }
-
-        .hero-card {
-            background: #ffffff;
-            padding: 2.25rem 2.5rem;
-            border-radius: 0.25rem;
-            max-width: 30rem;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
-        }
-
-        .breadcrumbs {
-            font-size: 0.875rem;
-            color: #555555;
-            margin-bottom: 1rem;
-        }
-
-        .hero-title {
-            font-size: clamp(2rem, 1.51vw + 1.661rem, 2.625rem);
-            font-weight: 800;
-            line-height: 1.05;
-            margin-bottom: 1rem;
-            font-family: "Arial Black", Impact, sans-serif;
-            letter-spacing: -0.5px;
-        }
-
-        .hero-text {
-            font-size: 0.9375rem;
-            color: #333333;
-            margin-bottom: 1.5rem;
-        }
-
         /* Buttons */
-        .btn {
-            display: inline-block;
-            padding: 0.75rem 1.375rem;
-            font-size: 0.875rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            text-decoration: none;
-            border-radius: 2px;
-            cursor: pointer;
-            text-align: center;
-            letter-spacing: 0.5px;
-        }
-
-        .btn-green {
-            background-color: #c3f23a;
-            color: #000000;
-            border: none;
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            color: #000000;
-            border: 1px solid #000000;
-            padding: 0.625rem 1.125rem;
-        }
-
         .btn-lime {
             background-color: var(--lime-accent);
             color: var(--dark-grey);
@@ -111,10 +48,6 @@
 
         .btn-lime:hover {
             background-color: #C3E239;
-        }
-
-        .btn-phone {
-            margin: 1rem 0;
         }
 
         /* Content Layout */
@@ -169,21 +102,8 @@
             letter-spacing: -0.5px;
         }
 
-        /* Ready to Book Banner */
-        .why-us-section {
-            padding: 3.75rem 0;
-        }
-
         /* Phones */
         @media (max-width: 600px) {
-            .hero-section {
-                padding: 2rem 0;
-            }
-
-            .hero-card {
-                padding: 2.25rem 1.25rem;
-            }
-
             .btn-lime {
                 padding: 0.85rem 1rem;
             }
@@ -194,10 +114,6 @@
 
             .faq-card {
                 padding: 1.75rem 1rem;
-            }
-
-            .why-us-section {
-                padding: 2.25rem 0;
             }
         }
     </style>
@@ -232,10 +148,10 @@
                     </div>
                 </div>
                 <div class="nav-item has-menu">
-                    <a href="Howitworks.html" class="nav-link">Data Destruction</a>
+                    <a href="DataDestruction.html" class="nav-link">Data Destruction</a>
                     <div class="nav-menu">
                         <a href="DataDestructionMethods.html">Secure data erasure</a>
-                        <a href="Articles.html">Data security articles</a>
+                        <a href="DataSecurityArticles.html">Data security articles</a>
                         <a href="Harddrivemediadestruction.html">Hard drive &amp; media destruction</a>
                         <a href="SecureDataDestruction.html">Secure data destruction</a>
                     </div>
@@ -252,19 +168,13 @@
     </header>
 
     <!-- Hero Header -->
-    <section class="hero-section">
-      <div class="container">
-        <div class="hero-card">
-          <div class="breadcrumbs">
-            <a href="index.html">Home</a> &rarr; <a href="index.html#services">Our Services</a> &rarr; FAQs
-          </div>
-          <h1 class="hero-title">Frequently asked questions</h1>
-          <p class="hero-text">
-            Here are FAQs about <a href="#">our service</a> and about <a href="#">our charges</a>. If you can't find what you're looking for here, <a href="#">drop us an email</a>. We are here to help.
-          </p>
-          <a href="Book.html#form-section" class="btn btn-green">BOOK A COLLECTION</a>
+    <section class="page-hero page-hero-pattern page-hero-pattern-faq">
+        <div class="page-hero-card">
+            <p class="breadcrumb"><a href="index.html">Home</a> &rarr; <a href="index.html#services">Our Services</a> &rarr; FAQs</p>
+            <h1>Frequently asked questions</h1>
+            <p>Here are FAQs about <a href="#">our service</a> and about <a href="#">our charges</a>. If you can't find what you're looking for here, <a href="#">drop us an email</a>. We are here to help.</p>
+            <a href="Book.html#form-section" class="btn-hero btn-hero-green">Book a collection</a>
         </div>
-      </div>
     </section>
 
     <!-- Main Content Body -->
@@ -337,14 +247,12 @@
           <h3>What data-wiping methods and standards do you use?</h3>
           <p>We use NIST SP 800-88 Rev. 1 and follow British HMG IS5 alongside current UK <a href="https://www.ncsc.gov.uk/guidance/secure-sanitisation-storage-media" target="_blank" rel="noopener noreferrer">Government/NCSC</a> guidance for the secure sanitisation and disposal of data-bearing devices.</p>
         </div>
-
       </div>
     </main>
 
-    <!-- Bottom CTA Section -->
-    <section class="why-us-section" id="book">
-      <div class="container">
-        <h2 class="section-heading" style="margin-top: 0;">Ready to book?</h2>
+    <!-- Ready to book: the ITAD process box (the same on every page, styled in css/styles.css) -->
+    <section class="book-cta" id="book">
+        <h2 class="book-cta-title">Ready to book?</h2>
 
         <div class="cta-banner">
             <h2>Our ITAD Process is simple!</h2>
@@ -416,7 +324,6 @@
                 <a href="tel:07904010708" class="btn-phone">07904010708</a>
             </div>
         </div>
-      </div>
     </section>
 
     <!-- Site footer (identical on every page) -->

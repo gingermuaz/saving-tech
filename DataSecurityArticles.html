@@ -10,7 +10,6 @@
     <!-- Styles used only on this page -->
     <style>
         :root {
-            --articles-hero-bg: #0d4b56;
             --articles-card-bg: #fff9ed;
         }
 
@@ -19,45 +18,6 @@
         }
 
         /* Articles Page Header Banner Section */
-        .articles-hero {
-            background-color: var(--articles-hero-bg);
-            color: var(--white);
-            padding: 3rem 2rem;
-        }
-
-        .articles-hero-container {
-            max-width: 62.5rem;
-            margin: 0 auto;
-        }
-
-        .breadcrumb {
-            font-size: 0.9rem;
-            color: #cbd5e1;
-            margin-bottom: 0.75rem;
-        }
-
-        .breadcrumb a {
-            color: #ffffff;
-            text-decoration: none;
-        }
-
-        .breadcrumb a:hover {
-            text-decoration: underline;
-        }
-
-        .articles-hero h1 {
-            font-size: clamp(2rem, 1.93vw + 1.566rem, 2.8rem);
-            font-weight: 800;
-            color: #c0f035;
-            margin-bottom: 0.5rem;
-        }
-
-        .articles-hero p {
-            font-size: 1.05rem;
-            color: #e2e8f0;
-            margin-bottom: 1.5rem;
-        }
-
         .search-box {
             display: flex;
             gap: 0.5rem;
@@ -75,7 +35,7 @@
         }
 
         .search-box button {
-            background-color: #c0f035;
+            background-color: var(--lime-accent);
             border: none;
             border-radius: 0.375rem;
             width: 3rem;
@@ -87,7 +47,7 @@
         }
 
         .search-box button:hover {
-            background-color: #a8d62a;
+            background-color: #C3E239;
         }
 
         .search-box button svg {
@@ -173,17 +133,14 @@
                 height: 12.5rem;
             }
 
-            .articles-hero h1 {
-                font-size: 2.2rem;
-            }
+        }
+
+        .search-box input[type="text"] {
+            border: 1px solid #D1D5DB;
         }
 
         /* Phones */
         @media (max-width: 600px) {
-            .articles-hero {
-                padding: 2rem 1rem;
-            }
-
             .articles-section {
                 padding: 2rem 1rem 3rem 1rem;
             }
@@ -224,10 +181,10 @@
                     </div>
                 </div>
                 <div class="nav-item has-menu">
-                    <a href="Howitworks.html" class="nav-link">Data Destruction</a>
+                    <a href="DataDestruction.html" class="nav-link">Data Destruction</a>
                     <div class="nav-menu">
                         <a href="DataDestructionMethods.html">Secure data erasure</a>
-                        <a href="Articles.html">Data security articles</a>
+                        <a href="DataSecurityArticles.html">Data security articles</a>
                         <a href="Harddrivemediadestruction.html">Hard drive &amp; media destruction</a>
                         <a href="SecureDataDestruction.html">Secure data destruction</a>
                     </div>
@@ -245,16 +202,13 @@
 
     <main>
         <!-- Hero / Search Section -->
-        <section class="articles-hero">
-            <div class="articles-hero-container">
-                <nav class="breadcrumb">
-                    <a href="index.html">Home</a> &rarr; <a href="Howitworks.html">Data Destruction</a> &rarr; Data Security
-                </nav>
-                <h1>Data Security</h1>
+        <section class="page-hero page-hero-pattern page-hero-pattern-security">
+            <div class="page-hero-card">
+                <p class="breadcrumb"><a href="index.html">Home</a> &rarr; <a href="DataDestruction.html">Data Destruction</a> &rarr; Data Security Articles</p>
+                <h1>Data Security Articles</h1>
                 <p>Everything you need to know about data security and protecting sensitive information when recycling old tech.</p>
-
                 <form class="search-box" action="#" method="GET">
-                    <input type="text" placeholder="Search articles">
+                    <input type="text" placeholder="Search articles" aria-label="Search articles">
                     <button type="submit" aria-label="Search">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                             <circle cx="11" cy="11" r="8"></circle>

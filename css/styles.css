@@ -25,7 +25,7 @@
     --hero-blue: #2A8BCA;
     --dark-blue: #0B4A6F;
     --icon-blue: #1085C5;
-    --dark-teal: #0d4b56;
+    --dark-teal: #084C53;
     --dark-grey: #1F2937;
     --text-grey: #374151;
     --light-bg: #F3F4F6;
@@ -287,27 +287,144 @@ a.inline-link:hover {
     color: #1a6291;
 }
 
-.btn-phone {
-    background-color: #E2E8F0;
-    color: var(--dark-grey);
-    padding: 0.85rem 1.75rem;
-    border-radius: 0.25rem;
-    text-decoration: none;
-    font-weight: 800;
-    font-size: 1.1rem;
-    display: inline-block;
-    border: none;
-    cursor: pointer;
-    transition: background 0.2s;
-}
-
-.btn-phone:hover {
-    background-color: #CBD5E1;
-}
-
 
 /* 5. Shared components
    ========================================================================== */
+
+/* Page hero for pages without a hero photo: a green band with a white card.
+   Every page that uses it gets the same size, layout and colours. */
+.page-hero {
+    display: flex;
+    align-items: center;
+    min-height: 46.5rem;
+    padding: 4rem 2rem;
+    background-color: var(--primary-green);
+}
+
+.page-hero-card {
+    width: 100%;
+    max-width: 40.625rem;
+    margin-left: max(0rem, calc((100vw - 75rem) / 2));
+    padding: 3rem;
+    background-color: var(--white);
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+.page-hero-card .breadcrumb {
+    margin-bottom: 1rem;
+    color: #4B5563;
+    font-size: 0.9rem;
+}
+
+.page-hero-card a {
+    color: var(--primary-green);
+    text-decoration: underline;
+}
+
+.page-hero-card h1 {
+    margin-bottom: 1rem;
+    color: var(--dark-grey);
+    font-size: clamp(1.75rem, 1.81vw + 1.343rem, 2.5rem);
+    font-weight: 800;
+    line-height: 1.15;
+}
+
+.page-hero-card p {
+    margin-bottom: 1.5rem;
+    color: var(--text-grey);
+    font-size: 1.1rem;
+}
+
+.page-hero-card .hero-note {
+    margin: 1.5rem 0 0;
+    padding-top: 1rem;
+    border-top: 1px solid #E5E7EB;
+    color: #6B7280;
+    font-size: 0.85rem;
+}
+
+.page-hero-card .btn-hero {
+    display: inline-block;
+    padding: 0.85rem 1.75rem;
+    border-radius: 0.25rem;
+    background-color: var(--lime-accent);
+    color: var(--dark-teal);
+    font-size: 1rem;
+    font-weight: 800;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background-color 0.2s;
+}
+
+.page-hero-card .btn-hero:hover {
+    background-color: #C3E239;
+}
+
+/* Optional extras for the page hero:
+   - "page-hero-pattern" on the section adds a subtle circuit-board pattern
+     over a green-to-dark-teal gradient
+   - add "page-hero-pattern-hex" as well for a honeycomb pattern instead,
+     or "page-hero-pattern-form" for forms, checklists and pens,
+     or "page-hero-pattern-data" for data destruction (drives, shredders, locks),
+     or "page-hero-pattern-hardware" for IT hardware (monitors, laptops, printers),
+     or "page-hero-pattern-faq" for FAQs (question and answer bubbles, an FAQ sign),
+     or "page-hero-pattern-cert" for certificates (certificate, diploma, seal, stamp),
+     or "page-hero-pattern-security" for data security articles (articles, keys, fingerprints)
+   - "btn-hero-green" on the button makes it primary green instead of lime */
+.page-hero-pattern {
+    --hero-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='0.13' stroke-width='1.5'%3E%3Cpath d='M0 30h28l14 14h24'/%3E%3Ccircle cx='69' cy='44' r='3'/%3E%3Cpath d='M120 30h-18l-12-12V0'/%3E%3Cpath d='M90 120v-16l-10-10H62'/%3E%3Ccircle cx='59' cy='94' r='3'/%3E%3Cpath d='M20 120V98l14-14h6'/%3E%3Ccircle cx='43' cy='84' r='3'/%3E%3Cpath d='M20 0v12'/%3E%3Ccircle cx='20' cy='15' r='3'/%3E%3Cpath d='M120 66h-22l-8 8v8'/%3E%3Ccircle cx='90' cy='85' r='3'/%3E%3Cpath d='M0 66h10'/%3E%3Ccircle cx='13' cy='66' r='3'/%3E%3C/g%3E%3Cg fill='%23D4F34A' fill-opacity='0.22'%3E%3Ccircle cx='69' cy='44' r='1.5'/%3E%3Ccircle cx='43' cy='84' r='1.5'/%3E%3Ccircle cx='90' cy='85' r='1.5'/%3E%3C/g%3E%3C/svg%3E");
+    --hero-pattern-size: 10rem 10rem;
+    background-image:
+        var(--hero-pattern),
+        radial-gradient(circle at 85% 15%, rgba(212, 243, 74, 0.18), transparent 40%),
+        linear-gradient(135deg, var(--primary-green) 0%, var(--primary-green) 40%, var(--dark-teal) 100%);
+    background-size: var(--hero-pattern-size), auto, auto;
+}
+
+.page-hero-pattern-hex {
+    --hero-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100' viewBox='0 0 56 100'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='0.12' stroke-width='1.2'%3E%3Cpath d='M28 66L0 50V16L28 0l28 16v34L28 66v34'/%3E%3Cpath d='M28 0v34L0 50v34l28 16 28-16V50L28 34'/%3E%3C/g%3E%3Cg fill='%23D4F34A' fill-opacity='0.35'%3E%3Ccircle cx='28' cy='34' r='1.6'/%3E%3Ccircle cx='0' cy='84' r='1.6'/%3E%3Ccircle cx='56' cy='84' r='1.6'/%3E%3C/g%3E%3C/svg%3E");
+    --hero-pattern-size: 4.375rem 7.8125rem;
+}
+
+.page-hero-pattern-form {
+    --hero-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='0.12' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 16h26l10 10v38H18z'/%3E%3Cpath d='M44 16v10h10'/%3E%3Cpath d='M25 34h20M25 42h22M25 50h14'/%3E%3Cpath d='M100 24h34v42h-34z'/%3E%3Cpath d='M110 20h14v8h-14z'/%3E%3Cpath d='M107 40h20M107 48h20M107 56h12'/%3E%3Cpath d='M20 98h9v9h-9zM20 116h9v9h-9z'/%3E%3Cpath d='M36 103h22M36 121h16'/%3E%3Cpath d='M98 142l4-11 34-34 7 7-34 34z'/%3E%3Cpath d='M131 102l7 7'/%3E%3Cpath d='M102 131l7 7'/%3E%3Cpath d='M62 146c6-8 10 4 15-3s8 4 13-2'/%3E%3C/g%3E%3Cg fill='none' stroke='%23D4F34A' stroke-opacity='0.4' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21.5 102.5l2.5 2.5 4.5-5.5'/%3E%3Cpath d='M25 58l2.5 2.5 4.5-5.5'/%3E%3C/g%3E%3C/svg%3E");
+    --hero-pattern-size: 12rem 12rem;
+}
+
+.page-hero-pattern-hardware {
+    --hero-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='0.12' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='16' y='14' width='46' height='31' rx='2'/%3E%3Cpath d='M35 45v7M27 52h24'/%3E%3Crect x='106' y='18' width='38' height='25' rx='2'/%3E%3Cpath d='M100 47h50l-4 5h-42z'/%3E%3Cpath d='M28 112v-10h26v10'/%3E%3Crect x='20' y='112' width='42' height='20' rx='3'/%3E%3Cpath d='M28 128v14h26v-14'/%3E%3Cpath d='M33 135h16M33 139h10'/%3E%3Crect x='86' y='100' width='18' height='32' rx='3'/%3E%3Cpath d='M92 104h6'/%3E%3Crect x='130' y='98' width='24' height='42' rx='2'/%3E%3Cpath d='M135 106h14M135 112h14'/%3E%3Ccircle cx='142' cy='130' r='3'/%3E%3C/g%3E%3Cg fill='%23D4F34A' fill-opacity='0.4'%3E%3Ccircle cx='57' cy='41' r='1.3'/%3E%3Ccircle cx='56' cy='117' r='1.5'/%3E%3Ccircle cx='95' cy='128' r='1.4'/%3E%3Ccircle cx='149' cy='120' r='1.3'/%3E%3C/g%3E%3C/svg%3E");
+    --hero-pattern-size: 12rem 12rem;
+}
+
+.page-hero-pattern-faq {
+    --hero-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='0.12' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 14h34a7 7 0 0 1 7 7v20a7 7 0 0 1-7 7h-21l-10 9v-9h-3a7 7 0 0 1-7-7v-20a7 7 0 0 1 7-7z'/%3E%3Cpath d='M33.5 26a4.5 4.5 0 1 1 6.5 4c-1.6 0.8 -2 1.8 -2 3.5v1.5'/%3E%3Cpath d='M126.8 23.6a7.2 7.2 0 1 1 10.4 6.4c-2.56 1.28 -3.2 2.88 -3.2 5.6v2.4'/%3E%3Cpath d='M30 104L44 92L58 104'/%3E%3Crect x='16' y='104' width='56' height='26' rx='4'/%3E%3Cpath d='M25 124V110h9M25 117h7'/%3E%3Cpath d='M38 124l5-14 5 14M40 119h6'/%3E%3Cellipse cx='58' cy='117' rx='6' ry='7'/%3E%3Cpath d='M60 120l4 5'/%3E%3Cpath d='M107 100h42a7 7 0 0 1 7 7v18a7 7 0 0 1-7 7h-3v9l-10-9h-29a7 7 0 0 1-7-7v-18a7 7 0 0 1 7-7z'/%3E%3Cpath d='M110 110h36M110 116h36M110 122h24'/%3E%3Ccircle cx='92' cy='68' r='11'/%3E%3Cpath d='M92 67v8'/%3E%3C/g%3E%3Cg fill='%23D4F34A' fill-opacity='0.4'%3E%3Ccircle cx='38' cy='38.5' r='1.2'/%3E%3Ccircle cx='134' cy='43.6' r='1.92'/%3E%3Ccircle cx='44' cy='90' r='1.5'/%3E%3Ccircle cx='92' cy='62.5' r='1.3'/%3E%3C/g%3E%3C/svg%3E");
+    --hero-pattern-size: 12rem 12rem;
+}
+
+.page-hero-pattern-cert {
+    --hero-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='0.12' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='12' y='14' width='64' height='46' rx='2'/%3E%3Crect x='16' y='18' width='56' height='38' rx='1'/%3E%3Cpath d='M30 26h28M23 33h42M23 39h28M23 50h16'/%3E%3Ccircle cx='62' cy='44' r='5'/%3E%3Cpath d='M59.5 48.5l-2 6.5M64.5 48.5l2 6.5'/%3E%3Crect x='106' y='24' width='54' height='13' rx='6.5'/%3E%3Cellipse cx='154' cy='30.5' rx='3' ry='6.5'/%3E%3Cpath d='M130 24v13M135 24v13M130 37l-4 9M135 37l4 9'/%3E%3Ccircle cx='92' cy='70' r='8'/%3E%3Cpath d='M88 77l-3 10 3.5-2 1.5 3.5 1.5-10M96 77l3 10-3.5-2-1.5 3.5-1.5-10'/%3E%3Ccircle cx='40' cy='118' r='16'/%3E%3Ccircle cx='40' cy='118' r='12' stroke-dasharray='2 3'/%3E%3Crect x='100' y='100' width='32' height='40' rx='2'/%3E%3Cpath d='M106 100v-6h32v40h-6'/%3E%3Cpath d='M106 110h20M106 117h20M106 124h13'/%3E%3Cpath d='M107 132l2.5 2.5 4.5-5'/%3E%3C/g%3E%3Cg fill='none' stroke='%23D4F34A' stroke-opacity='0.4' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M34 118l4.5 4.5 8-9'/%3E%3C/g%3E%3Cg fill='%23D4F34A' fill-opacity='0.4'%3E%3Ccircle cx='62' cy='44' r='2.2'/%3E%3Ccircle cx='132.5' cy='37.5' r='1.5'/%3E%3Ccircle cx='92' cy='70' r='3'/%3E%3C/g%3E%3C/svg%3E");
+    --hero-pattern-size: 12rem 12rem;
+}
+
+.page-hero-pattern-security {
+    --hero-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='0.12' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='14' y='12' width='46' height='54' rx='2'/%3E%3Cpath d='M20 19h26'/%3E%3Crect x='20' y='25' width='34' height='15' rx='1'/%3E%3Cpath d='M21 39l9-8 6 5 5-4 12 7'/%3E%3Cpath d='M20 47h34M20 53h34M20 59h22'/%3E%3Ccircle cx='120' cy='32' r='9'/%3E%3Cpath d='M129 32h28M151 32v7M145 32v5'/%3E%3Ccircle cx='84' cy='76' r='9'/%3E%3Cpath d='M90.5 82.5l8 8'/%3E%3Cpath d='M35.18 124.72A3 3.75 0 0 1 40.82 124.72M32.37 130.06A6.5 8.12 0 1 1 42.98 131.22M31.57 135.58A10 12.5 0 1 1 47.06 131.28M31.66 140.9A13.5 16.88 0 1 1 44.75 140.61M23.28 136.62A17 21.25 0 1 1 54.83 128.96'/%3E%3Crect x='108' y='104' width='46' height='30' rx='2'/%3E%3Cpath d='M102 138h58l-4 5h-50z'/%3E%3Crect x='115' y='115' width='32' height='8' rx='2'/%3E%3C/g%3E%3Cg fill='%23D4F34A' fill-opacity='0.4'%3E%3Ccircle cx='47.5' cy='30' r='1.6'/%3E%3Ccircle cx='120' cy='32' r='2.2'/%3E%3Ccircle cx='121' cy='119' r='1.2'/%3E%3Ccircle cx='126' cy='119' r='1.2'/%3E%3Ccircle cx='131' cy='119' r='1.2'/%3E%3Ccircle cx='136' cy='119' r='1.2'/%3E%3C/g%3E%3C/svg%3E");
+    --hero-pattern-size: 12rem 12rem;
+}
+
+.page-hero-pattern-data {
+    --hero-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='0.12' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='16' y='14' width='38' height='50' rx='4'/%3E%3Ccircle cx='35' cy='34' r='12'/%3E%3Ccircle cx='35' cy='34' r='2.5'/%3E%3Cpath d='M48 58l-9-20'/%3E%3Ccircle cx='21' cy='59' r='1'/%3E%3Ccircle cx='49' cy='19' r='1'/%3E%3Cpath d='M104 30h44v14h-44z'/%3E%3Cpath d='M110 37h32'/%3E%3Cpath d='M114 30v-12h24v12'/%3E%3Cpath d='M110 48v14M116 48v20M122 48v11M128 48v18M134 48v13M140 48v16'/%3E%3Crect x='22' y='112' width='30' height='24' rx='3'/%3E%3Cpath d='M28 112v-7a9 9 0 0 1 18 0v7'/%3E%3Cpath d='M84 104v12M84 104l-3 3'/%3E%3Cellipse cx='94' cy='110' rx='3.5' ry='6'/%3E%3Cpath d='M104 104v12M104 104l-3 3'/%3E%3Cpath d='M114 104v12M114 104l-3 3'/%3E%3Cellipse cx='124' cy='110' rx='3.5' ry='6'/%3E%3Cpath d='M128 140l14-6 14 6v10c0 9-6 15-14 18-8-3-14-9-14-18z'/%3E%3C/g%3E%3Cg fill='none' stroke='%23D4F34A' stroke-opacity='0.4' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M136 151l4 4 8-9'/%3E%3Cpath d='M37 122v5'/%3E%3Ccircle cx='37' cy='121' r='1.5'/%3E%3C/g%3E%3C/svg%3E");
+    --hero-pattern-size: 12rem 12rem;
+}
+
+.page-hero-card .btn-hero-green {
+    background-color: var(--primary-green);
+    color: var(--white);
+}
+
+.page-hero-card .btn-hero-green:hover {
+    background-color: var(--primary-green-hover);
+}
 
 .article-hero {
     background-color: var(--dark-teal);
@@ -319,36 +436,71 @@ a.inline-link:hover {
     text-decoration: underline;
 }
 
-.cta-banner {
+/* "Ready to book?" section with the ITAD process box.
+   It is identical on every page that has it: the markup is the same and it
+   is styled only here, so pages must not restyle it. It sits at the top level
+   of the page (never inside a narrower content column), so it is always the
+   same width. Its colours are pinned on the section, so a page that tweaks
+   its own palette can't change the box. */
+.book-cta {
+    --dark-blue: #0B4A6F;
+    --icon-blue: #1085C5;
+    --hero-blue: #2A8BCA;
+    --lime-accent: #D4F34A;
+    --dark-grey: #1F2937;
+    --white: #FFFFFF;
+    max-width: 75rem;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    color: var(--dark-grey);
+    line-height: 1.6;
+    letter-spacing: normal;
+    text-align: start;
+}
+
+.book-cta,
+.book-cta * {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.book-cta .book-cta-title {
+    font-size: clamp(1.5rem, 1.69vw + 1.12rem, 2.2rem);
+    font-weight: 700;
+    line-height: 1.6;
+    color: var(--dark-grey);
+    margin: 0 0 1.5rem;
+}
+
+.book-cta .cta-banner {
     background-color: var(--dark-blue);
     border-radius: 0.75rem;
     padding: 3.5rem 2rem;
     color: var(--white);
-    margin-bottom: 3rem;
+    margin: 0 0 3rem;
 }
 
-.cta-banner h2 {
+.book-cta .cta-banner h2 {
     font-size: clamp(1.5rem, 1.69vw + 1.12rem, 2.2rem);
     color: var(--lime-accent);
-    margin-bottom: 0.5rem;
+    margin: 0 0 0.5rem;
     font-weight: 800;
     line-height: 1.2;
 }
 
-.cta-banner p.sub-heading {
+.book-cta .cta-banner .sub-heading {
     font-size: 1.15rem;
     color: #E2E8F0;
-    margin-bottom: 2.5rem;
+    margin: 0 0 2.5rem;
 }
 
-.cta-grid {
+.book-cta .cta-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 1rem;
-    margin-bottom: 2.5rem;
+    margin: 0 0 2.5rem;
 }
 
-.cta-card {
+.book-cta .cta-card {
     background-color: var(--white);
     color: var(--dark-grey);
     border-radius: 0.5rem;
@@ -358,36 +510,103 @@ a.inline-link:hover {
     align-items: flex-start;
 }
 
-.cta-card-icon {
+.book-cta .cta-card-icon {
     width: 2.5rem;
     height: 2.5rem;
-    margin-bottom: 0.85rem;
+    margin: 0 0 0.85rem;
     color: var(--icon-blue);
 }
 
-.cta-card h4 {
+.book-cta .cta-card h4 {
     font-size: 1.05rem;
-    margin-bottom: 0.5rem;
+    margin: 0 0 0.5rem;
     line-height: 1.2;
     font-weight: 700;
 }
 
-.cta-card p {
+.book-cta .cta-card p {
     font-size: 0.88rem;
     color: #4B5563;
     line-height: 1.4;
+    margin: 0;
 }
 
-.cta-footer-text {
+.book-cta a.inline-link {
+    color: var(--hero-blue);
+    font-weight: inherit;
+    text-decoration: underline;
+}
+
+.book-cta a.inline-link:hover {
+    color: #1A6291;
+}
+
+.book-cta .cta-footer-text {
     font-size: 1.05rem;
     color: #E2E8F0;
-    margin-bottom: 1.5rem;
+    margin: 0 0 1.5rem;
 }
 
-.cta-actions {
+.book-cta .cta-actions {
     display: flex;
     gap: 1rem;
     align-items: center;
+}
+
+.book-cta .cta-actions a {
+    display: inline-block;
+    margin: 1rem 0;
+    padding: 0.85rem 1.75rem;
+    border: none;
+    border-radius: 0.25rem;
+    color: var(--dark-grey);
+    font-size: 1.1rem;
+    font-weight: 800;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.book-cta .cta-actions .btn-lime {
+    background-color: var(--lime-accent);
+    text-transform: uppercase;
+}
+
+.book-cta .cta-actions .btn-lime:hover {
+    background-color: #C3E239;
+    opacity: 1;
+}
+
+.book-cta .cta-actions .btn-phone {
+    background-color: #E2E8F0;
+}
+
+.book-cta .cta-actions .btn-phone:hover {
+    background-color: #CBD5E1;
+}
+
+
+/* "Link copied" message from the share bar's copy-link button (js/main.js) */
+.share-toast {
+    position: fixed;
+    left: 50%;
+    bottom: 2rem;
+    z-index: 1000;
+    transform: translateX(-50%);
+    background-color: var(--lime-accent);
+    color: var(--dark-grey);
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+}
+
+.share-toast.is-visible {
+    opacity: 1;
 }
 
 
@@ -461,17 +680,17 @@ a.inline-link:hover {
 
 /* Shared components on smaller screens */
 @media (max-width: 1200px) {
-    .cta-grid {
+    .book-cta .cta-grid {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
 @media (max-width: 768px) {
-    .cta-grid {
+    .book-cta .cta-grid {
         grid-template-columns: 1fr;
     }
 
-    .cta-actions {
+    .book-cta .cta-actions {
         flex-direction: column;
         align-items: stretch;
     }
@@ -483,17 +702,40 @@ a.inline-link:hover {
    Large screens: every size on the site is in rem, so raising the root font
    size scales the whole layout up evenly, like zooming in. */
 
+/* Page hero: height follows the content on tablets and phones */
+@media (max-width: 768px) {
+    .page-hero {
+        min-height: 0;
+    }
+}
+
 /* Tablets: two process cards per row */
 @media (min-width: 481px) and (max-width: 768px) {
-    .cta-grid {
+    .book-cta .cta-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 /* Phones */
 @media (max-width: 600px) {
-    .cta-banner {
+    .page-hero {
+        padding: 2.5rem 1rem;
+    }
+
+    .page-hero-card {
+        padding: 2rem 1.25rem;
+    }
+
+    .book-cta {
+        padding: 2rem 1rem;
+    }
+
+    .book-cta .cta-banner {
         padding: 2.25rem 1.25rem;
+    }
+
+    .book-cta .cta-actions .btn-lime {
+        padding: 0.85rem 1rem;
     }
 
     .site-footer {

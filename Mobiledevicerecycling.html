@@ -178,22 +178,6 @@
             line-height: 1.5;
         }
 
-        /* --- Ready to Book / CTA Banner --- */
-        .section-title {
-            font-size: clamp(1.5rem, 1.69vw + 1.12rem, 2.2rem);
-            color: var(--dark-grey);
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-        }
-
-        .cta-banner {
-            background-color: var(--dark-blue);
-            border-radius: 0.75rem;
-            padding: 3.5rem 2rem;
-            color: var(--white);
-            margin: 4rem 0;
-        }
-
         /* --- FAQ Section --- */
         .faq-section {
             margin: 4rem 0;
@@ -242,7 +226,8 @@
             gap: 0.5rem;
         }
 
-        .share-icons span {
+        .share-icons a {
+            text-decoration: none;
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -285,6 +270,15 @@
             }
         }
 
+        /* The "Ready to book?" section sits between padded wrappers: no double spacing */
+        .container:has(+ .book-cta) {
+            padding-bottom: 0;
+        }
+
+        .book-cta + .container {
+            padding-top: 0;
+        }
+
         /* Phones */
         @media (max-width: 600px) {
             .btn-lime {
@@ -308,10 +302,6 @@
             }
 
             .steps-box {
-                padding: 2rem 1rem;
-            }
-
-            .cta-banner {
                 padding: 2rem 1rem;
             }
 
@@ -351,10 +341,10 @@
                     </div>
                 </div>
                 <div class="nav-item has-menu">
-                    <a href="Howitworks.html" class="nav-link">Data Destruction</a>
+                    <a href="DataDestruction.html" class="nav-link">Data Destruction</a>
                     <div class="nav-menu">
                         <a href="DataDestructionMethods.html">Secure data erasure</a>
-                        <a href="Articles.html">Data security articles</a>
+                        <a href="DataSecurityArticles.html">Data security articles</a>
                         <a href="Harddrivemediadestruction.html">Hard drive &amp; media destruction</a>
                         <a href="SecureDataDestruction.html">Secure data destruction</a>
                     </div>
@@ -430,83 +420,85 @@
                     </div>
                 </div>
             </section>
+        </div>
 
-            <!-- Ready to Book CTA Section -->
-            <section id="book">
-                <h2 class="section-title">Ready to book?</h2>
+        <!-- Ready to book: the ITAD process box (the same on every page, styled in css/styles.css) -->
+        <section class="book-cta" id="book">
+            <h2 class="book-cta-title">Ready to book?</h2>
 
-                <div class="cta-banner">
-                    <h2>Our ITAD Process is simple!</h2>
-                    <p class="sub-heading">We make sustainable IT disposal simple for all businesses &amp; institutions.</p>
+            <div class="cta-banner">
+                <h2>Our ITAD Process is simple!</h2>
+                <p class="sub-heading">We make sustainable IT disposal simple for all businesses &amp; institutions.</p>
 
-                    <div class="cta-grid">
-                        <!-- Card 1 -->
-                        <div class="cta-card">
-                            <svg class="cta-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="10"/>
-                                <path d="M2 12h20"/>
-                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-                            </svg>
-                            <h4>Book</h4>
-                            <p>Fill in the form and book a collection date. Free qualifying collections for 10+ devices.</p>
-                        </div>
-
-                        <!-- Card 2 -->
-                        <div class="cta-card">
-                            <svg class="cta-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M1 3h15v13H1z"/>
-                                <path d="M16 8h4l3 3v5h-7V8z"/>
-                                <circle cx="5.5" cy="18.5" r="2.5"/>
-                                <circle cx="18.5" cy="18.5" r="2.5"/>
-                            </svg>
-                            <h4>Collect</h4>
-                            <p>We securely collect your IT equipment directly from your premises, ensuring every device is handled safely and transported.</p>
-                        </div>
-
-                        <!-- Card 3 -->
-                        <div class="cta-card">
-                            <svg class="cta-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-                                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-                            </svg>
-                            <h4>We handle the data</h4>
-                            <p>All <a href="SecureDataDestruction.html" class="inline-link">data is securely erased.</a> Devices that cannot be securely erased are <a href="DataDestructionMethods.html" class="inline-link">securely destroyed </a> and disposed of responsibly.</p>
-                        </div>
-
-                        <!-- Card 4 -->
-                        <div class="cta-card">
-                            <svg class="cta-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M7 19H3v-4"/>
-                                <path d="M21 12a9 9 0 0 0-15-6.7L3 9"/>
-                                <path d="M3 5v4h4"/>
-                                <path d="M17 5h4v4"/>
-                                <path d="M3 12a9 9 0 0 0 15 6.7l3-3.7"/>
-                                <path d="M21 19v-4h-4"/>
-                            </svg>
-                            <h4>Recycle &amp; Reuse</h4>
-                            <p>Suitable equipment is refurbished, reused or responsibly recycled.</p>
-                        </div>
-
-                        <!-- Card 5 -->
-                        <div class="cta-card">
-                            <svg class="cta-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                                <polyline points="22 4 12 14.01 9 11.01"/>
-                            </svg>
-                            <h4>Certifications provided</h4>
-                            <p>We provide <a href="Documentscertificates.html" class="inline-link">all the certificates and records</a> for your compliance.</p>
-                        </div>
+                <div class="cta-grid">
+                    <!-- Card 1 -->
+                    <div class="cta-card">
+                        <svg class="cta-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M2 12h20"/>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                        </svg>
+                        <h4>Book</h4>
+                        <p>Fill in the form and book a collection date. Free qualifying collections for 10+ devices.</p>
                     </div>
 
-                    <p class="cta-footer-text">Book your collection today and let us take care of compliance, security, and sustainability with transparent, certified recycling:</p>
+                    <!-- Card 2 -->
+                    <div class="cta-card">
+                        <svg class="cta-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M1 3h15v13H1z"/>
+                            <path d="M16 8h4l3 3v5h-7V8z"/>
+                            <circle cx="5.5" cy="18.5" r="2.5"/>
+                            <circle cx="18.5" cy="18.5" r="2.5"/>
+                        </svg>
+                        <h4>Collect</h4>
+                        <p>We securely collect your IT equipment directly from your premises, ensuring every device is handled safely and transported.</p>
+                    </div>
 
-                    <div class="cta-actions">
-                        <a href="Book.html#form-section" class="btn-lime">BOOK A COLLECTION</a>
-                        <a href="tel:07904010708" class="btn-phone">07904010708</a>
+                    <!-- Card 3 -->
+                    <div class="cta-card">
+                        <svg class="cta-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                        </svg>
+                        <h4>We handle the data</h4>
+                        <p>All <a href="SecureDataDestruction.html" class="inline-link">data is securely erased.</a> Devices that cannot be securely erased are <a href="DataDestructionMethods.html" class="inline-link">securely destroyed </a> and disposed of responsibly.</p>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="cta-card">
+                        <svg class="cta-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M7 19H3v-4"/>
+                            <path d="M21 12a9 9 0 0 0-15-6.7L3 9"/>
+                            <path d="M3 5v4h4"/>
+                            <path d="M17 5h4v4"/>
+                            <path d="M3 12a9 9 0 0 0 15 6.7l3-3.7"/>
+                            <path d="M21 19v-4h-4"/>
+                        </svg>
+                        <h4>Recycle & Reuse</h4>
+                        <p>Suitable equipment is refurbished, reused or responsibly recycled.</p>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="cta-card">
+                        <svg class="cta-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <polyline points="22 4 12 14.01 9 11.01"/>
+                        </svg>
+                        <h4>Certifications provided</h4>
+                        <p>We provide <a href="Documentscertificates.html" class="inline-link">all the certificates and records</a> for your compliance.</p>
                     </div>
                 </div>
-            </section>
 
+                <p class="cta-footer-text">Book your collection today and let us take care of compliance, security, and sustainability with transparent, certified recycling:</p>
+
+                <div class="cta-actions">
+                    <a href="Book.html#form-section" class="btn-lime">BOOK A COLLECTION</a>
+                    <a href="tel:07904010708" class="btn-phone">07904010708</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
             <!-- FAQ Section -->
             <section class="faq-section">
                 <h2 style="font-size: clamp(1.5rem, 1.69vw + 1.12rem, 2.2rem); color: var(--dark-grey); font-weight: 800;">Frequently asked questions</h2>
@@ -553,10 +545,10 @@
             <div class="share-section">
                 <span>Share this:</span>
                 <div class="share-icons">
-                    <span class="icon-in" title="LinkedIn">in</span>
-                    <span class="icon-teams" title="Microsoft Teams">T</span>
-                    <span class="icon-wa" title="WhatsApp">W</span>
-                    <span class="icon-link" title="Copy Link">&#128279;</span>
+                    <a href="#" class="icon-in" data-share="linkedin" title="Share on LinkedIn">in</a>
+                    <a href="#" class="icon-teams" data-share="teams" title="Share on Teams">T</a>
+                    <a href="#" class="icon-wa" data-share="whatsapp" title="Share on WhatsApp">W</a>
+                    <a href="#" class="icon-link" data-share="copy" role="button" title="Copy Link">&#128279;</a>
                 </div>
             </div>
         </div>
