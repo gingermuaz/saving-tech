@@ -17,6 +17,8 @@
     <meta property="og:image" content="https://savingtech.co.uk/Images/share-image.jpg">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <meta name="theme-color" content="#2E8B57">
     <link rel="stylesheet" href="css/styles.css">
 
     <!-- Styles used only on this page -->
@@ -41,9 +43,13 @@
             padding: 0.75rem 1rem;
             border-radius: 0.375rem;
             border: none;
-            outline: none;
             font-size: 0.95rem;
             background-color: #fff9ed;
+        }
+
+        .search-box input[type="text"]:focus-visible {
+            outline: 2px solid var(--primary-green-text);
+            outline-offset: 2px;
         }
 
         .search-box button {
@@ -107,6 +113,29 @@
             flex: 1;
         }
 
+        /* the heading round each article title adds no styling of its own */
+        .article-heading {
+            font: inherit;
+        }
+
+        /* hidden by the search box when it doesn't match */
+        .article-card[hidden] {
+            display: none;
+        }
+
+        /* "3 articles found" / "No articles found" under the search */
+        .search-status {
+            max-width: 62.5rem;
+            margin: 0 auto 1.5rem;
+            color: var(--dark-grey);
+            font-weight: 600;
+            scroll-margin-top: 7.5rem;
+        }
+
+        .search-status:empty {
+            display: none;
+        }
+
         .article-title {
             font-size: 1.35rem;
             font-weight: 700;
@@ -164,6 +193,7 @@
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- Site header (identical on every page) -->
     <header class="site-header">
@@ -212,7 +242,7 @@
         </div>
     </header>
 
-    <main>
+    <main id="main-content">
         <!-- Hero / Search Section -->
         <section class="page-hero page-hero-pattern page-hero-pattern-security">
             <div class="page-hero-card">
@@ -220,7 +250,7 @@
                 <h1>Data Security Articles</h1>
                 <p>Everything you need to know about data security and protecting sensitive information when recycling old tech.</p>
                 <form class="search-box" action="#" method="GET">
-                    <input type="text" placeholder="Search articles" aria-label="Search articles">
+                    <input type="text" placeholder="Search articles" aria-label="Search articles" enterkeyhint="search">
                     <button type="submit" aria-label="Search">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                             <circle cx="11" cy="11" r="8"></circle>
@@ -238,10 +268,10 @@
                 <!-- Article 1 -->
                 <article class="article-card">
                     <div class="article-image">
-                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" alt="8 common myths about free IT recycling, debunked">
+                        <img src="Images/article-8-myths.webp" alt="" width="1200" height="1798" srcset="Images/article-8-myths-400.webp 400w, Images/article-8-myths-800.webp 800w, Images/article-8-myths.webp 1200w" sizes="(max-width: 600px) 95vw, (max-width: 1080px) 92vw, (max-width: 1920px) 320px, 17vw" fetchpriority="high">
                     </div>
                     <div class="article-details">
-                        <a href="8CommonMyths.html" class="article-title">8 common myths about free IT recycling, debunked</a>
+                        <h2 class="article-heading"><a href="8CommonMyths.html" class="article-title">8 common myths about free IT recycling, debunked</a></h2>
                         <div class="article-date">September 21, 2026</div>
                         <p class="article-excerpt">Free IT recycling raises a lot of questions before businesses commit. Here are the eight most common misconceptions – and what the reality actually looks like.</p>
                     </div>
@@ -250,10 +280,10 @@
                 <!-- Article 2 -->
                 <article class="article-card">
                     <div class="article-image">
-                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80" alt="6 questions to ask any IT recycling company before you book a collection" loading="lazy" decoding="async">
+                        <img src="Images/article-6-questions.webp" alt="" loading="lazy" decoding="async" width="1200" height="801" srcset="Images/article-6-questions-400.webp 400w, Images/article-6-questions-800.webp 800w, Images/article-6-questions.webp 1200w" sizes="(max-width: 600px) 95vw, (max-width: 1080px) 92vw, (max-width: 1920px) 320px, 17vw">
                     </div>
                     <div class="article-details">
-                        <a href="6QuestionsToAskAnyIT.html" class="article-title">6 questions to ask any IT recycling company before you book a collection</a>
+                        <h2 class="article-heading"><a href="6QuestionsToAskAnyIT.html" class="article-title">6 questions to ask any IT recycling company before you book a collection</a></h2>
                         <div class="article-date">September 14, 2026</div>
                         <p class="article-excerpt">Not all IT recycling companies operate to the same standard. These six questions will help you identify whether a provider can actually protect your business over your equipment.</p>
                     </div>
@@ -262,10 +292,10 @@
                 <!-- Article 3 -->
                 <article class="article-card">
                     <div class="article-image">
-                        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=600&q=80" alt="Office move IT disposal: what to do with the equipment you're leaving behind" loading="lazy" decoding="async">
+                        <img src="Images/article-office-move.webp" alt="" loading="lazy" decoding="async" width="1200" height="800" srcset="Images/article-office-move-400.webp 400w, Images/article-office-move-800.webp 800w, Images/article-office-move.webp 1200w" sizes="(max-width: 600px) 95vw, (max-width: 1080px) 92vw, (max-width: 1920px) 320px, 17vw">
                     </div>
                     <div class="article-details">
-                        <a href="OfficeMoveITDisposal.html" class="article-title">Office move IT disposal: what to do with the equipment you're leaving behind</a>
+                        <h2 class="article-heading"><a href="OfficeMoveITDisposal.html" class="article-title">Office move IT disposal: what to do with the equipment you're leaving behind</a></h2>
                         <div class="article-date">September 1, 2026</div>
                         <p class="article-excerpt">Relocating or closing a site? This guide covers how to audit, decommission and clear redundant IT before the removal vans arrive – with certified data destruction and the documentation to close out the building.</p>
                     </div>
@@ -274,10 +304,10 @@
                 <!-- Article 4 -->
                 <article class="article-card">
                     <div class="article-image">
-                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80" alt="Why every business should have an IT asset disposal policy" loading="lazy" decoding="async">
+                        <img src="Images/article-disposal-policy.webp" alt="" loading="lazy" decoding="async" width="1200" height="800" srcset="Images/article-disposal-policy-400.webp 400w, Images/article-disposal-policy-800.webp 800w, Images/article-disposal-policy.webp 1200w" sizes="(max-width: 600px) 95vw, (max-width: 1080px) 92vw, (max-width: 1920px) 320px, 17vw">
                     </div>
                     <div class="article-details">
-                        <a href="WhyEveryBusiness.html" class="article-title">Why every business should have an IT asset disposal policy</a>
+                        <h2 class="article-heading"><a href="WhyEveryBusiness.html" class="article-title">Why every business should have an IT asset disposal policy</a></h2>
                         <div class="article-date">August 25, 2026</div>
                         <p class="article-excerpt">An IT asset disposal policy turns ad hoc decisions about old equipment into a documented, repeatable process – and gives you the evidence trail to back it up when it matters.</p>
                     </div>
@@ -286,10 +316,10 @@
                 <!-- Article 5 -->
                 <article class="article-card">
                     <div class="article-image">
-                        <img src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&w=600&q=80" alt="Laptop recycling for business – recovering devices from remote workers" loading="lazy" decoding="async">
+                        <img src="Images/article-remote-laptops.webp" alt="" loading="lazy" decoding="async" width="1200" height="800" srcset="Images/article-remote-laptops-400.webp 400w, Images/article-remote-laptops-800.webp 800w, Images/article-remote-laptops.webp 1200w" sizes="(max-width: 600px) 95vw, (max-width: 1080px) 92vw, (max-width: 1920px) 320px, 17vw">
                     </div>
                     <div class="article-details">
-                        <a href="LaptopRecyclingForBusiness.html" class="article-title">Laptop recycling for business – recovering devices from remote workers</a>
+                        <h2 class="article-heading"><a href="LaptopRecyclingForBusiness.html" class="article-title">Laptop recycling for business – recovering devices from remote workers</a></h2>
                         <div class="article-date">August 11, 2026</div>
                         <p class="article-excerpt">Remote and hybrid working has scattered company laptops across hundreds of homes. This guide covers how to recover devices from leavers, close the data gap, and arrange certified disposal.</p>
                     </div>
@@ -298,10 +328,10 @@
                 <!-- Article 6 -->
                 <article class="article-card">
                     <div class="article-image">
-                        <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=600&q=80" alt="How to catalogue and prepare your IT assets before recycling" loading="lazy" decoding="async">
+                        <img src="Images/article-how-to-catalogue.webp" alt="" loading="lazy" decoding="async" width="1200" height="800" srcset="Images/article-how-to-catalogue-400.webp 400w, Images/article-how-to-catalogue-800.webp 800w, Images/article-how-to-catalogue.webp 1200w" sizes="(max-width: 600px) 95vw, (max-width: 1080px) 92vw, (max-width: 1920px) 320px, 17vw">
                     </div>
                     <div class="article-details">
-                        <a href="HowToCatalogue.html" class="article-title">How to catalogue and prepare your IT assets before recycling</a>
+                        <h2 class="article-heading"><a href="HowToCatalogue.html" class="article-title">How to catalogue and prepare your IT assets before recycling</a></h2>
                         <div class="article-date">July 28, 2026</div>
                         <p class="article-excerpt">Good IT asset inventory management starts before the recycler arrives. This guide covers what to capture, how to build an inventory, and how to prepare for collection day.</p>
                     </div>
@@ -310,10 +340,10 @@
                 <!-- Article 7 -->
                 <article class="article-card">
                     <div class="article-image">
-                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600&q=80" alt="IT asset disposal the right way (and the mistakes to avoid)" loading="lazy" decoding="async">
+                        <img src="Images/article-it-asset-disposal.webp" alt="" loading="lazy" decoding="async" width="1200" height="801" srcset="Images/article-it-asset-disposal-400.webp 400w, Images/article-it-asset-disposal-800.webp 800w, Images/article-it-asset-disposal.webp 1200w" sizes="(max-width: 600px) 95vw, (max-width: 1080px) 92vw, (max-width: 1920px) 320px, 17vw">
                     </div>
                     <div class="article-details">
-                        <a href="ITAssetDisposal.html" class="article-title">IT asset disposal the right way (and the mistakes to avoid)</a>
+                        <h2 class="article-heading"><a href="ITAssetDisposal.html" class="article-title">IT asset disposal the right way (and the mistakes to avoid)</a></h2>
                         <div class="article-date">July 21, 2026</div>
                         <p class="article-excerpt">Disposing of old office IT equipment incorrectly puts your business at risk. This guide covers the right approach, common mistakes, and the documentation you need.</p>
                     </div>
@@ -322,10 +352,10 @@
                 <!-- Article 8 -->
                 <article class="article-card">
                     <div class="article-image">
-                        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=600&q=80" alt="Laptop recycling for financial services: meeting FCA & GDPR requirements" loading="lazy" decoding="async">
+                        <img src="Images/article-financial-services.webp" alt="" loading="lazy" decoding="async" width="1200" height="675" srcset="Images/article-financial-services-400.webp 400w, Images/article-financial-services-800.webp 800w, Images/article-financial-services.webp 1200w" sizes="(max-width: 600px) 95vw, (max-width: 1080px) 92vw, (max-width: 1920px) 320px, 17vw">
                     </div>
                     <div class="article-details">
-                        <a href="LaptopRecyclingForFinancial.html" class="article-title">Laptop recycling for financial services: meeting FCA &amp; GDPR requirements</a>
+                        <h2 class="article-heading"><a href="LaptopRecyclingForFinancial.html" class="article-title">Laptop recycling for financial services: meeting FCA &amp; GDPR requirements</a></h2>
                         <div class="article-date">June 19, 2026</div>
                         <p class="article-excerpt">Regulated firms face specific FCA, PRA and GDPR requirements for laptop recycling. Financial services organisations need documented data destruction standards and full audit trails to demonstrate compliance.</p>
                     </div>
@@ -334,10 +364,10 @@
                 <!-- Article 9 -->
                 <article class="article-card">
                     <div class="article-image">
-                        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="What happens to your business computers after they are collected for recycling?" loading="lazy" decoding="async">
+                        <img src="Images/article-what-happens.webp" alt="" loading="lazy" decoding="async" width="1200" height="800" srcset="Images/article-what-happens-400.webp 400w, Images/article-what-happens-800.webp 800w, Images/article-what-happens.webp 1200w" sizes="(max-width: 600px) 95vw, (max-width: 1080px) 92vw, (max-width: 1920px) 320px, 17vw">
                     </div>
                     <div class="article-details">
-                        <a href="WhatHappensToYourBusiness.html" class="article-title">What happens to your business computers after they are collected for recycling?</a>
+                        <h2 class="article-heading"><a href="WhatHappensToYourBusiness.html" class="article-title">What happens to your business computers after they are collected for recycling?</a></h2>
                         <div class="article-date">June 2, 2026</div>
                         <p class="article-excerpt">A step-by-step guide to business computer recycling – how data is destroyed, devices assessed for reuse, and why circularity is important.</p>
                     </div>
@@ -346,10 +376,10 @@
                 <!-- Article 10 -->
                 <article class="article-card">
                     <div class="article-image">
-                        <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=600&q=80" alt="IT recycling for charities and non-profits" loading="lazy" decoding="async">
+                        <img src="Images/article-charities.webp" alt="" loading="lazy" decoding="async" width="1200" height="800" srcset="Images/article-charities-400.webp 400w, Images/article-charities-800.webp 800w, Images/article-charities.webp 1200w" sizes="(max-width: 600px) 95vw, (max-width: 1080px) 92vw, (max-width: 1920px) 320px, 17vw">
                     </div>
                     <div class="article-details">
-                        <a href="ITRecyclingForCharities.html" class="article-title">IT recycling for charities and non-profits</a>
+                        <h2 class="article-heading"><a href="ITRecyclingForCharities.html" class="article-title">IT recycling for charities and non-profits</a></h2>
                         <div class="article-date">May 20, 2026</div>
                         <p class="article-excerpt">The same IT disposal rules apply to charities as to commercial organisations. Free, certified collection is available — here is what you need to know.</p>
                     </div>
@@ -361,6 +391,53 @@
 
     <!-- Site footer (identical on every page) -->
     <footer class="site-footer">
+        <nav class="footer-sitemap" aria-label="Site map">
+            <a href="index.html" class="sitemap-home"><svg class="sitemap-home-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M3 10.5 12 3l9 7.5M5.5 8.5V21h5v-6h3v6h5V8.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</a>
+            <ul class="sitemap-branches">
+                <li class="sitemap-branch">
+                    <a href="FreeITDisposal.html" class="sitemap-node">Free IT Disposal</a>
+                    <ul class="sitemap-pages">
+                        <li><a href="Computerrecycling.html">Computer recycling</a></li>
+                        <li><a href="Laptoprecycling.html">Laptop recycling</a></li>
+                        <li><a href="Mobiledevicerecycling.html">Mobile device recycling</a></li>
+                        <li><a href="Monitorscreenrecycling.html">Monitor &amp; screen recycling</a></li>
+                        <li><a href="ServerRecycling.html">Server recycling</a></li>
+                    </ul>
+                </li>
+                <li class="sitemap-branch">
+                    <a href="index.html#services" class="sitemap-node">Our Services</a>
+                    <ul class="sitemap-pages">
+                        <li><a href="Assetswecollectrecycle.html">Assets we collect &amp; recycle</a></li>
+                        <li><a href="FAQs.html">FAQs</a></li>
+                    </ul>
+                </li>
+                <li class="sitemap-branch">
+                    <a href="DataDestruction.html" class="sitemap-node">Data Destruction</a>
+                    <ul class="sitemap-pages">
+                        <li><a href="DataDestructionMethods.html">Secure data erasure</a></li>
+                        <li><a href="DataSecurityArticles.html" aria-current="page">Data security articles</a></li>
+                        <li><a href="Harddrivemediadestruction.html">Hard drive &amp; media destruction</a></li>
+                        <li><a href="SecureDataDestruction.html">Secure data destruction</a></li>
+                    </ul>
+                </li>
+                <li class="sitemap-branch">
+                    <a href="AboutUs.html" class="sitemap-node">About Us</a>
+                    <ul class="sitemap-pages">
+                        <li><a href="Documentscertificates.html">Documents &amp; certificates</a></li>
+                    </ul>
+                </li>
+                <li class="sitemap-branch sitemap-branch-book">
+                    <a href="Book.html#form-section" class="sitemap-node">Book a Collection</a>
+                    <ul class="sitemap-pages">
+                        <li class="sitemap-call">Call us on <a href="tel:07904010708">07904010708</a><br>or Email <a href="mailto:contact@savingtech.co.uk">contact@savingtech.co.uk</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <nav class="footer-links" aria-label="Legal">
+            <a href="PrivacyNotice.html">Privacy Notice</a>
+            <a href="TermsAndConditions.html">Terms and Conditions</a>
+        </nav>
         <p>&copy; <span id="year">2026</span> Saving Tech. All rights reserved.</p>
     </footer>
 

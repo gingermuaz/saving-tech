@@ -21,6 +21,16 @@
             navToggle.setAttribute('aria-expanded', String(isOpen));
             navToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
         });
+
+        // Escape closes the open menu and puts focus back on the menu button
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && siteNav.classList.contains('is-open')) {
+                siteNav.classList.remove('is-open');
+                navToggle.setAttribute('aria-expanded', 'false');
+                navToggle.setAttribute('aria-label', 'Open menu');
+                navToggle.focus();
+            }
+        });
     }
 
     // Newsletter sign-up forms
@@ -33,10 +43,55 @@
         });
     });
 
-    // Article search box (not connected to a search service yet)
+    // Article search box (Data Security Articles): filters the list of
+    // articles on the page as you type. Every word typed has to appear in an
+    // article's title, date or summary for it to stay in the list.
     document.querySelectorAll('form.search-box').forEach(function (form) {
+        var input = form.querySelector('input');
+        var cards = document.querySelectorAll('.article-card');
         form.addEventListener('submit', function (e) {
             e.preventDefault();
+        });
+        if (!input || !cards.length) {
+            return;
+        }
+        var list = cards[0].parentNode;
+        var status = document.createElement('p');
+        status.className = 'search-status';
+        status.setAttribute('role', 'status');
+        list.parentNode.insertBefore(status, list);
+
+        var filter = function () {
+            var typed = input.value.trim();
+            var words = typed.toLowerCase().split(/\s+/).filter(Boolean);
+            var shown = 0;
+            cards.forEach(function (card) {
+                var text = card.textContent.toLowerCase();
+                var match = words.every(function (word) {
+                    return text.indexOf(word) !== -1;
+                });
+                card.hidden = !match;
+                if (match) {
+                    shown += 1;
+                }
+            });
+            if (!words.length) {
+                status.textContent = '';
+            } else if (shown) {
+                status.textContent = shown + (shown === 1 ? ' article' : ' articles') + ' found for \u201c' + typed + '\u201d';
+            } else {
+                status.textContent = 'No articles found for \u201c' + typed + '\u201d. Try a different word.';
+            }
+        };
+
+        input.addEventListener('input', filter);
+        // Pressing Enter or the search button also brings the results into view
+        form.addEventListener('submit', function () {
+            filter();
+            if (status.textContent) {
+                var calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                status.scrollIntoView({ behavior: calm ? 'auto' : 'smooth', block: 'start' });
+            }
         });
     });
 
